@@ -30,13 +30,14 @@ dotnet run --project tests/MaiPlay.GameplayHarness -- --plan "歌曲目录" arti
 
 输出 `hands.json` 和整曲 `results.json`，包含逐音符判定、分手动作和缺口；非全 CP 时返回非零退出码，但仍保存可播放的部分方案。日志可在设置 → 判定与诊断加载。导入日志只携带动作；要在主界面查看缺口列表，需为当前谱面点击「求解手顺」。
 
-批量验证本地全部 Expert，包括标准和 DX 谱面：
+算法成绩评估只运行 Master 和 Re:Master，包括标准和 DX 谱面：
 
 ```powershell
-dotnet run --project tests/MaiPlay.GameplayHarness -c Release -- --batch 4 .reference/charts/game-extracted artifacts/expert-validation/red
+dotnet run --project tests/MaiPlay.GameplayHarness -c Release -- --batch 5 .reference/charts/game-extracted artifacts/evaluation/master
+dotnet run --project tests/MaiPlay.GameplayHarness -c Release -- --batch 6 .reference/charts/game-extracted artifacts/evaluation/remaster
 ```
 
-难度编号可改为 `2`、`3`、`5`、`6`，分别验证 Basic、Advanced、Master、Re:Master；`--batch-expert` 保留为难度 4 的简写。优化后先复查失败项，再运行整个难度的曲库，避免只看到局部改进。
+本流程的难度范围与上传步骤见[水鱼成绩上传](DIVING-FISH.md)。优化后先复查失败项，再运行这两个难度的完整曲库，避免只看到局部改进。下文 Expert 扫描数据保留为历史验证记录。
 
 每首保存达成率、Rating、逐音符错误、缺口和谱面 SHA-256；`summary.json` 汇总全部结果、算法程序集指纹、平均达成率、Rating 合计、旧 35 / 新 15 的 B50 与理论上限。版本分组和边界规则见 [Rating 契约](specs/achievement.md#rating-与-b50)。不把缺少该难度或解析失败当作通过。可再传入旧 `summary.json` 路径，只复查其中未通过的谱面，子集报告不代表整库 B50。批量模式不保存全部手部轨迹；用 `--plan` 可单独导出供回放。
 

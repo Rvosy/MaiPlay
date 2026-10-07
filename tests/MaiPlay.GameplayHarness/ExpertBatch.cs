@@ -14,7 +14,7 @@ internal static class ExpertBatch
         Converters = { new JsonStringEnumConverter() }
     };
 
-    public static int Run(string root, string output, string? retrySummary = null, int difficulty = 4)
+    public static int Run(string root, string output, string? retrySummary = null, int difficulty = 4, bool humanPlanner = false)
     {
         if (difficulty is < 1 or > 7) throw new ArgumentOutOfRangeException(nameof(difficulty));
         root = Path.GetFullPath(root);
@@ -46,7 +46,7 @@ internal static class ExpertBatch
                 if (chart is null) report = new(relative, song.Title, "", "missing-difficulty", 0, 0, 0, 0, [], [], null, 0);
                 else
                 {
-                    var plan = NormalHandPlanner.Plan(chart);
+                    var plan = humanPlanner ? HumanPlanner.Plan(chart) : NormalHandPlanner.Plan(chart);
                     report = new(relative, chart.Title, chart.Level, plan.AllCriticalPerfect ? "all-cp" : "partial",
                         chart.Notes.Count, plan.Results.Count(e => e.Grade == AchievementGrade.Perfect), plan.Achievement,
                         plan.DXScore, plan.Gaps, plan.Errors.Select(e => new Failure(e.Note.Id, e.Note.Kind,
@@ -74,6 +74,7 @@ internal static class ExpertBatch
         var summary = new
         {
             createdAt = DateTimeOffset.Now, root, difficulty, ruleVersion = InputLog.CurrentRuleVersion,
+            planner = humanPlanner ? nameof(HumanPlanner) : nameof(NormalHandPlanner),
             plannerAssemblySha256 = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(NormalHandPlanner).Assembly.Location))),
             newVersions = newVersions.Order().ToArray(), ratingScope = retrySummary is null ? "full-library" : "retry-subset",
             averageAchievement = eligible.Length == 0 ? 0 : eligible.Average(r => r.Achievement),

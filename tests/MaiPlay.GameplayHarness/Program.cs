@@ -9,6 +9,8 @@ if (args.Length >= 5 && args[0] == "--compare-planners")
 
 if (args.Length >= 3 && args[0] == "--batch-expert")
     return ExpertBatch.Run(args[1], args[2], args.Length > 3 ? args[3] : null);
+if (args.Length >= 4 && args[0] == "--batch-human")
+    return ExpertBatch.Run(args[2], args[3], args.Length > 4 ? args[4] : null, int.Parse(args[1]), true);
 if (args.Length >= 4 && args[0] == "--batch")
     return ExpertBatch.Run(args[2], args[3], args.Length > 4 ? args[4] : null, int.Parse(args[1]));
 

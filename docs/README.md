@@ -18,6 +18,7 @@
 - [程序使用](../README.md)。
 - [谱面与时序](CHART-COMPATIBILITY.md)、[皮肤](SKIN-COMPATIBILITY.md)、[音频](AUDIO.md)：现有版本的兼容行为及限制。
 - [官方谱面转换](OFFICIAL-CHARTS.md)：转换工具、版本分类与独立的整库验收记录。
+- [水鱼成绩上传](DIVING-FISH.md)：从算法评估报告生成上传包，使用个人 Import-Token 上传并读回核对。
 - [既有验收记录](VALIDATION.md)：对应记录中的版本，不代表下一阶段已完成。
 - [上游研究记录](../research/upstream-gameplay.md)：固定源码、调查证据、差异与后续核验入口。
 
