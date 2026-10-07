@@ -1,0 +1,377 @@
+{
+  "ruleVersion": "majdata-dc19722-240-v1",
+  "events": [
+    {
+      "time": 1,
+      "channel": "Button",
+      "area": "1",
+      "isDown": true
+    },
+    {
+      "time": 1.05,
+      "channel": "Button",
+      "area": "1",
+      "isDown": false
+    },
+    {
+      "time": 1.925,
+      "channel": "Button",
+      "area": "2",
+      "isDown": true
+    },
+    {
+      "time": 1.975,
+      "channel": "Button",
+      "area": "2",
+      "isDown": false
+    },
+    {
+      "time": 3.125,
+      "channel": "Button",
+      "area": "3",
+      "isDown": true
+    },
+    {
+      "time": 3.175,
+      "channel": "Button",
+      "area": "3",
+      "isDown": false
+    },
+    {
+      "time": 4,
+      "channel": "Button",
+      "area": "5",
+      "isDown": true
+    },
+    {
+      "time": 4.05,
+      "channel": "Button",
+      "area": "5",
+      "isDown": false
+    },
+    {
+      "time": 5.025,
+      "channel": "Button",
+      "area": "5",
+      "isDown": true
+    },
+    {
+      "time": 5.075,
+      "channel": "Button",
+      "area": "5",
+      "isDown": false
+    },
+    {
+      "time": 5.875,
+      "channel": "Button",
+      "area": "6",
+      "isDown": true
+    },
+    {
+      "time": 5.925,
+      "channel": "Button",
+      "area": "6",
+      "isDown": false
+    },
+    {
+      "time": 7,
+      "channel": "Button",
+      "area": "7",
+      "isDown": true
+    },
+    {
+      "time": 8.4,
+      "channel": "Button",
+      "area": "7",
+      "isDown": false
+    },
+    {
+      "time": 9.2,
+      "channel": "Touch",
+      "area": "A1",
+      "isDown": true
+    },
+    {
+      "time": 9.25,
+      "channel": "Touch",
+      "area": "A1",
+      "isDown": false
+    },
+    {
+      "time": 10,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": true
+    },
+    {
+      "time": 10.05,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": false
+    },
+    {
+      "time": 10.7,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": true
+    },
+    {
+      "time": 11.4,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": false
+    },
+    {
+      "time": 12,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": true
+    },
+    {
+      "time": 13.5,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": false
+    },
+    {
+      "time": 14,
+      "channel": "Button",
+      "area": "1",
+      "isDown": true
+    },
+    {
+      "time": 14.05,
+      "channel": "Button",
+      "area": "1",
+      "isDown": false
+    },
+    {
+      "time": 14.2,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": true
+    },
+    {
+      "time": 14.25,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": false
+    },
+    {
+      "time": 14.45,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": true
+    },
+    {
+      "time": 14.5,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": false
+    },
+    {
+      "time": 14.65,
+      "channel": "Touch",
+      "area": "B5",
+      "isDown": true
+    },
+    {
+      "time": 14.7,
+      "channel": "Touch",
+      "area": "B5",
+      "isDown": false
+    },
+    {
+      "time": 14.8,
+      "channel": "Touch",
+      "area": "A5",
+      "isDown": true
+    },
+    {
+      "time": 14.85,
+      "channel": "Touch",
+      "area": "A5",
+      "isDown": false
+    },
+    {
+      "time": 17,
+      "channel": "Button",
+      "area": "2",
+      "isDown": true
+    },
+    {
+      "time": 17.05,
+      "channel": "Button",
+      "area": "2",
+      "isDown": false
+    },
+    {
+      "time": 17.3,
+      "channel": "Touch",
+      "area": "A8",
+      "isDown": true
+    },
+    {
+      "time": 17.35,
+      "channel": "Touch",
+      "area": "A8",
+      "isDown": false
+    },
+    {
+      "time": 20,
+      "channel": "Button",
+      "area": "3",
+      "isDown": true
+    },
+    {
+      "time": 20.2,
+      "channel": "Button",
+      "area": "3",
+      "isDown": false
+    },
+    {
+      "time": 22,
+      "channel": "Touch",
+      "area": "A2",
+      "isDown": true
+    },
+    {
+      "time": 22,
+      "channel": "Touch",
+      "area": "B2",
+      "isDown": true
+    },
+    {
+      "time": 22.05,
+      "channel": "Touch",
+      "area": "A2",
+      "isDown": false
+    },
+    {
+      "time": 22.05,
+      "channel": "Touch",
+      "area": "B2",
+      "isDown": false
+    },
+    {
+      "time": 25,
+      "channel": "Button",
+      "area": "1",
+      "isDown": true
+    },
+    {
+      "time": 25.05,
+      "channel": "Button",
+      "area": "1",
+      "isDown": false
+    },
+    {
+      "time": 25.2,
+      "channel": "Touch",
+      "area": "B8",
+      "isDown": true
+    },
+    {
+      "time": 25.2,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": true
+    },
+    {
+      "time": 25.2,
+      "channel": "Touch",
+      "area": "B2",
+      "isDown": true
+    },
+    {
+      "time": 25.25,
+      "channel": "Touch",
+      "area": "B8",
+      "isDown": false
+    },
+    {
+      "time": 25.25,
+      "channel": "Touch",
+      "area": "B1",
+      "isDown": false
+    },
+    {
+      "time": 25.25,
+      "channel": "Touch",
+      "area": "B2",
+      "isDown": false
+    },
+    {
+      "time": 25.5,
+      "channel": "Touch",
+      "area": "B7",
+      "isDown": true
+    },
+    {
+      "time": 25.5,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": true
+    },
+    {
+      "time": 25.5,
+      "channel": "Touch",
+      "area": "B3",
+      "isDown": true
+    },
+    {
+      "time": 25.55,
+      "channel": "Touch",
+      "area": "B7",
+      "isDown": false
+    },
+    {
+      "time": 25.55,
+      "channel": "Touch",
+      "area": "C",
+      "isDown": false
+    },
+    {
+      "time": 25.55,
+      "channel": "Touch",
+      "area": "B3",
+      "isDown": false
+    },
+    {
+      "time": 25.8,
+      "channel": "Touch",
+      "area": "A6",
+      "isDown": true
+    },
+    {
+      "time": 25.8,
+      "channel": "Touch",
+      "area": "A5",
+      "isDown": true
+    },
+    {
+      "time": 25.8,
+      "channel": "Touch",
+      "area": "A4",
+      "isDown": true
+    },
+    {
+      "time": 25.85,
+      "channel": "Touch",
+      "area": "A6",
+      "isDown": false
+    },
+    {
+      "time": 25.85,
+      "channel": "Touch",
+      "area": "A5",
+      "isDown": false
+    },
+    {
+      "time": 25.85,
+      "channel": "Touch",
+      "area": "A4",
+      "isDown": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MaiPlay.Core/MaiPlay.Core.csproj" />
+    <Project Path="src/MaiPlay/MaiPlay.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MaiPlay.AudioSmoke/MaiPlay.AudioSmoke.csproj" />
+    <Project Path="tests/MaiPlay.Tests/MaiPlay.Tests.csproj" />
+    <Project Path="tests/MaiPlay.GameplayHarness/MaiPlay.GameplayHarness.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,236 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:render="using:MaiPlay.Rendering"
+        x:Class="MaiPlay.MainWindow"
+        Title="MaiPlay · Simai 游玩器" Width="1220" Height="900"
+        MinWidth="960" MinHeight="720" Background="#EEF3F7">
+  <Grid>
+  <Grid x:Name="MainPage" RowDefinitions="76,*,Auto">
+    <Border Background="#F9FBFD" BorderBrush="#DAE3EA" BorderThickness="0,0,0,1" Padding="26,0">
+      <Grid ColumnDefinitions="250,*,Auto" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Spacing="12">
+          <Border Width="34" Height="34" CornerRadius="17" BorderBrush="#087D91" BorderThickness="5" VerticalAlignment="Center">
+            <Ellipse Width="7" Height="7" Fill="#EF917A" />
+          </Border>
+          <StackPanel>
+            <TextBlock Text="MaiPlay" FontFamily="Bahnschrift, Segoe UI" FontSize="26" FontWeight="SemiBold" />
+            <TextBlock Text="SIMAI  /  DESKTOP PLAYER" Classes="caption" LetterSpacing="1.7" FontSize="9" />
+          </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+          <TextBlock x:Name="SongTitle" Text="打开一首谱面" FontWeight="SemiBold" FontSize="17" TextTrimming="CharacterEllipsis" />
+          <TextBlock x:Name="SongSubtitle" Text="本地音乐 · 实时谱面" Classes="caption" TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+        <Button x:Name="SettingsButton" Grid.Column="2" Content="设置" Click="Settings_Click" MinWidth="88" />
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="1" ColumnDefinitions="260,*" Margin="20,20,20,0" ColumnSpacing="20">
+      <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Spacing="18" Margin="0,0,0,18">
+          <Border Background="White" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="9">
+              <TextBlock Text="歌曲与谱面" Classes="section" />
+              <Button x:Name="OpenFolderButton" Content="打开歌曲目录" Classes="primary" HorizontalAlignment="Stretch" Click="OpenFolder_Click" />
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Content="谱面 / ZIP" HorizontalAlignment="Stretch" Click="OpenChart_Click" />
+                <Button Grid.Column="1" Content="选择音乐" HorizontalAlignment="Stretch" Click="OpenMusic_Click" />
+              </Grid>
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Content="谱面示例" HorizontalAlignment="Stretch" Click="Demo_Click" />
+                <Button Grid.Column="1" Content="正攻示例" HorizontalAlignment="Stretch" Click="NormalDemo_Click" />
+              </Grid>
+              <TextBlock x:Name="SongPath" Text="支持 maidata.txt / Simai" Classes="caption" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="难度" Classes="caption" Margin="0,5,0,0" />
+              <ComboBox x:Name="DifficultyPicker" SelectionChanged="Difficulty_Changed" />
+              <TextBlock x:Name="ChartDetails" Classes="caption" TextWrapping="Wrap" />
+            </StackPanel>
+          </Border>
+
+          <Border Background="White" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="9">
+              <TextBlock Text="运行模式" Classes="section" />
+              <ComboBox x:Name="ModePicker" SelectedIndex="0" SelectionChanged="Mode_Changed">
+                <ComboBoxItem Content="Auto Play" />
+                <ComboBoxItem Content="算法游玩" />
+              </ComboBox>
+              <Button x:Name="GeneratePlanButton" Content="生成正攻手顺" HorizontalAlignment="Stretch" Click="GeneratePlan_Click" IsEnabled="False" />
+              <TextBlock x:Name="ModeHint" Text="按谱面时机自动完成，显示理想判定。" Classes="caption" TextWrapping="Wrap" LineHeight="18" />
+              <ComboBox x:Name="PlanIssuePicker" IsVisible="False" PlaceholderText="定位未解或误判音符" SelectionChanged="PlanIssue_Changed" />
+            </StackPanel>
+          </Border>
+
+          <Border Background="White" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="8">
+              <TextBlock Text="成绩" Classes="section" />
+              <TextBlock x:Name="DxScoreText" Text="DX  0 / 0" FontFamily="Bahnschrift, Segoe UI" FontSize="20" />
+              <TextBlock x:Name="RatingText" Text="Rating —" Classes="caption" />
+              <TextBlock x:Name="GradeSummary" Text="CP 0 · PERFECT 0 · GREAT 0 · GOOD 0" Classes="caption" TextWrapping="Wrap" />
+              <TextBlock x:Name="TimingSummary" Text="FAST 0 · LATE 0" Classes="caption" />
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+
+      <Border Grid.Column="1" CornerRadius="12" Background="#0C1830" ClipToBounds="True">
+        <Grid RowDefinitions="52,*,82">
+          <Grid Margin="24,0" ColumnDefinitions="*,Auto" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Spacing="9">
+              <Ellipse Width="6" Height="6" Fill="#70DCD3" />
+              <TextBlock x:Name="ModeLabel" Text="AUTO PLAY" Foreground="#C3D4E8" LetterSpacing="1.8" FontSize="11" />
+            </StackPanel>
+            <TextBlock x:Name="PlaybackLabel" Grid.Column="1" Text="就绪" Foreground="#91A5BE" FontSize="12" />
+          </Grid>
+          <render:GameView x:Name="Playfield" Grid.Row="1" Margin="16,0" />
+          <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*" Margin="24,8,24,12">
+            <StackPanel>
+              <TextBlock x:Name="ComboText" Text="0" FontFamily="Bahnschrift" FontSize="27" Foreground="White" />
+              <TextBlock Text="COMBO" Foreground="#91A5BE" FontSize="10" LetterSpacing="1.5" />
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+              <TextBlock x:Name="CompletedText" Text="0" FontFamily="Bahnschrift" FontSize="27" Foreground="#70DCD3" />
+              <TextBlock Text="已完成" Foreground="#91A5BE" FontSize="10" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+              <TextBlock x:Name="MissText" Text="0" FontFamily="Bahnschrift" FontSize="27" Foreground="#E9A596" />
+              <TextBlock Text="MISS" Foreground="#91A5BE" FontSize="10" LetterSpacing="1.5" />
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+              <TextBlock x:Name="RemainingText" Text="0" FontFamily="Bahnschrift" FontSize="27" Foreground="White" />
+              <TextBlock Text="剩余" Foreground="#91A5BE" FontSize="10" />
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </Border>
+    </Grid>
+
+    <StackPanel Grid.Row="2" Margin="20,14,20,14" Spacing="9">
+      <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="12">
+        <Button x:Name="PlayButton" Content="播放" Width="104" Classes="primary" Click="Play_Click" IsEnabled="False" />
+        <Button x:Name="RestartButton" Grid.Column="1" Content="重新开始" Click="Restart_Click" IsEnabled="False" />
+        <StackPanel Grid.Column="2" VerticalAlignment="Center" Spacing="5" Margin="10,0">
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <render:SeekTimeline x:Name="Progress" Height="46" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Spacing="3">
+              <Button Content="−" Padding="7,3" Click="ZoomOut_Click" ToolTip.Tip="缩小时间轴" />
+              <Button Content="+" Padding="7,3" Click="ZoomIn_Click" ToolTip.Tip="放大时间轴" />
+              <Button Content="全曲" Padding="7,3" Click="FitTimeline_Click" />
+            </StackPanel>
+          </Grid>
+          <TextBlock x:Name="JudgmentText" Text="空格：播放 / 暂停 · R：重开" Classes="caption" TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+        <TextBlock x:Name="TimeText" Grid.Column="3" Text="00:00.0 / 00:00.0" FontFamily="Cascadia Code, Consolas" FontSize="13" VerticalAlignment="Center" />
+      </Grid>
+      <Border x:Name="StatusBorder" Background="#E1EBF2" CornerRadius="6" Padding="12,8">
+        <ScrollViewer MaxHeight="64"><TextBlock x:Name="StatusText" Text="打开歌曲目录，或点击「体验示例」。" FontSize="12" Foreground="#426078" TextWrapping="Wrap" /></ScrollViewer>
+      </Border>
+    </StackPanel>
+  </Grid>
+    <Border x:Name="SettingsPanel" Background="#B2101F37" IsVisible="False">
+      <Border Background="#F9FBFD" CornerRadius="12" Margin="32" Padding="24" MaxWidth="680">
+        <Grid RowDefinitions="Auto,*,Auto" RowSpacing="18">
+          <Grid ColumnDefinitions="*,Auto">
+            <StackPanel Spacing="5">
+              <TextBlock Text="设置" FontSize="24" FontWeight="SemiBold" />
+              <TextBlock Text="游玩已暂停。关闭设置后，点击播放继续。" Classes="caption" />
+            </StackPanel>
+            <Button x:Name="CloseSettingsButton" Grid.Column="1" Content="关闭" Click="CloseSettings_Click" VerticalAlignment="Top" />
+          </Grid>
+          <TabControl Grid.Row="1">
+            <TabItem Header="显示">
+              <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Spacing="16" Margin="4,20,4,8">
+              <Border Height="1" Background="#E5EBF1" Margin="0,4" />
+              <Grid ColumnDefinitions="*,112" RowDefinitions="Auto,Auto" RowSpacing="8">
+                <StackPanel VerticalAlignment="Center">
+                  <TextBlock Text="Tap 流速" />
+                  <TextBlock Text="Tap · Hold · 星头" Classes="caption" FontSize="10" />
+                </StackPanel>
+                <NumericUpDown Grid.Column="1" x:Name="TapSpeedInput" Value="7.5" Minimum="0.25" Maximum="20" Increment="0.25" FormatString="0.00" ValueChanged="Speed_Changed" />
+                <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                  <TextBlock Text="Touch 流速" />
+                  <TextBlock Text="Touch · TouchHold" Classes="caption" FontSize="10" />
+                </StackPanel>
+                <NumericUpDown Grid.Row="1" Grid.Column="1" x:Name="TouchSpeedInput" Value="7.5" Minimum="0.25" Maximum="20" Increment="0.25" FormatString="0.00" ValueChanged="Speed_Changed" />
+              </Grid>
+              <TextBlock Text="数值越大，音符出现越晚、接近越快。" Classes="caption" FontSize="10" />
+                  <TextBlock Text="流速不改变判定时刻和 Slide 移动时长。" Classes="caption" TextWrapping="Wrap" />
+                  <Border Height="1" Background="#E5EBF1" />
+                  <CheckBox x:Name="ContactHighlightToggle" Content="点亮当前触发区域" IsChecked="True" IsCheckedChanged="HandDisplay_Changed" />
+                  <CheckBox x:Name="HandMarkerToggle" Content="显示左右手位" IsChecked="True" IsCheckedChanged="HandDisplay_Changed" />
+                  <CheckBox x:Name="HandTrailToggle" Content="显示短拖尾" IsCheckedChanged="HandDisplay_Changed" />
+                  <TextBlock Text="○ 蓝色左手 · ◇ 橙色右手。手位用于看手顺，区域底色表示实际触发。" Classes="caption" TextWrapping="Wrap" />
+                  <TextBlock Text="手位需要带手部轨迹的输入日志；这些显示选项不改变判定。" Classes="caption" TextWrapping="Wrap" />
+                </StackPanel>
+              </ScrollViewer>
+            </TabItem>
+            <TabItem Header="皮肤">
+              <ScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,12,0,0">
+          <Border Background="White" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="9">
+              <TextBlock Text="皮肤" Classes="section" />
+              <ComboBox x:Name="SkinPicker" SelectionChanged="Skin_Changed" />
+              <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                <Button Content="导入 ZIP" HorizontalAlignment="Stretch" Click="ImportSkinZip_Click" />
+                <Button Grid.Column="1" Content="导入目录" HorizontalAlignment="Stretch" Click="ImportSkinFolder_Click" />
+              </Grid>
+              <Button x:Name="PreviewButton" Content="查看皮肤素材与状态" Click="PreviewSkin_Click" HorizontalAlignment="Stretch" />
+              <TextBlock x:Name="SkinHint" Text="直接读取 MajdataPlay 原格式" Classes="caption" TextWrapping="Wrap" />
+            </StackPanel>
+          </Border>
+
+              </ScrollViewer>
+            </TabItem>
+            <TabItem Header="声音">
+              <ScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,12,0,0">
+          <Border Background="White" CornerRadius="10" Padding="18">
+            <StackPanel Spacing="7">
+              <TextBlock Text="声音" Classes="section" />
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="音乐" />
+                <TextBlock x:Name="MusicLevel" Grid.Column="1" Classes="caption" />
+              </Grid>
+              <Slider x:Name="MusicSlider" Minimum="0" Maximum="100" Value="70" ValueChanged="Volume_Changed" />
+              <Grid ColumnDefinitions="*,Auto">
+                <CheckBox x:Name="SoundToggle" Content="音效" IsChecked="True" IsCheckedChanged="SoundEnabled_Changed" MinHeight="26" />
+                <TextBlock x:Name="SoundLevel" Grid.Column="1" Classes="caption" VerticalAlignment="Center" />
+              </Grid>
+              <Slider x:Name="SoundSlider" Minimum="0" Maximum="100" Value="55" ValueChanged="Volume_Changed" />
+              <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <Button Content="选择 SFX 目录" Click="ImportSound_Click" />
+                <Button Grid.Column="1" Content="内置" Click="BuiltInSound_Click" />
+              </Grid>
+              <TextBlock x:Name="SoundHint" Text="内置合成音效" Classes="caption" TextWrapping="Wrap" />
+            </StackPanel>
+          </Border>
+              </ScrollViewer>
+            </TabItem>
+            <TabItem Header="判定与诊断">
+              <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Spacing="12" Margin="4,20,4,8">
+                  <CheckBox x:Name="SensorToggle" Content="显示按钮与触摸区域边界、编号" IsCheckedChanged="Sensors_Changed" />
+                  <TextBlock Text="区域亮起可在显示页开关。蓝色为左手，橙色为右手，无手部归属的输入为绿色。外键范围为近似值。" Classes="caption" TextWrapping="Wrap" />
+                  <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                    <Button Content="加载输入日志" HorizontalAlignment="Stretch" Click="LoadInputLog_Click" />
+                    <Button Grid.Column="1" Content="清空输入" Click="ClearInputLog_Click" />
+                  </Grid>
+                  <TextBlock x:Name="InputLogHint" Text="未加载输入日志。算法游玩将按无输入状态判定。" Classes="caption" TextWrapping="Wrap" />
+                  <TextBlock Text="加载或清空输入会重新开始本局，并保持暂停。输入日志只在算法游玩中使用。" Classes="caption" TextWrapping="Wrap" />
+                  <TextBlock Text="最近输入" FontWeight="SemiBold" Margin="0,8,0,0" />
+                  <TextBlock x:Name="InputHistoryText" Text="尚无输入" FontFamily="Cascadia Code, Consolas" FontSize="12" TextWrapping="Wrap" />
+                  <TextBlock Text="最近判定" FontWeight="SemiBold" />
+                  <TextBlock x:Name="ResultDetails" Text="尚无判定" FontSize="12" TextWrapping="Wrap" />
+                  <TextBlock Text="最近 Slide 进度" FontWeight="SemiBold" />
+                  <TextBlock x:Name="SlideProgressText" Text="尚无 Slide 进度" FontFamily="Cascadia Code, Consolas" FontSize="12" TextWrapping="Wrap" />
+                </StackPanel>
+              </ScrollViewer>
+            </TabItem>
+          </TabControl>
+          <Border Grid.Row="2" Background="#E1EBF2" CornerRadius="6" Padding="12,9">
+            <TextBlock x:Name="SettingsStatus" Text="设置自动保存。" FontSize="12" Foreground="#426078" TextWrapping="Wrap" />
+          </Border>
+        </Grid>
+      </Border>
+    </Border>
+  </Grid>
+</Window>

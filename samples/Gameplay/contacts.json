@@ -1,0 +1,11 @@
+{
+  "ruleVersion": "majdata-dc19722-240-v1",
+  "contacts": [
+    {"time": 0.9, "source": "left", "channel": "Button", "position": {"x": 0.4286054442, "y": -1.0347450764}, "radius": 0.03, "isDown": true},
+    {"time": 1.1, "source": "left", "channel": "Button", "position": {"x": 0.4286054442, "y": -1.0347450764}, "radius": 0.03, "isDown": false},
+    {"time": 10.95, "source": "left", "channel": "Touch", "position": {"x": 0, "y": 0}, "radius": 0.04, "isDown": true},
+    {"time": 11.1, "source": "right", "channel": "Touch", "position": {"x": 0, "y": 0}, "radius": 0.04, "isDown": true},
+    {"time": 11.2, "source": "left", "channel": "Touch", "position": {"x": 0, "y": 0}, "radius": 0.04, "isDown": false},
+    {"time": 11.4, "source": "right", "channel": "Touch", "position": {"x": 0, "y": 0}, "radius": 0.04, "isDown": false}
+  ]
+}
