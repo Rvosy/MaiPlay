@@ -1,0 +1,289 @@
+{
+  "createdAtUtc": "2026-10-07T22:23:37.4367332+00:00",
+  "planner": "human",
+  "assemblyHash": "DEB5256209FB154C057A64AD93835C3E8F0C1D8A543AFF2CB6041B28CB3EF3BE",
+  "currentRuleVersion": "majdata-dc19722-240-v1",
+  "framework": ".NET 10.0.5",
+  "os": "Microsoft Windows 10.0.22631",
+  "processorCount": 16,
+  "repetitions": 3,
+  "charts": [
+    {
+      "path": "C:/Users/Rvosy/AppData/Local/MaiPlay/ImportedSongs/C367E958587D7D86/maidata.txt",
+      "title": "Panopticon",
+      "difficulty": 5,
+      "level": "14.4",
+      "notes": 900,
+      "chartSha256": "A329F413BF4F12925334226376C4F962BA7724FA27B3BFD8642A0ABC63CE9618",
+      "runs": [
+        {
+          "seconds": 8.7557293,
+          "cpuSeconds": 0.484375,
+          "allocatedBytes": 7047949104,
+          "fingerprint": "5CD139AA1C4E452F86F8FCB305D93C1EA14E1A56CAF2FFC585A96AAA6A640999",
+          "cp": 899,
+          "achievement": 100.93169398907104,
+          "dxScore": 2697,
+          "gaps": 1,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:23:37.4367332+00:00"
+        },
+        {
+          "seconds": 7.640739,
+          "cpuSeconds": 0.546875,
+          "allocatedBytes": 7043573880,
+          "fingerprint": "5CD139AA1C4E452F86F8FCB305D93C1EA14E1A56CAF2FFC585A96AAA6A640999",
+          "cp": 899,
+          "achievement": 100.93169398907104,
+          "dxScore": 2697,
+          "gaps": 1,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:39.5070559+00:00"
+        },
+        {
+          "seconds": 10.9834083,
+          "cpuSeconds": 0.96875,
+          "allocatedBytes": 7047913320,
+          "fingerprint": "5CD139AA1C4E452F86F8FCB305D93C1EA14E1A56CAF2FFC585A96AAA6A640999",
+          "cp": 899,
+          "achievement": 100.93169398907104,
+          "dxScore": 2697,
+          "gaps": 1,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:27.1725485+00:00"
+        }
+      ]
+    },
+    {
+      "path": "C:/Users/Rvosy/AppData/Local/MaiPlay/ImportedSongs/C367E958587D7D86/maidata.txt",
+      "title": "Panopticon",
+      "difficulty": 6,
+      "level": "14.3",
+      "notes": 909,
+      "chartSha256": "A329F413BF4F12925334226376C4F962BA7724FA27B3BFD8642A0ABC63CE9618",
+      "runs": [
+        {
+          "seconds": 6.3100328,
+          "cpuSeconds": 0.625,
+          "allocatedBytes": 4276275544,
+          "fingerprint": "EB4BDB1AB6F1E6C1B041AEE047492D8734D292194E977FA4960A7092CB42006E",
+          "cp": 861,
+          "achievement": 94.57255520504732,
+          "dxScore": 2583,
+          "gaps": 47,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:23:52.3151705+00:00"
+        },
+        {
+          "seconds": 5.003306,
+          "cpuSeconds": 0.3125,
+          "allocatedBytes": 3681129352,
+          "fingerprint": "EB4BDB1AB6F1E6C1B041AEE047492D8734D292194E977FA4960A7092CB42006E",
+          "cp": 861,
+          "achievement": 94.57255520504732,
+          "dxScore": 2583,
+          "gaps": 47,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:50.7496656+00:00"
+        },
+        {
+          "seconds": 5.5310288,
+          "cpuSeconds": 0.296875,
+          "allocatedBytes": 3613876224,
+          "fingerprint": "EB4BDB1AB6F1E6C1B041AEE047492D8734D292194E977FA4960A7092CB42006E",
+          "cp": 861,
+          "achievement": 94.57255520504732,
+          "dxScore": 2583,
+          "gaps": 47,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:40.4180111+00:00"
+        }
+      ]
+    },
+    {
+      "path": ".reference/charts/game-extracted/00_maimai/000018_Love You/maidata.txt",
+      "title": "Love You",
+      "difficulty": 5,
+      "level": "11.7",
+      "notes": 198,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "runs": [
+        {
+          "seconds": 2.4698206,
+          "cpuSeconds": 0.609375,
+          "allocatedBytes": 1063497528,
+          "fingerprint": "CC57888973024352B85DD1A87DC8D58F35E18FB566FB2451CE03913159DBF94F",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:02.6911141+00:00"
+        },
+        {
+          "seconds": 2.2261519,
+          "cpuSeconds": 0.203125,
+          "allocatedBytes": 1065732304,
+          "fingerprint": "CC57888973024352B85DD1A87DC8D58F35E18FB566FB2451CE03913159DBF94F",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:57.1889633+00:00"
+        },
+        {
+          "seconds": 1.8342773,
+          "cpuSeconds": 0.203125,
+          "allocatedBytes": 1063544912,
+          "fingerprint": "CC57888973024352B85DD1A87DC8D58F35E18FB566FB2451CE03913159DBF94F",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:48.5521497+00:00"
+        }
+      ]
+    },
+    {
+      "path": ".reference/charts/game-extracted/00_maimai/000078_マリアをはげませ/maidata.txt",
+      "title": "マリアをはげませ",
+      "difficulty": 5,
+      "level": "11.9",
+      "notes": 452,
+      "chartSha256": "93F2EF83DFF4D61E02C539CEC3E2434C5E9B7FA7B088C53023B4F284168A6267",
+      "runs": [
+        {
+          "seconds": 1.3505773,
+          "cpuSeconds": 0.171875,
+          "allocatedBytes": 699608928,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:08.945332+00:00"
+        },
+        {
+          "seconds": 1.1890974,
+          "cpuSeconds": 0.25,
+          "allocatedBytes": 695284056,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:02.0733458+00:00"
+        },
+        {
+          "seconds": 1.1459208,
+          "cpuSeconds": 0.140625,
+          "allocatedBytes": 696889456,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:53.4881645+00:00"
+        }
+      ]
+    },
+    {
+      "path": ".reference/charts/game-extracted/14_maimaDXPLUS/011113_ハム太郎とっとこうた/maidata.txt",
+      "title": "ハム太郎とっとこうた",
+      "difficulty": 5,
+      "level": "12.0",
+      "notes": 451,
+      "chartSha256": "375020CD70AE72E3072D4BEFF9DEAC5B432BD254793BAF6A640496BEF4B93231",
+      "runs": [
+        {
+          "seconds": 1.1905356,
+          "cpuSeconds": 0.0625,
+          "allocatedBytes": 746392088,
+          "fingerprint": "04F662B0520B65304A8074632E6816963C72D477969A2762E51DE4E7278EFA3E",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:13.6994639+00:00"
+        },
+        {
+          "seconds": 1.4712287,
+          "cpuSeconds": 0.125,
+          "allocatedBytes": 746371456,
+          "fingerprint": "04F662B0520B65304A8074632E6816963C72D477969A2762E51DE4E7278EFA3E",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:08.0765471+00:00"
+        },
+        {
+          "seconds": 1.3542252,
+          "cpuSeconds": 0.125,
+          "allocatedBytes": 758416544,
+          "fingerprint": "04F662B0520B65304A8074632E6816963C72D477969A2762E51DE4E7278EFA3E",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:58.0097442+00:00"
+        }
+      ]
+    },
+    {
+      "path": ".reference/charts/game-extracted/17_UNiVERSE/011295_脳天直撃/maidata.txt",
+      "title": "脳天直撃",
+      "difficulty": 4,
+      "level": "12.9",
+      "notes": 790,
+      "chartSha256": "1D1DF1B53B51B9F42713DDAAC1B8350A1F140F367038F418212C6E3DA33CE0F2",
+      "runs": [
+        {
+          "seconds": 2.3585411,
+          "cpuSeconds": 0.171875,
+          "allocatedBytes": 1383747776,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:24:20.1591764+00:00"
+        },
+        {
+          "seconds": 2.3787565,
+          "cpuSeconds": 0.28125,
+          "allocatedBytes": 1331133248,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:25:15.004296+00:00"
+        },
+        {
+          "seconds": 2.04385,
+          "cpuSeconds": 0.234375,
+          "allocatedBytes": 1389428608,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T22:26:03.5589397+00:00"
+        }
+      ]
+    }
+  ],
+  "measurement": "相对第一版优化测量；每张谱面每版三次，独立进程预热后计时，按原版→优化版、优化版→原版、原版→优化版交替。包含本机导入的 Panopticon 紫谱、白谱和四张对照谱面。测量期间存在其他任务负载；范围与构建入口见 [验证说明](README.md)。"
+}

@@ -14,9 +14,32 @@ public static class HumanPlanner
 {
     private const double Epsilon = 1e-8;
     private sealed record Action(int DemandId, ChartNote Note, HandSide Hand, InputChannel Channel,
-        HandFrame[] Frames, double Start, double End, string Technique, int Pattern, int Direction, int Branch, ContactProfile Profile)
+        HandFrame[] Contact, ChartPoint ApproachPosition, double ApproachTime, bool Continues,
+        double Start, double End, string Technique, int Pattern, int Direction, int Branch, ContactProfile Profile)
     {
-        public ChartPoint Last => Frames[^1].Position;
+        private HandFrame[]? _frames;
+        public ChartPoint Last => Contact[^1].Position;
+        // 剪枝只需要时位与成本；后续衔接或实际回放用到时才展开轨迹。
+        public HandFrame[] Frames => _frames ??= BuildFrames();
+
+        private HandFrame[] BuildFrames()
+        {
+            var count = Continues ? Math.Max(2, (int)Math.Ceiling((Start - ApproachTime) * PlaybackSession.LogicHz)) : 1;
+            var frames = new HandFrame[count + Contact.Length];
+            if (Continues)
+            {
+                var angle = Math.Atan2(ApproachPosition.Y, ApproachPosition.X);
+                var sweep = RotationAngle(ApproachPosition, Contact[0].Position, Direction);
+                for (var i = 0; i < count; i++)
+                {
+                    var point = Ring(angle + Direction * sweep * i / count);
+                    frames[i] = new(ApproachTime + (Start - ApproachTime) * i / count, point, Fingers(point, InputChannel.Button));
+                }
+            }
+            else frames[0] = new(ApproachTime, ApproachPosition, []);
+            Contact.CopyTo(frames, count);
+            return frames;
+        }
     }
     private sealed record State(Action? Left, Action? Right, bool Crossed, int Skipped, double Cost,
         State? Parent, Action? Added, GameplayDemand? Gap);
@@ -24,6 +47,12 @@ public static class HumanPlanner
         ContactProfile Profile = ContactProfile.Fingertips);
     private readonly record struct ActionKey(int? DemandId, double? Start, double? End, int? Direction,
         int? Pattern, int? Branch, double? ApproachTime, ChartPoint? ApproachPosition, ContactProfile? Profile);
+    private sealed record PreparedSearch(Dictionary<int, Motion[]> Motions, IReadOnlyList<PatternSegment> Patterns,
+        HashSet<double> DoubleTimes)
+    {
+        public Dictionary<(int Id, int Direction), Motion> SweepMotions { get; } = new();
+        public Dictionary<(HandFrame[] Frames, double Shift), HandFrame[]> ShiftedContacts { get; } = new();
+    }
 
     public static HandPlan Plan(Chart chart, CancellationToken cancellationToken = default) =>
         Plan(chart, new HumanPlannerOptions(), cancellationToken);
@@ -34,8 +63,20 @@ public static class HumanPlanner
         if (options.BeamWidth < 1 || options.VerificationCandidates < 1)
             throw new ArgumentOutOfRangeException(nameof(options), "搜索宽度和核验候选数必须为正数。");
         ArgumentNullException.ThrowIfNull(options.MotionModel);
+        cancellationToken.ThrowIfCancellationRequested();
+        var demands = GameplayDemandCompiler.Compile(chart, cancellationToken);
+        var doubleTimes = chart.Notes.Where(n => n.Kind != NoteKind.Slide).GroupBy(n => n.Time)
+            .Where(g => g.Count() == 2).Select(g => g.Key).ToHashSet();
+        PreparedSearch PrepareContacts(IReadOnlySet<int> small)
+        {
+            var motions = CreateMotions(chart, cancellationToken, small).GroupBy(m => m.Note.Id).ToDictionary(g => g.Key,
+                g => g.Select(m => PrepareMotion(m, options.MotionModel)).ToArray());
+            return new(motions, PatternAnalyzer.Analyze(demands, d => d.Note.SlidePath is { IsWifi: true }
+                ? Math.Max(d.Start, motions[d.Id][0].Frames[0].Time) : motions[d.Id][0].Frames[0].Time), doubleTimes);
+        }
         var fingertips = new HashSet<int>();
-        var best = PlanPass(chart, options, null, fingertips, cancellationToken);
+        var prepared = PrepareContacts(fingertips);
+        var best = PlanPass(chart, options, prepared, null, cancellationToken);
         var shifts = new Dictionary<int, double?>();
         for (var attempt = 0; attempt < 2 && !best.AllCriticalPerfect; attempt++)
         {
@@ -44,12 +85,14 @@ public static class HumanPlanner
             smaller.UnionWith(PlannerTimingFeedback.FingertipCandidates(best));
             if (smaller.Count > fingertips.Count)
             {
-                var adjusted = PlanPass(chart, options, shifts, smaller, cancellationToken);
+                var smallerPrepared = PrepareContacts(smaller);
+                var adjusted = PlanPass(chart, options, smallerPrepared, shifts, cancellationToken);
                 if (Better(adjusted, best) && (adjusted.Errors.Count < best.Errors.Count ||
                     adjusted.Achievement > best.Achievement || adjusted.Gaps.Count < best.Gaps.Count))
                 {
                     best = adjusted;
                     fingertips = smaller;
+                    prepared = smallerPrepared;
                 }
                 if (best.AllCriticalPerfect) break;
             }
@@ -68,10 +111,14 @@ public static class HumanPlanner
                          feedback.ToDictionary(kv => kv.Key, kv => (double?)kv.Value)
                      })
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 if (timing.Count == 0) continue;
                 var hints = new Dictionary<int, double?>(shifts);
                 foreach (var (id, start) in timing) hints[id] = start;
-                var adjusted = PlanPass(chart, options, hints, fingertips, cancellationToken);
+                // 当前最优方案已经核验过这组时机，不再重复搜索整首谱面。
+                if (hints.Count == shifts.Count && hints.All(pair =>
+                        shifts.TryGetValue(pair.Key, out var previous) && previous == pair.Value)) continue;
+                var adjusted = PlanPass(chart, options, prepared, hints, cancellationToken);
                 if (!Better(adjusted, best)) continue;
                 best = adjusted;
                 accepted = hints;
@@ -83,13 +130,11 @@ public static class HumanPlanner
         return best;
     }
 
-    private static HandPlan PlanPass(Chart chart, HumanPlannerOptions options,
-        IReadOnlyDictionary<int, double?>? shiftHints, IReadOnlySet<int> fingertips, CancellationToken cancellationToken)
+    private static HandPlan PlanPass(Chart chart, HumanPlannerOptions options, PreparedSearch prepared,
+        IReadOnlyDictionary<int, double?>? shiftHints, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
-        var demands = GameplayDemandCompiler.Compile(chart, cancellationToken);
-        var doubleTimes = chart.Notes.Where(n => n.Kind != NoteKind.Slide).GroupBy(n => n.Time)
-            .Where(g => g.Count() == 2).Select(g => g.Key).ToHashSet();
+        var doubleTimes = prepared.DoubleTimes;
         var model = options.MotionModel;
         var coverageProbe = new DemandCoverageProbe(chart);
         var coverageCache = new Dictionary<(ActionKey, ActionKey), (IReadOnlyList<InputEvent> Inputs, Dictionary<int, bool> Results)>();
@@ -120,11 +165,10 @@ public static class HumanPlanner
             // 已有轨迹顺带完成的需求不增加搜索缺口，最终仍以整曲回放为准。
             return Skip(state, demand, covered ? 0 : actions);
         }
-        var motions = CreateMotions(chart, cancellationToken, fingertips).GroupBy(m => m.Note.Id).ToDictionary(g => g.Key,
-            g => g.Select(m => PrepareMotion(m, model)).ToArray());
-        var patterns = PatternAnalyzer.Analyze(demands, d => d.Note.SlidePath is { IsWifi: true }
-            ? Math.Max(d.Start, motions[d.Id][0].Frames[0].Time) : motions[d.Id][0].Frames[0].Time);
-        var sweepMotions = new Dictionary<(int Id, int Direction), Motion>();
+        var motions = prepared.Motions;
+        var patterns = prepared.Patterns;
+        var sweepMotions = prepared.SweepMotions;
+        var shiftedContacts = prepared.ShiftedContacts;
         var beam = new List<State> { new(null, null, false, 0, 0, null, null, null) };
         for (var patternIndex = 0; patternIndex < patterns.Count; patternIndex++)
         {
@@ -174,7 +218,7 @@ public static class HumanPlanner
                                     var branchHand = branch == 0 ? hand : Other(hand);
                                     candidate = Assign(candidate, demand, variant[branch], branchHand, shift,
                                         technique.Name, patternIndex, direction, branch,
-                                        doubleTimes.Contains(demand.Note.Time), technique.RequiresSweepContinuation, model);
+                                        doubleTimes.Contains(demand.Note.Time), technique.RequiresSweepContinuation, model, shiftedContacts);
                                     if (candidate is null) break;
                                 }
                                 if (candidate is not null)
@@ -277,7 +321,8 @@ public static class HumanPlanner
     }
 
     private static State? Assign(State state, GameplayDemand demand, Motion motion, HandSide hand, double shift,
-        string technique, int pattern, int direction, int branch, bool twoHandChord, bool requiresSweepContinuation, HumanMotionModel model)
+        string technique, int pattern, int direction, int branch, bool twoHandChord, bool requiresSweepContinuation, HumanMotionModel model,
+        Dictionary<(HandFrame[] Frames, double Shift), HandFrame[]> shiftedContacts)
     {
         if (!motion.Feasible) return null;
         var before = hand == HandSide.Left ? state.Left : state.Right;
@@ -292,20 +337,12 @@ public static class HumanPlanner
         var from = before?.Last ?? Rest(hand);
         var departure = before?.End ?? Math.Min(0, start - 1);
         var distance = model.Geometry.DistanceMillimeters(from, first);
-        HandFrame[] approach;
         if (continues)
         {
             from = before!.Frames.First(f => Math.Abs(f.Time - before.Start) < Epsilon).Position;
             departure = before.Start;
-            var angle = Math.Atan2(from.Y, from.X);
             var sweep = RotationAngle(from, first, direction);
             distance = 1.12 * model.Geometry.JudgementRadiusMillimeters * sweep;
-            var count = Math.Max(2, (int)Math.Ceiling((start - departure) * PlaybackSession.LogicHz));
-            approach = Enumerable.Range(0, count).Select(i =>
-            {
-                var point = Ring(angle + direction * sweep * i / count);
-                return new HandFrame(departure + (start - departure) * i / count, point, Fingers(point, InputChannel.Button));
-            }).ToArray();
         }
         else
         {
@@ -313,7 +350,6 @@ public static class HumanPlanner
             // 搜索和轨迹生成使用同一段移动时间，空闲时按舒适速度提前出发。
             var travel = Math.Max(PlaybackSession.LogicStep, distance / model.PreferredSpeedMillimetersPerSecond);
             departure = Math.Max(departure, start - travel);
-            approach = [new(departure, from, [])];
         }
         if (start <= departure || distance > (start - departure) * model.MaxSpeedMillimetersPerSecond + Epsilon) return null;
         var otherPosition = other is null ? Rest(Other(hand)) : HumanMotionModel.PositionAt(other.Frames, start);
@@ -324,9 +360,14 @@ public static class HumanPlanner
             Math.Abs(before.Note.Time - demand.Note.Time) < Epsilon &&
             !(before.Note.Kind == NoteKind.Touch && demand.Note.Kind == NoteKind.Touch && other is not null &&
               other.Start < demand.Start - .15 && other.End > demand.Start + .15)) return null;
-        var contact = contactFrames.Select(f => f with { Time = f.Time + shift }).ToArray();
-        var frames = approach.Concat(contact).ToArray();
-        var action = new Action(demand.Id, demand.Note, hand, demand.Channel, frames, start, end, technique, pattern, direction, branch, motion.Profile);
+        // 同一模板的时移与分手、前驱状态无关，整轮搜索只生成一次。
+        if (!shiftedContacts.TryGetValue((contactFrames, shift), out var contact))
+        {
+            contact = contactFrames.Select(f => f with { Time = f.Time + shift }).ToArray();
+            shiftedContacts.Add((contactFrames, shift), contact);
+        }
+        var action = new Action(demand.Id, demand.Note, hand, demand.Channel, contact, from, departure, continues,
+            start, end, technique, pattern, direction, branch, motion.Profile);
         var crossingChange = transition.Crossed != state.Crossed ? .15 : 0;
         var repeatCost = before is not null && before.Note.Kind == NoteKind.Tap && demand.Note.Kind == NoteKind.Tap &&
             demand.Note.Time > before.Note.Time + Epsilon &&
@@ -361,10 +402,12 @@ public static class HumanPlanner
             start - before.Start <= NormalHandPlanner.FastSweepInterval * steps + Epsilon;
     }
 
-    private static List<State> Prune(IEnumerable<State> states, int width)
+    private static List<State> Prune(List<State> states, int width)
     {
-        var ranked = states.OrderBy(s => s.Skipped).ThenBy(s => s.Cost)
-            .DistinctBy(s => (Key(s.Left), Key(s.Right), s.Crossed)).ToArray();
+        var seen = new HashSet<(ActionKey Left, ActionKey Right, bool Crossed)>(states.Count);
+        var ranked = new List<State>(states.Count);
+        foreach (var state in states.OrderBy(s => s.Skipped).ThenBy(s => s.Cost))
+            if (seen.Add((Key(state.Left), Key(state.Right), state.Crossed))) ranked.Add(state);
         // 每种占手布局保留最低成本，以及左右手各自最早释放的方案。
         // 长按尾部的少量时差可能决定下一组 Touch 是否来得及完成。
         var layouts = ranked.Where(s => s.Skipped == ranked[0].Skipped)
@@ -387,7 +430,8 @@ public static class HumanPlanner
 
     private static ActionKey Key(Action? action) =>
         new(action?.DemandId, action?.Start, action?.End, action?.Direction, action?.Pattern, action?.Branch,
-            action?.Frames[0].Time, action?.Frames[0].Position, action?.Profile);
+            action?.ApproachTime, action is { Continues: true }
+                ? Ring(Math.Atan2(action.ApproachPosition.Y, action.ApproachPosition.X)) : action?.ApproachPosition, action?.Profile);
 
     private static HandPlan Verify(Chart chart, State state, IReadOnlyList<PatternSegment> patterns,
         HumanMotionModel model, CancellationToken token)

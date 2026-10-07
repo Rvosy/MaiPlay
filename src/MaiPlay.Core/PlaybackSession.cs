@@ -48,7 +48,8 @@ public sealed class PlaybackSession
         _results = new PlaybackEvent?[chart.Notes.Count];
         _heads = new HeadJudgements(chart);
         _slides = new SlideJudgements(chart);
-        var first = Math.Min(0, chart.Notes.Count == 0 ? 0 : chart.Notes.Min(n => n.Time) - .5);
+        // 首个音符窗口和首条输入之前，所有区域与判定状态都保持初始值。
+        var first = chart.Notes.Count == 0 ? 0 : chart.Notes.Min(n => n.Time) - .5;
         if (_input.Length > 0) first = Math.Min(first, _input[0].Time);
         _firstTick = (long)Math.Floor(first * LogicHz);
         _nextTick = _firstTick;

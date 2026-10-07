@@ -15,6 +15,7 @@ public sealed class HandReplay
     public const int MaximumSamples = 1_000_000;
     private readonly Dictionary<HandSide, HandTrack> _tracks;
     private readonly Dictionary<string, HandSide> _sourceHands = new(StringComparer.Ordinal);
+    private readonly Dictionary<(HandSide Hand, string Part), string> _sources = new();
     public IReadOnlyList<HandSide> Hands { get; }
     public IReadOnlyList<InputEvent> Events { get; }
 
@@ -25,7 +26,13 @@ public sealed class HandReplay
         Hands = _tracks.Keys.Order().ToArray();
         foreach (var track in tracks)
             foreach (var part in track.Frames.SelectMany(f => f.Contacts))
-                _sourceHands[Source(track.Hand, part.Id)] = track.Hand;
+            {
+                var key = (track.Hand, part.Id);
+                if (_sources.ContainsKey(key)) continue;
+                var source = Source(track.Hand, part.Id);
+                _sources.Add(key, source);
+                _sourceHands[source] = track.Hand;
+            }
         Events = ContactMapper.Convert(GenerateContacts());
     }
 
@@ -35,28 +42,40 @@ public sealed class HandReplay
     {
         if (!_tracks.TryGetValue(hand, out var track)) return null;
         var frames = track.Frames;
-        if (time < frames[0].Time) return null;
+        var index = FrameIndexAt(frames, time);
+        if (index < 0) return null;
+        var before = frames[index];
+        if (index == frames.Count - 1) return new(before.Position, before.Contacts);
+        var after = frames[index + 1];
+        var t = (time - before.Time) / (after.Time - before.Time);
+        var position = ChartPoint.Lerp(before.Position, after.Position, t);
+        var contacts = before.Contacts.Select(part =>
+        {
+            var (offset, radius) = ContactGeometryAt(part, after, t);
+            return part with { Offset = offset, Radius = radius };
+        }).ToArray();
+        return new(position, contacts);
+    }
+
+    private static int FrameIndexAt(IReadOnlyList<HandFrame> frames, double time)
+    {
         var low = 0; var high = frames.Count;
         while (low < high)
         {
             var mid = low + (high - low) / 2;
             if (frames[mid].Time <= time) low = mid + 1; else high = mid;
         }
-        var before = frames[low - 1];
-        if (low == frames.Count) return new(before.Position, before.Contacts);
-        var after = frames[low];
-        var t = (time - before.Time) / (after.Time - before.Time);
-        var position = ChartPoint.Lerp(before.Position, after.Position, t);
-        var contacts = before.Contacts.Select(part =>
+        return low - 1;
+    }
+
+    private static (ChartPoint Offset, double Radius) ContactGeometryAt(HandContact part, HandFrame after, double t)
+    {
+        foreach (var next in after.Contacts)
         {
-            var next = after.Contacts.FirstOrDefault(p => p.Id == part.Id && p.Channel == part.Channel);
-            return next is null ? part : part with
-            {
-                Offset = ChartPoint.Lerp(part.Offset, next.Offset, t),
-                Radius = part.Radius + (next.Radius - part.Radius) * t
-            };
-        }).ToArray();
-        return new(position, contacts);
+            if (next.Id == part.Id && next.Channel == part.Channel)
+                return (ChartPoint.Lerp(part.Offset, next.Offset, t), part.Radius + (next.Radius - part.Radius) * t);
+        }
+        return (part.Offset, part.Radius);
     }
 
     private IEnumerable<ContactEvent> GenerateContacts()
@@ -69,17 +88,26 @@ public sealed class HandReplay
             for (var tick = first; tick <= last; tick++) times.Add(tick / (double)PlaybackSession.LogicHz);
         }
         var previous = new Dictionary<(string Source, InputChannel Channel), ContactEvent>();
+        var current = new Dictionary<(string Source, InputChannel Channel), ContactEvent>();
         foreach (var time in times)
         {
-            var current = new Dictionary<(string Source, InputChannel Channel), ContactEvent>();
             foreach (var hand in Hands)
             {
-                if (PoseAt(hand, time) is not { } pose) continue;
-                foreach (var part in pose.Contacts)
+                var frames = _tracks[hand].Frames;
+                var index = FrameIndexAt(frames, time);
+                if (index < 0) continue;
+                var before = frames[index];
+                var after = index + 1 < frames.Count ? frames[index + 1] : null;
+                var t = after is null ? 0 : (time - before.Time) / (after.Time - before.Time);
+                var position = after is null ? before.Position : ChartPoint.Lerp(before.Position, after.Position, t);
+                foreach (var part in before.Contacts)
                 {
-                    var source = Source(hand, part.Id);
-                    current[(source, part.Channel)] = new(time, source, part.Channel,
-                        new(pose.Position.X + part.Offset.X, pose.Position.Y + part.Offset.Y), part.Radius, true);
+                    var source = _sources[(hand, part.Id)];
+                    var key = (source, part.Channel);
+                    var (offset, radius) = after is null ? (part.Offset, part.Radius) : ContactGeometryAt(part, after, t);
+                    var centre = new ChartPoint(position.X + offset.X, position.Y + offset.Y);
+                    current[key] = previous.TryGetValue(key, out var old) && old.Position == centre && old.Radius == radius
+                        ? old : new(time, source, part.Channel, centre, radius, true);
                 }
             }
             foreach (var (key, old) in previous)
@@ -87,7 +115,8 @@ public sealed class HandReplay
             foreach (var (key, contact) in current)
                 if (!previous.TryGetValue(key, out var old) || old.Position != contact.Position || old.Radius != contact.Radius)
                     yield return contact;
-            previous = current;
+            previous.Clear();
+            (previous, current) = (current, previous);
         }
     }
 

@@ -118,6 +118,36 @@ public sealed class HandReplayTests
     }
 
     [Fact]
+    public void InterpolatedContactGeometryAndChannelChangesDriveActualInputs()
+    {
+        var button = SlidePath.ButtonPosition(1, 1.12);
+        var replay = new HandReplay([new(HandSide.Left, [
+            new(1, new(-.6, 0), [new("finger", InputChannel.Touch, new(-.2, 0), .01)]),
+            new(2, new(.6, 0), [new("finger", InputChannel.Touch, new(.2, 0), .07)]),
+            new(3, button, [new("finger", InputChannel.Button, new(0, 0), .035)]),
+            new(4, button, [])
+        ])]);
+        var middle = replay.PoseAt(HandSide.Left, 1.5)!;
+        Assert.Equal(new ChartPoint(0, 0), middle.Position);
+        var contact = Assert.Single(middle.Contacts);
+        Assert.Equal(new ChartPoint(0, 0), contact.Offset);
+        Assert.Equal(.04, contact.Radius, 12);
+        var beforeChannelChange = Assert.Single(replay.PoseAt(HandSide.Left, 2.5)!.Contacts);
+        Assert.Equal(InputChannel.Touch, beforeChannelChange.Channel);
+        Assert.Equal(new ChartPoint(.2, 0), beforeChannelChange.Offset);
+        Assert.Equal(.07, beforeChannelChange.Radius);
+        var session = new PlaybackSession(EmptyChart, PlayMode.Algorithm, replay.Events);
+        session.Advance(1.5);
+        Assert.True(session.Inputs.IsSensorOn(SensorArea.C));
+        Assert.DoesNotContain(replay.Events, e => e.Channel == InputChannel.Button && e.Time < 3);
+        session.Advance(3 + PlaybackSession.LogicStep);
+        Assert.True(session.Inputs.IsButtonOn(1));
+        Assert.All(Enum.GetValues<SensorArea>(), area => Assert.False(session.Inputs.IsSensorOn(area)));
+        session.Advance(4 + PlaybackSession.LogicStep);
+        Assert.False(session.Inputs.IsButtonOn(1));
+    }
+
+    [Fact]
     public void ShortPulseKeepsItsHandAttributionForTheLatchedSample()
     {
         var replay = new HandReplay([new(HandSide.Left,

@@ -1,0 +1,250 @@
+{
+  "human": {
+    "beforeAssemblyHash": "56BA52C5C8DF62D224D716B9D11BA5DC8C48F7548B8C828FC07480666E9A9862",
+    "afterAssemblyHash": "69B3963E692132D553F21B74F6E64ED3696701CED3E7C7C51C4FD2B031F3AFE7",
+    "beforeCreatedAtUtc": "2026-10-07T21:47:11.2257405+00:00",
+    "afterCreatedAtUtc": "2026-10-07T21:45:02.5370423+00:00",
+    "charts": [
+      {
+        "path": "00_maimai/000018_Love You/maidata.txt",
+        "title": "Love You",
+        "difficulty": 5,
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "before": {
+          "seconds": 15.7086184,
+          "cpuSeconds": 1.28125,
+          "allocatedBytes": 4019612456,
+          "fingerprint": "CC57888973024352B85DD1A87DC8D58F35E18FB566FB2451CE03913159DBF94F",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "after": {
+          "seconds": 2.5815569,
+          "cpuSeconds": 1.03125,
+          "allocatedBytes": 1098257760,
+          "fingerprint": "CC57888973024352B85DD1A87DC8D58F35E18FB566FB2451CE03913159DBF94F",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "identical": true
+      },
+      {
+        "path": "00_maimai/000078_マリアをはげませ/maidata.txt",
+        "title": "マリアをはげませ",
+        "difficulty": 5,
+        "chartSha256": "93F2EF83DFF4D61E02C539CEC3E2434C5E9B7FA7B088C53023B4F284168A6267",
+        "before": {
+          "seconds": 2.8881089,
+          "cpuSeconds": 0.296875,
+          "allocatedBytes": 1264977464,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "after": {
+          "seconds": 0.7760107,
+          "cpuSeconds": 0.09375,
+          "allocatedBytes": 676374456,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "identical": true
+      },
+      {
+        "path": "14_maimaDXPLUS/011113_ハム太郎とっとこうた/maidata.txt",
+        "title": "ハム太郎とっとこうた",
+        "difficulty": 5,
+        "chartSha256": "375020CD70AE72E3072D4BEFF9DEAC5B432BD254793BAF6A640496BEF4B93231",
+        "before": {
+          "seconds": 5.1126297,
+          "cpuSeconds": 0.34375,
+          "allocatedBytes": 1677914472,
+          "fingerprint": "1AF5BCCA94602CB0D9C9A3DC7015154CE5EB1F20C7997939D8B152A7411CD072",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "after": {
+          "seconds": 1.1249684,
+          "cpuSeconds": 0.25,
+          "allocatedBytes": 753811104,
+          "fingerprint": "1AF5BCCA94602CB0D9C9A3DC7015154CE5EB1F20C7997939D8B152A7411CD072",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "identical": true
+      },
+      {
+        "path": "17_UNiVERSE/011295_脳天直撃/maidata.txt",
+        "title": "脳天直撃",
+        "difficulty": 4,
+        "chartSha256": "1D1DF1B53B51B9F42713DDAAC1B8350A1F140F367038F418212C6E3DA33CE0F2",
+        "before": {
+          "seconds": 27.2780468,
+          "cpuSeconds": 2.921875,
+          "allocatedBytes": 5701872952,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "after": {
+          "seconds": 2.428156,
+          "cpuSeconds": 0.515625,
+          "allocatedBytes": 1381701992,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0
+        },
+        "identical": true
+      }
+    ]
+  },
+  "normal": {
+    "beforeAssemblyHash": "56BA52C5C8DF62D224D716B9D11BA5DC8C48F7548B8C828FC07480666E9A9862",
+    "afterAssemblyHash": "69B3963E692132D553F21B74F6E64ED3696701CED3E7C7C51C4FD2B031F3AFE7",
+    "beforeCreatedAtUtc": "2026-10-07T21:47:28.3519208+00:00",
+    "afterCreatedAtUtc": "2026-10-07T21:45:27.5724842+00:00",
+    "charts": [
+      {
+        "path": "00_maimai/000018_Love You/maidata.txt",
+        "title": "Love You",
+        "difficulty": 5,
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "before": {
+          "seconds": 3.9561577,
+          "cpuSeconds": 0.5625,
+          "allocatedBytes": 770886648,
+          "fingerprint": "CF43A44B20A5E1736C0389D3012D9897D88B6E703A593B728FD87A86BB7523B3",
+          "cp": 197,
+          "achievement": 100.59568733153638,
+          "dxScore": 591,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "after": {
+          "seconds": 1.1225851,
+          "cpuSeconds": 0.234375,
+          "allocatedBytes": 202552944,
+          "fingerprint": "CF43A44B20A5E1736C0389D3012D9897D88B6E703A593B728FD87A86BB7523B3",
+          "cp": 197,
+          "achievement": 100.59568733153638,
+          "dxScore": 591,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "identical": true
+      },
+      {
+        "path": "00_maimai/000078_マリアをはげませ/maidata.txt",
+        "title": "マリアをはげませ",
+        "difficulty": 5,
+        "chartSha256": "93F2EF83DFF4D61E02C539CEC3E2434C5E9B7FA7B088C53023B4F284168A6267",
+        "before": {
+          "seconds": 1.7891895,
+          "cpuSeconds": 0.09375,
+          "allocatedBytes": 410184776,
+          "fingerprint": "3381030478E93A82644BDED43DB34E6B6380947D863A2BDF66821EBF2DEA0C24",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "after": {
+          "seconds": 0.4599217,
+          "cpuSeconds": 0.015625,
+          "allocatedBytes": 108133560,
+          "fingerprint": "3381030478E93A82644BDED43DB34E6B6380947D863A2BDF66821EBF2DEA0C24",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "identical": true
+      },
+      {
+        "path": "14_maimaDXPLUS/011113_ハム太郎とっとこうた/maidata.txt",
+        "title": "ハム太郎とっとこうた",
+        "difficulty": 5,
+        "chartSha256": "375020CD70AE72E3072D4BEFF9DEAC5B432BD254793BAF6A640496BEF4B93231",
+        "before": {
+          "seconds": 5.2690088,
+          "cpuSeconds": 0.46875,
+          "allocatedBytes": 1214051448,
+          "fingerprint": "A5EE85438DDEA6FC67BE7E5C63E2854C48C7898C1A46C49F753750E5FD5957D6",
+          "cp": 450,
+          "achievement": 100.06362297496318,
+          "dxScore": 1350,
+          "gaps": 1,
+          "speedLimitViolations": null
+        },
+        "after": {
+          "seconds": 1.3272495,
+          "cpuSeconds": 0.59375,
+          "allocatedBytes": 385475856,
+          "fingerprint": "A5EE85438DDEA6FC67BE7E5C63E2854C48C7898C1A46C49F753750E5FD5957D6",
+          "cp": 450,
+          "achievement": 100.06362297496318,
+          "dxScore": 1350,
+          "gaps": 1,
+          "speedLimitViolations": null
+        },
+        "identical": true
+      },
+      {
+        "path": "17_UNiVERSE/011295_脳天直撃/maidata.txt",
+        "title": "脳天直撃",
+        "difficulty": 4,
+        "chartSha256": "1D1DF1B53B51B9F42713DDAAC1B8350A1F140F367038F418212C6E3DA33CE0F2",
+        "before": {
+          "seconds": 5.2569748,
+          "cpuSeconds": 0.390625,
+          "allocatedBytes": 1204018928,
+          "fingerprint": "EA0C601C9279B8C7A3E3256EF6C46E497530125135A854871CBBBEB0FCCEE592",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "after": {
+          "seconds": 1.1098298,
+          "cpuSeconds": 0.4375,
+          "allocatedBytes": 324650616,
+          "fingerprint": "EA0C601C9279B8C7A3E3256EF6C46E497530125135A854871CBBBEB0FCCEE592",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": null
+        },
+        "identical": true
+      }
+    ]
+  }
+}

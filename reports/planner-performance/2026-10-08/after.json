@@ -1,0 +1,197 @@
+{
+  "createdAtUtc": "2026-10-07T21:41:56.1927176+00:00",
+  "planner": "human",
+  "assemblyHash": "CE72B5FD201F78146314FDFAD49B94B038A125122C734F5D3969FD892079A632",
+  "currentRuleVersion": "majdata-dc19722-240-v1",
+  "framework": ".NET 10.0.5",
+  "os": "Microsoft Windows 10.0.22631",
+  "processorCount": 16,
+  "repetitions": 3,
+  "charts": [
+    {
+      "path": "00_maimai/000018_Love You/maidata.txt",
+      "title": "Love You",
+      "difficulty": 5,
+      "level": "11.7",
+      "notes": 198,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "runs": [
+        {
+          "seconds": 2.9807716,
+          "cpuSeconds": 0.84375,
+          "allocatedBytes": 1098411712,
+          "fingerprint": "DC881A338E4E9224546EEDC27FFBF0952077D3FF7D84D35D08DDDED1EF22ADC6",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:41:56.1927176+00:00"
+        },
+        {
+          "seconds": 2.3131424,
+          "cpuSeconds": 0.375,
+          "allocatedBytes": 1098623504,
+          "fingerprint": "DC881A338E4E9224546EEDC27FFBF0952077D3FF7D84D35D08DDDED1EF22ADC6",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:43:11.2733279+00:00"
+        },
+        {
+          "seconds": 2.680166,
+          "cpuSeconds": 0.328125,
+          "allocatedBytes": 1098194968,
+          "fingerprint": "DC881A338E4E9224546EEDC27FFBF0952077D3FF7D84D35D08DDDED1EF22ADC6",
+          "cp": 198,
+          "achievement": 101,
+          "dxScore": 594,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:44:53.7336952+00:00"
+        }
+      ]
+    },
+    {
+      "path": "00_maimai/000078_マリアをはげませ/maidata.txt",
+      "title": "マリアをはげませ",
+      "difficulty": 5,
+      "level": "11.9",
+      "notes": 452,
+      "chartSha256": "93F2EF83DFF4D61E02C539CEC3E2434C5E9B7FA7B088C53023B4F284168A6267",
+      "runs": [
+        {
+          "seconds": 1.6779415,
+          "cpuSeconds": 0.15625,
+          "allocatedBytes": 715098136,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:42:09.5455681+00:00"
+        },
+        {
+          "seconds": 1.3484457,
+          "cpuSeconds": 0.140625,
+          "allocatedBytes": 718186848,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:43:33.0183125+00:00"
+        },
+        {
+          "seconds": 1.6691913,
+          "cpuSeconds": 0.21875,
+          "allocatedBytes": 707496528,
+          "fingerprint": "89C86D0E042616BCC61524183B636852B61FED5A0CE1381FF6410E951BC45756",
+          "cp": 452,
+          "achievement": 101,
+          "dxScore": 1356,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:45:05.498531+00:00"
+        }
+      ]
+    },
+    {
+      "path": "14_maimaDXPLUS/011113_ハム太郎とっとこうた/maidata.txt",
+      "title": "ハム太郎とっとこうた",
+      "difficulty": 5,
+      "level": "12.0",
+      "notes": 451,
+      "chartSha256": "375020CD70AE72E3072D4BEFF9DEAC5B432BD254793BAF6A640496BEF4B93231",
+      "runs": [
+        {
+          "seconds": 3.1479719,
+          "cpuSeconds": 2.65625,
+          "allocatedBytes": 707016520,
+          "fingerprint": "BAC59BD553706121EC31234D41B1E2FF2EE3AC76BEA994603968ECF2D80B4793",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:42:27.4441962+00:00"
+        },
+        {
+          "seconds": 1.5153728,
+          "cpuSeconds": 0.140625,
+          "allocatedBytes": 765580056,
+          "fingerprint": "BAC59BD553706121EC31234D41B1E2FF2EE3AC76BEA994603968ECF2D80B4793",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:43:44.264085+00:00"
+        },
+        {
+          "seconds": 1.9168653,
+          "cpuSeconds": 0.65625,
+          "allocatedBytes": 776383568,
+          "fingerprint": "BAC59BD553706121EC31234D41B1E2FF2EE3AC76BEA994603968ECF2D80B4793",
+          "cp": 451,
+          "achievement": 101,
+          "dxScore": 1353,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:45:20.2819423+00:00"
+        }
+      ]
+    },
+    {
+      "path": "17_UNiVERSE/011295_脳天直撃/maidata.txt",
+      "title": "脳天直撃",
+      "difficulty": 4,
+      "level": "12.9",
+      "notes": 790,
+      "chartSha256": "1D1DF1B53B51B9F42713DDAAC1B8350A1F140F367038F418212C6E3DA33CE0F2",
+      "runs": [
+        {
+          "seconds": 2.6355749,
+          "cpuSeconds": 0.1875,
+          "allocatedBytes": 1387082752,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:43:07.6503175+00:00"
+        },
+        {
+          "seconds": 2.627193,
+          "cpuSeconds": 0.25,
+          "allocatedBytes": 1384568992,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:43:58.0683278+00:00"
+        },
+        {
+          "seconds": 2.8327588,
+          "cpuSeconds": 0.234375,
+          "allocatedBytes": 1329707456,
+          "fingerprint": "E2700E6F3FEC9C32ABF7C240B267A2B423AD4CBD4FE298A474DAD5420DB41ACC",
+          "cp": 790,
+          "achievement": 101,
+          "dxScore": 2370,
+          "gaps": 0,
+          "speedLimitViolations": 0,
+          "measuredAtUtc": "2026-10-07T21:46:00.5988837+00:00"
+        }
+      ]
+    }
+  ],
+  "measurement": "每张谱面每版运行三次，每次独立进程预热后计时。顺序为原版→优化版、优化版→原版、原版→优化版。本机同时运行其他曲库任务；样本范围、实现与回归验证见 [验证说明](README.md)。"
+}

@@ -75,6 +75,89 @@ public class CoreInputTests
     }
 
     [Fact]
+    public void WideTouchContactReportsEverySensorOnceInStableOrder()
+    {
+        var events = ContactMapper.Convert([
+            new(0, "palm", InputChannel.Touch, new(0, 0), 2, true),
+            new(1, "palm", InputChannel.Touch, new(0, 0), 2, true),
+            new(2, "palm", InputChannel.Touch, new(0, 0), 2, false)
+        ]);
+        var areas = Enum.GetNames<SensorArea>().Order(StringComparer.Ordinal).ToArray();
+        Assert.Equal(areas.Select(a => new InputEvent(0, InputChannel.Touch, a, true, "palm"))
+            .Concat(areas.Select(a => new InputEvent(2, InputChannel.Touch, a, false, "palm"))), events);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(.035)]
+    [InlineData(.15)]
+    public void PolygonVerticesRemainCoveredAtTheContactRadiusBoundary(double radius)
+    {
+        var polygons = ContactMapper.ButtonPolygons.Select((p, i) => (InputChannel.Button, (i + 1).ToString(), p))
+            .Concat(ContactMapper.SensorPolygons.Select(p => (InputChannel.Touch, p.Area.ToString(), p.Points)));
+        foreach (var (channel, area, points) in polygons)
+            foreach (var vertex in points)
+                foreach (var offset in new[] { new ChartPoint(radius + .5e-12, 0), new(-radius - .5e-12, 0),
+                             new(0, radius + .5e-12), new(0, -radius - .5e-12) })
+                    Assert.Contains(area, ContactMapper.AreasAt(channel, new(vertex.X + offset.X, vertex.Y + offset.Y), radius));
+    }
+
+    [Fact]
+    public void MovingMultiAreaContactKeepsReleaseOrderAndIndependentChannels()
+    {
+        var events = ContactMapper.Convert([
+            new(0, "hand", InputChannel.Button, new(0, -1.12), .15, true),
+            new(.5, "other", InputChannel.Button, new(0, -1.12), .15, true),
+            new(1, "hand", InputChannel.Button, new(0, 1.12), .15, true),
+            new(1, "hand", InputChannel.Touch, new(0, 0), .01, true),
+            new(2, "hand", InputChannel.Button, new(0, 1.12), .15, true),
+            new(3, "hand", InputChannel.Button, new(0, 1.12), .15, false),
+            new(4, "hand", InputChannel.Touch, new(0, 0), .01, false)
+        ]);
+        Assert.Equal(new InputEvent[] {
+            new(0, InputChannel.Button, "1", true, "hand"),
+            new(0, InputChannel.Button, "8", true, "hand"),
+            new(.5, InputChannel.Button, "1", true, "other"),
+            new(.5, InputChannel.Button, "8", true, "other"),
+            new(1, InputChannel.Button, "1", false, "hand"),
+            new(1, InputChannel.Button, "8", false, "hand"),
+            new(1, InputChannel.Button, "4", true, "hand"),
+            new(1, InputChannel.Button, "5", true, "hand"),
+            new(1, InputChannel.Touch, "C", true, "hand"),
+            new(3, InputChannel.Button, "4", false, "hand"),
+            new(3, InputChannel.Button, "5", false, "hand"),
+            new(4, InputChannel.Touch, "C", false, "hand")
+        }, events);
+    }
+
+    [Fact]
+    public void DelayedChartKeepsEarlyHeldInputAndResetReplaysOnTheSameClock()
+    {
+        const double first = 200.003;
+        var chart = SimaiParser.ParseChart("(120){4}1,2,E", first: first);
+        InputEvent[] inputs = [new(first - 1, InputChannel.Button, "1", true),
+            new(first + .2, InputChannel.Button, "1", false),
+            new(first + .5, InputChannel.Button, "2", true),
+            new(first + .6, InputChannel.Button, "2", false)];
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, inputs);
+        Assert.Empty(session.Advance(0));
+        Assert.Empty(session.InputHistory);
+        Assert.Empty(session.Advance(first - .5));
+        Assert.True(session.Inputs.IsButtonOn(1));
+        var expected = session.Advance(session.FinishTime).ToArray();
+        Assert.Equal(AchievementGrade.Miss, session.GetResult(chart.Notes[0])!.Grade);
+        Assert.Equal(AchievementGrade.Perfect, session.GetResult(chart.Notes[1])!.Grade);
+        Assert.Equal(inputs, session.InputHistory);
+
+        session.Reset();
+        Assert.Empty(session.InputHistory);
+        Assert.False(session.Inputs.IsButtonOn(1));
+        Assert.Empty(session.Advance(first - 2));
+        Assert.Equal(expected, session.Advance(session.FinishTime));
+        Assert.Equal(inputs, session.InputHistory);
+    }
+
+    [Fact]
     public void ReplayIsIndependentOfAdvanceCadenceAndResetClearsInputsAndScores()
     {
         var chart = SimaiParser.ParseChart("(120){#1}1,2h[#1.5],,A1,1?-5[0##1],E", first: 1);
