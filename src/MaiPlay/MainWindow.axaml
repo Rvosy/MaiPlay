@@ -38,7 +38,7 @@
               </Grid>
               <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
                 <Button Content="谱面示例" HorizontalAlignment="Stretch" Click="Demo_Click" />
-                <Button Grid.Column="1" Content="正攻示例" HorizontalAlignment="Stretch" Click="NormalDemo_Click" />
+                <Button Grid.Column="1" Content="求解示例" HorizontalAlignment="Stretch" Click="NormalDemo_Click" />
               </Grid>
               <TextBlock x:Name="SongPath" Text="支持 maidata.txt / Simai" Classes="caption" TextTrimming="CharacterEllipsis" />
               <TextBlock Text="难度" Classes="caption" Margin="0,5,0,0" />
@@ -54,7 +54,7 @@
                 <ComboBoxItem Content="Auto Play" />
                 <ComboBoxItem Content="算法游玩" />
               </ComboBox>
-              <Button x:Name="GeneratePlanButton" Content="生成正攻手顺" HorizontalAlignment="Stretch" Click="GeneratePlan_Click" IsEnabled="False" />
+              <Button x:Name="GeneratePlanButton" Content="求解手顺" HorizontalAlignment="Stretch" Click="GeneratePlan_Click" IsEnabled="False" />
               <TextBlock x:Name="ModeHint" Text="按谱面时机自动完成，显示理想判定。" Classes="caption" TextWrapping="Wrap" LineHeight="18" />
               <ComboBox x:Name="PlanIssuePicker" IsVisible="False" PlaceholderText="定位未解或误判音符" SelectionChanged="PlanIssue_Changed" />
             </StackPanel>

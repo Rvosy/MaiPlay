@@ -1,4 +1,4 @@
-&title=正攻手顺示例
+&title=手顺求解示例
 &artist=MaiPlay
 &des=MaiPlay
 &first=1

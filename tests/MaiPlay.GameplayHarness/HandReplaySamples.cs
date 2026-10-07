@@ -14,7 +14,7 @@ internal static class HandReplaySamples
     {
         Directory.CreateDirectory(output);
         File.WriteAllText(Path.Combine(output, "maidata.txt"), """
-            &title=正攻手顺示例
+            &title=手顺求解示例
             &artist=MaiPlay
             &des=MaiPlay
             &first=1
@@ -24,7 +24,7 @@ internal static class HandReplaySamples
         WriteClockAudio(Path.Combine(output, "track.wav"));
         var chart = SimaiParser.LoadSong(output).Charts.Single();
         var plan = NormalHandPlanner.Plan(chart);
-        if (!plan.AllCriticalPerfect) throw new InvalidDataException("正攻示例未通过整首判定核验。");
+        if (!plan.AllCriticalPerfect) throw new InvalidDataException("求解示例未通过整首判定核验。");
         File.WriteAllText(Path.Combine(output, "hands.json"), JsonSerializer.Serialize(new InputLog { Hands = plan.Tracks }, Json));
         var reports = Path.Combine("artifacts", "normal-planner-validation");
         Directory.CreateDirectory(reports);

@@ -181,7 +181,7 @@ public static class NormalHandPlanner
                         if (Assign(state, new(stroke, hand, shift)) is { } candidate) next.Add(candidate);
             if (next.Count == 0)
             {
-                gaps.Add(new(stroke.Note.Id, stroke.Start, stroke.End, "双手占用或移动时间不足，暂未找到可衔接的正攻手顺。"));
+                gaps.Add(new(stroke.Note.Id, stroke.Start, stroke.End, "双手占用或移动时间不足，暂未找到可衔接的手顺。"));
                 continue;
             }
             beam = next.OrderBy(s => s.Cost)

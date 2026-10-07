@@ -319,7 +319,7 @@ public sealed partial class MainWindow : Window
         PlayButton.IsEnabled = RestartButton.IsEnabled = _audioReady && !_loading && _planning is null;
         Progress.IsEnabled = _audioReady && !_loading && _planning is null;
         GeneratePlanButton.IsEnabled = _session != null && !_loading && _planning is null;
-        GeneratePlanButton.Content = _planning is null ? "生成正攻手顺" : "正在生成并核验…";
+        GeneratePlanButton.Content = _planning is null ? "求解手顺" : "正在求解并核验…";
         PlayButton.Content = _audio.IsPlaying ? "暂停" : "播放";
         PlaybackLabel.Text = _audio.IsPlaying ? "播放中" : _audioReady && _audio.Position >= _audio.Duration ? "播放结束" : "已暂停";
     }
@@ -393,7 +393,7 @@ public sealed partial class MainWindow : Window
         using var cancellation = new CancellationTokenSource();
         _planning = cancellation;
         UpdateTransport();
-        SetStatus("正在分配双手，并通过实际输入核验整首谱面…");
+        SetStatus("正在求解手顺，并通过实际输入核验整首谱面…");
         try
         {
             var plan = await Task.Run(() => NormalHandPlanner.Plan(chart, cancellation.Token), cancellation.Token);
@@ -404,14 +404,14 @@ public sealed partial class MainWindow : Window
             if (ModePicker.SelectedIndex != 1) ModePicker.SelectedIndex = 1;
             else ConfigureChart();
             SaveSettings();
-            SetStatus($"正攻手顺已生成：CP {plan.Results.Count - plan.Errors.Count}/{chart.Notes.Count}，{plan.Achievement:F4}%。" +
+            SetStatus($"手顺求解完成：CP {plan.Results.Count - plan.Errors.Count}/{chart.Notes.Count}，{plan.Achievement:F4}%。" +
                 (plan.AllCriticalPerfect ? "点击播放查看手顺。" : $"有 {plan.Gaps.Count} 处手顺缺口、{plan.Errors.Count} 个非 CP 音符；可播放，并从位置列表或时间轴查看。"), !plan.AllCriticalPerfect);
         }
         catch (OperationCanceledException) { }
         catch (Exception ex)
         {
             if (!_closed && !cancellation.IsCancellationRequested && _session?.Chart == chart)
-                SetStatus($"无法生成正攻手顺：{ex.Message}", true);
+                SetStatus($"手顺求解失败：{ex.Message}", true);
         }
         finally
         {
@@ -454,14 +454,14 @@ public sealed partial class MainWindow : Window
     private void RefreshInputHint()
     {
         var algorithm = ModePicker.SelectedIndex == 1;
-        ModeLabel.Text = algorithm ? _generatedPlan is null ? "ALGORITHM / INPUT REPLAY" : "ALGORITHM / NORMAL PLAN" : "AUTO PLAY";
+        ModeLabel.Text = algorithm ? _generatedPlan is null ? "ALGORITHM / INPUT REPLAY" : "ALGORITHM / SOLUTION" : "AUTO PLAY";
         ModeHint.Text = !algorithm ? "按谱面时机自动完成，显示理想判定。"
-            : _generatedPlan is { } plan ? $"正攻手顺 · CP {plan.Results.Count - plan.Errors.Count}/{plan.Chart.Notes.Count} · 缺口 {plan.Gaps.Count}\n○ 蓝色左手 · ◇ 橙色右手"
+            : _generatedPlan is { } plan ? $"求解结果 · CP {plan.Results.Count - plan.Errors.Count}/{plan.Chart.Notes.Count} · 缺口 {plan.Gaps.Count}\n○ 蓝色左手 · ◇ 橙色右手"
             : _inputLog is null ? "未加载输入。可在设置中加载日志；无输入时按实际状态判定。"
             : $"回放 {Path.GetFileName(_settings.InputLogPath)} · {_inputLog.Events.Count} 条区域输入。" +
               (_inputLog.HandReplay is null ? "" : "\n○ 蓝色左手 · ◇ 橙色右手");
         ToolTip.SetTip(ModeHint, algorithm ? _settings.InputLogPath : null);
-        InputLogHint.Text = _generatedPlan is { } generated ? $"当前谱面的正攻手顺 · {generated.Strokes.Count} 个动作\n整首核验 {generated.Results.Count} CP · {generated.Achievement:F4}%"
+        InputLogHint.Text = _generatedPlan is { } generated ? $"当前谱面的求解结果 · {generated.Strokes.Count} 个动作\n整首核验 {generated.Results.Count} CP · {generated.Achievement:F4}%"
             : _inputLog is null ? "未加载输入日志。算法游玩将按无输入状态判定。"
             : $"{_settings.InputLogPath}\n{_inputLog.Events.Count} 条输入" +
               (_inputLog.HandReplay is null ? " · 无手位轨迹" : $" · {_inputLog.Hands.Count} 条手部轨迹");

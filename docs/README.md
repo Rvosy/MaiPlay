@@ -2,7 +2,7 @@
 
 ## 行为契约
 
-- [游玩机制与算法输入](specs/gameplay.md)：基础判定、输入契约与开发版正攻规划行为；0.2.0 的验收范围见本版记录。
+- [游玩机制与算法输入](specs/gameplay.md)：基础判定、输入契约与开发版手顺求解行为；0.2.0 的验收范围见本版记录。
 - [播放界面与二级设置](specs/player-settings.md)：设置按钮、主画面布局和设置生效行为。
 - [DX 达成率与 Rating](specs/achievement.md)：减分计分、单曲 Rating 和批量验证的 B50 分组规则。
 
