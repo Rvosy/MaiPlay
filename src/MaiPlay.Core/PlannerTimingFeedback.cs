@@ -26,6 +26,70 @@ internal static class PlannerTimingFeedback
         EarlyContacts(plan).Where(contact => contact.Palm).Select(contact => contact.Action.NoteId)
             .Concat(MaskedTouchContacts(plan)).ToHashSet();
 
+    internal static IReadOnlySet<int> InterferingSweeps(HandPlan plan, bool includeMaskedContacts = true)
+    {
+        var result = new HashSet<int>();
+        foreach (var error in plan.Errors.Where(e => e.Note.Kind is NoteKind.Tap or NoteKind.Hold &&
+                     e.DifferenceSeconds < 0))
+        {
+            var time = error.Note.Time + error.DifferenceSeconds!.Value;
+            var tick = Tick(time);
+            foreach (var input in plan.Replay.Events.Where(e => e.Channel == InputChannel.Button && e.IsDown &&
+                         e.Area == error.Note.StartPosition.ToString() && Tick(e.Time) == tick))
+                AddSweepsAt(plan, result, input);
+        }
+        if (!includeMaskedContacts) return result;
+        foreach (var error in plan.Errors.Where(e => e.Note.Kind is NoteKind.Tap or NoteKind.Hold && e.Reason == "head-timeout"))
+        {
+            var attempts = plan.Strokes.Where(s => s.NoteId == error.Note.Id && s.Channel == InputChannel.Button).ToArray();
+            if (attempts.Length == 0) continue;
+            var samples = plan.Replay.Events.Where(e => e.Channel == InputChannel.Button &&
+                e.Area == error.Note.StartPosition.ToString() && e.Time <= PlaybackSession.MissDeadline(error.Note))
+                .GroupBy(e => Tick(e.Time));
+            var inputs = new InputState();
+            var origins = new Dictionary<string, InputEvent>();
+            long previousTick = long.MinValue;
+            foreach (var sample in samples)
+            {
+                // 同帧短按会锁存到下一采样；空采样也必须经过真实输入状态，不能仅合并浮点区间。
+                if (previousTick != long.MinValue && sample.Key > previousTick + 1)
+                {
+                    inputs.Sample([]);
+                    foreach (var source in origins.Keys.Where(s => !inputs.ButtonSources(error.Note.StartPosition).Contains(s)).ToArray())
+                        origins.Remove(source);
+                }
+                var wasOn = inputs.IsButtonOn(error.Note.StartPosition);
+                var blockers = origins.Values.ToArray();
+                inputs.Sample(sample);
+                if (wasOn && inputs.IsButtonOn(error.Note.StartPosition) && sample.Any(e => e.IsDown &&
+                        attempts.Any(s => s.Hand == plan.Replay.HandForSource(e.Source) &&
+                            sample.Key >= Tick(s.Start) - 1 && sample.Key <= Tick(s.End))))
+                    foreach (var blocker in blockers) AddSweepsAt(plan, result, blocker);
+                foreach (var input in sample.Where(e => e.IsDown)) origins.TryAdd(input.Source, input);
+                foreach (var source in origins.Keys.Where(s => !inputs.ButtonSources(error.Note.StartPosition).Contains(s)).ToArray())
+                    origins.Remove(source);
+                previousTick = sample.Key;
+            }
+        }
+        return result;
+    }
+
+    private static void AddSweepsAt(HandPlan plan, HashSet<int> result, InputEvent input)
+    {
+        var hand = plan.Replay.HandForSource(input.Source);
+        var actions = plan.Strokes.Where(s => s.Hand == hand).OrderBy(s => s.Start).ToArray();
+        for (var i = 0; i < actions.Length; i++)
+        {
+            var action = actions[i];
+            if (action.Technique != HandTechnique.Rotation) continue;
+            if (action.Start <= input.Time && input.Time < action.End) result.Add(action.NoteId);
+            // 连续扫键的接近段从前一键起沿弧保持接触，可能压住另一手尚未到时的键。
+            if (i > 0 && actions[i - 1].Technique == HandTechnique.Rotation &&
+                actions[i - 1].Start <= input.Time && input.Time <= action.Start)
+                result.Add(action.NoteId);
+        }
+    }
+
     internal static IReadOnlyDictionary<int, double> EarlierContacts(HandPlan plan)
     {
         var starts = new Dictionary<int, double>();

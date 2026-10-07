@@ -1,0 +1,171 @@
+{
+  "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+  "chart": "11_MiLKPLUS/000779_怒槌/maidata.txt",
+  "chartSha256": "08D70A1944D39980B0A5EBD95113271DCFF83B988C29FA11676D2FA558F4D1C2",
+  "difficulty": 5,
+  "rows": [
+    {
+      "planner": "human",
+      "totalNotes": 1188,
+      "cp": 1187,
+      "achievement": 100.96565540927304,
+      "gaps": 0,
+      "priorCP": 1183,
+      "cpLostIds": [],
+      "newMissIds": [],
+      "tail": [
+        {
+          "id": 1180,
+          "kind": "Tap",
+          "time": 146.4000000000004,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000414957,
+          "reason": ""
+        },
+        {
+          "id": 1181,
+          "kind": "Tap",
+          "time": 146.4000000000004,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000414957,
+          "reason": ""
+        },
+        {
+          "id": 1182,
+          "kind": "Tap",
+          "time": 146.41875000000041,
+          "grade": "Perfect",
+          "differenceSeconds": -0.010416666667083518,
+          "reason": ""
+        },
+        {
+          "id": 1183,
+          "kind": "Tap",
+          "time": 146.41875000000041,
+          "grade": "Perfect",
+          "differenceSeconds": -0.010416666667083518,
+          "reason": ""
+        },
+        {
+          "id": 1184,
+          "kind": "Tap",
+          "time": 146.43750000000043,
+          "grade": "Perfect",
+          "differenceSeconds": -4.263256414560601e-13,
+          "reason": ""
+        },
+        {
+          "id": 1185,
+          "kind": "Tap",
+          "time": 146.43750000000043,
+          "grade": "Perfect",
+          "differenceSeconds": -4.263256414560601e-13,
+          "reason": ""
+        },
+        {
+          "id": 1186,
+          "kind": "Tap",
+          "time": 146.45625000000044,
+          "grade": "Perfect",
+          "differenceSeconds": 0.014583333332893744,
+          "reason": ""
+        },
+        {
+          "id": 1187,
+          "kind": "Tap",
+          "time": 146.45625000000044,
+          "grade": "Perfect",
+          "differenceSeconds": 0.014583333332893744,
+          "reason": ""
+        }
+      ],
+      "directory": "artifacts/human-planner-validation/wifi-final-rage-human",
+      "resultsSha256": "0754E28A0D20A52437565437666021B44664F3990D93E847EC3AF5326FE96EAB",
+      "handsSha256": "47E07E9D64F912502AC2D3E37ADAD084EB3D6900A29A0A13BDDFD9572920D2AE",
+      "beforeDirectory": "artifacts/human-planner-validation/palm-final/rage-master-human",
+      "beforeResultsSha256": "BB4A5A71D53F5FCD136177B897E17C654F61B34C07A3EDEAF0659EF6DD68D137"
+    },
+    {
+      "planner": "normal",
+      "totalNotes": 1188,
+      "cp": 1174,
+      "achievement": 100.31883228391528,
+      "gaps": 14,
+      "priorCP": 1174,
+      "cpLostIds": [],
+      "newMissIds": [],
+      "tail": [
+        {
+          "id": 1180,
+          "kind": "Tap",
+          "time": 146.4000000000004,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000414957,
+          "reason": ""
+        },
+        {
+          "id": 1181,
+          "kind": "Tap",
+          "time": 146.4000000000004,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000414957,
+          "reason": ""
+        },
+        {
+          "id": 1182,
+          "kind": "Tap",
+          "time": 146.41875000000041,
+          "grade": "Perfect",
+          "differenceSeconds": -0.010416666667083518,
+          "reason": ""
+        },
+        {
+          "id": 1183,
+          "kind": "Tap",
+          "time": 146.41875000000041,
+          "grade": "Perfect",
+          "differenceSeconds": -0.010416666667083518,
+          "reason": ""
+        },
+        {
+          "id": 1184,
+          "kind": "Tap",
+          "time": 146.43750000000043,
+          "grade": "Perfect",
+          "differenceSeconds": -4.263256414560601e-13,
+          "reason": ""
+        },
+        {
+          "id": 1185,
+          "kind": "Tap",
+          "time": 146.43750000000043,
+          "grade": "Perfect",
+          "differenceSeconds": -4.263256414560601e-13,
+          "reason": ""
+        },
+        {
+          "id": 1186,
+          "kind": "Tap",
+          "time": 146.45625000000044,
+          "grade": "Perfect",
+          "differenceSeconds": 0.014583333332893744,
+          "reason": ""
+        },
+        {
+          "id": 1187,
+          "kind": "Tap",
+          "time": 146.45625000000044,
+          "grade": "Perfect",
+          "differenceSeconds": 0.014583333332893744,
+          "reason": ""
+        }
+      ],
+      "directory": "artifacts/human-planner-validation/wifi-final-rage-normal",
+      "resultsSha256": "A9FB11F2E64683482835E10392769B80CB0EBE4DCB8F72B25C50E3EF574783D9",
+      "handsSha256": "184DD4170EEE798332F32DFF517F824ABFDB27043F4F582F2AB17F91A651E2CE",
+      "beforeDirectory": "artifacts/human-planner-validation/palm-final/rage-master-normal",
+      "beforeResultsSha256": "DA03789FCA7EBDB982AE363769D4947F30814B112F094833398E97139DA96403"
+    }
+  ]
+}

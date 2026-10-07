@@ -117,22 +117,13 @@ public static class NormalHandPlanner
         return plan;
     }
 
-    private static HandPlan Optimize(Chart chart, Stroke[] strokes, CancellationToken cancellationToken, out Stroke[] selectedStrokes)
+    private static HandPlan Optimize(Chart chart, Stroke[] strokes, CancellationToken cancellationToken, out Stroke[] selectedStrokes,
+        bool recoverInitialContacts = true)
     {
         selectedStrokes = strokes;
         var plan = Solve(chart, strokes, cancellationToken);
         if (plan.AllCriticalPerfect) return plan;
-        var smaller = SmallerContacts(chart, strokes, plan, cancellationToken);
-        if (smaller is not null)
-        {
-            var adjusted = Solve(chart, smaller, cancellationToken);
-            if (Better(adjusted, plan))
-            {
-                plan = adjusted;
-                selectedStrokes = strokes = smaller;
-            }
-        }
-        if (plan.AllCriticalPerfect) return plan;
+        var initialPlan = plan;
         var problemTimes = plan.Gaps.Select(g => g.Time).Concat(plan.Errors.SelectMany(e =>
             new[] { e.Time, e.Note.Kind == NoteKind.Slide ? e.Note.SlideStartTime : e.Note.Time })).ToArray();
         var failedSlides = plan.Errors.Where(e => e.Note.Kind == NoteKind.Slide).Select(e => e.Note.Id).ToHashSet();
@@ -163,7 +154,7 @@ public static class NormalHandPlanner
             selectedStrokes = expanded;
         }
         if (plan.AllCriticalPerfect) return plan;
-        smaller = SmallerContacts(chart, selectedStrokes, plan, cancellationToken);
+        var smaller = SmallerContacts(chart, selectedStrokes, plan, cancellationToken);
         if (smaller is not null)
         {
             var adjusted = Solve(chart, smaller, cancellationToken);
@@ -185,6 +176,17 @@ public static class NormalHandPlanner
                 selectedStrokes = repaired;
             }
             if (plan.AllCriticalPerfect) break;
+        }
+        // 调时后的局部改善可能改变误触来源；保留原始反馈的缩手方案，再完整核验一次。
+        if (!plan.AllCriticalPerfect && recoverInitialContacts &&
+            SmallerContacts(chart, strokes, initialPlan, cancellationToken) is { } initialSmaller)
+        {
+            var recovered = Optimize(chart, initialSmaller, cancellationToken, out var recoveredStrokes, recoverInitialContacts: false);
+            if (Better(recovered, plan))
+            {
+                plan = recovered;
+                selectedStrokes = recoveredStrokes;
+            }
         }
         return plan;
     }
@@ -222,16 +224,32 @@ public static class NormalHandPlanner
     {
         var gaps = new List<HandPlanGap>();
         var beam = new List<SearchState> { new(null, null, 0, null, null) };
+        var wifiPairs = strokes.Where(s => s.Note.SlidePath is { IsWifi: true })
+            .GroupBy(s => s.Note.Id).ToDictionary(g => g.Key, g => g.ToArray());
         foreach (var stroke in strokes)
         {
             cancellationToken.ThrowIfCancellationRequested();
+            wifiPairs.TryGetValue(stroke.Note.Id, out var pair);
+            if (pair is not null && stroke.Index != pair[0].Index) continue;
             var next = new List<SearchState>();
             var variants = ContactVariants(stroke);
+            var pairedVariants = pair is null ? null : ContactVariants(pair[1]);
             foreach (var state in beam)
                 foreach (var hand in new[] { HandSide.Left, HandSide.Right })
                     foreach (var variant in variants)
                     foreach (var shift in variant.Shifts)
-                        if (Assign(state, new(variant, hand, shift)) is { } candidate) next.Add(candidate);
+                    {
+                        if (Assign(state, new(variant, hand, shift)) is not { } candidate) continue;
+                        if (pairedVariants is null)
+                        {
+                            next.Add(candidate);
+                            continue;
+                        }
+                        // WiFi 双手同步入屏；任一手无法衔接时，整个动作都不进入候选。
+                        foreach (var paired in pairedVariants.Where(s => s.EntryDelay == variant.EntryDelay && s.Shifts.Contains(shift)))
+                            if (Assign(candidate, new(paired, hand == HandSide.Left ? HandSide.Right : HandSide.Left, shift)) is { } complete)
+                                next.Add(complete);
+                    }
             if (next.Count == 0)
             {
                 gaps.Add(new(stroke.Note.Id, stroke.Start, stroke.End, "双手占用或移动时间不足，暂未找到可衔接的手顺。"));
@@ -242,24 +260,31 @@ public static class NormalHandPlanner
                     s.Right?.Stroke.Index, s.Right?.Shift, s.Right?.Stroke.EntryDelay))
                 .Take(BeamWidth).ToList();
         }
-        cancellationToken.ThrowIfCancellationRequested();
-        var choices = new List<Choice>();
-        for (var state = beam[0]; state.Added is not null; state = state.Parent!) choices.Add(state.Added);
-        var tracks = BuildTracks(choices);
-        var replay = new HandReplay(tracks);
-        var session = new PlaybackSession(chart, PlayMode.Algorithm, replay.Events);
-        var results = new List<PlaybackEvent>();
-        for (var time = Math.Min(0, strokes.FirstOrDefault()?.Start ?? 0); time < session.FinishTime; time += 1)
+        HandPlan? best = null;
+        foreach (var final in beam.Take(4))
         {
             cancellationToken.ThrowIfCancellationRequested();
-            results.AddRange(session.Advance(time).Where(e => e.IsFinal));
+            var choices = new List<Choice>();
+            for (var state = final; state.Added is not null; state = state.Parent!) choices.Add(state.Added);
+            var tracks = BuildTracks(choices);
+            var replay = new HandReplay(tracks);
+            var session = new PlaybackSession(chart, PlayMode.Algorithm, replay.Events);
+            var results = new List<PlaybackEvent>();
+            for (var time = Math.Min(0, strokes.FirstOrDefault()?.Start ?? 0); time < session.FinishTime; time += 1)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                results.AddRange(session.Advance(time).Where(e => e.IsFinal));
+            }
+            results.AddRange(session.Advance(session.FinishTime + .1).Where(e => e.IsFinal));
+            var plan = new HandPlan(chart, tracks, replay, choices.OrderBy(c => c.Start).Select(c =>
+                new PlannedStroke(c.Stroke.Note.Id, c.Hand, c.Start, c.End, c.Stroke.Channel,
+                    c.Stroke.RotationDirection != 0 ? HandTechnique.Rotation : c.Stroke.Note.Kind == NoteKind.Slide ? HandTechnique.Slide : HandTechnique.Strike)).ToArray(),
+                results, session.Achievement.Percentage, session.DXScore,
+                gaps.Where(g => results.Any(e => e.Note.Id == g.NoteId && e.Grade != AchievementGrade.Perfect)).DistinctBy(g => g.NoteId).ToArray());
+            if (best is null || Better(plan, best)) best = plan;
+            if (best.AllCriticalPerfect) break;
         }
-        results.AddRange(session.Advance(session.FinishTime + .1).Where(e => e.IsFinal));
-        return new(chart, tracks, replay, choices.OrderBy(c => c.Start).Select(c =>
-            new PlannedStroke(c.Stroke.Note.Id, c.Hand, c.Start, c.End, c.Stroke.Channel,
-                c.Stroke.RotationDirection != 0 ? HandTechnique.Rotation : c.Stroke.Note.Kind == NoteKind.Slide ? HandTechnique.Slide : HandTechnique.Strike)).ToArray(),
-            results, session.Achievement.Percentage, session.DXScore,
-            gaps.Where(g => results.Any(e => e.Note.Id == g.NoteId && e.Grade != AchievementGrade.Perfect)).DistinctBy(g => g.NoteId).ToArray());
+        return best!;
     }
 
     private static Stroke[] ContactVariants(Stroke stroke)
@@ -495,7 +520,6 @@ public static class NormalHandPlanner
                 }
         var before = choice.Hand == HandSide.Left ? state.Left : state.Right;
         var other = choice.Hand == HandSide.Left ? state.Right : state.Left;
-        if (choice.Stroke.Note.SlidePath is { IsWifi: true } && before?.Stroke.Note.Id == choice.Stroke.Note.Id) return null;
         var singleHandTouches = false;
         if (choice.Stroke.TwoHandChord)
             for (var previous = state; previous.Added is { } added && added.Stroke.Start >= choice.Stroke.Start - Epsilon; previous = previous.Parent!)

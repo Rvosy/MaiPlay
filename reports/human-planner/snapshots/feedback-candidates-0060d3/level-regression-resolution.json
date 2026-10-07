@@ -1,0 +1,112 @@
+{
+  "beforeCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "rows": [
+    {
+      "title": "VERTeX (rintaro soma deconstructed remix)",
+      "difficulty": 4,
+      "notes": 618,
+      "beforeCP": 617,
+      "afterCP": 618,
+      "afterGaps": 0,
+      "gradeChanges": [
+        {
+          "id": 381,
+          "kind": "Tap",
+          "time": 102.3417721519528,
+          "before": "Miss",
+          "after": "Perfect",
+          "beforeStrokes": [
+            {
+              "noteId": 381,
+              "hand": "Left",
+              "start": 102.3417721519528,
+              "end": 102.3667721519528,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ],
+          "afterStrokes": [
+            {
+              "noteId": 381,
+              "hand": "Right",
+              "start": 102.3292721519528,
+              "end": 102.3542721519528,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        }
+      ],
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "evidence": [
+        {
+          "phase": "before",
+          "directory": "artifacts/human-planner-validation/wifi-final/level-regressions/vertex-expert/d9e964",
+          "resultsSha256": "104D1F71E6F168115E817140F3BC6EEC85BFC0EDFED3674680A9B9A5F4BD1538",
+          "handsSha256": "90661D6CD98DE795067A5D2C563E96662A43B7D4BD7E1EF7F54EBFDB34F4DD19"
+        },
+        {
+          "phase": "after",
+          "directory": "artifacts/human-planner-validation/wifi-final/level-regressions/vertex-expert/feedback-candidates",
+          "resultsSha256": "E6D6B85DE6E550F6D9CA9E723B651FFD19C2EF7FAE7751236F8E34168C45B3FE",
+          "handsSha256": "4E92227F708335B804B7C2F7968776E73F07A576EB66682BCFF02F13CB360AFF"
+        }
+      ]
+    },
+    {
+      "title": "Trrricksters!!",
+      "difficulty": 4,
+      "notes": 775,
+      "beforeCP": 774,
+      "afterCP": 775,
+      "afterGaps": 0,
+      "gradeChanges": [
+        {
+          "id": 713,
+          "kind": "Tap",
+          "time": 135.87096774193574,
+          "before": "Miss",
+          "after": "Perfect",
+          "beforeStrokes": [
+            {
+              "noteId": 713,
+              "hand": "Left",
+              "start": 135.87096774193574,
+              "end": 135.89596774193575,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ],
+          "afterStrokes": [
+            {
+              "noteId": 713,
+              "hand": "Right",
+              "start": 135.88346774193573,
+              "end": 135.90846774193574,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        }
+      ],
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "evidence": [
+        {
+          "phase": "before",
+          "directory": "artifacts/human-planner-validation/wifi-final/level-regressions/trrricksters-expert/d9e964",
+          "resultsSha256": "0FCB38F817532D627E63B9EC152E496421F81386D963AD721405C20AE8FF8CEE",
+          "handsSha256": "CC0F8F91179CB266C5200BE78385E79660BE99918677802D754335A9DEC29BF8"
+        },
+        {
+          "phase": "after",
+          "directory": "artifacts/human-planner-validation/wifi-final/level-regressions/trrricksters-expert/feedback-candidates",
+          "resultsSha256": "0256BF041DF284CD9DE97405C31F2007AD0CF0A9350E60CEDAD8DB04A9A0F7B4",
+          "handsSha256": "5C279534650D32BF5B64F39EB0F643F545DC7EDD977B3E01ACE51F43A59C072C"
+        }
+      ]
+    }
+  ]
+}

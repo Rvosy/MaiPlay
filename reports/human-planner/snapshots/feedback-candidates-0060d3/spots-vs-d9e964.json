@@ -1,0 +1,2183 @@
+{
+  "createdAtUtc": "2026-10-07T23:46:31.513941+00:00",
+  "previousCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "currentCoreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "previousIndexSha256": "AECEDFBE04644E4941FB0C8D12ADB228AD3198EC8D8CEC7E235536C2EAC1D1A2",
+  "currentIndexSha256": "198A0C806D075F299DF4034E7353DC1A9912B6F865A5039D602DD7A63E3694D3",
+  "aggregateRegressions": 0,
+  "chartsWithNewMiss": 0,
+  "chartsWithCPLoss": 0,
+  "rows": [
+    {
+      "key": "end-time-master",
+      "planner": "human",
+      "title": "End Time",
+      "difficulty": 5,
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "before": {
+        "notes": 949,
+        "cp": 949,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847
+      },
+      "after": {
+        "notes": 949,
+        "cp": 949,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2873
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 12
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 12
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 64
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2873
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 12
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 12
+        }
+      ],
+      "previousEvidence": {
+        "key": "end-time-master",
+        "title": "End Time",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "12_FiNALE/000844_End Time/maidata.txt",
+        "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/end-time-master/human/results.json",
+        "resultsSha256": "1F75FDBE3B9FCA203FA58B8624C923451C5AFFE0E5D15369FA6282E3796EB978",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/end-time-master/human/hands.json",
+        "handsSha256": "D346A5EA15BFF6D2AC07959F55D526D2D1C4DB77D93E5A82AFDCA8E281D825B8",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/end-time-master/human/segments.json",
+        "segmentsSha256": "480D2060F08D191B2F7CAFB9625E53D92661B2652FD4B97265108F60F7D49E95",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "end-time-master",
+        "title": "End Time",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "12_FiNALE/000844_End Time/maidata.txt",
+        "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/end-time-master/human/results.json",
+        "resultsSha256": "E646ECF220CA396B9EFA1B8D2E9C8FFEF23372B818D964214CC536D261869512",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/end-time-master/human/hands.json",
+        "handsSha256": "D346A5EA15BFF6D2AC07959F55D526D2D1C4DB77D93E5A82AFDCA8E281D825B8",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/end-time-master/human/segments.json",
+        "segmentsSha256": "60B2B1BE8E7D3EDE23E2E9A68684F51CDF0BF651CC15E4E204107E85B8920E45",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "hera-master",
+      "planner": "human",
+      "title": "HERA",
+      "difficulty": 5,
+      "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+      "before": {
+        "notes": 1031,
+        "cp": 1031,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3093
+      },
+      "after": {
+        "notes": 1031,
+        "cp": 1031,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3093
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 5107
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 1269
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 5107
+        }
+      ],
+      "previousEvidence": {
+        "key": "hera-master",
+        "title": "HERA",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "08_MURASAKi/000567_HERA/maidata.txt",
+        "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/hera-master/human/results.json",
+        "resultsSha256": "EB42F8DC591DCB504CD0AFD09685296B57E8E3CE307796E8BFB26BF8EEDE0144",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/hera-master/human/hands.json",
+        "handsSha256": "4176ACCC6035E8CD5CF147642260FF1F962A293580F23AFEF81745B229F74275",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/hera-master/human/segments.json",
+        "segmentsSha256": "23FCFE92B4677156BFFA9ABF7E9F11700E23F44C574199092E5A2F864383543B",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "hera-master",
+        "title": "HERA",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "08_MURASAKi/000567_HERA/maidata.txt",
+        "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/hera-master/human/results.json",
+        "resultsSha256": "AC4742DF198FEA73A0932D14710FCB230EE92E37603CA20AC475EECC412EB5EB",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/hera-master/human/hands.json",
+        "handsSha256": "4176ACCC6035E8CD5CF147642260FF1F962A293580F23AFEF81745B229F74275",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/hera-master/human/segments.json",
+        "segmentsSha256": "B6FED02118D075F976007D21811B93642D64BE2813D0FB3BE0B2B060409B1821",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "panopticon-master",
+      "planner": "human",
+      "title": "Panopticon",
+      "difficulty": 5,
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "before": {
+        "notes": 900,
+        "cp": 900,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2700
+      },
+      "after": {
+        "notes": 900,
+        "cp": 900,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2700
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 5443
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 4
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 4
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 575
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 5443
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 4
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 4
+        }
+      ],
+      "previousEvidence": {
+        "key": "panopticon-master",
+        "title": "Panopticon",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+        "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-master/human/results.json",
+        "resultsSha256": "09C70650D069FEA29E58E8B4EACB4BB4C8428451DEE58B472D2A109F4E30960A",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-master/human/hands.json",
+        "handsSha256": "1ACAB92A1CC48EFD8D6502F9605F0C5632924331EEC9ADCD250D3F9C60335417",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-master/human/segments.json",
+        "segmentsSha256": "08863D6F8AF07DF6ED85496BCE9FABDD2669C0524A54EB6690530E67A590A71E",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [
+              {
+                "id": 234,
+                "kind": "Tap",
+                "time": 36.477272727300004,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "panopticon-master",
+        "title": "Panopticon",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+        "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-master/human/results.json",
+        "resultsSha256": "5D85E40CB988B35463B0E5B460F3768664CBC9341966926B8B270F67D8916A29",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-master/human/hands.json",
+        "handsSha256": "1ACAB92A1CC48EFD8D6502F9605F0C5632924331EEC9ADCD250D3F9C60335417",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-master/human/segments.json",
+        "segmentsSha256": "D44A126B570B0E65FB5A937E590A39E53CF0CB2CC78BFB367AFF6E940F431665",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "panopticon-remaster",
+      "planner": "human",
+      "title": "Panopticon",
+      "difficulty": 6,
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "before": {
+        "notes": 909,
+        "cp": 888,
+        "miss": 21,
+        "gaps": 21,
+        "achievement": 98.39747634069401,
+        "dxScore": 2664
+      },
+      "after": {
+        "notes": 909,
+        "cp": 888,
+        "miss": 21,
+        "gaps": 21,
+        "achievement": 98.39747634069401,
+        "dxScore": 2664
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [
+        {
+          "id": 518,
+          "kind": "Tap",
+          "time": 78.06818181824849,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 538,
+          "kind": "Tap",
+          "time": 80.25000000006753,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 558,
+          "kind": "Tap",
+          "time": 82.43181818188657,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 580,
+          "kind": "Tap",
+          "time": 84.6136363637046,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 606,
+          "kind": "Tap",
+          "time": 87.34090909097662,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 610,
+          "kind": "Tap",
+          "time": 87.75000000006763,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 614,
+          "kind": "Tap",
+          "time": 88.15909090915864,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 618,
+          "kind": "Tap",
+          "time": 88.56818181824964,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 623,
+          "kind": "Tap",
+          "time": 88.97727272734065,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 754,
+          "kind": "Hold",
+          "time": 109.1590909091743,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 758,
+          "kind": "Hold",
+          "time": 109.5681818182653,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 762,
+          "kind": "Hold",
+          "time": 109.97727272735631,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 766,
+          "kind": "Hold",
+          "time": 110.38636363644731,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 774,
+          "kind": "Hold",
+          "time": 111.34090909099231,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 778,
+          "kind": "Hold",
+          "time": 111.75000000008332,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 782,
+          "kind": "Hold",
+          "time": 112.15909090917432,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 786,
+          "kind": "Hold",
+          "time": 112.56818181826533,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 797,
+          "kind": "Hold",
+          "time": 113.93181818190133,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 804,
+          "kind": "Hold",
+          "time": 114.75000000008335,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 816,
+          "kind": "Hold",
+          "time": 116.11363636371935,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 823,
+          "kind": "Hold",
+          "time": 116.93181818190136,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        }
+      ],
+      "gaps": [
+        {
+          "noteId": 518,
+          "time": 78.06818181824849,
+          "endTime": 78.06818181824849,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 538,
+          "time": 80.25000000006753,
+          "endTime": 80.25000000006753,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 558,
+          "time": 82.43181818188657,
+          "endTime": 82.43181818188657,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 580,
+          "time": 84.6136363637046,
+          "endTime": 84.6136363637046,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 606,
+          "time": 87.34090909097662,
+          "endTime": 87.34090909097662,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 610,
+          "time": 87.75000000006763,
+          "endTime": 87.75000000006763,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 614,
+          "time": 88.15909090915864,
+          "endTime": 88.15909090915864,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 618,
+          "time": 88.56818181824964,
+          "endTime": 88.56818181824964,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 623,
+          "time": 88.97727272734065,
+          "endTime": 88.97727272734065,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 754,
+          "time": 109.1590909091743,
+          "endTime": 109.3636363637193,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 758,
+          "time": 109.5681818182653,
+          "endTime": 109.7727272728103,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 762,
+          "time": 109.97727272735631,
+          "endTime": 110.1818181819013,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 766,
+          "time": 110.38636363644731,
+          "endTime": 110.59090909099231,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 774,
+          "time": 111.34090909099231,
+          "endTime": 111.54545454553731,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 778,
+          "time": 111.75000000008332,
+          "endTime": 111.95454545462832,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 782,
+          "time": 112.15909090917432,
+          "endTime": 112.36363636371932,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 786,
+          "time": 112.56818181826533,
+          "endTime": 112.77272727281033,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 797,
+          "time": 113.93181818190133,
+          "endTime": 114.13636363644633,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 804,
+          "time": 114.75000000008335,
+          "endTime": 114.95454545462835,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 816,
+          "time": 116.11363636371935,
+          "endTime": 116.31818181826435,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 823,
+          "time": 116.93181818190136,
+          "endTime": 117.13636363644636,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        }
+      ],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 4291
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 32
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 32
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 99
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 4291
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 32
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 32
+        }
+      ],
+      "previousEvidence": {
+        "key": "panopticon-remaster",
+        "title": "Panopticon",
+        "difficulty": 6,
+        "planner": "human",
+        "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+        "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 2,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-remaster/human/results.json",
+        "resultsSha256": "54A8AD2AFCE8C5631E17547DB6D4A044FB55DE99FF4124B1C76A76D3B545375B",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-remaster/human/hands.json",
+        "handsSha256": "B04D9272734DD05D7DF57729B4BA9A3D9034932732BE24500C5DAD736118623C",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/panopticon-remaster/human/segments.json",
+        "segmentsSha256": "8A14A61F2EC34D8F09491331EBD38CD94FFE70C3C03B2C73AEC29D8B35BCC452",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [
+              {
+                "id": 502,
+                "kind": "Hold",
+                "time": 76.43181818188447,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 506,
+                "kind": "Hold",
+                "time": 76.84090909097547,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 510,
+                "kind": "Hold",
+                "time": 77.25000000006648,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 514,
+                "kind": "Hold",
+                "time": 77.65909090915748,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 522,
+                "kind": "Hold",
+                "time": 78.6136363637035,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 526,
+                "kind": "Hold",
+                "time": 79.02272727279451,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 530,
+                "kind": "Hold",
+                "time": 79.43181818188552,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 534,
+                "kind": "Hold",
+                "time": 79.84090909097652,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 542,
+                "kind": "Hold",
+                "time": 80.79545454552255,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 546,
+                "kind": "Hold",
+                "time": 81.20454545461355,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 550,
+                "kind": "Hold",
+                "time": 81.61363636370456,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 554,
+                "kind": "Hold",
+                "time": 82.02272727279556,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 564,
+                "kind": "Hold",
+                "time": 82.97727272734058,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 568,
+                "kind": "Hold",
+                "time": 83.38636363643158,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 572,
+                "kind": "Hold",
+                "time": 83.79545454552259,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 576,
+                "kind": "Hold",
+                "time": 84.2045454546136,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 586,
+                "kind": "Hold",
+                "time": 85.1590909091586,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 590,
+                "kind": "Hold",
+                "time": 85.56818181824961,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 596,
+                "kind": "Hold",
+                "time": 86.25000000006762,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 600,
+                "kind": "Hold",
+                "time": 86.65909090915862,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 794,
+                "kind": "Hold",
+                "time": 113.52272727281033,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 812,
+                "kind": "Hold",
+                "time": 115.70454545462835,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 839,
+                "kind": "Tap",
+                "time": 118.90909090917532,
+                "before": "LateGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 841,
+                "kind": "Tap",
+                "time": 119.04545454553931,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 855,
+                "kind": "Tap",
+                "time": 121.09090909099429,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 871,
+                "kind": "Tap",
+                "time": 123.27272727281326,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 888,
+                "kind": "Tap",
+                "time": 125.45454545463222,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "panopticon-remaster",
+        "title": "Panopticon",
+        "difficulty": 6,
+        "planner": "human",
+        "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+        "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 2,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-remaster/human/results.json",
+        "resultsSha256": "F6C8DBD32A5670F54861670CBA3D5DF972EC7E60ED5CB987AE9D684F0D2C92A1",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-remaster/human/hands.json",
+        "handsSha256": "B04D9272734DD05D7DF57729B4BA9A3D9034932732BE24500C5DAD736118623C",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/panopticon-remaster/human/segments.json",
+        "segmentsSha256": "CE6B301119C197877908C351E341909E9D21CCEE9A5E4FD3EEFA303E190BCE4B",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "phoenix-master",
+      "planner": "human",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "before": {
+        "notes": 1092,
+        "cp": 1092,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3276
+      },
+      "after": {
+        "notes": 1092,
+        "cp": 1092,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3276
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 7694
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 16
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 16
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 28
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 7694
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 16
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 16
+        }
+      ],
+      "previousEvidence": {
+        "key": "phoenix-master",
+        "title": "封焔の135秒",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+        "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/phoenix-master/human/results.json",
+        "resultsSha256": "9F74BBDC643B4ED6EA74FBEAABCDEF13D6AE601D07A955F4017059BA153A8591",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/phoenix-master/human/hands.json",
+        "handsSha256": "32733BB0D11F94AE144A62B78C1097ED00FEEB3C40B8446F32626F499014E62A",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/phoenix-master/human/segments.json",
+        "segmentsSha256": "E637E86808366D1C0EB9AAB049C7F7A1D38CA8D5245A13341DD3515794EF6461",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [
+              {
+                "id": 94,
+                "kind": "Tap",
+                "time": 22.70000000000003,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 780,
+                "kind": "Slide",
+                "time": 98.70000000000014,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": "末区完成"
+              },
+              {
+                "id": 1018,
+                "kind": "Tap",
+                "time": 117.22500000000046,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1020,
+                "kind": "Tap",
+                "time": 117.37500000000047,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1036,
+                "kind": "Tap",
+                "time": 118.4250000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1038,
+                "kind": "Tap",
+                "time": 118.5750000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1071,
+                "kind": "Tap",
+                "time": 121.22500000000049,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1073,
+                "kind": "Tap",
+                "time": 121.2500000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1072,
+                "kind": "Tap",
+                "time": 121.2500000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1074,
+                "kind": "Tap",
+                "time": 121.2750000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [
+              {
+                "id": 94,
+                "kind": "Tap",
+                "time": 22.70000000000003,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 487,
+                "kind": "Tap",
+                "time": 60.15000000000008,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 494,
+                "kind": "Tap",
+                "time": 60.45000000000009,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1018,
+                "kind": "Tap",
+                "time": 117.22500000000046,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1020,
+                "kind": "Tap",
+                "time": 117.37500000000047,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1036,
+                "kind": "Tap",
+                "time": 118.4250000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1038,
+                "kind": "Tap",
+                "time": 118.5750000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1071,
+                "kind": "Tap",
+                "time": 121.22500000000049,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1073,
+                "kind": "Tap",
+                "time": 121.2500000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1072,
+                "kind": "Tap",
+                "time": 121.2500000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1074,
+                "kind": "Tap",
+                "time": 121.2750000000005,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [
+              {
+                "id": 94,
+                "kind": "Tap",
+                "time": 22.70000000000003,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 830,
+                "kind": "Tap",
+                "time": 103.50000000000021,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 832,
+                "kind": "Tap",
+                "time": 103.65000000000022,
+                "before": "FastGreat",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1018,
+                "kind": "Tap",
+                "time": 117.22500000000046,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1020,
+                "kind": "Tap",
+                "time": 117.37500000000047,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1036,
+                "kind": "Tap",
+                "time": 118.4250000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1038,
+                "kind": "Tap",
+                "time": 118.5750000000005,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1076,
+                "kind": "Tap",
+                "time": 121.30000000000051,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "phoenix-master",
+        "title": "封焔の135秒",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+        "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/phoenix-master/human/results.json",
+        "resultsSha256": "C888C578F7CFC7EC5E33136406425340B6BE9D9F96F827A2965CCCD05BB1EF6D",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/phoenix-master/human/hands.json",
+        "handsSha256": "32733BB0D11F94AE144A62B78C1097ED00FEEB3C40B8446F32626F499014E62A",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/phoenix-master/human/segments.json",
+        "segmentsSha256": "20B29BC559496A3612EDCA8B6A3E34D747387B98E04D8C156402520D1427A953",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "xaleid-remaster",
+      "planner": "human",
+      "title": "Xaleid◆scopiX",
+      "difficulty": 6,
+      "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+      "before": {
+        "notes": 2222,
+        "cp": 2201,
+        "miss": 13,
+        "gaps": 17,
+        "achievement": 99.73070189708194,
+        "dxScore": 6605
+      },
+      "after": {
+        "notes": 2222,
+        "cp": 2201,
+        "miss": 13,
+        "gaps": 17,
+        "achievement": 99.73070189708194,
+        "dxScore": 6605
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [
+        {
+          "id": 1029,
+          "kind": "Tap",
+          "time": 147.4087205279352,
+          "grade": "FastPerfect2nd",
+          "differenceSeconds": -0.01705386126852204,
+          "reason": ""
+        },
+        {
+          "id": 1031,
+          "kind": "Tap",
+          "time": 147.54205386126822,
+          "grade": "FastGood",
+          "differenceSeconds": -0.12955386126822077,
+          "reason": ""
+        },
+        {
+          "id": 1033,
+          "kind": "Tap",
+          "time": 147.67538719460123,
+          "grade": "FastGood",
+          "differenceSeconds": -0.11705386126789108,
+          "reason": ""
+        },
+        {
+          "id": 1034,
+          "kind": "Tap",
+          "time": 147.80872052793424,
+          "grade": "FastGood",
+          "differenceSeconds": -0.11705386126757844,
+          "reason": ""
+        },
+        {
+          "id": 1241,
+          "kind": "TouchHold",
+          "time": 165.83262041047806,
+          "grade": "LateGood",
+          "differenceSeconds": 0.025712922855262832,
+          "reason": "touch-group"
+        },
+        {
+          "id": 1242,
+          "kind": "TouchHold",
+          "time": 165.83262041047806,
+          "grade": "LateGood",
+          "differenceSeconds": 0.025712922855262832,
+          "reason": "touch-group"
+        },
+        {
+          "id": 1243,
+          "kind": "TouchHold",
+          "time": 165.83262041047806,
+          "grade": "LateGood",
+          "differenceSeconds": 0.025712922855262832,
+          "reason": "touch-group"
+        },
+        {
+          "id": 1353,
+          "kind": "Tap",
+          "time": 175.83262041049,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1587,
+          "kind": "Hold",
+          "time": 203.415953743821,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1595,
+          "kind": "Hold",
+          "time": 203.915953743821,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1623,
+          "kind": "Hold",
+          "time": 206.082620410488,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1625,
+          "kind": "Hold",
+          "time": 206.332620410488,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1630,
+          "kind": "Hold",
+          "time": 206.582620410488,
+          "grade": "Miss",
+          "differenceSeconds": 0.15,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1631,
+          "kind": "Tap",
+          "time": 206.832620410488,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1651,
+          "kind": "Tap",
+          "time": 208.16595374381703,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1653,
+          "kind": "Tap",
+          "time": 208.24928707715003,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1921,
+          "kind": "TouchHold",
+          "time": 235.83262041050392,
+          "grade": "LateGood",
+          "differenceSeconds": 0.3,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1922,
+          "kind": "TouchHold",
+          "time": 236.49928707717092,
+          "grade": "Miss",
+          "differenceSeconds": 0.3,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1923,
+          "kind": "TouchHold",
+          "time": 237.16595374383792,
+          "grade": "Miss",
+          "differenceSeconds": 0.3,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1924,
+          "kind": "TouchHold",
+          "time": 237.83262041050492,
+          "grade": "Miss",
+          "differenceSeconds": 0.3,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1925,
+          "kind": "TouchHold",
+          "time": 238.4992870771719,
+          "grade": "Miss",
+          "differenceSeconds": 0.3,
+          "reason": "head-timeout"
+        }
+      ],
+      "gaps": [
+        {
+          "noteId": 1243,
+          "time": 165.83262041047806,
+          "endTime": 166.33262041047806,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1242,
+          "time": 165.83262041047806,
+          "endTime": 166.33262041047806,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1241,
+          "time": 165.83262041047806,
+          "endTime": 166.33262041047806,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1353,
+          "time": 175.83262041049,
+          "endTime": 175.83262041049,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1587,
+          "time": 203.415953743821,
+          "endTime": 203.582620410488,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1595,
+          "time": 203.915953743821,
+          "endTime": 204.082620410488,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1623,
+          "time": 206.082620410488,
+          "endTime": 206.249287077155,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1625,
+          "time": 206.332620410488,
+          "endTime": 206.499287077155,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1630,
+          "time": 206.582620410488,
+          "endTime": 206.749287077155,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1631,
+          "time": 206.832620410488,
+          "endTime": 206.832620410488,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1651,
+          "time": 208.16595374381703,
+          "endTime": 208.16595374381703,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1653,
+          "time": 208.24928707715003,
+          "endTime": 208.24928707715003,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1921,
+          "time": 235.83262041050392,
+          "endTime": 239.16595374383692,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1922,
+          "time": 236.49928707717092,
+          "endTime": 239.16595374383792,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1923,
+          "time": 237.16595374383792,
+          "endTime": 239.16595374383792,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1924,
+          "time": 237.83262041050492,
+          "endTime": 239.16595374383792,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1925,
+          "time": 238.4992870771719,
+          "endTime": 239.1659537438389,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        }
+      ],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 9195
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 28
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 28
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 176
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 9195
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 28
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 28
+        }
+      ],
+      "previousEvidence": {
+        "key": "xaleid-remaster",
+        "title": "Xaleid◆scopiX",
+        "difficulty": 6,
+        "planner": "human",
+        "chart": "24_PRiSMPLUS/011820_Xaleid◆scopiX/maidata.txt",
+        "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 2,
+        "results": "artifacts/human-planner-validation/wifi-final/spots-current/xaleid-remaster/human/results.json",
+        "resultsSha256": "529DC00EEAEE01A46EB4E0099BAB289943D3E1A33597BEEA64F716A8C981DD7A",
+        "hands": "artifacts/human-planner-validation/wifi-final/spots-current/xaleid-remaster/human/hands.json",
+        "handsSha256": "2D2E82B45DCDD34C21EC9A50E308BCB905CC2A8633F98464C54F0A87EE9CF196",
+        "segments": "artifacts/human-planner-validation/wifi-final/spots-current/xaleid-remaster/human/segments.json",
+        "segmentsSha256": "0118EC9E45FA2FD52401133BA57D6E706C84BED608CF46640CF1D426D73A6162",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+            "gradeChanges": [
+              {
+                "id": 0,
+                "kind": "Tap",
+                "time": 4,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 6,
+                "kind": "Tap",
+                "time": 4.09375,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 7,
+                "kind": "Tap",
+                "time": 4.125,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 5,
+                "kind": "Hold",
+                "time": 4.09375,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 915,
+                "kind": "Touch",
+                "time": 130.12767308080612,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1029,
+                "kind": "Tap",
+                "time": 147.4087205279352,
+                "before": "FastGood",
+                "after": "FastPerfect2nd",
+                "reason": ""
+              },
+              {
+                "id": 1152,
+                "kind": "Tap",
+                "time": 153.53990332363708,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1182,
+                "kind": "TouchHold",
+                "time": 160.4992870771381,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1183,
+                "kind": "TouchHold",
+                "time": 160.4992870771381,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": "touch-group"
+              },
+              {
+                "id": 1184,
+                "kind": "TouchHold",
+                "time": 160.4992870771381,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": "touch-group"
+              },
+              {
+                "id": 1185,
+                "kind": "TouchHold",
+                "time": 160.4992870771381,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": "touch-group"
+              },
+              {
+                "id": 1921,
+                "kind": "TouchHold",
+                "time": 235.83262041050392,
+                "before": "Miss",
+                "after": "LateGood",
+                "reason": "head-timeout"
+              },
+              {
+                "id": 2168,
+                "kind": "Tap",
+                "time": 252.5826204105626,
+                "before": "LatePerfect3rd",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 2220,
+                "kind": "Hold",
+                "time": 254.16595374390855,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+            "gradeChanges": [
+              {
+                "id": 1029,
+                "kind": "Tap",
+                "time": 147.4087205279352,
+                "before": "FastGood",
+                "after": "FastPerfect2nd",
+                "reason": ""
+              },
+              {
+                "id": 2168,
+                "kind": "Tap",
+                "time": 252.5826204105626,
+                "before": "LatePerfect3rd",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "xaleid-remaster",
+        "title": "Xaleid◆scopiX",
+        "difficulty": 6,
+        "planner": "human",
+        "chart": "24_PRiSMPLUS/011820_Xaleid◆scopiX/maidata.txt",
+        "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 2,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/xaleid-remaster/human/results.json",
+        "resultsSha256": "C94D391D023A8E3ADE5A401909F902F502B5E50080230FD9729DDF1F3559E2FC",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/xaleid-remaster/human/hands.json",
+        "handsSha256": "2D2E82B45DCDD34C21EC9A50E308BCB905CC2A8633F98464C54F0A87EE9CF196",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/spots-current/xaleid-remaster/human/segments.json",
+        "segmentsSha256": "0206506AD38CD959F203F3D8DADD8F83BD31B8A292365EAA215C675D7A9552CD",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    }
+  ]
+}

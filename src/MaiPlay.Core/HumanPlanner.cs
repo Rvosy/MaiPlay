@@ -127,11 +127,36 @@ public static class HumanPlanner
             if (ReferenceEquals(before, best)) break;
             shifts = accepted;
         }
+        var sweepBase = best;
+        var earlySweeps = PlannerTimingFeedback.InterferingSweeps(sweepBase, includeMaskedContacts: false);
+        var allInterference = PlannerTimingFeedback.InterferingSweeps(sweepBase);
+        var sweepCandidates = earlySweeps.SetEquals(allInterference) ? new[] { earlySweeps } : [earlySweeps, allInterference];
+        foreach (var strikeOnly in sweepCandidates)
+        {
+            // 持续占键约束可能让其他段失去可行解，两组反馈从同一方案分别核验。
+            var candidate = sweepBase;
+            if (strikeOnly.Count > 0)
+            {
+                var adjusted = PlanPass(chart, options, prepared, shifts, cancellationToken, strikeOnly);
+                if (Better(adjusted, candidate)) candidate = adjusted;
+            }
+            if (!candidate.AllCriticalPerfect && candidate.Gaps.Any(g => chart.Notes[g.NoteId].Kind is NoteKind.Tap or NoteKind.Hold &&
+                    candidate.Strokes.Any(s => s.Technique == HandTechnique.Rotation && g.Time > s.Start &&
+                        g.Time - s.Start <= 2 * NormalHandPlanner.FastSweepInterval)))
+            {
+                // 密集扫键的可行时序可能落在原候选之间，保留原方案后再核验更细的采样。
+                var adjusted = PlanPass(chart, options, prepared, shifts, cancellationToken, strikeOnly, refineSweepTiming: true);
+                if (Better(adjusted, candidate)) candidate = adjusted;
+            }
+            if (Better(candidate, best)) best = candidate;
+            if (best.AllCriticalPerfect) break;
+        }
         return best;
     }
 
     private static HandPlan PlanPass(Chart chart, HumanPlannerOptions options, PreparedSearch prepared,
-        IReadOnlyDictionary<int, double?>? shiftHints, CancellationToken cancellationToken)
+        IReadOnlyDictionary<int, double?>? shiftHints, CancellationToken cancellationToken,
+        IReadOnlySet<int>? strikeOnly = null, bool refineSweepTiming = false)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var doubleTimes = prepared.DoubleTimes;
@@ -177,6 +202,8 @@ public static class HumanPlanner
             foreach (var technique in TechniqueCandidates.For(pattern, model.PreferredStrikeIntervalSeconds))
             {
                 cancellationToken.ThrowIfCancellationRequested();
+                if (strikeOnly is not null && pattern.Demands.Where((d, i) => strikeOnly.Contains(d.Id) &&
+                        (technique.SweepDirections?[i] ?? technique.SweepDirection) != 0).Any()) continue;
                 var local = beam.Where(s => !technique.RequiresSweepContinuation || CanContinueTechnique(s, pattern, technique, shiftHints))
                     .Select(s => s with { Cost = s.Cost + technique.PreferenceCost * pattern.Demands.Count }).ToList();
                 if (local.Count == 0) continue;
@@ -210,7 +237,7 @@ public static class HumanPlanner
                             foreach (var variant in motionVariants)
                             foreach (var shift in shiftHints is not null && shiftHints.TryGetValue(demand.Id, out var contactStart)
                                          ? new[] { contactStart is { } requestedStart ? requestedStart - variant[0].Frames[0].Time : 0 }
-                                         : Shifts(demand))
+                                         : Shifts(demand, refineSweepTiming && direction != 0))
                             {
                                 var candidate = state;
                                 for (var branch = 0; branch < variant.Length; branch++)
@@ -255,8 +282,9 @@ public static class HumanPlanner
         return best!;
     }
 
-    private static IEnumerable<double> Shifts(GameplayDemand demand)
+    private static IEnumerable<double> Shifts(GameplayDemand demand, bool refineSweepTiming)
     {
+        if (refineSweepTiming) return [0, -.00625, .00625, -.0125, .0125];
         return demand.Note.Kind switch
         {
             NoteKind.Touch or NoteKind.TouchHold => [0, -.025, .025, -.075, .075, -.125, .125],

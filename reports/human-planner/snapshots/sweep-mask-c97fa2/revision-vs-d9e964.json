@@ -1,0 +1,251 @@
+{
+  "createdAtUtc": "2026-10-07T23:36:50.466337+00:00",
+  "oldAssemblySha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "newAssemblySha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+  "batches": [
+    {
+      "name": "master-11-plus",
+      "charts": 50,
+      "oldReportSha256": "56BD4BA71C2ACF7A9F8DA4C2550A725727A7BFD683E93D417766BC7A37CA23BD",
+      "newReportSha256": "E04D39410E442FCEC1DAC2C24B41C69D3AB9C9A786DDDA4D688AD1E42E006AF3",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 50,
+          "before": {
+            "allCP": 41,
+            "cp": 27496,
+            "gaps": 11,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 41,
+            "cp": 27496,
+            "gaps": 11,
+            "errors": 0
+          },
+          "changes": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 50,
+          "before": {
+            "allCP": 50,
+            "cp": 27507,
+            "gaps": 0,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 50,
+            "cp": 27507,
+            "gaps": 0,
+            "errors": 0
+          },
+          "changes": []
+        }
+      ]
+    },
+    {
+      "name": "expert-12-plus",
+      "charts": 139,
+      "oldReportSha256": "E6C5506C7378094BD6DB8B2FB940495700DC846066A8CE19760ADC207C58A5B4",
+      "newReportSha256": "78289E7B394DBCA7059377EB9B90DAFCB996B33B721125DC41D5B383D3F52F38",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 139,
+          "before": {
+            "allCP": 136,
+            "cp": 87756,
+            "gaps": 5,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 136,
+            "cp": 87756,
+            "gaps": 5,
+            "errors": 0
+          },
+          "changes": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 2,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 137,
+          "before": {
+            "allCP": 137,
+            "cp": 87759,
+            "gaps": 0,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 139,
+            "cp": 87761,
+            "gaps": 0,
+            "errors": 0
+          },
+          "changes": [
+            {
+              "path": "20_FESTiVALPLUS/011544_VERTeX (rintaro soma deconstructed remix)/maidata.txt",
+              "difficulty": 4,
+              "title": "VERTeX (rintaro soma deconstructed remix)",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 617,
+                "achievement": 100.8896247240618,
+                "dxScore": 1851,
+                "gaps": 0,
+                "error": null
+              },
+              "after": {
+                "status": "all-cp",
+                "cp": 618,
+                "achievement": 101,
+                "dxScore": 1854,
+                "gaps": 0,
+                "error": null
+              }
+            },
+            {
+              "path": "20_FESTiVALPLUS/011549_Trrricksters!!/maidata.txt",
+              "difficulty": 4,
+              "title": "Trrricksters!!",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 774,
+                "achievement": 100.92119779353821,
+                "dxScore": 2322,
+                "gaps": 0,
+                "error": null
+              },
+              "after": {
+                "status": "all-cp",
+                "cp": 775,
+                "achievement": 101,
+                "dxScore": 2325,
+                "gaps": 0,
+                "error": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "patterns",
+      "charts": 30,
+      "oldReportSha256": "6C1FD4B42A0073DCBC253D609A5E8FAF0D3B4B9AC7804538E3B1208AE5F1E6E3",
+      "newReportSha256": "31EF570F2319C8C3C8D5606BB801376455B87621CC01B32C42B7B98866464CCB",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 30,
+          "before": {
+            "allCP": 12,
+            "cp": 26324,
+            "gaps": 221,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 12,
+            "cp": 26324,
+            "gaps": 221,
+            "errors": 0
+          },
+          "changes": [],
+          "patternSegmentsCompared": 144,
+          "segmentChanges": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 0,
+          "regressed": 1,
+          "mixed": 0,
+          "unchanged": 29,
+          "before": {
+            "allCP": 26,
+            "cp": 26533,
+            "gaps": 17,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 26,
+            "cp": 26531,
+            "gaps": 17,
+            "errors": 0
+          },
+          "changes": [
+            {
+              "path": "21_BUDDiES/011612_Latent Kingdom/maidata.txt",
+              "difficulty": 5,
+              "title": "Latent Kingdom",
+              "change": "regressed",
+              "improvements": [],
+              "regressions": [
+                "cp",
+                "achievement",
+                "dxScore"
+              ],
+              "before": {
+                "status": "partial",
+                "cp": 1363,
+                "achievement": 100.55685805422648,
+                "dxScore": 4089,
+                "gaps": 7,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1361,
+                "achievement": 100.3988038277512,
+                "dxScore": 4083,
+                "gaps": 7,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              }
+            }
+          ],
+          "patternSegmentsCompared": 144,
+          "segmentChanges": []
+        }
+      ]
+    }
+  ]
+}

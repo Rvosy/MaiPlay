@@ -1,0 +1,410 @@
+{
+  "createdAtUtc": "2026-10-07T23:46:31.160555+00:00",
+  "previousCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+  "currentCoreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "previousIndexSha256": "F810C3E97937E69D2381021061C65509E859202AB8781BF75B99F2699960B834",
+  "currentIndexSha256": "EFD48CA858C78C4A12ACABA378E7AAFAE5AEF889EDD776BFB12F7646284A0203",
+  "aggregateRegressions": 0,
+  "chartsWithNewMiss": 0,
+  "chartsWithCPLoss": 0,
+  "rows": [
+    {
+      "key": "bbkk-expert",
+      "planner": "human",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "before": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "after": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "previousEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-mask-final/regression-current/bbkk-expert/human/results.json",
+        "resultsSha256": "3110D8FDD1B4992247E735611883DABBF0BC9E664A35E9EC0D4849B98BBE0781",
+        "hands": "artifacts/human-planner-validation/sweep-mask-final/regression-current/bbkk-expert/human/hands.json",
+        "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+        "segments": "artifacts/human-planner-validation/sweep-mask-final/regression-current/bbkk-expert/human/segments.json",
+        "segmentsSha256": "62AEE0F2EC4C60A6C7C7A8DBA98272A4A061FB49B3FEAD1E0BBA55E3C7462D18",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/bbkk-expert/human/results.json",
+        "resultsSha256": "A3F6C937ECEECE8F10F81F174934E905246D05E39C38F0DD71A9A614CF5AED9B",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/bbkk-expert/human/hands.json",
+        "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/bbkk-expert/human/segments.json",
+        "segmentsSha256": "382D8E1BEFA2EBB5A4FF28ED03C553F871296BC54E0FB307A553772CC46B0ABE",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "love-you-master",
+      "planner": "human",
+      "title": "Love You",
+      "difficulty": 5,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "before": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "after": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "previousEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-mask-final/regression-current/love-you-master/human/results.json",
+        "resultsSha256": "9B4CC5759FC442543CE4EB70933ADCE7BB5F83C4E9F4247EAAF3C76A46DBF317",
+        "hands": "artifacts/human-planner-validation/sweep-mask-final/regression-current/love-you-master/human/hands.json",
+        "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+        "segments": "artifacts/human-planner-validation/sweep-mask-final/regression-current/love-you-master/human/segments.json",
+        "segmentsSha256": "26B51DB2921573D9C2AD40D09B636671499BCEEB130799C2989A0C6BAC42653A",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/love-you-master/human/results.json",
+        "resultsSha256": "8D1240F12679A029CF962A1F1B8DA78B5D98467C3331A89FC1E114E4E3215107",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/love-you-master/human/hands.json",
+        "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/love-you-master/human/segments.json",
+        "segmentsSha256": "B4CFF03D70F4B492D304850EABE241F756B931D0C5F7769A13855C637F0B5BFE",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "planner": "human",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "before": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "after": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "previousEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-mask-final/regression-current/nulctrl-expert/human/results.json",
+        "resultsSha256": "7C3AD9F6834BA9B21B4A424F1E439C2803098880A3739D7A366EE4E48F86870A",
+        "hands": "artifacts/human-planner-validation/sweep-mask-final/regression-current/nulctrl-expert/human/hands.json",
+        "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+        "segments": "artifacts/human-planner-validation/sweep-mask-final/regression-current/nulctrl-expert/human/segments.json",
+        "segmentsSha256": "2B400A23F14D07FA94FC69ED6F0CFF2581B0F59C0FD54F14B4CC57613AA1AF59",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      },
+      "currentEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/nulctrl-expert/human/results.json",
+        "resultsSha256": "4B4C42ACC9A1A3E733CB05916D5834511DEE72C2C972E2BDECF1FAE8DD38A8DE",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/nulctrl-expert/human/hands.json",
+        "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/regression-current/nulctrl-expert/human/segments.json",
+        "segmentsSha256": "A9CCB1F71D9FB771297DC5D76D40FE2B2B0009E38D9F30A576DCA7373CAE6F6A",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    }
+  ]
+}

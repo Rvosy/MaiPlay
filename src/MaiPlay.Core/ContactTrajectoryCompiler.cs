@@ -2,7 +2,7 @@ using PointFrame = MaiPlay.Core.ContactPoint;
 
 namespace MaiPlay.Core;
 
-internal sealed record ContactPoint(double Time, ChartPoint Position);
+internal sealed record ContactPoint(double Time, ChartPoint Position, ChartPoint? ContactAxis = null);
 internal enum ContactProfile { Palm, Fingertips }
 internal sealed record ContactMotion(ChartNote Note, InputChannel Channel, ContactPoint[] Points,
     ContactProfile Profile = ContactProfile.Palm);
@@ -12,6 +12,9 @@ internal static class ContactTrajectoryCompiler
     private const double Pulse = .025;
     // 以掌面圆近似整掌接触，默认机台比例下直径约 89.4 mm。
     private const double PalmRadius = .19;
+    // 横放手掌用三个等半径圆近似，长约 178.8 mm、宽约 89.4 mm；两手内端相接。
+    private const double WifiPalmHalfAxis = .19;
+    private const double WifiHandOffset = PalmRadius + WifiPalmHalfAxis;
     internal static IEnumerable<ContactMotion> CreateMotions(Chart chart, CancellationToken token,
         IReadOnlySet<int>? fingertipNotes = null)
     {
@@ -31,21 +34,8 @@ internal static class ContactTrajectoryCompiler
             }
             if (note.SlidePath!.IsWifi)
             {
-                // Wifi 的显示直线不经过全部判定区。双手分别扫过两侧 B 区，
-                // 一手同时经过中路，不能把三条显示线直接当作接触轨迹。
-                foreach (var branch in new[] { 1, 2 })
-                {
-                    SensorArea[] areas = branch == 1
-                        ? [SensorArea.A1, SensorArea.B1, SensorArea.B2, SensorArea.C, SensorArea.B3, SensorArea.B5, SensorArea.A4]
-                        : [SensorArea.A1, SensorArea.B8, SensorArea.B7, SensorArea.A6];
-                    var start = Math.Max(note.Time + .05, note.SlideStartTime - .12);
-                    var end = note.EndTime + .025;
-                    var points = areas.Select((area, i) => new PointFrame(start + (end - start) * i / (areas.Length - 1),
-                        TouchCentre(SlideJudgements.Transform(area, note.StartPosition, false).ToString())))
-                        .Append(new PointFrame(end + PlaybackSession.LogicStep, TouchCentre(
-                            SlideJudgements.Transform(areas[^1], note.StartPosition, false).ToString()))).ToArray();
+                foreach (var points in WifiPoints(note, profile))
                     yield return new(note, InputChannel.Touch, points, profile);
-                }
             }
             else
             {
@@ -74,6 +64,36 @@ internal static class ContactTrajectoryCompiler
                 }
                 yield return new(note, InputChannel.Touch, points, profile);
             }
+        }
+    }
+
+    private static IEnumerable<PointFrame[]> WifiPoints(ChartNote note, ContactProfile profile)
+    {
+        var start = Math.Max(note.Time + .05, note.SlideStartTime - .12);
+        var end = note.EndTime + .025;
+        if (profile == ContactProfile.Fingertips)
+        {
+            // 仅在防蹭反馈选中缩手后使用分路窄接触；默认横掌保持双手同步直线下滑。
+            foreach (var areas in new SensorArea[][]
+            {
+                [SensorArea.A1, SensorArea.B1, SensorArea.B2, SensorArea.C, SensorArea.B3, SensorArea.B5, SensorArea.A4],
+                [SensorArea.A1, SensorArea.B8, SensorArea.B7, SensorArea.A6]
+            })
+                yield return areas.Select((area, i) => new PointFrame(start + (end - start) * i / (areas.Length - 1),
+                    TouchCentre(SlideJudgements.Transform(area, note.StartPosition, false).ToString())))
+                    .Append(new PointFrame(end + PlaybackSession.LogicStep, TouchCentre(
+                        SlideJudgements.Transform(areas[^1], note.StartPosition, false).ToString()))).ToArray();
+            yield break;
+        }
+        var down = SlidePath.ButtonPosition(note.EndPosition);
+        var axis = new ChartPoint(down.Y, -down.X);
+        foreach (var side in new[] { -1, 1 })
+        {
+            ChartPoint At(double radial) => new(down.X * radial + axis.X * side * WifiHandOffset,
+                down.Y * radial + axis.Y * side * WifiHandOffset);
+            // 掌面前缘覆盖中路 B 区和两侧末区，手心沿同一轴移动，横向间距与朝向不变。
+            yield return [new(start, At(-.8), axis), new(end, At(.35), axis),
+                new(end + PlaybackSession.LogicStep, At(.35), axis)];
         }
     }
 
@@ -120,11 +140,17 @@ internal static class ContactTrajectoryCompiler
     internal static HandFrame[] ContactFrames(PointFrame[] points, InputChannel channel, double shift,
         ContactProfile profile = ContactProfile.Palm) =>
         points.Select((p, i) => new HandFrame(p.Time + shift, p.Position,
-            i == points.Length - 1 ? [] : Contacts(p.Position, channel, profile))).ToArray();
+            i == points.Length - 1 ? [] : Contacts(p.Position, channel, profile, p.ContactAxis))).ToArray();
 
-    internal static HandContact[] Contacts(ChartPoint position, InputChannel channel, ContactProfile profile) =>
+    internal static HandContact[] Contacts(ChartPoint position, InputChannel channel, ContactProfile profile,
+        ChartPoint? axis = null) =>
         channel == InputChannel.Touch && profile == ContactProfile.Palm
-            ? [new("palm", channel, new(0, 0), PalmRadius)] : Fingers(position, channel);
+            ? axis is { } direction
+                ? [new("palm", channel, new(0, 0), PalmRadius),
+                    new("palm1", channel, new(-direction.X * WifiPalmHalfAxis, -direction.Y * WifiPalmHalfAxis), PalmRadius),
+                    new("palm2", channel, new(direction.X * WifiPalmHalfAxis, direction.Y * WifiPalmHalfAxis), PalmRadius)]
+                : [new("palm", channel, new(0, 0), PalmRadius)]
+            : Fingers(position, channel);
 
     internal static HandContact[] Fingers(ChartPoint position, InputChannel channel)
     {

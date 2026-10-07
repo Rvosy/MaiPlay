@@ -1,0 +1,432 @@
+{
+  "createdAtUtc": "2026-10-07T23:46:31.786779+00:00",
+  "previousCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "currentCoreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "previousIndexSha256": "13429010D613EFA0A0F4452222306CD8AAD2A093929555DF1469A3F035268889",
+  "currentIndexSha256": "9F340873C54D7A229066A9CDD2F2A902E53F7360695ECDFFF79D5551DB5BC18A",
+  "aggregateRegressions": 0,
+  "chartsWithNewMiss": 0,
+  "chartsWithCPLoss": 0,
+  "rows": [
+    {
+      "key": "latent-master",
+      "planner": "human",
+      "title": "Latent Kingdom",
+      "difficulty": 5,
+      "chartSha256": "8C5F4FA990AC0B500431BA2734CDC1EE44F9770C4491D0D585AFED2C0D9082A0",
+      "before": {
+        "notes": 1371,
+        "cp": 1363,
+        "miss": 7,
+        "gaps": 7,
+        "achievement": 100.55685805422648,
+        "dxScore": 4089
+      },
+      "after": {
+        "notes": 1371,
+        "cp": 1363,
+        "miss": 7,
+        "gaps": 7,
+        "achievement": 100.55685805422648,
+        "dxScore": 4089
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [
+        {
+          "id": 566,
+          "kind": "Tap",
+          "time": 70.24875621892814,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 567,
+          "kind": "Tap",
+          "time": 70.27363184081914,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 568,
+          "kind": "Tap",
+          "time": 70.32338308460014,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 569,
+          "kind": "Tap",
+          "time": 70.34825870649114,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 570,
+          "kind": "Tap",
+          "time": 70.37313432838214,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 571,
+          "kind": "Tap",
+          "time": 70.39800995027313,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 572,
+          "kind": "Tap",
+          "time": 70.42288557216413,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1356,
+          "kind": "Slide",
+          "time": 159.70149253740666,
+          "grade": "LateGood",
+          "differenceSeconds": null,
+          "reason": "超时，末段剩余 1 区"
+        }
+      ],
+      "gaps": [
+        {
+          "noteId": 566,
+          "time": 70.24875621892814,
+          "endTime": 70.24875621892814,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 567,
+          "time": 70.27363184081914,
+          "endTime": 70.27363184081914,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 568,
+          "time": 70.32338308460014,
+          "endTime": 70.32338308460014,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 569,
+          "time": 70.34825870649114,
+          "endTime": 70.34825870649114,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 570,
+          "time": 70.37313432838214,
+          "endTime": 70.37313432838214,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 571,
+          "time": 70.39800995027313,
+          "endTime": 70.39800995027313,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1356,
+          "time": 160.00000000009368,
+          "endTime": 160.07462686576568,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        }
+      ],
+      "oldContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 9953
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 16
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 16
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 9953
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 16
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 16
+        }
+      ],
+      "previousEvidence": {
+        "key": "latent-master",
+        "title": "Latent Kingdom",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "21_BUDDiES/011612_Latent Kingdom/maidata.txt",
+        "chartSha256": "8C5F4FA990AC0B500431BA2734CDC1EE44F9770C4491D0D585AFED2C0D9082A0",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "verified-existing-frozen-run",
+        "sourceEvidencePath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-mask-final\\latent-regression\\comparison.json",
+        "sourceEvidenceSha256": "899D010448D19B6C0F95EC8B3EE241FAADC38B6D8AB73EED820AC6F9834B5357",
+        "results": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/d9e964/results.json",
+        "resultsSha256": "FAF535D6ED56526A53D24B5EBF6670F281009FA23B8BE06ADD8063B1339B15BC",
+        "hands": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/d9e964/hands.json",
+        "handsSha256": "5A430FC5AE5B0E17FA44AF0882B27BE54CD041EA2276A8F1339BE768CF3E6B83",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/baselines/d9e964/latent-master/segments.json",
+        "segmentsSha256": "B38889D8E3EE5BF8F89773AE6EC02D52D7B053088BA8513559BE44D36206A40A"
+      },
+      "currentEvidence": {
+        "key": "latent-master",
+        "title": "Latent Kingdom",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "21_BUDDiES/011612_Latent Kingdom/maidata.txt",
+        "chartSha256": "8C5F4FA990AC0B500431BA2734CDC1EE44F9770C4491D0D585AFED2C0D9082A0",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "verified-existing-frozen-run",
+        "processExitCode": null,
+        "results": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/feedback-candidates/results.json",
+        "resultsSha256": "EE451AF53B3C1410F868DE3874BCE069FB92CB269ED00C2FB6B7F5F09AE7EFE2",
+        "hands": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/feedback-candidates/hands.json",
+        "handsSha256": "5A430FC5AE5B0E17FA44AF0882B27BE54CD041EA2276A8F1339BE768CF3E6B83",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/extra-human-current/latent-master/human/segments.json",
+        "segmentsSha256": "C9BA0366AB7C9C039D02256B11340F4E25D8C979C9F8716033774A4F343B74B0",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [
+              {
+                "id": 565,
+                "kind": "Tap",
+                "time": 70.22388059703714,
+                "before": "Miss",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 572,
+                "kind": "Tap",
+                "time": 70.42288557216413,
+                "before": "Perfect",
+                "after": "Miss",
+                "reason": "head-timeout"
+              },
+              {
+                "id": 1075,
+                "kind": "Tap",
+                "time": 130.6467661692181,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              },
+              {
+                "id": 1333,
+                "kind": "Tap",
+                "time": 158.2089552239726,
+                "before": "FastGood",
+                "after": "Perfect",
+                "reason": ""
+              }
+            ],
+            "cpLostNoteIds": [
+              572
+            ],
+            "newMissNoteIds": [
+              572
+            ]
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "rage-master",
+      "planner": "human",
+      "title": "怒槌",
+      "difficulty": 5,
+      "chartSha256": "08D70A1944D39980B0A5EBD95113271DCFF83B988C29FA11676D2FA558F4D1C2",
+      "before": {
+        "notes": 1188,
+        "cp": 1187,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 100.96565540927304,
+        "dxScore": 3562
+      },
+      "after": {
+        "notes": 1188,
+        "cp": 1187,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 100.96565540927304,
+        "dxScore": 3562
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [
+        {
+          "id": 503,
+          "kind": "Slide",
+          "time": 64.19999999999982,
+          "grade": "LateGreat",
+          "differenceSeconds": 0.25196666666684564,
+          "reason": "末区完成"
+        }
+      ],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6932
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 20
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 20
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 93
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6932
+        },
+        {
+          "part": "palm1",
+          "radius": 0.19,
+          "controlPointCount": 20
+        },
+        {
+          "part": "palm2",
+          "radius": 0.19,
+          "controlPointCount": 20
+        }
+      ],
+      "previousEvidence": {
+        "key": "rage-master",
+        "title": "怒槌",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "11_MiLKPLUS/000779_怒槌/maidata.txt",
+        "chartSha256": "08D70A1944D39980B0A5EBD95113271DCFF83B988C29FA11676D2FA558F4D1C2",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "verified-existing-frozen-run",
+        "sourceEvidencePath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final-rage-comparison.json",
+        "sourceEvidenceSha256": "B99D0742D7E1A78BCF7C793FFDCAE54EB324AF4589F0DEB7165FFB1AFAC81A18",
+        "results": "artifacts/human-planner-validation/wifi-final-rage-human/results.json",
+        "resultsSha256": "0754E28A0D20A52437565437666021B44664F3990D93E847EC3AF5326FE96EAB",
+        "hands": "artifacts/human-planner-validation/wifi-final-rage-human/hands.json",
+        "handsSha256": "47E07E9D64F912502AC2D3E37ADAD084EB3D6900A29A0A13BDDFD9572920D2AE",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/baselines/d9e964/rage-master/segments.json",
+        "segmentsSha256": "6F32699090D1E1850F6D6DD35F647966A650FDAC777A7152533F76F1BBED67C4"
+      },
+      "currentEvidence": {
+        "key": "rage-master",
+        "title": "怒槌",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "11_MiLKPLUS/000779_怒槌/maidata.txt",
+        "chartSha256": "08D70A1944D39980B0A5EBD95113271DCFF83B988C29FA11676D2FA558F4D1C2",
+        "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 2,
+        "results": "artifacts/human-planner-validation/sweep-candidate-final/extra-human-current/rage-master/human/results.json",
+        "resultsSha256": "8797EE54B5DE5CBEAE627E3896EC2CE7982EFB8CFBBAB11B2922785EA4C92513",
+        "hands": "artifacts/human-planner-validation/sweep-candidate-final/extra-human-current/rage-master/human/hands.json",
+        "handsSha256": "47E07E9D64F912502AC2D3E37ADAD084EB3D6900A29A0A13BDDFD9572920D2AE",
+        "segments": "artifacts/human-planner-validation/sweep-candidate-final/extra-human-current/rage-master/human/segments.json",
+        "segmentsSha256": "3613A2B645912E74C77DF8EB7AADE760F95E3491609531DF77C6DD6C7ECAAD78",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          },
+          {
+            "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    }
+  ]
+}

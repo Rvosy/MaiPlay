@@ -1,0 +1,145 @@
+{
+  "createdAtUtc": "2026-10-07T23:40:25.821758+00:00",
+  "status": "regressions-found",
+  "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+  "corePath": "artifacts/human-planner-validation/sweep-mask-build/bin/MaiPlay.GameplayHarness/release/MaiPlay.Core.dll",
+  "tests": {
+    "configuration": "Release",
+    "path": "artifacts/human-planner-validation/tests/wifi-masked-final/wifi-masked-final.trx",
+    "sha256": "562C141421D55279E5891147F36DBA0531A061F26819EE7F96E14C558BDAEC8E",
+    "counters": {
+      "total": 1632,
+      "executed": 1632,
+      "passed": 1632,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "cohorts": [
+    {
+      "name": "master-11-plus",
+      "report": "artifacts/human-planner-validation/sweep-mask-final/master-11-plus/comparison.json",
+      "sha256": "E04D39410E442FCEC1DAC2C24B41C69D3AB9C9A786DDDA4D688AD1E42E006AF3",
+      "charts": 50
+    },
+    {
+      "name": "expert-12-plus",
+      "report": "artifacts/human-planner-validation/sweep-mask-final/expert-12-plus/comparison.json",
+      "sha256": "78289E7B394DBCA7059377EB9B90DAFCB996B33B721125DC41D5B383D3F52F38",
+      "charts": 139
+    },
+    {
+      "name": "patterns",
+      "report": "artifacts/human-planner-validation/sweep-mask-final/patterns/pattern-validation.json",
+      "sha256": "31EF570F2319C8C3C8D5606BB801376455B87621CC01B32C42B7B98866464CCB",
+      "charts": 30
+    }
+  ],
+  "spotRuns": 18,
+  "fixedSelectionSha256": "3085369805E8E92422C3784AB233DAB23E2E0420EDDCD08C7C7DDE9BF79CB0E7",
+  "files": [
+    {
+      "path": "expert-12-plus/comparison.json",
+      "sha256": "78289E7B394DBCA7059377EB9B90DAFCB996B33B721125DC41D5B383D3F52F38"
+    },
+    {
+      "path": "expert-12-plus/comparison.md",
+      "sha256": "4930DC3A558E193CF5C253C49342C55E4FED73DA10702E8E3047A751E5EEB9C3"
+    },
+    {
+      "path": "latent-regression.json",
+      "sha256": "899D010448D19B6C0F95EC8B3EE241FAADC38B6D8AB73EED820AC6F9834B5357"
+    },
+    {
+      "path": "level-regression-resolution.json",
+      "sha256": "2A10E1DACAEB65AE6F756839ADDD28914093D812CFE75E13AA1C9081690ED950"
+    },
+    {
+      "path": "master-11-plus/comparison.json",
+      "sha256": "E04D39410E442FCEC1DAC2C24B41C69D3AB9C9A786DDDA4D688AD1E42E006AF3"
+    },
+    {
+      "path": "master-11-plus/comparison.md",
+      "sha256": "3D29DBF035D217909BD179499A8126528B4873AC3B53B9DFBA81A220A7E85D4B"
+    },
+    {
+      "path": "patterns/pattern-selection.json",
+      "sha256": "3085369805E8E92422C3784AB233DAB23E2E0420EDDCD08C7C7DDE9BF79CB0E7"
+    },
+    {
+      "path": "patterns/pattern-selection.md",
+      "sha256": "52599E0238A8DB85C1BC141F401F2304C57A84CE0781C0EE5FCB38DE38AFF90B"
+    },
+    {
+      "path": "patterns/pattern-validation.json",
+      "sha256": "31EF570F2319C8C3C8D5606BB801376455B87621CC01B32C42B7B98866464CCB"
+    },
+    {
+      "path": "patterns/pattern-validation.md",
+      "sha256": "0D4CCC13BB480A307108B38DB3A7AC7C69697038519EE14ADC5C7341A04270DB"
+    },
+    {
+      "path": "rage-comparison.json",
+      "sha256": "7779FDE2D65EC76DC06DD3FE2D10D70C181072BFAA2E41C2A90B0D7E58834EE6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "F09E91341BEB6C3AAA5C72BCCCAEAD97097CDB0B8BD4CF2FB79FCD9A51A3F86C"
+    },
+    {
+      "path": "regression-vs-d9e964.json",
+      "sha256": "85D272BAF7563F212A9A24FAD6BEC20AD3346DDF02B0DE1DA8079022DA769722"
+    },
+    {
+      "path": "regression-vs-df33.json",
+      "sha256": "249F7D2414B2D0B932C824FE4D2BBD6E35BC2B3177B5CAEC9AC5A39E473D2F72"
+    },
+    {
+      "path": "revision-vs-854c.json",
+      "sha256": "F930D9B32D7B62BD04939B9AF051E87D686E66F26C4CED5A86DC61AC1315CCE7"
+    },
+    {
+      "path": "revision-vs-890106.json",
+      "sha256": "5F2CF0E9750850915F84859C75DD4C5B9FF9EB71B189F427F0BD1D57BE976597"
+    },
+    {
+      "path": "revision-vs-d9e964.json",
+      "sha256": "775D4C87A2BCB169C06076D3AC8955C41A6F198FB1DD97BC084ADC0575A0277B"
+    },
+    {
+      "path": "run-index.json",
+      "sha256": "89F86CFF0CCB324296D13C494534CF09503B5D79817F7CC30DA013DF7480E27E"
+    },
+    {
+      "path": "spot-audit.json",
+      "sha256": "24FD7B40579990CEE1A9616CBD81C0978761299CEEF9F9D148BB71810026DE0F"
+    },
+    {
+      "path": "spots-vs-854c.json",
+      "sha256": "2504A4BF8EAF7E1FCC8E03A105522E6ABF54AC1A08F30BAFD508B5F22814581E"
+    },
+    {
+      "path": "spots-vs-890106.json",
+      "sha256": "F104E96DD45C1753783B860879EC125CCFAA5D262346974366FF40B5F68FA61C"
+    },
+    {
+      "path": "spots-vs-d9e964.json",
+      "sha256": "4DE4CA55FC63A55EB47951AADF5D0DD7B03C7D6BF604F8303EA8E78CF7917516"
+    },
+    {
+      "path": "spots-vs-df33.json",
+      "sha256": "38C03F26C1A85A68CB08645919463AB7BE22A15048EB3E4085D7B0E5C44B1870"
+    }
+  ]
+}

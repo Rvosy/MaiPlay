@@ -24,15 +24,14 @@ public sealed class ContactProfilePlannerTests
     [InlineData(true, "E2", "1")]
     [InlineData(false, "E2h[#0.025]", "1h[#0.5]")]
     [InlineData(true, "E2", "1h[#0.5]")]
-    public void InterferingTouchUsesFingertipsAndUnrelatedTouchKeepsPalm(bool human, string touch, string next)
+    public void TouchContactAvoidsEarlyHitsAndUnrelatedTouchKeepsPalm(bool human, string touch, string next)
     {
         var chart = SimaiParser.ParseChart($"(120){{#0.1}}{touch},{next},{{#1}}C,E", first: 1);
         var plan = Plan(chart, human);
         Assert.True(plan.AllCriticalPerfect, Explain(plan));
         Assert.Empty(plan.Gaps);
-        var small = ContactPose(plan, Assert.Single(plan.Strokes, s => chart.Notes[s.NoteId].TouchArea == "E2"));
-        Assert.Equal(4, small.Contacts.Count);
-        Assert.All(small.Contacts, c => Assert.StartsWith("finger", c.Id));
+        var hit = Assert.Single(plan.Results, e => e.IsFinal && e.Note.Source == next);
+        Assert.Equal(AchievementGrade.Perfect, hit.Grade);
         var palm = ContactPose(plan, Assert.Single(plan.Strokes, s => chart.Notes[s.NoteId].TouchArea == "C"));
         Assert.Equal("palm", Assert.Single(palm.Contacts).Id);
         VerifyReplay(plan);

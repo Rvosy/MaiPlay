@@ -1,0 +1,3207 @@
+{
+  "createdAtUtc": "2026-10-07T23:26:47.160235+00:00",
+  "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "sourceIndexes": [
+    {
+      "path": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\run-index.json",
+      "sha256": "2F6289FD8693908BB3F762A3FE9478A0EA0592CC23D0645D6F6C01EB42E33A96"
+    },
+    {
+      "path": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\run-index.json",
+      "sha256": "69959BC996AE04D6F83A3814776FE7CDFA2F5A7100961B139B86DF28D8DC07D4"
+    }
+  ],
+  "rows": [
+    {
+      "key": "bbkk-expert",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "planner": "human",
+      "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\human\\results.json",
+      "resultsSha256": "8EC4434F4B478C5D1F3B419D58A0762312A120EA19F3C960CFD08A4A30D5252A",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\human\\hands.json",
+      "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\human\\segments.json",
+      "segmentsSha256": "A59C9E5D875A0846565C22AE19BFF6D144ED73EB5C8DDBDA8DC3EF6F90513514",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028,
+        "seconds": 3.1652508
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 5159.936693001468,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 85380.94372348787,
+          "Right": 83042.7537869488
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "bbkk-expert",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "planner": "normal",
+      "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\normal\\results.json",
+      "resultsSha256": "93692A5EB8EB8F4177531FDF1B94B6F3758BBAF0207D0692B59F4EB6760AE9BE",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\normal\\hands.json",
+      "handsSha256": "F85AD7DE1E9EE9386786604AC22AF8676DE619F6D83C4A093009EC7F487987EC",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\bbkk-expert\\normal\\segments.json",
+      "segmentsSha256": "C174925477F6CA117027F60290C9A143ECEB039D1DB3B65221DFE780224E01E4",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028,
+        "seconds": 1.3789817
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 3478.5747262203463,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 89213.5716242789,
+          "Right": 86357.28119277945
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "end-time-master",
+      "title": "End Time",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "12_FiNALE/000844_End Time/maidata.txt",
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\human\\results.json",
+      "resultsSha256": "1F75FDBE3B9FCA203FA58B8624C923451C5AFFE0E5D15369FA6282E3796EB978",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\human\\hands.json",
+      "handsSha256": "D346A5EA15BFF6D2AC07959F55D526D2D1C4DB77D93E5A82AFDCA8E281D825B8",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\human\\segments.json",
+      "segmentsSha256": "480D2060F08D191B2F7CAFB9625E53D92661B2652FD4B97265108F60F7D49E95",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 949,
+        "cp": 949,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847,
+        "seconds": 4.0020466
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4964.8773287896265,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 98379.05129888318,
+          "Right": 94768.3695273522
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "end-time-master",
+      "title": "End Time",
+      "difficulty": 5,
+      "planner": "normal",
+      "chart": "12_FiNALE/000844_End Time/maidata.txt",
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\normal\\results.json",
+      "resultsSha256": "2FBE0E07772BE18EE1F64004C23E8520143FAECB7D67B5B4440F8508745D9DE6",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\normal\\hands.json",
+      "handsSha256": "052838EE924840F79CF3274F20E59B8FF2F8B429509C20996FDA85BA0B6DD782",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\end-time-master\\normal\\segments.json",
+      "segmentsSha256": "E53129B4EA5B02CFF03AD96CAE3F76BCD1C252E4E9750E54EBC5CAA9418EA065",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 949,
+        "cp": 947,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 100.91645781119465,
+        "dxScore": 2841,
+        "seconds": 7.9271421
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4964.8773287896265,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 110303.94236297117,
+          "Right": 105986.8296351451
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "hera-master",
+      "title": "HERA",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "08_MURASAKi/000567_HERA/maidata.txt",
+      "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\human\\results.json",
+      "resultsSha256": "EB42F8DC591DCB504CD0AFD09685296B57E8E3CE307796E8BFB26BF8EEDE0144",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\human\\hands.json",
+      "handsSha256": "4176ACCC6035E8CD5CF147642260FF1F962A293580F23AFEF81745B229F74275",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\human\\segments.json",
+      "segmentsSha256": "23FCFE92B4677156BFFA9ABF7E9F11700E23F44C574199092E5A2F864383543B",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1031,
+        "cp": 1031,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3093,
+        "seconds": 4.8507923
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4502.84220330517,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99644.77927076165,
+          "Right": 104105.16332174526
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "hera-master",
+      "title": "HERA",
+      "difficulty": 5,
+      "planner": "normal",
+      "chart": "08_MURASAKi/000567_HERA/maidata.txt",
+      "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\normal\\results.json",
+      "resultsSha256": "B0A4165F34DEC3CC4651C9524688A8E3A41AFA19AF626443EAC50B3E5FFD0E64",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\normal\\hands.json",
+      "handsSha256": "00C924B9B5F4C0F949396A698507DA95FC07CC1397DF995FB60D39191E95A097",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\hera-master\\normal\\segments.json",
+      "segmentsSha256": "DAC99723161E468B7FD3B442BC0D80B504E4BF2EB698FFC0678D7D07B2801E63",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1031,
+        "cp": 1014,
+        "miss": 17,
+        "gaps": 17,
+        "achievement": 99.1280193236715,
+        "dxScore": 3042,
+        "seconds": 3.6522658
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 3841.451255177371,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 102770.69689887734,
+          "Right": 97817.88146034595
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "love-you-master",
+      "title": "Love You",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "00_maimai/000018_Love You/maidata.txt",
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\human\\results.json",
+      "resultsSha256": "F74E081393540705D1DC33090E0BE0DA18E22AED98CCE9C6C2D73F0ADCE52C4B",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\human\\hands.json",
+      "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\human\\segments.json",
+      "segmentsSha256": "03A948385D7DB37216788127FED2DF8B7CF199C84C84C3705B133AE945B3D86C",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594,
+        "seconds": 2.7361797
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2493.0513065914333,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 34992.18517300841,
+          "Right": 37289.747351338105
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "love-you-master",
+      "title": "Love You",
+      "difficulty": 5,
+      "planner": "normal",
+      "chart": "00_maimai/000018_Love You/maidata.txt",
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\normal\\results.json",
+      "resultsSha256": "E26907FCA94C2013665313FE521310EB9478A330E75F541097EE64EB42E4D3E8",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\normal\\hands.json",
+      "handsSha256": "F6914700B28050B62F15DBD59F1431C489E3C1C66391C305D44202EC36F57DF6",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\love-you-master\\normal\\segments.json",
+      "segmentsSha256": "8C1871ABAB8F79298DF1884C0E881AE573F1BCEF54E1B1426C62CF11E33CBD01",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594,
+        "seconds": 1.3044858
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2931.6558515618476,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 35071.514560979136,
+          "Right": 37919.472984786065
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "planner": "human",
+      "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\human\\results.json",
+      "resultsSha256": "FFDB63CEE0797A2DE96CA5E7E2C2F3A2A8662C13A658716D463FB7948841F78A",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\human\\hands.json",
+      "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\human\\segments.json",
+      "segmentsSha256": "AD73DB7C6E74FA949F979702ACF2FE3FA99E22090CF53C1E79DF883BB901EBDF",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569,
+        "seconds": 2.8681267
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2709.6422364736636,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 43989.93644975061,
+          "Right": 43380.339283645255
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "planner": "normal",
+      "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\normal\\results.json",
+      "resultsSha256": "23BE64A92017EA7E676255332BEBB0F7133E94F8EDEABC9D0518ED0A84C99A10",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\normal\\hands.json",
+      "handsSha256": "0801DBA44A49A8B733BDB7A12A2D503891AED32531753AC4DD60F1F548A1ADD6",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\regression-current\\nulctrl-expert\\normal\\segments.json",
+      "segmentsSha256": "39C52A755475B4B526CFCC539824FF50A5787B2BE90E99170364BCE6E68278A1",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569,
+        "seconds": 2.0065664
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2980.6064601210146,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 45184.38015259535,
+          "Right": 46216.00961079837
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "panopticon-master",
+      "title": "Panopticon",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\human\\results.json",
+      "resultsSha256": "09C70650D069FEA29E58E8B4EACB4BB4C8428451DEE58B472D2A109F4E30960A",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\human\\hands.json",
+      "handsSha256": "1ACAB92A1CC48EFD8D6502F9605F0C5632924331EEC9ADCD250D3F9C60335417",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\human\\segments.json",
+      "segmentsSha256": "08863D6F8AF07DF6ED85496BCE9FABDD2669C0524A54EB6690530E67A590A71E",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 234,
+              "kind": "Tap",
+              "time": 36.477272727300004,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 900,
+        "cp": 900,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2700,
+        "seconds": 6.5175376
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6190.440773164215,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 115484.66515405172,
+          "Right": 118949.73817929323
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "panopticon-master",
+      "title": "Panopticon",
+      "difficulty": 5,
+      "planner": "normal",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\normal\\results.json",
+      "resultsSha256": "DEB2344CDDC505AFD67D74FE6526D518E76E8575673ABE70119D7C44312B7B3B",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\normal\\hands.json",
+      "handsSha256": "BF41A58AA404DB0CE368CF9AE7527E007C1F0ED2D537E8383201C0A9647EDE6E",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-master\\normal\\segments.json",
+      "segmentsSha256": "4214BE63C93D5830EA6F14C69B08BE316687F0A53B639AD3E8DAD4079BF1F24E",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 71,
+              "kind": "Tap",
+              "time": 14.590909090915018,
+              "before": "FastGreat2nd",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 234,
+              "kind": "Tap",
+              "time": 36.477272727300004,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 361,
+              "kind": "Tap",
+              "time": 56.18181818185223,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 900,
+        "cp": 886,
+        "miss": 10,
+        "gaps": 14,
+        "achievement": 99.79065385340117,
+        "dxScore": 2660,
+        "seconds": 17.9070524
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4551.137551380531,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 117309.29519281592,
+          "Right": 118832.75626420476
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "panopticon-remaster",
+      "title": "Panopticon",
+      "difficulty": 6,
+      "planner": "human",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\human\\results.json",
+      "resultsSha256": "54A8AD2AFCE8C5631E17547DB6D4A044FB55DE99FF4124B1C76A76D3B545375B",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\human\\hands.json",
+      "handsSha256": "B04D9272734DD05D7DF57729B4BA9A3D9034932732BE24500C5DAD736118623C",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\human\\segments.json",
+      "segmentsSha256": "8A14A61F2EC34D8F09491331EBD38CD94FFE70C3C03B2C73AEC29D8B35BCC452",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 502,
+              "kind": "Hold",
+              "time": 76.43181818188447,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 506,
+              "kind": "Hold",
+              "time": 76.84090909097547,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 510,
+              "kind": "Hold",
+              "time": 77.25000000006648,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 514,
+              "kind": "Hold",
+              "time": 77.65909090915748,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 522,
+              "kind": "Hold",
+              "time": 78.6136363637035,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 526,
+              "kind": "Hold",
+              "time": 79.02272727279451,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 530,
+              "kind": "Hold",
+              "time": 79.43181818188552,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 534,
+              "kind": "Hold",
+              "time": 79.84090909097652,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 542,
+              "kind": "Hold",
+              "time": 80.79545454552255,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 546,
+              "kind": "Hold",
+              "time": 81.20454545461355,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 550,
+              "kind": "Hold",
+              "time": 81.61363636370456,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 554,
+              "kind": "Hold",
+              "time": 82.02272727279556,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 564,
+              "kind": "Hold",
+              "time": 82.97727272734058,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 568,
+              "kind": "Hold",
+              "time": 83.38636363643158,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 572,
+              "kind": "Hold",
+              "time": 83.79545454552259,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 576,
+              "kind": "Hold",
+              "time": 84.2045454546136,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 586,
+              "kind": "Hold",
+              "time": 85.1590909091586,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 590,
+              "kind": "Hold",
+              "time": 85.56818181824961,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 596,
+              "kind": "Hold",
+              "time": 86.25000000006762,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 600,
+              "kind": "Hold",
+              "time": 86.65909090915862,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 794,
+              "kind": "Hold",
+              "time": 113.52272727281033,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 812,
+              "kind": "Hold",
+              "time": 115.70454545462835,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 839,
+              "kind": "Tap",
+              "time": 118.90909090917532,
+              "before": "LateGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 841,
+              "kind": "Tap",
+              "time": 119.04545454553931,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 855,
+              "kind": "Tap",
+              "time": 121.09090909099429,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 871,
+              "kind": "Tap",
+              "time": 123.27272727281326,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 888,
+              "kind": "Tap",
+              "time": 125.45454545463222,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 909,
+        "cp": 888,
+        "miss": 21,
+        "gaps": 21,
+        "achievement": 98.39747634069401,
+        "dxScore": 2664,
+        "seconds": 5.7559773
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6029.248284796597,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99225.32508195039,
+          "Right": 102747.06138067973
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "panopticon-remaster",
+      "title": "Panopticon",
+      "difficulty": 6,
+      "planner": "normal",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\normal\\results.json",
+      "resultsSha256": "E35E2726A02195323504620016F3892E44FC7E9A8310500440FC1FD07519654A",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\normal\\hands.json",
+      "handsSha256": "9002106FDB0270EDBAE7C87EF6029544A29081EFD47DB39623357BBBAB995CC8",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\panopticon-remaster\\normal\\segments.json",
+      "segmentsSha256": "2749CFD4CE1CE7627BE953E0915FF59D2EE67390B69B73365ABB50E2D9E0DCA8",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 140,
+              "kind": "Hold",
+              "time": 26.249999999998998,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 143,
+              "kind": "Hold",
+              "time": 26.659090909089997,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 146,
+              "kind": "Hold",
+              "time": 27.068181818180996,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 149,
+              "kind": "Hold",
+              "time": 27.477272727271995,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 471,
+              "kind": "Hold",
+              "time": 72.06818181824639,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 474,
+              "kind": "Hold",
+              "time": 72.4772727273374,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 477,
+              "kind": "Hold",
+              "time": 72.8863636364284,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 480,
+              "kind": "Hold",
+              "time": 73.2954545455194,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 486,
+              "kind": "Hold",
+              "time": 74.25000000006543,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 489,
+              "kind": "Hold",
+              "time": 74.65909090915643,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 492,
+              "kind": "Hold",
+              "time": 75.06818181824744,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 495,
+              "kind": "Hold",
+              "time": 75.47727272733844,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 501,
+              "kind": "Tap",
+              "time": 76.39772727279346,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 502,
+              "kind": "Hold",
+              "time": 76.43181818188447,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 505,
+              "kind": "Tap",
+              "time": 76.80681818188447,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 506,
+              "kind": "Hold",
+              "time": 76.84090909097547,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 509,
+              "kind": "Tap",
+              "time": 77.21590909097547,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 510,
+              "kind": "Hold",
+              "time": 77.25000000006648,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 513,
+              "kind": "Tap",
+              "time": 77.62500000006648,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 514,
+              "kind": "Hold",
+              "time": 77.65909090915748,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 521,
+              "kind": "Tap",
+              "time": 78.5795454546125,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 522,
+              "kind": "Hold",
+              "time": 78.6136363637035,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 525,
+              "kind": "Tap",
+              "time": 78.9886363637035,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 526,
+              "kind": "Hold",
+              "time": 79.02272727279451,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 529,
+              "kind": "Tap",
+              "time": 79.39772727279451,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 530,
+              "kind": "Hold",
+              "time": 79.43181818188552,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 533,
+              "kind": "Tap",
+              "time": 79.80681818188552,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 534,
+              "kind": "Hold",
+              "time": 79.84090909097652,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 541,
+              "kind": "Tap",
+              "time": 80.76136363643154,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 542,
+              "kind": "Hold",
+              "time": 80.79545454552255,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 545,
+              "kind": "Tap",
+              "time": 81.17045454552255,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 546,
+              "kind": "Hold",
+              "time": 81.20454545461355,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 549,
+              "kind": "Tap",
+              "time": 81.57954545461355,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 550,
+              "kind": "Hold",
+              "time": 81.61363636370456,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 553,
+              "kind": "Tap",
+              "time": 81.98863636370456,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 554,
+              "kind": "Hold",
+              "time": 82.02272727279556,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 563,
+              "kind": "Tap",
+              "time": 82.94318181824957,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 564,
+              "kind": "Hold",
+              "time": 82.97727272734058,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 567,
+              "kind": "Tap",
+              "time": 83.35227272734058,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 568,
+              "kind": "Hold",
+              "time": 83.38636363643158,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 571,
+              "kind": "Tap",
+              "time": 83.76136363643158,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 572,
+              "kind": "Hold",
+              "time": 83.79545454552259,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 575,
+              "kind": "Tap",
+              "time": 84.17045454552259,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 576,
+              "kind": "Hold",
+              "time": 84.2045454546136,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 585,
+              "kind": "Tap",
+              "time": 85.1250000000676,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 586,
+              "kind": "Hold",
+              "time": 85.1590909091586,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 589,
+              "kind": "Tap",
+              "time": 85.5340909091586,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 590,
+              "kind": "Hold",
+              "time": 85.56818181824961,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 595,
+              "kind": "Tap",
+              "time": 86.21590909097661,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 596,
+              "kind": "Hold",
+              "time": 86.25000000006762,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 599,
+              "kind": "Tap",
+              "time": 86.62500000006762,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 600,
+              "kind": "Hold",
+              "time": 86.65909090915862,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 753,
+              "kind": "Hold",
+              "time": 109.1590909091743,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 754,
+              "kind": "Hold",
+              "time": 109.1590909091743,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 757,
+              "kind": "Hold",
+              "time": 109.5681818182653,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 758,
+              "kind": "Hold",
+              "time": 109.5681818182653,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 761,
+              "kind": "Hold",
+              "time": 109.97727272735631,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 762,
+              "kind": "Hold",
+              "time": 109.97727272735631,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 765,
+              "kind": "Hold",
+              "time": 110.38636363644731,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 766,
+              "kind": "Hold",
+              "time": 110.38636363644731,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 773,
+              "kind": "Hold",
+              "time": 111.34090909099231,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 774,
+              "kind": "Hold",
+              "time": 111.34090909099231,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 777,
+              "kind": "Hold",
+              "time": 111.75000000008332,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 778,
+              "kind": "Hold",
+              "time": 111.75000000008332,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 781,
+              "kind": "Hold",
+              "time": 112.15909090917432,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 782,
+              "kind": "Hold",
+              "time": 112.15909090917432,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 785,
+              "kind": "Hold",
+              "time": 112.56818181826533,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 786,
+              "kind": "Hold",
+              "time": 112.56818181826533,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 793,
+              "kind": "Tap",
+              "time": 113.48863636371932,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 794,
+              "kind": "Hold",
+              "time": 113.52272727281033,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 797,
+              "kind": "Hold",
+              "time": 113.93181818190133,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 798,
+              "kind": "Hold",
+              "time": 113.93181818190133,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 801,
+              "kind": "Hold",
+              "time": 114.34090909099234,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 804,
+              "kind": "Hold",
+              "time": 114.75000000008335,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 805,
+              "kind": "Hold",
+              "time": 114.75000000008335,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 811,
+              "kind": "Tap",
+              "time": 115.67045454553734,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 812,
+              "kind": "Hold",
+              "time": 115.70454545462835,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 815,
+              "kind": "Hold",
+              "time": 116.11363636371935,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 816,
+              "kind": "Hold",
+              "time": 116.11363636371935,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 819,
+              "kind": "Hold",
+              "time": 116.52272727281036,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 822,
+              "kind": "Hold",
+              "time": 116.93181818190136,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 823,
+              "kind": "Hold",
+              "time": 116.93181818190136,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 839,
+              "kind": "Tap",
+              "time": 118.90909090917532,
+              "before": "LateGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 841,
+              "kind": "Tap",
+              "time": 119.04545454553931,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 855,
+              "kind": "Tap",
+              "time": 121.09090909099429,
+              "before": "Miss",
+              "after": "LateGood",
+              "reason": ""
+            },
+            {
+              "id": 857,
+              "kind": "Tap",
+              "time": 121.22727272735828,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 871,
+              "kind": "Tap",
+              "time": 123.27272727281326,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 888,
+              "kind": "Tap",
+              "time": 125.45454545463222,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [
+            {
+              "id": 855,
+              "kind": "Tap",
+              "time": 121.09090909099429,
+              "before": "Perfect",
+              "after": "LateGood",
+              "reason": ""
+            },
+            {
+              "id": 857,
+              "kind": "Tap",
+              "time": 121.22727272735828,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            }
+          ],
+          "cpLostNoteIds": [
+            855,
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [
+            {
+              "id": 855,
+              "kind": "Tap",
+              "time": 121.09090909099429,
+              "before": "Perfect",
+              "after": "LateGood",
+              "reason": ""
+            },
+            {
+              "id": 857,
+              "kind": "Tap",
+              "time": 121.22727272735828,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            }
+          ],
+          "cpLostNoteIds": [
+            855,
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        }
+      ],
+      "metrics": {
+        "notes": 909,
+        "cp": 878,
+        "miss": 26,
+        "gaps": 27,
+        "achievement": 98.59463722397476,
+        "dxScore": 2634,
+        "seconds": 13.0752532
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6029.248284796597,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 114197.77342406237,
+          "Right": 114679.3764010208
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "phoenix-master",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\human\\results.json",
+      "resultsSha256": "9F74BBDC643B4ED6EA74FBEAABCDEF13D6AE601D07A955F4017059BA153A8591",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\human\\hands.json",
+      "handsSha256": "32733BB0D11F94AE144A62B78C1097ED00FEEB3C40B8446F32626F499014E62A",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\human\\segments.json",
+      "segmentsSha256": "E637E86808366D1C0EB9AAB049C7F7A1D38CA8D5245A13341DD3515794EF6461",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 94,
+              "kind": "Tap",
+              "time": 22.70000000000003,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 780,
+              "kind": "Slide",
+              "time": 98.70000000000014,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "末区完成"
+            },
+            {
+              "id": 1018,
+              "kind": "Tap",
+              "time": 117.22500000000046,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1020,
+              "kind": "Tap",
+              "time": 117.37500000000047,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1036,
+              "kind": "Tap",
+              "time": 118.4250000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1038,
+              "kind": "Tap",
+              "time": 118.5750000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1071,
+              "kind": "Tap",
+              "time": 121.22500000000049,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1073,
+              "kind": "Tap",
+              "time": 121.2500000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1072,
+              "kind": "Tap",
+              "time": 121.2500000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1074,
+              "kind": "Tap",
+              "time": 121.2750000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [
+            {
+              "id": 94,
+              "kind": "Tap",
+              "time": 22.70000000000003,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 487,
+              "kind": "Tap",
+              "time": 60.15000000000008,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 494,
+              "kind": "Tap",
+              "time": 60.45000000000009,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1018,
+              "kind": "Tap",
+              "time": 117.22500000000046,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1020,
+              "kind": "Tap",
+              "time": 117.37500000000047,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1036,
+              "kind": "Tap",
+              "time": 118.4250000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1038,
+              "kind": "Tap",
+              "time": 118.5750000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1071,
+              "kind": "Tap",
+              "time": 121.22500000000049,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1073,
+              "kind": "Tap",
+              "time": 121.2500000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1072,
+              "kind": "Tap",
+              "time": 121.2500000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1074,
+              "kind": "Tap",
+              "time": 121.2750000000005,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [
+            {
+              "id": 94,
+              "kind": "Tap",
+              "time": 22.70000000000003,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 830,
+              "kind": "Tap",
+              "time": 103.50000000000021,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 832,
+              "kind": "Tap",
+              "time": 103.65000000000022,
+              "before": "FastGreat",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1018,
+              "kind": "Tap",
+              "time": 117.22500000000046,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1020,
+              "kind": "Tap",
+              "time": 117.37500000000047,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1036,
+              "kind": "Tap",
+              "time": 118.4250000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1038,
+              "kind": "Tap",
+              "time": 118.5750000000005,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1076,
+              "kind": "Tap",
+              "time": 121.30000000000051,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1092,
+        "cp": 1092,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3276,
+        "seconds": 6.2997404
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6948.736908843017,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 119407.76690946023,
+          "Right": 118465.32005958958
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "phoenix-master",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "planner": "normal",
+      "chart": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\normal\\results.json",
+      "resultsSha256": "03F28413B79D3261258F7680B4A2F62AA9A266D08FEEF0807C68F76A35C32E00",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\normal\\hands.json",
+      "handsSha256": "CBACC192DEC5B8ED0CF950AD14BE00E46E1F5FA159F6AA9A032396F47B0B5AFD",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\phoenix-master\\normal\\segments.json",
+      "segmentsSha256": "5C17487FD873E23CC1A843DF951B0458FA74A54FDC194A022B0B3E1E301E5CAA",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 486,
+              "kind": "Tap",
+              "time": 60.075000000000074,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 495,
+              "kind": "Tap",
+              "time": 60.48750000000009,
+              "before": "Perfect",
+              "after": "LatePerfect3rd",
+              "reason": ""
+            },
+            {
+              "id": 494,
+              "kind": "Tap",
+              "time": 60.45000000000009,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 484,
+              "kind": "Hold",
+              "time": 60.00000000000007,
+              "before": "LateGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 783,
+              "kind": "Tap",
+              "time": 99.30000000000014,
+              "before": "LateGreat",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 785,
+              "kind": "Tap",
+              "time": 99.40000000000013,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 937,
+              "kind": "Tap",
+              "time": 111.1500000000003,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [
+            486,
+            495,
+            494
+          ],
+          "newMissNoteIds": [
+            486,
+            494
+          ]
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [
+            {
+              "id": 487,
+              "kind": "Tap",
+              "time": 60.15000000000008,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1092,
+        "cp": 1081,
+        "miss": 10,
+        "gaps": 11,
+        "achievement": 100.23624467254938,
+        "dxScore": 3245,
+        "seconds": 9.154377
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 5554.327037300709,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 120737.3728288201,
+          "Right": 120752.20499635633
+        },
+        "violations": []
+      }
+    },
+    {
+      "key": "xaleid-remaster",
+      "title": "Xaleid◆scopiX",
+      "difficulty": 6,
+      "planner": "human",
+      "chart": "24_PRiSMPLUS/011820_Xaleid◆scopiX/maidata.txt",
+      "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\human\\results.json",
+      "resultsSha256": "529DC00EEAEE01A46EB4E0099BAB289943D3E1A33597BEEA64F716A8C981DD7A",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\human\\hands.json",
+      "handsSha256": "2D2E82B45DCDD34C21EC9A50E308BCB905CC2A8633F98464C54F0A87EE9CF196",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\human\\segments.json",
+      "segmentsSha256": "0118EC9E45FA2FD52401133BA57D6E706C84BED608CF46640CF1D426D73A6162",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 0,
+              "kind": "Tap",
+              "time": 4,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 6,
+              "kind": "Tap",
+              "time": 4.09375,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 7,
+              "kind": "Tap",
+              "time": 4.125,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 5,
+              "kind": "Hold",
+              "time": 4.09375,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 915,
+              "kind": "Touch",
+              "time": 130.12767308080612,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1029,
+              "kind": "Tap",
+              "time": 147.4087205279352,
+              "before": "FastGood",
+              "after": "FastPerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1152,
+              "kind": "Tap",
+              "time": 153.53990332363708,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1182,
+              "kind": "TouchHold",
+              "time": 160.4992870771381,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1183,
+              "kind": "TouchHold",
+              "time": 160.4992870771381,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1184,
+              "kind": "TouchHold",
+              "time": 160.4992870771381,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1185,
+              "kind": "TouchHold",
+              "time": 160.4992870771381,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1921,
+              "kind": "TouchHold",
+              "time": 235.83262041050392,
+              "before": "Miss",
+              "after": "LateGood",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 2168,
+              "kind": "Tap",
+              "time": 252.5826204105626,
+              "before": "LatePerfect3rd",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 2220,
+              "kind": "Hold",
+              "time": 254.16595374390855,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [
+            {
+              "id": 1029,
+              "kind": "Tap",
+              "time": 147.4087205279352,
+              "before": "FastGood",
+              "after": "FastPerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 2168,
+              "kind": "Tap",
+              "time": 252.5826204105626,
+              "before": "LatePerfect3rd",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 2222,
+        "cp": 2201,
+        "miss": 13,
+        "gaps": 17,
+        "achievement": 99.73070189708194,
+        "dxScore": 6605,
+        "seconds": 18.3826016
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7049.670329644227,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 225748.34369874332,
+          "Right": 232166.42930845817
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "xaleid-remaster",
+      "title": "Xaleid◆scopiX",
+      "difficulty": 6,
+      "planner": "normal",
+      "chart": "24_PRiSMPLUS/011820_Xaleid◆scopiX/maidata.txt",
+      "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+      "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\normal\\results.json",
+      "resultsSha256": "24B82B7C49B8A1D6FD73A0DE1B55D3B7C8E585D0FC84EA35169162B3AD5BD2A5",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\normal\\hands.json",
+      "handsSha256": "777D8089541E9FAA50EC4CEA882B6AD03723030F0C462E37C8FC053D0448CD69",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\spots-current\\xaleid-remaster\\normal\\segments.json",
+      "segmentsSha256": "E4A219486B929A18AE20B27CF8E9BC849DFA843FA64B5036566B2E902CFF1F9C",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "gradeChanges": [
+            {
+              "id": 2,
+              "kind": "Tap",
+              "time": 4.03125,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 3,
+              "kind": "Tap",
+              "time": 4.0625,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 4,
+              "kind": "Tap",
+              "time": 4.0625,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 6,
+              "kind": "Tap",
+              "time": 4.09375,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 5,
+              "kind": "Hold",
+              "time": 4.09375,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 304,
+              "kind": "Hold",
+              "time": 53.124200858604006,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 363,
+              "kind": "Tap",
+              "time": 60.45753419193104,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 364,
+              "kind": "Tap",
+              "time": 60.45753419193104,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 570,
+              "kind": "Tap",
+              "time": 81.79086752526504,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 571,
+              "kind": "Tap",
+              "time": 81.79086752526504,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 683,
+              "kind": "Hold",
+              "time": 108.45753419192309,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 816,
+              "kind": "Tap",
+              "time": 121.7908675252541,
+              "before": "FastGreat",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 817,
+              "kind": "Tap",
+              "time": 121.7908675252541,
+              "before": "Miss",
+              "after": "LatePerfect3rd",
+              "reason": ""
+            },
+            {
+              "id": 820,
+              "kind": "Tap",
+              "time": 122.1242008585871,
+              "before": "FastGreat",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 914,
+              "kind": "Tap",
+              "time": 130.12420085858412,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 915,
+              "kind": "Touch",
+              "time": 130.12767308080612,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1029,
+              "kind": "Tap",
+              "time": 147.4087205279352,
+              "before": "FastGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1033,
+              "kind": "Tap",
+              "time": 147.67538719460123,
+              "before": "FastGood",
+              "after": "FastGreat2nd",
+              "reason": ""
+            },
+            {
+              "id": 1152,
+              "kind": "Tap",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1156,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1158,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1155,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1157,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1169,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1160,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1170,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1159,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1167,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1168,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1161,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1162,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Miss",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1163,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1164,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1165,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1166,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1244,
+              "kind": "TouchHold",
+              "time": 165.83262041047806,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1245,
+              "kind": "TouchHold",
+              "time": 165.83262041047806,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1246,
+              "kind": "TouchHold",
+              "time": 165.83262041047806,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1243,
+              "kind": "TouchHold",
+              "time": 165.83262041047806,
+              "before": "LateGood",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1587,
+              "kind": "Hold",
+              "time": 203.415953743821,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1595,
+              "kind": "Hold",
+              "time": 203.915953743821,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1623,
+              "kind": "Hold",
+              "time": 206.082620410488,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1625,
+              "kind": "Hold",
+              "time": 206.332620410488,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1630,
+              "kind": "Hold",
+              "time": 206.582620410488,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1631,
+              "kind": "Tap",
+              "time": 206.832620410488,
+              "before": "Perfect",
+              "after": "Miss",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 1825,
+              "kind": "Tap",
+              "time": 224.499287077157,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1826,
+              "kind": "Tap",
+              "time": 224.499287077157,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            },
+            {
+              "id": 1921,
+              "kind": "TouchHold",
+              "time": 235.83262041050392,
+              "before": "Miss",
+              "after": "LateGood",
+              "reason": "head-timeout"
+            },
+            {
+              "id": 2220,
+              "kind": "Hold",
+              "time": 254.16595374390855,
+              "before": "Miss",
+              "after": "Perfect",
+              "reason": ""
+            }
+          ],
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1163,
+            1164,
+            1165,
+            1166,
+            1587,
+            1595,
+            1623,
+            1625,
+            1630,
+            1631
+          ],
+          "newMissNoteIds": [
+            1587,
+            1595,
+            1623,
+            1625,
+            1630,
+            1631
+          ]
+        },
+        {
+          "baselineCoreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "gradeChanges": [
+            {
+              "id": 1031,
+              "kind": "Tap",
+              "time": 147.54205386126822,
+              "before": "FastGreat2nd",
+              "after": "FastGood",
+              "reason": ""
+            },
+            {
+              "id": 1024,
+              "kind": "Slide",
+              "time": 147.00872052793616,
+              "before": "LateGreat",
+              "after": "Perfect",
+              "reason": "末区完成"
+            },
+            {
+              "id": 1033,
+              "kind": "Tap",
+              "time": 147.67538719460123,
+              "before": "FastGood",
+              "after": "FastGreat2nd",
+              "reason": ""
+            },
+            {
+              "id": 1159,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1167,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1168,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1161,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1162,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1163,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1164,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1165,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1166,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            }
+          ],
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166
+          ],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "gradeChanges": [
+            {
+              "id": 1031,
+              "kind": "Tap",
+              "time": 147.54205386126822,
+              "before": "FastGreat2nd",
+              "after": "FastGood",
+              "reason": ""
+            },
+            {
+              "id": 1024,
+              "kind": "Slide",
+              "time": 147.00872052793616,
+              "before": "LateGreat",
+              "after": "Perfect",
+              "reason": "末区完成"
+            },
+            {
+              "id": 1033,
+              "kind": "Tap",
+              "time": 147.67538719460123,
+              "before": "FastGood",
+              "after": "FastGreat2nd",
+              "reason": ""
+            },
+            {
+              "id": 1159,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1167,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": ""
+            },
+            {
+              "id": 1168,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1161,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1162,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1163,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1164,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1165,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            },
+            {
+              "id": 1166,
+              "kind": "Touch",
+              "time": 153.53990332363708,
+              "before": "Perfect",
+              "after": "LatePerfect2nd",
+              "reason": "touch-group"
+            }
+          ],
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166
+          ],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 2222,
+        "cp": 2133,
+        "miss": 58,
+        "gaps": 81,
+        "achievement": 98.13732541656016,
+        "dxScore": 6431,
+        "seconds": 134.9254165
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7380.148461331978,
+        "speedLimitViolations": 29,
+        "distancesMillimeters": {
+          "Left": 235262.72796308005,
+          "Right": 229368.95938968824
+        },
+        "violations": [
+          {
+            "hand": "Left",
+            "start": 213.165953743821,
+            "end": 213.17012041048767,
+            "speedMillimetersPerSecond": 7380.141299488278
+          },
+          {
+            "hand": "Left",
+            "start": 213.17012041048767,
+            "end": 213.17428707715433,
+            "speedMillimetersPerSecond": 7377.915543873438
+          },
+          {
+            "hand": "Left",
+            "start": 213.17428707715433,
+            "end": 213.178453743821,
+            "speedMillimetersPerSecond": 7380.138917759891
+          },
+          {
+            "hand": "Left",
+            "start": 213.178453743821,
+            "end": 213.1826204104877,
+            "speedMillimetersPerSecond": 7380.141507809629
+          },
+          {
+            "hand": "Left",
+            "start": 213.1826204104877,
+            "end": 213.18678707715435,
+            "speedMillimetersPerSecond": 7377.918373897521
+          },
+          {
+            "hand": "Left",
+            "start": 213.18678707715435,
+            "end": 213.190953743821,
+            "speedMillimetersPerSecond": 7380.136013181389
+          },
+          {
+            "hand": "Left",
+            "start": 213.190953743821,
+            "end": 213.19512041048768,
+            "speedMillimetersPerSecond": 7380.144408926393
+          },
+          {
+            "hand": "Left",
+            "start": 213.19512041048768,
+            "end": 213.19928707715434,
+            "speedMillimetersPerSecond": 7377.914107866758
+          },
+          {
+            "hand": "Left",
+            "start": 213.19928707715434,
+            "end": 213.203453743821,
+            "speedMillimetersPerSecond": 7380.138201089091
+          },
+          {
+            "hand": "Left",
+            "start": 213.203453743821,
+            "end": 213.20762041048766,
+            "speedMillimetersPerSecond": 7380.1434568049
+          },
+          {
+            "hand": "Left",
+            "start": 213.20762041048766,
+            "end": 213.21178707715433,
+            "speedMillimetersPerSecond": 7377.913954088559
+          },
+          {
+            "hand": "Left",
+            "start": 213.21178707715433,
+            "end": 213.21595374382102,
+            "speedMillimetersPerSecond": 7380.142330866501
+          },
+          {
+            "hand": "Left",
+            "start": 213.21595374382102,
+            "end": 213.22012041048768,
+            "speedMillimetersPerSecond": 7380.143561976496
+          },
+          {
+            "hand": "Left",
+            "start": 213.22012041048768,
+            "end": 213.22428707715434,
+            "speedMillimetersPerSecond": 7377.910761042455
+          },
+          {
+            "hand": "Left",
+            "start": 213.22428707715434,
+            "end": 213.228453743821,
+            "speedMillimetersPerSecond": 7380.138364825873
+          },
+          {
+            "hand": "Left",
+            "start": 213.228453743821,
+            "end": 213.23262041048767,
+            "speedMillimetersPerSecond": 7380.142532165385
+          },
+          {
+            "hand": "Left",
+            "start": 213.23262041048767,
+            "end": 213.23678707715433,
+            "speedMillimetersPerSecond": 7377.918154595659
+          },
+          {
+            "hand": "Left",
+            "start": 213.23678707715433,
+            "end": 213.240953743821,
+            "speedMillimetersPerSecond": 7380.145303512803
+          },
+          {
+            "hand": "Left",
+            "start": 213.240953743821,
+            "end": 213.2451204104877,
+            "speedMillimetersPerSecond": 7380.130049913201
+          },
+          {
+            "hand": "Left",
+            "start": 213.2451204104877,
+            "end": 213.24928707715435,
+            "speedMillimetersPerSecond": 7377.918568173097
+          },
+          {
+            "hand": "Left",
+            "start": 213.24928707715435,
+            "end": 213.253453743821,
+            "speedMillimetersPerSecond": 7380.138201089101
+          },
+          {
+            "hand": "Left",
+            "start": 213.253453743821,
+            "end": 213.25762041048768,
+            "speedMillimetersPerSecond": 7380.148461331978
+          },
+          {
+            "hand": "Left",
+            "start": 213.25762041048768,
+            "end": 213.26178707715434,
+            "speedMillimetersPerSecond": 7377.917491541074
+          },
+          {
+            "hand": "Left",
+            "start": 213.26178707715434,
+            "end": 213.265953743821,
+            "speedMillimetersPerSecond": 7380.130791134888
+          },
+          {
+            "hand": "Left",
+            "start": 213.265953743821,
+            "end": 213.27012041048766,
+            "speedMillimetersPerSecond": 7380.144612539852
+          },
+          {
+            "hand": "Left",
+            "start": 213.27012041048766,
+            "end": 213.27428707715433,
+            "speedMillimetersPerSecond": 7377.918370898614
+          },
+          {
+            "hand": "Left",
+            "start": 213.27428707715433,
+            "end": 213.27845374382102,
+            "speedMillimetersPerSecond": 7380.143597197907
+          },
+          {
+            "hand": "Left",
+            "start": 213.27845374382102,
+            "end": 213.28262041048768,
+            "speedMillimetersPerSecond": 7380.133551626305
+          },
+          {
+            "hand": "Left",
+            "start": 213.28262041048768,
+            "end": 213.28333333333333,
+            "speedMillimetersPerSecond": 7377.919677753908
+          }
+        ]
+      }
+    }
+  ]
+}

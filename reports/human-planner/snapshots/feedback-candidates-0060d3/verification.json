@@ -1,0 +1,170 @@
+{
+  "createdAtUtc": "2026-10-07T23:50:21.909623+00:00",
+  "status": "human-regression-passed-relative-to-d9e964",
+  "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "corePath": "artifacts/human-planner-validation/sweep-candidate-build/bin/MaiPlay.GameplayHarness/release/MaiPlay.Core.dll",
+  "regressionBaselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "tests": {
+    "configuration": "Release",
+    "path": "artifacts/human-planner-validation/tests/sweep-candidate-full/sweep-candidate-full.trx",
+    "sha256": "BB97546094DFF594E8A92C92EC8020D4CBAF958570F91A1A998B9B663BA54B28",
+    "counters": {
+      "total": 1634,
+      "executed": 1634,
+      "passed": 1634,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "cohorts": [
+    {
+      "name": "master-11-plus",
+      "report": "artifacts/human-planner-validation/sweep-candidate-final/master-11-plus/comparison.json",
+      "sha256": "0312EFAD1249B20A36AEFD4BC821E09BD09D333F04331315E4FB28E4E3F87E7E",
+      "charts": 50,
+      "plannersActuallyRun": [
+        "NormalHandPlanner",
+        "HumanPlanner"
+      ]
+    },
+    {
+      "name": "expert-12-plus",
+      "report": "artifacts/human-planner-validation/sweep-candidate-final/expert-12-plus/comparison.json",
+      "sha256": "A1FAA4359178A4D15767B4A349B52405C998AFDFED4699DBDF4DF4407AA2BB9B",
+      "charts": 139,
+      "plannersActuallyRun": [
+        "NormalHandPlanner",
+        "HumanPlanner"
+      ]
+    },
+    {
+      "name": "patterns",
+      "report": "artifacts/human-planner-validation/sweep-candidate-final/patterns/pattern-validation.json",
+      "sha256": "F29F05D74FCD05099C6C06DC3D71F60F5056CE85CD330C6E5AD804A2C7C1555D",
+      "charts": 30,
+      "plannersActuallyRun": [
+        "NormalHandPlanner",
+        "HumanPlanner"
+      ]
+    }
+  ],
+  "spotEvidence": {
+    "currentHuman": {
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "charts": 11,
+      "newRuns": 10,
+      "verifiedExistingFrozenRun": 1
+    },
+    "reusedNormal": {
+      "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+      "charts": 9,
+      "rerun": false
+    }
+  },
+  "fixedSelectionSha256": "3085369805E8E92422C3784AB233DAB23E2E0420EDDCD08C7C7DDE9BF79CB0E7",
+  "files": [
+    {
+      "path": "expert-12-plus/comparison.json",
+      "sha256": "A1FAA4359178A4D15767B4A349B52405C998AFDFED4699DBDF4DF4407AA2BB9B"
+    },
+    {
+      "path": "expert-12-plus/comparison.md",
+      "sha256": "4930DC3A558E193CF5C253C49342C55E4FED73DA10702E8E3047A751E5EEB9C3"
+    },
+    {
+      "path": "extra-human-audit.json",
+      "sha256": "24F61D058DD260374449AEF0AACCC95487F76B3F7CAAABE1EEB08E1C9D9FC74F"
+    },
+    {
+      "path": "extra-human-run-index.json",
+      "sha256": "891F7E449E7404EB7576A04ECFF0B93C0CCDA835549AEB2ED759F9656F52618F"
+    },
+    {
+      "path": "extra-human-vs-c97fa2.json",
+      "sha256": "2C398A3BE53C72C39D25EE0BF2454F062EA52C5AC638AF90E9F7D36627023412"
+    },
+    {
+      "path": "extra-human-vs-d9e964.json",
+      "sha256": "BC8705DFC26312EB0B98D604187DBCBE2DAEBED7EC4E90181ABE5F33B9D94C3A"
+    },
+    {
+      "path": "human-run-index.json",
+      "sha256": "DDD114457AC12968981FC16132729D0EFA49350E2D95E2C723B95D449D714D88"
+    },
+    {
+      "path": "level-regression-resolution.json",
+      "sha256": "3187595FA22CB2685CE7400E2BCA0EB5461A3756568131E52147E3BEF3E15C77"
+    },
+    {
+      "path": "master-11-plus/comparison.json",
+      "sha256": "0312EFAD1249B20A36AEFD4BC821E09BD09D333F04331315E4FB28E4E3F87E7E"
+    },
+    {
+      "path": "master-11-plus/comparison.md",
+      "sha256": "3D29DBF035D217909BD179499A8126528B4873AC3B53B9DFBA81A220A7E85D4B"
+    },
+    {
+      "path": "patterns/pattern-selection.json",
+      "sha256": "3085369805E8E92422C3784AB233DAB23E2E0420EDDCD08C7C7DDE9BF79CB0E7"
+    },
+    {
+      "path": "patterns/pattern-selection.md",
+      "sha256": "52599E0238A8DB85C1BC141F401F2304C57A84CE0781C0EE5FCB38DE38AFF90B"
+    },
+    {
+      "path": "patterns/pattern-validation.json",
+      "sha256": "F29F05D74FCD05099C6C06DC3D71F60F5056CE85CD330C6E5AD804A2C7C1555D"
+    },
+    {
+      "path": "patterns/pattern-validation.md",
+      "sha256": "B5A711322F927970B67DF91EEA86CE48BCEC11F1AEE584F4D9EA18D09C32B18A"
+    },
+    {
+      "path": "README.md",
+      "sha256": "34E11D541CF94EF6FE6B583F6FA3ABBEE02A11EBF242D2C53B87D08F2BBAA19B"
+    },
+    {
+      "path": "regression-vs-c97fa2.json",
+      "sha256": "F31360FD86B81C06E281A3B0992505EA5A363055EBB39DAB127DCCB9EAE4FB68"
+    },
+    {
+      "path": "regression-vs-d9e964.json",
+      "sha256": "658E9ADA456C24B735AF712A71C0B7ED1E01511E956A35088EE360877F8F89CC"
+    },
+    {
+      "path": "revision-vs-c97fa2.json",
+      "sha256": "F3C084EFCB56974152EC7EBC868FD67C7A3B326CE5B60457A4C5A03A04896170"
+    },
+    {
+      "path": "revision-vs-d9e964.json",
+      "sha256": "FC0C633B963B687B642F91459F0B6F4DABE40480EBA2E95CD21449783B9025D1"
+    },
+    {
+      "path": "run-index.json",
+      "sha256": "35C9F5F45B7BF389AA940B0E64437E6AD7C85A9DA5C2AC0FD97ABAA33F93C593"
+    },
+    {
+      "path": "spot-audit.json",
+      "sha256": "641145B7E2AF85693A29576179CCCEC968696E2129F6DE3DC8460D5B3E84CF4D"
+    },
+    {
+      "path": "spots-vs-c97fa2.json",
+      "sha256": "8727E10C1B1272D3EFA254A729B491E52986CE7514DC507A550AF4A0E6925843"
+    },
+    {
+      "path": "spots-vs-d9e964.json",
+      "sha256": "48030DA2A25DB26CDB91AE05500BA0EA842AD7C969A31FCDFD11B6EB5FA5A81A"
+    }
+  ]
+}

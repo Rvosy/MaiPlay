@@ -1,0 +1,128 @@
+{
+  "rows": [
+    {
+      "title": "Trrricksters!!",
+      "difficulty": 4,
+      "stage": "d9e964",
+      "notes": 775,
+      "cp": 774,
+      "gaps": 0,
+      "failures": [
+        {
+          "id": 713,
+          "kind": "Tap",
+          "time": 135.87096774193574,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "strokes": [
+        {
+          "noteId": 713,
+          "hand": "Left",
+          "start": 135.87096774193574,
+          "end": 135.89596774193575,
+          "channel": "Button",
+          "technique": "Strike"
+        }
+      ],
+      "resultsPath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\level-regressions\\trrricksters-expert\\d9e964\\results.json",
+      "resultsSha256": "0FCB38F817532D627E63B9EC152E496421F81386D963AD721405C20AE8FF8CEE",
+      "handsSha256": "CC0F8F91179CB266C5200BE78385E79660BE99918677802D754335A9DEC29BF8"
+    },
+    {
+      "title": "Trrricksters!!",
+      "difficulty": 4,
+      "stage": "df33",
+      "notes": 775,
+      "cp": 774,
+      "gaps": 0,
+      "failures": [
+        {
+          "id": 713,
+          "kind": "Tap",
+          "time": 135.87096774193574,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "strokes": [
+        {
+          "noteId": 713,
+          "hand": "Left",
+          "start": 135.87096774193574,
+          "end": 135.89596774193575,
+          "channel": "Button",
+          "technique": "Strike"
+        }
+      ],
+      "resultsPath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\level-regressions\\trrricksters-expert\\df33\\results.json",
+      "resultsSha256": "DAA3FE230BBBB3E5081496655A2F91A7BE7239A918348E4269F1B7604590348D",
+      "handsSha256": "F71438218267E057F4E7502C60FC1AEAFD9EE76C028FAE85D5703F0577D31AF0"
+    },
+    {
+      "title": "VERTeX (rintaro soma deconstructed remix)",
+      "difficulty": 4,
+      "stage": "d9e964",
+      "notes": 618,
+      "cp": 617,
+      "gaps": 0,
+      "failures": [
+        {
+          "id": 381,
+          "kind": "Tap",
+          "time": 102.3417721519528,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "strokes": [
+        {
+          "noteId": 381,
+          "hand": "Left",
+          "start": 102.3417721519528,
+          "end": 102.3667721519528,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ],
+      "resultsPath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\level-regressions\\vertex-expert\\d9e964\\results.json",
+      "resultsSha256": "104D1F71E6F168115E817140F3BC6EEC85BFC0EDFED3674680A9B9A5F4BD1538",
+      "handsSha256": "90661D6CD98DE795067A5D2C563E96662A43B7D4BD7E1EF7F54EBFDB34F4DD19"
+    },
+    {
+      "title": "VERTeX (rintaro soma deconstructed remix)",
+      "difficulty": 4,
+      "stage": "df33",
+      "notes": 618,
+      "cp": 617,
+      "gaps": 0,
+      "failures": [
+        {
+          "id": 381,
+          "kind": "Tap",
+          "time": 102.3417721519528,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "strokes": [
+        {
+          "noteId": 381,
+          "hand": "Left",
+          "start": 102.3417721519528,
+          "end": 102.3667721519528,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ],
+      "resultsPath": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\level-regressions\\vertex-expert\\df33\\results.json",
+      "resultsSha256": "A5A6D76C3C91FFFA3F5FC486C1F4D049FE7C8A3457C43BC6223B0B42F8185C90",
+      "handsSha256": "90661D6CD98DE795067A5D2C563E96662A43B7D4BD7E1EF7F54EBFDB34F4DD19"
+    }
+  ]
+}

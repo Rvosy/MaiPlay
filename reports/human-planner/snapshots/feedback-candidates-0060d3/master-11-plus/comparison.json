@@ -1,0 +1,5570 @@
+{
+  "createdAtUtc": "2026-10-07T23:44:24.3048487+00:00",
+  "ruleVersion": "majdata-dc19722-240-v1",
+  "plannerAssemblySha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "baseline": "NormalHandPlanner",
+  "candidate": "HumanPlanner",
+  "motionParameters": {
+    "judgementRadiusMillimeters": 235.224,
+    "maxSpeedMillimetersPerSecond": 7056.719999999999,
+    "preferredSpeedMillimetersPerSecond": 1300,
+    "preferredStrikeIntervalSeconds": 0.125
+  },
+  "difficulty": 5,
+  "displayLevel": "11+",
+  "files": 1512,
+  "missingDifficulty": 0,
+  "excludedLevel": 1462,
+  "seconds": 25.8071807,
+  "totals": {
+    "charts": 50,
+    "improved": 9,
+    "regressed": 0,
+    "mixed": 0,
+    "unchanged": 41,
+    "errors": 0,
+    "notes": 27507,
+    "baseline": {
+      "allCP": 41,
+      "partial": 9,
+      "errors": 0,
+      "cp": 27496,
+      "gaps": 11,
+      "averageAchievement": 100.93466087448283110898147261,
+      "seconds": 32.459196899999995,
+      "totalDistanceMillimeters": 6994180.307832189,
+      "peakSpeedMillimetersPerSecond": 4986.100669481683,
+      "speedLimitViolations": 0,
+      "projectedCrossingCount": 1209,
+      "projectedCrossingSeconds": 474.4041521200727,
+      "directionReversalCount": 15698,
+      "patterns": []
+    },
+    "candidate": {
+      "allCP": 50,
+      "partial": 0,
+      "errors": 0,
+      "cp": 27507,
+      "gaps": 0,
+      "averageAchievement": 101,
+      "seconds": 49.12773340000001,
+      "totalDistanceMillimeters": 6755424.827227358,
+      "peakSpeedMillimetersPerSecond": 5205.103193226963,
+      "speedLimitViolations": 0,
+      "projectedCrossingCount": 952,
+      "projectedCrossingSeconds": 334.57424842583185,
+      "directionReversalCount": 15323,
+      "patterns": [
+        {
+          "kind": "SingleTap",
+          "detected": 7291,
+          "solved": 7291
+        },
+        {
+          "kind": "Chord",
+          "detected": 5563,
+          "solved": 5563
+        },
+        {
+          "kind": "Jack",
+          "detected": 74,
+          "solved": 74
+        },
+        {
+          "kind": "Trill",
+          "detected": 66,
+          "solved": 66
+        },
+        {
+          "kind": "Anchor",
+          "detected": 75,
+          "solved": 75
+        },
+        {
+          "kind": "Stair",
+          "detected": 160,
+          "solved": 160
+        },
+        {
+          "kind": "Rotation",
+          "detected": 1,
+          "solved": 1
+        },
+        {
+          "kind": "Stream",
+          "detected": 344,
+          "solved": 344
+        },
+        {
+          "kind": "HoldLock",
+          "detected": 1376,
+          "solved": 1376
+        },
+        {
+          "kind": "SimpleSlide",
+          "detected": 3931,
+          "solved": 3931
+        },
+        {
+          "kind": "Wifi",
+          "detected": 16,
+          "solved": 16
+        },
+        {
+          "kind": "Touch",
+          "detected": 361,
+          "solved": 361
+        },
+        {
+          "kind": "HoldSweep",
+          "detected": 44,
+          "solved": 44
+        }
+      ]
+    }
+  },
+  "levels": [
+    {
+      "level": "11+",
+      "totals": {
+        "charts": 50,
+        "improved": 9,
+        "regressed": 0,
+        "mixed": 0,
+        "unchanged": 41,
+        "errors": 0,
+        "notes": 27507,
+        "baseline": {
+          "allCP": 41,
+          "partial": 9,
+          "errors": 0,
+          "cp": 27496,
+          "gaps": 11,
+          "averageAchievement": 100.93466087448283110898147261,
+          "seconds": 32.459196899999995,
+          "totalDistanceMillimeters": 6994180.307832189,
+          "peakSpeedMillimetersPerSecond": 4986.100669481683,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 1209,
+          "projectedCrossingSeconds": 474.4041521200727,
+          "directionReversalCount": 15698,
+          "patterns": []
+        },
+        "candidate": {
+          "allCP": 50,
+          "partial": 0,
+          "errors": 0,
+          "cp": 27507,
+          "gaps": 0,
+          "averageAchievement": 101,
+          "seconds": 49.12773340000001,
+          "totalDistanceMillimeters": 6755424.827227358,
+          "peakSpeedMillimetersPerSecond": 5205.103193226963,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 952,
+          "projectedCrossingSeconds": 334.57424842583185,
+          "directionReversalCount": 15323,
+          "patterns": [
+            {
+              "kind": "SingleTap",
+              "detected": 7291,
+              "solved": 7291
+            },
+            {
+              "kind": "Chord",
+              "detected": 5563,
+              "solved": 5563
+            },
+            {
+              "kind": "Jack",
+              "detected": 74,
+              "solved": 74
+            },
+            {
+              "kind": "Trill",
+              "detected": 66,
+              "solved": 66
+            },
+            {
+              "kind": "Anchor",
+              "detected": 75,
+              "solved": 75
+            },
+            {
+              "kind": "Stair",
+              "detected": 160,
+              "solved": 160
+            },
+            {
+              "kind": "Rotation",
+              "detected": 1,
+              "solved": 1
+            },
+            {
+              "kind": "Stream",
+              "detected": 344,
+              "solved": 344
+            },
+            {
+              "kind": "HoldLock",
+              "detected": 1376,
+              "solved": 1376
+            },
+            {
+              "kind": "SimpleSlide",
+              "detected": 3931,
+              "solved": 3931
+            },
+            {
+              "kind": "Wifi",
+              "detected": 16,
+              "solved": 16
+            },
+            {
+              "kind": "Touch",
+              "detected": 361,
+              "solved": 361
+            },
+            {
+              "kind": "HoldSweep",
+              "detected": 44,
+              "solved": 44
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "parseErrors": [],
+  "charts": [
+    {
+      "path": "00_maimai/000018_Love You/maidata.txt",
+      "title": "Love You",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 198,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 198,
+        "achievement": 101,
+        "dxScore": 594,
+        "gaps": 0,
+        "seconds": 1.9592415,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 35071.514560979136,
+          "rightDistanceMillimeters": 37919.472984786065,
+          "peakSpeedMillimetersPerSecond": 2931.6558515618476,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 20,
+          "projectedCrossingSeconds": 16.695676615859767,
+          "directionReversalCount": 153,
+          "peakLeftActionsPerSecond": 3,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 72990.98754576521
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 198,
+        "achievement": 101,
+        "dxScore": 594,
+        "gaps": 0,
+        "seconds": 2.9330498,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 34992.18517300841,
+          "rightDistanceMillimeters": 37289.747351338105,
+          "peakSpeedMillimetersPerSecond": 2493.0513065914333,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 16,
+          "projectedCrossingSeconds": 12.322638042621765,
+          "directionReversalCount": 150,
+          "peakLeftActionsPerSecond": 3,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 72281.93252434651
+        },
+        "movementCost": 267.93064028018466,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 46,
+            "solved": 46
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 81,
+            "solved": 81
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 51,
+            "solved": 51
+          },
+          {
+            "kind": "Chord",
+            "detected": 10,
+            "solved": 10
+          }
+        ],
+        "techniqueUsage": {
+          "free": 178,
+          "alternate-right": 18,
+          "alternate-left": 2
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000027_Love or Lies/maidata.txt",
+      "title": "Love or Lies",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 353,
+      "chartSha256": "7C5B0109122360A1AF098A74447A921DA5E9195DB707043E682ABC5FAF714A30",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 353,
+        "achievement": 101,
+        "dxScore": 1059,
+        "gaps": 0,
+        "seconds": 0.146882,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 42568.15037179651,
+          "rightDistanceMillimeters": 40872.51460792075,
+          "peakSpeedMillimetersPerSecond": 2516.5457194030537,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 14,
+          "projectedCrossingSeconds": 6.041359864817434,
+          "directionReversalCount": 203,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 83440.66497971726
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 353,
+        "achievement": 101,
+        "dxScore": 1059,
+        "gaps": 0,
+        "seconds": 0.392175,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 40157.78134998076,
+          "rightDistanceMillimeters": 39034.37702347627,
+          "peakSpeedMillimetersPerSecond": 2363.781979579766,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 10,
+          "projectedCrossingSeconds": 4.393306094954923,
+          "directionReversalCount": 198,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 79192.15837345703
+        },
+        "movementCost": 313.4097228398159,
+        "patterns": [
+          {
+            "kind": "Jack",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 185,
+            "solved": 185
+          },
+          {
+            "kind": "Chord",
+            "detected": 50,
+            "solved": 50
+          },
+          {
+            "kind": "Stair",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 26,
+            "solved": 26
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 21,
+            "solved": 21
+          }
+        ],
+        "techniqueUsage": {
+          "repeat-right": 7,
+          "free": 239,
+          "repeat-left": 7,
+          "alternate-left": 18,
+          "alternate-right": 82
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000038_NIGHT OF FIRE/maidata.txt",
+      "title": "NIGHT OF FIRE",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 356,
+      "chartSha256": "BE0955998F6F9168D3C691625CBD69A2F903AAD505B5D404537B3BE6038D6E09",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 356,
+        "achievement": 101,
+        "dxScore": 1068,
+        "gaps": 0,
+        "seconds": 0.215729,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 42309.70381149044,
+          "rightDistanceMillimeters": 36181.367269357695,
+          "peakSpeedMillimetersPerSecond": 3133.0656964848567,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 14,
+          "projectedCrossingSeconds": 5.950453157035713,
+          "directionReversalCount": 198,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 78491.07108084814
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 356,
+        "achievement": 101,
+        "dxScore": 1068,
+        "gaps": 0,
+        "seconds": 0.6798229,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 38697.678831771984,
+          "rightDistanceMillimeters": 34453.38068430607,
+          "peakSpeedMillimetersPerSecond": 2867.9323549175047,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 5,
+          "projectedCrossingSeconds": 0.530894178818416,
+          "directionReversalCount": 193,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 73151.05951607805
+        },
+        "movementCost": 328.27201625741066,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 74,
+            "solved": 74
+          },
+          {
+            "kind": "Chord",
+            "detected": 65,
+            "solved": 65
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 29,
+            "solved": 29
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Trill",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Stream",
+            "detected": 9,
+            "solved": 9
+          },
+          {
+            "kind": "Anchor",
+            "detected": 8,
+            "solved": 8
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "Stair",
+            "detected": 5,
+            "solved": 5
+          }
+        ],
+        "techniqueUsage": {
+          "free": 175,
+          "alternate-right": 128,
+          "repeat-left": 4,
+          "alternate-left": 34,
+          "relay": 3,
+          "strike-right": 6,
+          "strike-left": 6
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000046_ルカルカ★ナイトフィーバー/maidata.txt",
+      "title": "ルカルカ★ナイトフィーバー",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 381,
+      "chartSha256": "7A2A1C2106E3BA209FA0593ECC03B02EE47928FDE70E605ABD59FCFC2D313985",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 381,
+        "achievement": 101,
+        "dxScore": 1143,
+        "gaps": 0,
+        "seconds": 0.145143,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 49253.714070020724,
+          "rightDistanceMillimeters": 54852.7672450066,
+          "peakSpeedMillimetersPerSecond": 3242.472369230741,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 18,
+          "projectedCrossingSeconds": 2.9754193924760237,
+          "directionReversalCount": 229,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 104106.48131502733
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 381,
+        "achievement": 101,
+        "dxScore": 1143,
+        "gaps": 0,
+        "seconds": 0.9433604,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 45686.268128941185,
+          "rightDistanceMillimeters": 57408.08077177318,
+          "peakSpeedMillimetersPerSecond": 5159.936693001468,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 4.4984794158441765,
+          "directionReversalCount": 202,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 103094.34890071437
+        },
+        "movementCost": 436.32245185253294,
+        "patterns": [
+          {
+            "kind": "Stream",
+            "detected": 19,
+            "solved": 19
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 23,
+            "solved": 23
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 71,
+            "solved": 71
+          },
+          {
+            "kind": "Stair",
+            "detected": 12,
+            "solved": 12
+          },
+          {
+            "kind": "Chord",
+            "detected": 55,
+            "solved": 55
+          },
+          {
+            "kind": "Anchor",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 14,
+            "solved": 14
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 107,
+          "free": 164,
+          "relay": 43,
+          "alternate-left": 50,
+          "hold-sweep-right": 9,
+          "sweep-right": 5,
+          "strike-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000063_メランコリック/maidata.txt",
+      "title": "メランコリック",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 323,
+      "chartSha256": "6D5FEDE83D8BB85BFA4902FA8CF54CABB75E1454853D7A1C4FC0D559C312E531",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 323,
+        "achievement": 101,
+        "dxScore": 969,
+        "gaps": 0,
+        "seconds": 0.0537769,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 43685.85196253619,
+          "rightDistanceMillimeters": 49668.081312713024,
+          "peakSpeedMillimetersPerSecond": 2783.6319396184263,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 20,
+          "projectedCrossingSeconds": 12.393406891846762,
+          "directionReversalCount": 198,
+          "peakLeftActionsPerSecond": 4,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 93353.9332752492
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 323,
+        "achievement": 101,
+        "dxScore": 969,
+        "gaps": 0,
+        "seconds": 0.3220777,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 41163.952352418935,
+          "rightDistanceMillimeters": 45147.39045296165,
+          "peakSpeedMillimetersPerSecond": 3548.3410239865907,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 17,
+          "projectedCrossingSeconds": 6.736516987937783,
+          "directionReversalCount": 180,
+          "peakLeftActionsPerSecond": 4,
+          "peakRightActionsPerSecond": 4,
+          "totalDistanceMillimeters": 86311.34280538058
+        },
+        "movementCost": 365.46462104705887,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 38,
+            "solved": 38
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 111,
+            "solved": 111
+          },
+          {
+            "kind": "Chord",
+            "detected": 72,
+            "solved": 72
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 26,
+            "solved": 26
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 175,
+          "alternate-right": 114,
+          "alternate-left": 30,
+          "repeat-right": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000071_マトリョシカ/maidata.txt",
+      "title": "マトリョシカ",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 454,
+      "chartSha256": "3C190540685C8A6E9FA28F24F22AD9A6D153495A2178B5448BA85EA2FBE89821",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 454,
+        "achievement": 101,
+        "dxScore": 1362,
+        "gaps": 0,
+        "seconds": 0.1052753,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 46751.96053864044,
+          "rightDistanceMillimeters": 46151.59695850742,
+          "peakSpeedMillimetersPerSecond": 2584.7461294143013,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 5,
+          "projectedCrossingSeconds": 2.137530463936635,
+          "directionReversalCount": 215,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 92903.55749714785
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 454,
+        "achievement": 101,
+        "dxScore": 1362,
+        "gaps": 0,
+        "seconds": 0.4913683,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 44467.20194202255,
+          "rightDistanceMillimeters": 45120.59082991306,
+          "peakSpeedMillimetersPerSecond": 1818.5461339457756,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 7,
+          "projectedCrossingSeconds": 2.2106146930871766,
+          "directionReversalCount": 209,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 89587.79277193561
+        },
+        "movementCost": 396.30212450112947,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 91,
+            "solved": 91
+          },
+          {
+            "kind": "Chord",
+            "detected": 80,
+            "solved": 80
+          },
+          {
+            "kind": "Stair",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "Anchor",
+            "detected": 14,
+            "solved": 14
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Trill",
+            "detected": 8,
+            "solved": 8
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 17,
+            "solved": 17
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "free": 248,
+          "alternate-right": 149,
+          "relay": 9,
+          "alternate-left": 48
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000073_メグメグ☆ファイアーエンドレスナイト/maidata.txt",
+      "title": "メグメグ☆ファイアーエンドレスナイト",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 381,
+      "chartSha256": "CF81E5C0D82A0E162550227703142747357D0576E7D87436F54F09EE6DA8203F",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 381,
+        "achievement": 101,
+        "dxScore": 1143,
+        "gaps": 0,
+        "seconds": 0.1345943,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 51701.233859820735,
+          "rightDistanceMillimeters": 50138.74756674944,
+          "peakSpeedMillimetersPerSecond": 3289.328906362184,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 15,
+          "projectedCrossingSeconds": 6.140447051396523,
+          "directionReversalCount": 203,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 101839.98142657017
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 381,
+        "achievement": 101,
+        "dxScore": 1143,
+        "gaps": 0,
+        "seconds": 0.7932379,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 48452.30566736097,
+          "rightDistanceMillimeters": 49406.31880288645,
+          "peakSpeedMillimetersPerSecond": 5159.556634571641,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 12,
+          "projectedCrossingSeconds": 3.762482382793806,
+          "directionReversalCount": 201,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 97858.62447024742
+        },
+        "movementCost": 396.5329906865418,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 71,
+            "solved": 71
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 15,
+            "solved": 15
+          },
+          {
+            "kind": "Stair",
+            "detected": 15,
+            "solved": 15
+          },
+          {
+            "kind": "Anchor",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Chord",
+            "detected": 78,
+            "solved": 78
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "Stream",
+            "detected": 11,
+            "solved": 11
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "free": 143,
+          "relay": 47,
+          "alternate-right": 132,
+          "strike-left": 3,
+          "alternate-left": 47,
+          "hold-sweep-right": 5,
+          "sweep-left": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "00_maimai/000078_マリアをはげませ/maidata.txt",
+      "title": "マリアをはげませ",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 452,
+      "chartSha256": "93F2EF83DFF4D61E02C539CEC3E2434C5E9B7FA7B088C53023B4F284168A6267",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 452,
+        "achievement": 101,
+        "dxScore": 1356,
+        "gaps": 0,
+        "seconds": 0.1812061,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 53606.29225639518,
+          "rightDistanceMillimeters": 54390.39640635238,
+          "peakSpeedMillimetersPerSecond": 2582.7551191741104,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 9,
+          "projectedCrossingSeconds": 8.304856868813005,
+          "directionReversalCount": 214,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 107996.68866274756
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 452,
+        "achievement": 101,
+        "dxScore": 1356,
+        "gaps": 0,
+        "seconds": 0.6238409,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 50840.3701687121,
+          "rightDistanceMillimeters": 53326.60789146848,
+          "peakSpeedMillimetersPerSecond": 2419.183119727259,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 8,
+          "projectedCrossingSeconds": 7.8382628248215305,
+          "directionReversalCount": 208,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 104166.97806018058
+        },
+        "movementCost": 421.47816425427544,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 108,
+            "solved": 108
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 33,
+            "solved": 33
+          },
+          {
+            "kind": "Chord",
+            "detected": 80,
+            "solved": 80
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 33,
+            "solved": 33
+          },
+          {
+            "kind": "Trill",
+            "detected": 12,
+            "solved": 12
+          },
+          {
+            "kind": "Stair",
+            "detected": 7,
+            "solved": 7
+          },
+          {
+            "kind": "Rotation",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Anchor",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 192,
+          "alternate-left": 19,
+          "alternate-right": 205,
+          "relay": 32,
+          "repeat-left": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "02_GreeN/000266_Living Universe/maidata.txt",
+      "title": "Living Universe",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 239,
+      "chartSha256": "135961C34E4B94A976A6290E2E7509D16CCE988EBF7CDAA9B6E3DD0349E932E0",
+      "baseline": {
+        "status": "partial",
+        "cp": 238,
+        "achievement": 100.48186528497409326424870466,
+        "dxScore": 714,
+        "gaps": 1,
+        "seconds": 0.8339138,
+        "failuresByKind": {
+          "Hold": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 30704.947976461408,
+          "rightDistanceMillimeters": 33192.48939104729,
+          "peakSpeedMillimetersPerSecond": 4522.69123822933,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 25,
+          "projectedCrossingSeconds": 14.419321315383977,
+          "directionReversalCount": 120,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 4,
+          "totalDistanceMillimeters": 63897.4373675087
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 239,
+        "achievement": 101,
+        "dxScore": 717,
+        "gaps": 0,
+        "seconds": 0.5486002,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 25740.13188175095,
+          "rightDistanceMillimeters": 29569.913624867015,
+          "peakSpeedMillimetersPerSecond": 4522.69123822933,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 11,
+          "projectedCrossingSeconds": 5.046778670267543,
+          "directionReversalCount": 106,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 55310.045506617964
+        },
+        "movementCost": 233.78537881597703,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 100,
+            "solved": 100
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 37,
+            "solved": 37
+          },
+          {
+            "kind": "Chord",
+            "detected": 29,
+            "solved": 29
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 35,
+            "solved": 35
+          },
+          {
+            "kind": "Stream",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "free": 175,
+          "alternate-right": 50,
+          "alternate-left": 14
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "03_GreeNPLUS/000310_エピクロスの虹はもう見えない/maidata.txt",
+      "title": "エピクロスの虹はもう見えない",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 464,
+      "chartSha256": "EE436B967B6FBA36FBD7828D52B357E64FA722077E0DF59FE3750C2D2493961D",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 464,
+        "achievement": 101,
+        "dxScore": 1392,
+        "gaps": 0,
+        "seconds": 0.5963823,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 67762.27637019675,
+          "rightDistanceMillimeters": 67547.25443138651,
+          "peakSpeedMillimetersPerSecond": 3937.4701071557497,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 27,
+          "projectedCrossingSeconds": 8.045523474665147,
+          "directionReversalCount": 284,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 135309.53080158326
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 464,
+        "achievement": 101,
+        "dxScore": 1392,
+        "gaps": 0,
+        "seconds": 1.6904309,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 63371.05066459763,
+          "rightDistanceMillimeters": 64090.125023344415,
+          "peakSpeedMillimetersPerSecond": 5159.556634567261,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 20,
+          "projectedCrossingSeconds": 4.743489515519688,
+          "directionReversalCount": 290,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 127461.17568794204
+        },
+        "movementCost": 505.1721784108414,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 20,
+            "solved": 20
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 126,
+            "solved": 126
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "Stair",
+            "detected": 12,
+            "solved": 12
+          },
+          {
+            "kind": "Chord",
+            "detected": 63,
+            "solved": 63
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 72,
+            "solved": 72
+          },
+          {
+            "kind": "Stream",
+            "detected": 8,
+            "solved": 8
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Jack",
+            "detected": 6,
+            "solved": 6
+          }
+        ],
+        "techniqueUsage": {
+          "free": 261,
+          "alternate-left": 21,
+          "alternate-right": 128,
+          "hold-sweep-right": 6,
+          "hold-sweep-left": 3,
+          "repeat-left": 11,
+          "repeat-right": 11,
+          "relay": 18,
+          "strike-left": 5
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "03_GreeNPLUS/000323_YATTA!/maidata.txt",
+      "title": "YATTA!",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 402,
+      "chartSha256": "57B536D0852BADB0C73FA9B70CAD62C2A0912802A3C1659CF011DCF52D55D339",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 402,
+        "achievement": 101,
+        "dxScore": 1206,
+        "gaps": 0,
+        "seconds": 0.1509722,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 59592.54909613073,
+          "rightDistanceMillimeters": 67355.53735298086,
+          "peakSpeedMillimetersPerSecond": 3274.8231790913283,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 26,
+          "projectedCrossingSeconds": 9.878933395070064,
+          "directionReversalCount": 250,
+          "peakLeftActionsPerSecond": 4,
+          "peakRightActionsPerSecond": 4,
+          "totalDistanceMillimeters": 126948.08644911158
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 402,
+        "achievement": 101,
+        "dxScore": 1206,
+        "gaps": 0,
+        "seconds": 0.5462288,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 58693.06752835162,
+          "rightDistanceMillimeters": 67059.97766199286,
+          "peakSpeedMillimetersPerSecond": 3274.8231790913283,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 27,
+          "projectedCrossingSeconds": 9.975821646194063,
+          "directionReversalCount": 243,
+          "peakLeftActionsPerSecond": 4,
+          "peakRightActionsPerSecond": 4,
+          "totalDistanceMillimeters": 125753.04519034448
+        },
+        "movementCost": 416.55387398563647,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 92,
+            "solved": 92
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 100,
+            "solved": 100
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 108,
+            "solved": 108
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 10,
+            "solved": 10
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-left": 22,
+          "free": 218,
+          "alternate-right": 162
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "04_ORANGE/000297_The Great Journey/maidata.txt",
+      "title": "The Great Journey",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 520,
+      "chartSha256": "9F334FFD22D849CF920C1C3DCC947B51F80258BB406F84793BCB4388F9B7ED1C",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 520,
+        "achievement": 101,
+        "dxScore": 1560,
+        "gaps": 0,
+        "seconds": 0.0777303,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 54751.85690995856,
+          "rightDistanceMillimeters": 56397.356883845394,
+          "peakSpeedMillimetersPerSecond": 4986.100669481683,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 6,
+          "projectedCrossingSeconds": 1.6875049753430176,
+          "directionReversalCount": 273,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 111149.21379380395
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 520,
+        "achievement": 101,
+        "dxScore": 1560,
+        "gaps": 0,
+        "seconds": 0.4862732,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 54824.09359392429,
+          "rightDistanceMillimeters": 57464.300341515125,
+          "peakSpeedMillimetersPerSecond": 4986.100669481683,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 8,
+          "projectedCrossingSeconds": 2.330532525303333,
+          "directionReversalCount": 265,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 112288.39393543941
+        },
+        "movementCost": 473.62270286025,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 183,
+            "solved": 183
+          },
+          {
+            "kind": "Chord",
+            "detected": 104,
+            "solved": 104
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Anchor",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 33,
+            "solved": 33
+          },
+          {
+            "kind": "Trill",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 31,
+            "solved": 31
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          }
+        ],
+        "techniqueUsage": {
+          "free": 252,
+          "alternate-right": 223,
+          "relay": 3,
+          "alternate-left": 42
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "05_ORANGEPLUS/000289_みくみくにしてあげる♪【してやんよ】/maidata.txt",
+      "title": "みくみくにしてあげる♪【してやんよ】",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 471,
+      "chartSha256": "7525AB8773AC05C7135B1A086F31CD8BDA4FA175B31C264DADA1F9766BBD18BE",
+      "baseline": {
+        "status": "partial",
+        "cp": 469,
+        "achievement": 100.70887918486171761280931587,
+        "dxScore": 1407,
+        "gaps": 2,
+        "seconds": 4.6829813,
+        "failuresByKind": {
+          "Tap": 2
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 63065.589210109494,
+          "rightDistanceMillimeters": 65303.5444252453,
+          "peakSpeedMillimetersPerSecond": 3242.472369230741,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 35,
+          "projectedCrossingSeconds": 8.445175805249367,
+          "directionReversalCount": 258,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 128369.1336353548
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 471,
+        "achievement": 101,
+        "dxScore": 1413,
+        "gaps": 0,
+        "seconds": 0.5409427,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 60282.72028811623,
+          "rightDistanceMillimeters": 58946.15675578139,
+          "peakSpeedMillimetersPerSecond": 5159.936693001485,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 21,
+          "projectedCrossingSeconds": 4.646496654007396,
+          "directionReversalCount": 258,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 119228.87704389762
+        },
+        "movementCost": 456.5821390462836,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 94,
+            "solved": 94
+          },
+          {
+            "kind": "Chord",
+            "detected": 64,
+            "solved": 64
+          },
+          {
+            "kind": "Stream",
+            "detected": 15,
+            "solved": 15
+          },
+          {
+            "kind": "Anchor",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 67,
+            "solved": 67
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 14,
+            "solved": 14
+          },
+          {
+            "kind": "Stair",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 250,
+          "alternate-right": 146,
+          "alternate-left": 33,
+          "hold-sweep-right": 7,
+          "relay": 22,
+          "hold-sweep-left": 7,
+          "strike-left": 3,
+          "repeat-left": 3
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "07_PiNKPLUS/000508_恋愛裁判/maidata.txt",
+      "title": "恋愛裁判",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 632,
+      "chartSha256": "94A30DAF58A8247F2AB10113D13E4B03D0FC773FCF981FE5F03218470E106350",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 632,
+        "achievement": 101,
+        "dxScore": 1896,
+        "gaps": 0,
+        "seconds": 0.4432565,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 86311.18794821644,
+          "rightDistanceMillimeters": 88028.11364946493,
+          "peakSpeedMillimetersPerSecond": 3696.3757978691774,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 32,
+          "projectedCrossingSeconds": 13.307651621185311,
+          "directionReversalCount": 371,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 174339.30159768136
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 632,
+        "achievement": 101,
+        "dxScore": 1896,
+        "gaps": 0,
+        "seconds": 0.6152652,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 76785.03629196988,
+          "rightDistanceMillimeters": 80041.52287391915,
+          "peakSpeedMillimetersPerSecond": 3299.445679826835,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 2.254649563616603,
+          "directionReversalCount": 342,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 156826.55916588905
+        },
+        "movementCost": 651.7571406269025,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 64,
+            "solved": 64
+          },
+          {
+            "kind": "Trill",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 159,
+            "solved": 159
+          },
+          {
+            "kind": "Chord",
+            "detected": 144,
+            "solved": 144
+          },
+          {
+            "kind": "Stream",
+            "detected": 9,
+            "solved": 9
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 69,
+            "solved": 69
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stair",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "free": 298,
+          "alternate-left": 67,
+          "alternate-right": 264,
+          "sweep-right": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "09_MURASAKiPLUS/000618_ラブチーノ/maidata.txt",
+      "title": "ラブチーノ",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 467,
+      "chartSha256": "D607102AFD6369285652EEB6FB5B5373A730D8E85C3FBCF988207B2D9DD59528",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 467,
+        "achievement": 101,
+        "dxScore": 1401,
+        "gaps": 0,
+        "seconds": 0.578999,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 76113.85875338648,
+          "rightDistanceMillimeters": 71646.1273268114,
+          "peakSpeedMillimetersPerSecond": 3102.4654270072806,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 28,
+          "projectedCrossingSeconds": 8.991379708805658,
+          "directionReversalCount": 268,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 147759.98608019788
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 467,
+        "achievement": 101,
+        "dxScore": 1401,
+        "gaps": 0,
+        "seconds": 1.8304953,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 73166.66246151719,
+          "rightDistanceMillimeters": 68579.91110490853,
+          "peakSpeedMillimetersPerSecond": 3548.341023952974,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 19,
+          "projectedCrossingSeconds": 6.033450901879409,
+          "directionReversalCount": 264,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 141746.5735664257
+        },
+        "movementCost": 508.90628868866565,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 76,
+            "solved": 76
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 86,
+            "solved": 86
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 158,
+            "solved": 158
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 44,
+            "solved": 44
+          },
+          {
+            "kind": "Stream",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stair",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 139,
+          "free": 297,
+          "alternate-left": 31
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "09_MURASAKiPLUS/000620_東京レトロ/maidata.txt",
+      "title": "東京レトロ",
+      "difficulty": 5,
+      "level": "11.6",
+      "displayLevel": "11+",
+      "notes": 470,
+      "chartSha256": "20E268FDD61673FD88920F73929BA8253CAC6E804588FF54369D80C4040CA941",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 470,
+        "achievement": 101,
+        "dxScore": 1410,
+        "gaps": 0,
+        "seconds": 0.3143872,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 70968.23919595114,
+          "rightDistanceMillimeters": 75098.77032860837,
+          "peakSpeedMillimetersPerSecond": 2326.847886154483,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 38,
+          "projectedCrossingSeconds": 13.645805516865762,
+          "directionReversalCount": 264,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 146067.00952455951
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 470,
+        "achievement": 101,
+        "dxScore": 1410,
+        "gaps": 0,
+        "seconds": 1.0790604,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 75362.08614431908,
+          "rightDistanceMillimeters": 68677.27691476022,
+          "peakSpeedMillimetersPerSecond": 2326.847886154483,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 31,
+          "projectedCrossingSeconds": 13.288045969678544,
+          "directionReversalCount": 276,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 144039.3630590793
+        },
+        "movementCost": 522.9130493888392,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 93,
+            "solved": 93
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 90,
+            "solved": 90
+          },
+          {
+            "kind": "Anchor",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 149,
+            "solved": 149
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 18,
+            "solved": 18
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 141,
+          "free": 279,
+          "alternate-left": 50
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "11_MiLKPLUS/000747_えれくとりっく・えんじぇぅ/maidata.txt",
+      "title": "えれくとりっく・えんじぇぅ",
+      "difficulty": 5,
+      "level": "11.6",
+      "displayLevel": "11+",
+      "notes": 594,
+      "chartSha256": "78979425CD5E238861104F4A63F704F7CDED983EA5AB3CDD76247CEB75412C89",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 594,
+        "achievement": 101,
+        "dxScore": 1782,
+        "gaps": 0,
+        "seconds": 0.3717341,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 73902.91651971704,
+          "rightDistanceMillimeters": 73272.40412328925,
+          "peakSpeedMillimetersPerSecond": 2770.0570073253416,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 20,
+          "projectedCrossingSeconds": 5.815585100481023,
+          "directionReversalCount": 328,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 147175.3206430063
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 594,
+        "achievement": 101,
+        "dxScore": 1782,
+        "gaps": 0,
+        "seconds": 0.9264796,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 71491.43294430505,
+          "rightDistanceMillimeters": 70530.77187036697,
+          "peakSpeedMillimetersPerSecond": 3548.3410239524937,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 18,
+          "projectedCrossingSeconds": 4.4737948494383915,
+          "directionReversalCount": 310,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 142022.204814672
+        },
+        "movementCost": 538.1143653270736,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 186,
+            "solved": 186
+          },
+          {
+            "kind": "Chord",
+            "detected": 102,
+            "solved": 102
+          },
+          {
+            "kind": "Stair",
+            "detected": 9,
+            "solved": 9
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 74,
+            "solved": 74
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "Jack",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Anchor",
+            "detected": 7,
+            "solved": 7
+          },
+          {
+            "kind": "Stream",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Trill",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "free": 315,
+          "alternate-right": 203,
+          "relay": 26,
+          "alternate-left": 35,
+          "repeat-left": 9,
+          "repeat-right": 6
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "11_MiLKPLUS/000763_はやくそれになりたい！/maidata.txt",
+      "title": "はやくそれになりたい！",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 764,
+      "chartSha256": "3C7601063B6944F02ECB8F7EADDCAC22E829B74683C9C36EF7E6782DD93BA592",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 764,
+        "achievement": 101,
+        "dxScore": 2292,
+        "gaps": 0,
+        "seconds": 0.7027598,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 100226.72844368397,
+          "rightDistanceMillimeters": 93985.0553439889,
+          "peakSpeedMillimetersPerSecond": 3416.4036423678267,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 31,
+          "projectedCrossingSeconds": 10.288198930074797,
+          "directionReversalCount": 427,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 194211.78378767287
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 764,
+        "achievement": 101,
+        "dxScore": 2292,
+        "gaps": 0,
+        "seconds": 2.0166943,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 93856.97444782303,
+          "rightDistanceMillimeters": 97167.35984858875,
+          "peakSpeedMillimetersPerSecond": 3823.940326787931,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 24,
+          "projectedCrossingSeconds": 7.047774985346209,
+          "directionReversalCount": 421,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 191024.33429641178
+        },
+        "movementCost": 710.2976102648968,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 216,
+            "solved": 216
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 142,
+            "solved": 142
+          },
+          {
+            "kind": "Chord",
+            "detected": 178,
+            "solved": 178
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 17,
+            "solved": 17
+          },
+          {
+            "kind": "Jack",
+            "detected": 4,
+            "solved": 4
+          }
+        ],
+        "techniqueUsage": {
+          "free": 395,
+          "alternate-right": 344,
+          "repeat-left": 6,
+          "alternate-left": 16,
+          "repeat-right": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "12_FiNALE/000793_ロキ/maidata.txt",
+      "title": "ロキ",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 730,
+      "chartSha256": "0BE68AE73A0E1B86D316C3C2F77C47BE71169C06503C82A63A59BF4CE9ACA982",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 730,
+        "achievement": 101,
+        "dxScore": 2190,
+        "gaps": 0,
+        "seconds": 0.3280508,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 82500.04976166894,
+          "rightDistanceMillimeters": 86307.73793988713,
+          "peakSpeedMillimetersPerSecond": 3010.8672000000493,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 40,
+          "projectedCrossingSeconds": 15.93959266690147,
+          "directionReversalCount": 355,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 168807.78770155605
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 730,
+        "achievement": 101,
+        "dxScore": 2190,
+        "gaps": 0,
+        "seconds": 2.5853324,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 80645.57970584121,
+          "rightDistanceMillimeters": 83372.75564267437,
+          "peakSpeedMillimetersPerSecond": 2880.522486228364,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 32,
+          "projectedCrossingSeconds": 10.129226259133441,
+          "directionReversalCount": 361,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 164018.3353485156
+        },
+        "movementCost": 632.155058158606,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 192,
+            "solved": 192
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 117,
+            "solved": 117
+          },
+          {
+            "kind": "Stream",
+            "detected": 21,
+            "solved": 21
+          },
+          {
+            "kind": "Chord",
+            "detected": 141,
+            "solved": 141
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 18,
+            "solved": 18
+          },
+          {
+            "kind": "Jack",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Trill",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "free": 410,
+          "alternate-right": 278,
+          "alternate-left": 28,
+          "repeat-right": 14
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "12_FiNALE/000806_ナイトメア☆パーティーナイト/maidata.txt",
+      "title": "ナイトメア☆パーティーナイト",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 693,
+      "chartSha256": "7890F081A5505954C3EBEB7B8A2A60379B16CA2E859BDF890A0F05015FFA42C5",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 693,
+        "achievement": 101,
+        "dxScore": 2079,
+        "gaps": 0,
+        "seconds": 0.342677,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 94276.33572046118,
+          "rightDistanceMillimeters": 92994.45998534682,
+          "peakSpeedMillimetersPerSecond": 3231.7331752039477,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 13.992325767002079,
+          "directionReversalCount": 400,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 187270.795705808
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 693,
+        "achievement": 101,
+        "dxScore": 2079,
+        "gaps": 0,
+        "seconds": 2.8351623,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 89383.31637558363,
+          "rightDistanceMillimeters": 96091.84928347278,
+          "peakSpeedMillimetersPerSecond": 3231.7331752039477,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 37,
+          "projectedCrossingSeconds": 12.390188834924913,
+          "directionReversalCount": 402,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 185475.1656590564
+        },
+        "movementCost": 670.4409164156859,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 7,
+            "solved": 7
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 256,
+            "solved": 256
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 162,
+            "solved": 162
+          },
+          {
+            "kind": "Chord",
+            "detected": 128,
+            "solved": 128
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stream",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 431,
+          "alternate-right": 214,
+          "relay": 3,
+          "alternate-left": 42,
+          "repeat-right": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "12_FiNALE/000816_クレイジークレイジーダンサーズ/maidata.txt",
+      "title": "クレイジークレイジーダンサーズ",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 606,
+      "chartSha256": "236C7C5279B138E0B4FA9E55D0C87AB91805ED9EDA4166B60777D26C20B90362",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 606,
+        "achievement": 101,
+        "dxScore": 1818,
+        "gaps": 0,
+        "seconds": 0.3093563,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 78407.21408080665,
+          "rightDistanceMillimeters": 81686.5460628817,
+          "peakSpeedMillimetersPerSecond": 3176.332035075099,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 6.549604753226803,
+          "directionReversalCount": 388,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 160093.76014368836
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 606,
+        "achievement": 101,
+        "dxScore": 1818,
+        "gaps": 0,
+        "seconds": 0.7160296,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 76979.79785002537,
+          "rightDistanceMillimeters": 77436.60224156383,
+          "peakSpeedMillimetersPerSecond": 3176.332035075099,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 18,
+          "projectedCrossingSeconds": 3.0829177669522316,
+          "directionReversalCount": 381,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 154416.4000915892
+        },
+        "movementCost": 574.1993129932033,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 27,
+            "solved": 27
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 157,
+            "solved": 157
+          },
+          {
+            "kind": "Chord",
+            "detected": 112,
+            "solved": 112
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 105,
+            "solved": 105
+          },
+          {
+            "kind": "Stream",
+            "detected": 11,
+            "solved": 11
+          },
+          {
+            "kind": "Jack",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Anchor",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 355,
+          "alternate-right": 221,
+          "repeat-right": 10,
+          "repeat-left": 10,
+          "alternate-left": 6,
+          "relay": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/010668_ようこそジャパリパークへ/maidata.txt",
+      "title": "ようこそジャパリパークへ",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 507,
+      "chartSha256": "2E610E9E23654E37B7F437570B773D5FA14DEB9CA3C117EDB4C4D8551AFE6106",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 507,
+        "achievement": 101,
+        "dxScore": 1521,
+        "gaps": 0,
+        "seconds": 0.255931,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 68551.6888028052,
+          "rightDistanceMillimeters": 68279.43820505349,
+          "peakSpeedMillimetersPerSecond": 4689.050810535859,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 33,
+          "projectedCrossingSeconds": 7.182493769147216,
+          "directionReversalCount": 313,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 136831.1270078587
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 507,
+        "achievement": 101,
+        "dxScore": 1521,
+        "gaps": 0,
+        "seconds": 0.7269679,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 67091.92620485618,
+          "rightDistanceMillimeters": 63239.46009508379,
+          "peakSpeedMillimetersPerSecond": 5159.556634567244,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 12,
+          "projectedCrossingSeconds": 2.6433293064798473,
+          "directionReversalCount": 303,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 130331.38629993997
+        },
+        "movementCost": 525.3481889448642,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 89,
+            "solved": 89
+          },
+          {
+            "kind": "Stair",
+            "detected": 11,
+            "solved": 11
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 11,
+            "solved": 11
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 75,
+            "solved": 75
+          },
+          {
+            "kind": "Chord",
+            "detected": 105,
+            "solved": 105
+          },
+          {
+            "kind": "Stream",
+            "detected": 17,
+            "solved": 17
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Touch",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "free": 247,
+          "sweep-left": 3,
+          "alternate-right": 175,
+          "alternate-left": 46,
+          "hold-sweep-left": 5,
+          "relay": 10,
+          "touch-nearest-right": 5,
+          "touch-right-to-left": 9,
+          "touch-left-to-right": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/010702_WARNING×WARNING×WARNING/maidata.txt",
+      "title": "WARNING×WARNING×WARNING",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 745,
+      "chartSha256": "1487582FF9FE864C65A8D3CDA00D18EB7CD1E55EAC026373B8C70BB15989DB40",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 745,
+        "achievement": 101,
+        "dxScore": 2235,
+        "gaps": 0,
+        "seconds": 0.3115024,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 104909.30130712358,
+          "rightDistanceMillimeters": 102605.56992462442,
+          "peakSpeedMillimetersPerSecond": 3526.3464093426105,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 33,
+          "projectedCrossingSeconds": 12.06875713902416,
+          "directionReversalCount": 520,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 207514.871231748
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 745,
+        "achievement": 101,
+        "dxScore": 2235,
+        "gaps": 0,
+        "seconds": 1.2235168,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 103648.67510763949,
+          "rightDistanceMillimeters": 101143.02619628764,
+          "peakSpeedMillimetersPerSecond": 3176.332035075099,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 33,
+          "projectedCrossingSeconds": 11.914259621001978,
+          "directionReversalCount": 496,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 204791.7013039271
+        },
+        "movementCost": 741.3472286711415,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 183,
+            "solved": 183
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 11,
+            "solved": 11
+          },
+          {
+            "kind": "Chord",
+            "detected": 162,
+            "solved": 162
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 131,
+            "solved": 131
+          },
+          {
+            "kind": "Anchor",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stair",
+            "detected": 7,
+            "solved": 7
+          },
+          {
+            "kind": "Stream",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Wifi",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Touch",
+            "detected": 5,
+            "solved": 5
+          }
+        ],
+        "techniqueUsage": {
+          "free": 414,
+          "alternate-right": 262,
+          "alternate-left": 20,
+          "touch-left-to-right": 13,
+          "relay": 18,
+          "touch-nearest-right": 4,
+          "touch-right-to-left": 13,
+          "touch-nearest-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/011010_STARTLINER/maidata.txt",
+      "title": "STARTLINER",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 521,
+      "chartSha256": "518E8639718BAF3E1627863B246799CC8A3A3803B11DBDC0B336F78093AAC8D7",
+      "baseline": {
+        "status": "partial",
+        "cp": 520,
+        "achievement": 100.86772486772486772486772487,
+        "dxScore": 1560,
+        "gaps": 1,
+        "seconds": 0.5027386,
+        "failuresByKind": {
+          "Tap": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 66424.5953755696,
+          "rightDistanceMillimeters": 68585.9674079117,
+          "peakSpeedMillimetersPerSecond": 3754.87318812155,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 27,
+          "projectedCrossingSeconds": 7.706314216578867,
+          "directionReversalCount": 328,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 135010.5627834813
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 521,
+        "achievement": 101,
+        "dxScore": 1563,
+        "gaps": 0,
+        "seconds": 0.7119249,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 65723.72425965754,
+          "rightDistanceMillimeters": 63408.4589874049,
+          "peakSpeedMillimetersPerSecond": 3754.87318812155,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 20,
+          "projectedCrossingSeconds": 5.8223421173750465,
+          "directionReversalCount": 301,
+          "peakLeftActionsPerSecond": 8,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 129132.18324706244
+        },
+        "movementCost": 474.7335250957801,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 147,
+            "solved": 147
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 75,
+            "solved": 75
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 25,
+            "solved": 25
+          },
+          {
+            "kind": "Chord",
+            "detected": 110,
+            "solved": 110
+          },
+          {
+            "kind": "Jack",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "Touch",
+            "detected": 30,
+            "solved": 30
+          }
+        ],
+        "techniqueUsage": {
+          "free": 297,
+          "alternate-right": 165,
+          "touch-left-to-right": 3,
+          "repeat-left": 9,
+          "alternate-left": 22,
+          "touch-right-to-left": 3,
+          "repeat-right": 6
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "13_maimaDX/011043_メルト/maidata.txt",
+      "title": "メルト",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 597,
+      "chartSha256": "C1BF55D44C6A9559B0B2F0F02DE2C64DDA3D4DA45FCCE0F3D309B1EDD6419ACB",
+      "baseline": {
+        "status": "partial",
+        "cp": 595,
+        "achievement": 100.53917050691244239631336406,
+        "dxScore": 1785,
+        "gaps": 2,
+        "seconds": 6.0009653,
+        "failuresByKind": {
+          "Hold": 2
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 84646.385853202,
+          "rightDistanceMillimeters": 88229.03115967812,
+          "peakSpeedMillimetersPerSecond": 3617.855493846393,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 38,
+          "projectedCrossingSeconds": 11.962325514771495,
+          "directionReversalCount": 365,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 172875.41701288012
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 597,
+        "achievement": 101,
+        "dxScore": 1791,
+        "gaps": 0,
+        "seconds": 0.532411,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 81672.03422620057,
+          "rightDistanceMillimeters": 88504.96881241091,
+          "peakSpeedMillimetersPerSecond": 5159.936693001468,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 33,
+          "projectedCrossingSeconds": 7.929588972430624,
+          "directionReversalCount": 361,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 170177.0030386115
+        },
+        "movementCost": 634.5415780858393,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 108,
+            "solved": 108
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 161,
+            "solved": 161
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 40,
+            "solved": 40
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 94,
+            "solved": 94
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Touch",
+            "detected": 18,
+            "solved": 18
+          },
+          {
+            "kind": "Jack",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "Wifi",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stair",
+            "detected": 4,
+            "solved": 4
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 207,
+          "free": 331,
+          "alternate-left": 20,
+          "touch-nearest-left": 4,
+          "touch-nearest-right": 4,
+          "repeat-left": 9,
+          "repeat-right": 6,
+          "hold-sweep-right": 6,
+          "strike-right": 4,
+          "strike-left": 3,
+          "touch-left-to-right": 5
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "13_maimaDX/011044_メルティランドナイトメア/maidata.txt",
+      "title": "メルティランドナイトメア",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 573,
+      "chartSha256": "BBA6D590527439DBEED726130B2ED060A2BAC10DD6C710B698AD4FDA3CC1BF30",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 573,
+        "achievement": 101,
+        "dxScore": 1719,
+        "gaps": 0,
+        "seconds": 0.0746087,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 62669.370617602995,
+          "rightDistanceMillimeters": 63802.27315744516,
+          "peakSpeedMillimetersPerSecond": 2938.763591134583,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 28,
+          "projectedCrossingSeconds": 13.469577567124754,
+          "directionReversalCount": 263,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 126471.64377504816
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 573,
+        "achievement": 101,
+        "dxScore": 1719,
+        "gaps": 0,
+        "seconds": 0.4318889,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 63727.45098030529,
+          "rightDistanceMillimeters": 63218.437225298076,
+          "peakSpeedMillimetersPerSecond": 2692.886185504281,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 15.842357777392914,
+          "directionReversalCount": 254,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 126945.88820560338
+        },
+        "movementCost": 447.701090442944,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 143,
+            "solved": 143
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 165,
+            "solved": 165
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 78,
+            "solved": 78
+          },
+          {
+            "kind": "Touch",
+            "detected": 9,
+            "solved": 9
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 14,
+            "solved": 14
+          },
+          {
+            "kind": "Stream",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Anchor",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 241,
+          "free": 271,
+          "alternate-left": 53,
+          "relay": 3,
+          "touch-left-to-right": 5
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/011061_アマツキツネ/maidata.txt",
+      "title": "アマツキツネ",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 661,
+      "chartSha256": "59AD2C61342CD3C05240CC05DA02F3304E677BC582E325132533A9101D92BB32",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 661,
+        "achievement": 101,
+        "dxScore": 1983,
+        "gaps": 0,
+        "seconds": 0.2198206,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 94682.8439040867,
+          "rightDistanceMillimeters": 94917.66083451973,
+          "peakSpeedMillimetersPerSecond": 3508.7388759579267,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 43,
+          "projectedCrossingSeconds": 21.897961087056018,
+          "directionReversalCount": 408,
+          "peakLeftActionsPerSecond": 9,
+          "peakRightActionsPerSecond": 9,
+          "totalDistanceMillimeters": 189600.50473860643
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 661,
+        "achievement": 101,
+        "dxScore": 1983,
+        "gaps": 0,
+        "seconds": 0.5144087,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 83601.97551823925,
+          "rightDistanceMillimeters": 94287.56893864938,
+          "peakSpeedMillimetersPerSecond": 5205.103193226963,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 32,
+          "projectedCrossingSeconds": 10.664132658972973,
+          "directionReversalCount": 381,
+          "peakLeftActionsPerSecond": 8,
+          "peakRightActionsPerSecond": 9,
+          "totalDistanceMillimeters": 177889.54445688863
+        },
+        "movementCost": 753.1970307892203,
+        "patterns": [
+          {
+            "kind": "Anchor",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 190,
+            "solved": 190
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 86,
+            "solved": 86
+          },
+          {
+            "kind": "Chord",
+            "detected": 126,
+            "solved": 126
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 28,
+            "solved": 28
+          },
+          {
+            "kind": "Touch",
+            "detected": 35,
+            "solved": 35
+          },
+          {
+            "kind": "Stream",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stair",
+            "detected": 7,
+            "solved": 7
+          }
+        ],
+        "techniqueUsage": {
+          "free": 383,
+          "alternate-right": 222,
+          "touch-nearest-left": 6,
+          "touch-left-to-right": 8,
+          "alternate-left": 14,
+          "sweep-left": 8,
+          "relay": 8,
+          "sweep-right": 9,
+          "touch-right-to-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/011086_だれかの心臓になれたなら/maidata.txt",
+      "title": "だれかの心臓になれたなら",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 729,
+      "chartSha256": "0FE9255FED2C1B54E908C262A08161A4DE2B8B9FC3A36E9604BC3AB3B0B93B0D",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 729,
+        "achievement": 101,
+        "dxScore": 2187,
+        "gaps": 0,
+        "seconds": 0.117183,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 90145.49031765215,
+          "rightDistanceMillimeters": 83282.98598189697,
+          "peakSpeedMillimetersPerSecond": 3068.4469277191847,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 17,
+          "projectedCrossingSeconds": 4.134576806075856,
+          "directionReversalCount": 417,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 173428.4762995491
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 729,
+        "achievement": 101,
+        "dxScore": 2187,
+        "gaps": 0,
+        "seconds": 0.7664669,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 87616.12989600624,
+          "rightDistanceMillimeters": 83198.5296304059,
+          "peakSpeedMillimetersPerSecond": 2677.7217737484625,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 2.398905477528304,
+          "directionReversalCount": 407,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 170814.65952641214
+        },
+        "movementCost": 657.8499720920737,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 172,
+            "solved": 172
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 22,
+            "solved": 22
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 187,
+            "solved": 187
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 75,
+            "solved": 75
+          },
+          {
+            "kind": "Touch",
+            "detected": 33,
+            "solved": 33
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stream",
+            "detected": 12,
+            "solved": 12
+          },
+          {
+            "kind": "Stair",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Wifi",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 313,
+          "free": 336,
+          "alternate-left": 51,
+          "touch-right-to-left": 8,
+          "touch-left-to-right": 4,
+          "touch-nearest-right": 7,
+          "touch-nearest-left": 6
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "13_maimaDX/011088_39みゅーじっく！/maidata.txt",
+      "title": "39みゅーじっく！",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 574,
+      "chartSha256": "30549FB381FFD620801E8B170391B41D998D83CBC1B92E196E2AC7E2D8B5F024",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 574,
+        "achievement": 101,
+        "dxScore": 1722,
+        "gaps": 0,
+        "seconds": 0.0948866,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 66236.96218236272,
+          "rightDistanceMillimeters": 64480.40593660298,
+          "peakSpeedMillimetersPerSecond": 2711.610040164894,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 9.15645445898635,
+          "directionReversalCount": 354,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 130717.3681189657
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 574,
+        "achievement": 101,
+        "dxScore": 1722,
+        "gaps": 0,
+        "seconds": 0.7389943,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 63285.82440399115,
+          "rightDistanceMillimeters": 66243.2749693111,
+          "peakSpeedMillimetersPerSecond": 3623.5068359538077,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 7,
+          "projectedCrossingSeconds": 1.238140046159394,
+          "directionReversalCount": 354,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 129529.09937330225
+        },
+        "movementCost": 483.5926797696061,
+        "patterns": [
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Chord",
+            "detected": 113,
+            "solved": 113
+          },
+          {
+            "kind": "Touch",
+            "detected": 15,
+            "solved": 15
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 147,
+            "solved": 147
+          },
+          {
+            "kind": "Anchor",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 68,
+            "solved": 68
+          },
+          {
+            "kind": "Stream",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "Stair",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 8,
+            "solved": 8
+          }
+        ],
+        "techniqueUsage": {
+          "repeat-left": 4,
+          "alternate-right": 203,
+          "free": 276,
+          "alternate-left": 45,
+          "touch-left-to-right": 5,
+          "relay": 18,
+          "touch-nearest-left": 4,
+          "touch-nearest-right": 13,
+          "touch-right-to-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "15_Splash/011190_とりあえずアナタがいなくなるまえに/maidata.txt",
+      "title": "とりあえずアナタがいなくなるまえに",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 546,
+      "chartSha256": "393E9CBB4F45AFDFF88860FCFC6ACF4E337FD9B14E12F011B6D81C1DA5F38943",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 546,
+        "achievement": 101,
+        "dxScore": 1638,
+        "gaps": 0,
+        "seconds": 0.1068431,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 73342.41119985233,
+          "rightDistanceMillimeters": 75247.82333277052,
+          "peakSpeedMillimetersPerSecond": 2585.3865401699336,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 8.453891966546738,
+          "directionReversalCount": 342,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 148590.23453262285
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 546,
+        "achievement": 101,
+        "dxScore": 1638,
+        "gaps": 0,
+        "seconds": 0.5826085,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 71592.49591394387,
+          "rightDistanceMillimeters": 72424.06388898655,
+          "peakSpeedMillimetersPerSecond": 3548.341023952973,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 6.535056497161625,
+          "directionReversalCount": 345,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 144016.55980293042
+        },
+        "movementCost": 533.0024438006902,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 21,
+            "solved": 21
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 153,
+            "solved": 153
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 84,
+            "solved": 84
+          },
+          {
+            "kind": "Chord",
+            "detected": 117,
+            "solved": 117
+          },
+          {
+            "kind": "Stair",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Touch",
+            "detected": 36,
+            "solved": 36
+          }
+        ],
+        "techniqueUsage": {
+          "free": 294,
+          "alternate-right": 234,
+          "relay": 18
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "17_UNiVERSE/011325_テレキャスタービーボーイ/maidata.txt",
+      "title": "テレキャスタービーボーイ",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 562,
+      "chartSha256": "B9DBE669F05EE5C565810574F342B76CF7B1F5522F9CC2094C6D313D8E9747AC",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 562,
+        "achievement": 101,
+        "dxScore": 1686,
+        "gaps": 0,
+        "seconds": 0.705011,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 61674.62630010948,
+          "rightDistanceMillimeters": 62432.562712475294,
+          "peakSpeedMillimetersPerSecond": 4218.434631360209,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 21,
+          "projectedCrossingSeconds": 9.774282399768449,
+          "directionReversalCount": 298,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 124107.18901258477
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 562,
+        "achievement": 101,
+        "dxScore": 1686,
+        "gaps": 0,
+        "seconds": 1.6528382,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 61399.35230898648,
+          "rightDistanceMillimeters": 60116.514790158246,
+          "peakSpeedMillimetersPerSecond": 4218.434631360209,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 16,
+          "projectedCrossingSeconds": 9.561883805446499,
+          "directionReversalCount": 295,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 121515.86709914473
+        },
+        "movementCost": 487.5023214569196,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 133,
+            "solved": 133
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 40,
+            "solved": 40
+          },
+          {
+            "kind": "Stream",
+            "detected": 12,
+            "solved": 12
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 77,
+            "solved": 77
+          },
+          {
+            "kind": "Chord",
+            "detected": 101,
+            "solved": 101
+          },
+          {
+            "kind": "Stair",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Jack",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Touch",
+            "detected": 5,
+            "solved": 5
+          }
+        ],
+        "techniqueUsage": {
+          "free": 332,
+          "alternate-right": 190,
+          "touch-nearest-left": 7,
+          "touch-nearest-right": 3,
+          "touch-left-to-right": 3,
+          "relay": 6,
+          "alternate-left": 10,
+          "repeat-right": 9
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "17_UNiVERSE/011369_廻廻奇譚/maidata.txt",
+      "title": "廻廻奇譚",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 721,
+      "chartSha256": "A6383CD731ED50B78B87C932B8219D386850B9A96FC2CD8120FFC24998ABFA48",
+      "baseline": {
+        "status": "partial",
+        "cp": 720,
+        "achievement": 100.90566037735849056603773585,
+        "dxScore": 2160,
+        "gaps": 1,
+        "seconds": 3.5087144,
+        "failuresByKind": {
+          "Tap": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 88269.51137969027,
+          "rightDistanceMillimeters": 89363.05672848206,
+          "peakSpeedMillimetersPerSecond": 3416.403642367826,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 12.247637483254618,
+          "directionReversalCount": 384,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 177632.56810817233
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 721,
+        "achievement": 101,
+        "dxScore": 2163,
+        "gaps": 0,
+        "seconds": 1.8210402,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 83873.86994603935,
+          "rightDistanceMillimeters": 85595.63318707429,
+          "peakSpeedMillimetersPerSecond": 3823.940326787931,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 28,
+          "projectedCrossingSeconds": 10.115897478979171,
+          "directionReversalCount": 388,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 169469.50313311364
+        },
+        "movementCost": 665.2657083246525,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 204,
+            "solved": 204
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 118,
+            "solved": 118
+          },
+          {
+            "kind": "Chord",
+            "detected": 157,
+            "solved": 157
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 47,
+            "solved": 47
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Touch",
+            "detected": 11,
+            "solved": 11
+          }
+        ],
+        "techniqueUsage": {
+          "free": 404,
+          "alternate-right": 293,
+          "alternate-left": 24
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "18_UNiVERSEPLUS/011410_ヴァンパイア/maidata.txt",
+      "title": "ヴァンパイア",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 633,
+      "chartSha256": "4B207363AAB6F88C67EA819E446DA1EF218FB90B92C0F69322656F6E7472CB01",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 633,
+        "achievement": 101,
+        "dxScore": 1899,
+        "gaps": 0,
+        "seconds": 0.2447553,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 74611.85451106771,
+          "rightDistanceMillimeters": 76076.5566733858,
+          "peakSpeedMillimetersPerSecond": 3028.5956613527205,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 24,
+          "projectedCrossingSeconds": 8.087680935570837,
+          "directionReversalCount": 358,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 150688.41118445352
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 633,
+        "achievement": 101,
+        "dxScore": 1899,
+        "gaps": 0,
+        "seconds": 0.9052643,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 72745.85754165101,
+          "rightDistanceMillimeters": 73800.82769788434,
+          "peakSpeedMillimetersPerSecond": 3667.612991143511,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 16,
+          "projectedCrossingSeconds": 5.434959440324038,
+          "directionReversalCount": 344,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 146546.68523953535
+        },
+        "movementCost": 550.7821218105958,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 149,
+            "solved": 149
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 125,
+            "solved": 125
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 84,
+            "solved": 84
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 53,
+            "solved": 53
+          },
+          {
+            "kind": "Wifi",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Trill",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Anchor",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stream",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Jack",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stair",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Touch",
+            "detected": 6,
+            "solved": 6
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 296,
+          "free": 287,
+          "alternate-left": 20,
+          "touch-nearest-right": 6,
+          "repeat-right": 3,
+          "relay": 17,
+          "touch-right-to-left": 3,
+          "repeat-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "19_FESTiVAL/011486_ヴィラン/maidata.txt",
+      "title": "ヴィラン",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 572,
+      "chartSha256": "FC01F1922AE67594F85E40CE2AC7033B2851DD8EF45CD565F00CD270AFFC8FE9",
+      "baseline": {
+        "status": "partial",
+        "cp": 571,
+        "achievement": 100.31604938271604938271604938,
+        "dxScore": 1713,
+        "gaps": 1,
+        "seconds": 0.5755393,
+        "failuresByKind": {
+          "Tap": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 64190.13759013373,
+          "rightDistanceMillimeters": 64706.75515242307,
+          "peakSpeedMillimetersPerSecond": 2257.2935976911367,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 3,
+          "projectedCrossingSeconds": 0.909113102020715,
+          "directionReversalCount": 325,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 128896.89274255681
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 572,
+        "achievement": 101,
+        "dxScore": 1716,
+        "gaps": 0,
+        "seconds": 0.6909845,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 62282.70656135044,
+          "rightDistanceMillimeters": 64293.027838485534,
+          "peakSpeedMillimetersPerSecond": 2257.2935976911367,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 2,
+          "projectedCrossingSeconds": 0.6273895162553487,
+          "directionReversalCount": 305,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 126575.73439983597
+        },
+        "movementCost": 452.2771074962224,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 136,
+            "solved": 136
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 187,
+            "solved": 187
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 67,
+            "solved": 67
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 21,
+            "solved": 21
+          },
+          {
+            "kind": "Stream",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 210,
+          "free": 296,
+          "alternate-left": 30,
+          "touch-nearest-right": 9,
+          "touch-nearest-left": 18,
+          "touch-right-to-left": 6,
+          "touch-left-to-right": 3
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "20_FESTiVALPLUS/011558_神っぽいな/maidata.txt",
+      "title": "神っぽいな",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 486,
+      "chartSha256": "4BE8E9F73FD819C6C3C2E1C9711C997A0832E4991E584ECA3B3C44E1FC61A97F",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 486,
+        "achievement": 101,
+        "dxScore": 1458,
+        "gaps": 0,
+        "seconds": 0.085674,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 57119.38569285066,
+          "rightDistanceMillimeters": 58319.12237056485,
+          "peakSpeedMillimetersPerSecond": 3224.72097604926,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 8,
+          "projectedCrossingSeconds": 1.707913626086242,
+          "directionReversalCount": 284,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 115438.5080634155
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 486,
+        "achievement": 101,
+        "dxScore": 1458,
+        "gaps": 0,
+        "seconds": 0.5207683,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 56960.20898347488,
+          "rightDistanceMillimeters": 55329.796567182195,
+          "peakSpeedMillimetersPerSecond": 3224.72097604926,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 7,
+          "projectedCrossingSeconds": 1.3896250945641206,
+          "directionReversalCount": 280,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 112290.00555065708
+        },
+        "movementCost": 436.4259771325042,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 85,
+            "solved": 85
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 190,
+            "solved": 190
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 58,
+            "solved": 58
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "Anchor",
+            "detected": 7,
+            "solved": 7
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 149,
+          "free": 270,
+          "touch-left-to-right": 7,
+          "touch-right-to-left": 9,
+          "alternate-left": 50
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "21_BUDDiES/011634_青春コンプレックス/maidata.txt",
+      "title": "青春コンプレックス",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 823,
+      "chartSha256": "672392BDD11B8DD53EB45699AFBB439D5ECB76CD1E1D6D73A3ECA7725420E8E7",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 823,
+        "achievement": 101,
+        "dxScore": 2469,
+        "gaps": 0,
+        "seconds": 1.7049582,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 104418.84976558905,
+          "rightDistanceMillimeters": 102331.55623351371,
+          "peakSpeedMillimetersPerSecond": 3508.738875945927,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 22,
+          "projectedCrossingSeconds": 7.3835853025214675,
+          "directionReversalCount": 441,
+          "peakLeftActionsPerSecond": 8,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 206750.40599910275
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 823,
+        "achievement": 101,
+        "dxScore": 2469,
+        "gaps": 0,
+        "seconds": 2.0374882,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 100631.48108859894,
+          "rightDistanceMillimeters": 97957.06054029349,
+          "peakSpeedMillimetersPerSecond": 5159.936692988651,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 15,
+          "projectedCrossingSeconds": 5.032329362122253,
+          "directionReversalCount": 435,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 198588.54162889242
+        },
+        "movementCost": 903.3559316994518,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 194,
+            "solved": 194
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 126,
+            "solved": 126
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 140,
+            "solved": 140
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 37,
+            "solved": 37
+          },
+          {
+            "kind": "Stream",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Stair",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Wifi",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Trill",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Anchor",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Touch",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Jack",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 231,
+          "free": 372,
+          "hold-sweep-left": 3,
+          "hold-sweep-right": 3,
+          "touch-right-to-left": 3,
+          "relay": 11,
+          "alternate-left": 177,
+          "repeat-left": 15,
+          "touch-left-to-right": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "21_BUDDiES/011637_バグ/maidata.txt",
+      "title": "バグ",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 713,
+      "chartSha256": "498F94D768D34C9BB63DA8C990D3CCB62A2AB84C827A012CA33036FFA919EAB4",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 713,
+        "achievement": 101,
+        "dxScore": 2139,
+        "gaps": 0,
+        "seconds": 0.3335589,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 95135.40113014546,
+          "rightDistanceMillimeters": 94226.84944967607,
+          "peakSpeedMillimetersPerSecond": 3434.8706890670837,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 54,
+          "projectedCrossingSeconds": 11.6356095377624,
+          "directionReversalCount": 464,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 189362.25057982153
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 713,
+        "achievement": 101,
+        "dxScore": 2139,
+        "gaps": 0,
+        "seconds": 1.0024504,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 90941.32829042665,
+          "rightDistanceMillimeters": 88731.44412856849,
+          "peakSpeedMillimetersPerSecond": 3830.796030836432,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 51,
+          "projectedCrossingSeconds": 7.348834728176239,
+          "directionReversalCount": 442,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 179672.77241899516
+        },
+        "movementCost": 743.9445938895348,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 197,
+            "solved": 197
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 60,
+            "solved": 60
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 108,
+            "solved": 108
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 123,
+            "solved": 123
+          },
+          {
+            "kind": "Touch",
+            "detected": 13,
+            "solved": 13
+          },
+          {
+            "kind": "Jack",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 329,
+          "alternate-left": 62,
+          "free": 309,
+          "touch-left-to-right": 1,
+          "touch-right-to-left": 1,
+          "repeat-right": 3,
+          "repeat-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "22_BUDDiESPLUS/011692_INTERNET YAMERO/maidata.txt",
+      "title": "INTERNET YAMERO",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 747,
+      "chartSha256": "DA7B65D3B0B32CC1004DFFB4082AA2AC81251F5077F694436ED82BD119953F93",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 747,
+        "achievement": 101,
+        "dxScore": 2241,
+        "gaps": 0,
+        "seconds": 0.2094341,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 78957.12248909893,
+          "rightDistanceMillimeters": 89774.67620541662,
+          "peakSpeedMillimetersPerSecond": 3998.6036867202843,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 28,
+          "projectedCrossingSeconds": 26.289427468365034,
+          "directionReversalCount": 380,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 168731.79869451554
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 747,
+        "achievement": 101,
+        "dxScore": 2241,
+        "gaps": 0,
+        "seconds": 1.1465523,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 74790.1021395751,
+          "rightDistanceMillimeters": 87192.42624240681,
+          "peakSpeedMillimetersPerSecond": 3998.6036867202843,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 22,
+          "projectedCrossingSeconds": 25.220603245611333,
+          "directionReversalCount": 358,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 161982.52838198192
+        },
+        "movementCost": 673.2455636480345,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 195,
+            "solved": 195
+          },
+          {
+            "kind": "Stream",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 91,
+            "solved": 91
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 146,
+            "solved": 146
+          },
+          {
+            "kind": "Touch",
+            "detected": 20,
+            "solved": 20
+          },
+          {
+            "kind": "Trill",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 37,
+            "solved": 37
+          },
+          {
+            "kind": "Anchor",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 285,
+          "free": 315,
+          "alternate-left": 129,
+          "touch-right-to-left": 12,
+          "touch-nearest-left": 4
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "22_BUDDiESPLUS/011697_ラビットホール/maidata.txt",
+      "title": "ラビットホール",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 713,
+      "chartSha256": "8335E93F66A78AE3EBC8134F70F3B17011E685921200591053B42979CBC4C333",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 713,
+        "achievement": 101,
+        "dxScore": 2139,
+        "gaps": 0,
+        "seconds": 0.4093223,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 94723.1549494112,
+          "rightDistanceMillimeters": 95819.94480697524,
+          "peakSpeedMillimetersPerSecond": 3194.799081795483,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 40,
+          "projectedCrossingSeconds": 12.771585598923167,
+          "directionReversalCount": 411,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 190543.09975638642
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 713,
+        "achievement": 101,
+        "dxScore": 2139,
+        "gaps": 0,
+        "seconds": 1.0257416,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 89286.90081836081,
+          "rightDistanceMillimeters": 91023.0456319128,
+          "peakSpeedMillimetersPerSecond": 3737.6407480488165,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 3.930367516782862,
+          "directionReversalCount": 429,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 180309.94645027362
+        },
+        "movementCost": 724.0985888489126,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 154,
+            "solved": 154
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 133,
+            "solved": 133
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 52,
+            "solved": 52
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 161,
+            "solved": 161
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stream",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Touch",
+            "detected": 18,
+            "solved": 18
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 242,
+          "free": 397,
+          "touch-left-to-right": 6,
+          "sweep-right": 4,
+          "touch-nearest-left": 3,
+          "touch-right-to-left": 3,
+          "alternate-left": 58
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "22_BUDDiESPLUS/011698_酔いどれ知らず/maidata.txt",
+      "title": "酔いどれ知らず",
+      "difficulty": 5,
+      "level": "11.6",
+      "displayLevel": "11+",
+      "notes": 513,
+      "chartSha256": "81CAA858595B5A68B84C0891F4992E34C617338768B80B141CFE2EA468EC3557",
+      "baseline": {
+        "status": "partial",
+        "cp": 512,
+        "achievement": 100.20768997880714501967907963,
+        "dxScore": 1536,
+        "gaps": 1,
+        "seconds": 1.1759036,
+        "failuresByKind": {
+          "Tap": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 57973.49198551132,
+          "rightDistanceMillimeters": 56622.2285527092,
+          "peakSpeedMillimetersPerSecond": 3254.4850546227804,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 24,
+          "projectedCrossingSeconds": 7.513316129096548,
+          "directionReversalCount": 273,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 114595.72053822051
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 513,
+        "achievement": 101,
+        "dxScore": 1539,
+        "gaps": 0,
+        "seconds": 0.6805073,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 57536.77630519689,
+          "rightDistanceMillimeters": 55413.69930271523,
+          "peakSpeedMillimetersPerSecond": 2318.8206014179996,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 24,
+          "projectedCrossingSeconds": 6.741232486150842,
+          "directionReversalCount": 256,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 112950.47560791211
+        },
+        "movementCost": 414.8969961772488,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 191,
+            "solved": 191
+          },
+          {
+            "kind": "Chord",
+            "detected": 80,
+            "solved": 80
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 71,
+            "solved": 71
+          },
+          {
+            "kind": "Stream",
+            "detected": 18,
+            "solved": 18
+          },
+          {
+            "kind": "Stair",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Wifi",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Touch",
+            "detected": 6,
+            "solved": 6
+          }
+        ],
+        "techniqueUsage": {
+          "free": 340,
+          "alternate-right": 134,
+          "relay": 14,
+          "alternate-left": 26
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "23_PRiSM/011760_勇者/maidata.txt",
+      "title": "勇者",
+      "difficulty": 5,
+      "level": "11.7",
+      "displayLevel": "11+",
+      "notes": 396,
+      "chartSha256": "A0C88FA2E4FBDFAC646DD5D81A738A56007796EE1A12B6A4AD93EE08E7713C40",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 396,
+        "achievement": 101,
+        "dxScore": 1188,
+        "gaps": 0,
+        "seconds": 0.1427785,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 44544.28414234869,
+          "rightDistanceMillimeters": 46573.22699644279,
+          "peakSpeedMillimetersPerSecond": 3841.14519082644,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 8,
+          "projectedCrossingSeconds": 5.2503624577742976,
+          "directionReversalCount": 205,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 91117.51113879148
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 396,
+        "achievement": 101,
+        "dxScore": 1188,
+        "gaps": 0,
+        "seconds": 0.4043926,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 42862.0155703656,
+          "rightDistanceMillimeters": 43947.073104000905,
+          "peakSpeedMillimetersPerSecond": 3970.0700800766344,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 6,
+          "projectedCrossingSeconds": 4.362007552634026,
+          "directionReversalCount": 205,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 86809.0886743665
+        },
+        "movementCost": 365.61350645410533,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 66,
+            "solved": 66
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 32,
+            "solved": 32
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 96,
+            "solved": 96
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 40,
+            "solved": 40
+          },
+          {
+            "kind": "HoldSweep",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Stair",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Stream",
+            "detected": 20,
+            "solved": 20
+          },
+          {
+            "kind": "Jack",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Touch",
+            "detected": 8,
+            "solved": 8
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 123,
+          "free": 225,
+          "alternate-left": 45,
+          "repeat-right": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "23_PRiSM/011763_ダーリンダンス/maidata.txt",
+      "title": "ダーリンダンス",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 709,
+      "chartSha256": "F91F5F27DF0B53B208000A7E4B7F7FB2D57D80ED7E913F4787C4EB5A520AC1A0",
+      "baseline": {
+        "status": "partial",
+        "cp": 708,
+        "achievement": 100.80952380952380952380952381,
+        "dxScore": 2124,
+        "gaps": 1,
+        "seconds": 0.8427377,
+        "failuresByKind": {
+          "Hold": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 89648.72527470862,
+          "rightDistanceMillimeters": 88380.14768645924,
+          "peakSpeedMillimetersPerSecond": 2942.9399027283694,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 34,
+          "projectedCrossingSeconds": 11.289512847909533,
+          "directionReversalCount": 377,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 178028.87296116786
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 709,
+        "achievement": 101,
+        "dxScore": 2127,
+        "gaps": 0,
+        "seconds": 0.7781413,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 83541.63782039347,
+          "rightDistanceMillimeters": 84145.63040533244,
+          "peakSpeedMillimetersPerSecond": 2942.9399027283694,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 7.368235021873453,
+          "directionReversalCount": 364,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 167687.26822572591
+        },
+        "movementCost": 689.4520447129439,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 146,
+            "solved": 146
+          },
+          {
+            "kind": "Stream",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 55,
+            "solved": 55
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 125,
+            "solved": 125
+          },
+          {
+            "kind": "Anchor",
+            "detected": 6,
+            "solved": 6
+          },
+          {
+            "kind": "Trill",
+            "detected": 9,
+            "solved": 9
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 85,
+            "solved": 85
+          },
+          {
+            "kind": "Touch",
+            "detected": 3,
+            "solved": 3
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 296,
+          "free": 339,
+          "alternate-left": 65,
+          "touch-nearest-left": 3,
+          "touch-left-to-right": 3,
+          "touch-right-to-left": 3
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "23_PRiSM/011764_唱/maidata.txt",
+      "title": "唱",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 577,
+      "chartSha256": "E16DA148F3DDB2C8CED4B3976F75FD5C599267924975BF48BB7DB76A50806F6D",
+      "baseline": {
+        "status": "partial",
+        "cp": 576,
+        "achievement": 100.89648033126293995859213251,
+        "dxScore": 1728,
+        "gaps": 1,
+        "seconds": 0.582918,
+        "failuresByKind": {
+          "Tap": 1
+        },
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 65673.73171013147,
+          "rightDistanceMillimeters": 66083.24752286477,
+          "peakSpeedMillimetersPerSecond": 2437.6501664436255,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 25,
+          "projectedCrossingSeconds": 11.035871438799497,
+          "directionReversalCount": 318,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 131756.97923299624
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 577,
+        "achievement": 101,
+        "dxScore": 1731,
+        "gaps": 0,
+        "seconds": 0.821123,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 65157.631405924425,
+          "rightDistanceMillimeters": 65893.7519787262,
+          "peakSpeedMillimetersPerSecond": 2588.742453067395,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 23,
+          "projectedCrossingSeconds": 8.015047216020445,
+          "directionReversalCount": 313,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 131051.38338465063
+        },
+        "movementCost": 480.8612539386429,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 173,
+            "solved": 173
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 88,
+            "solved": 88
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 111,
+            "solved": 111
+          },
+          {
+            "kind": "Touch",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Jack",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 256,
+          "free": 226,
+          "alternate-left": 60,
+          "touch-right-to-left": 9,
+          "touch-left-to-right": 12,
+          "touch-nearest-right": 8,
+          "repeat-left": 3,
+          "repeat-right": 3
+        }
+      },
+      "change": "improved"
+    },
+    {
+      "path": "23_PRiSM/011779_プラネタリウム・レヴュー/maidata.txt",
+      "title": "プラネタリウム・レヴュー",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 388,
+      "chartSha256": "F16E6E7B969DE90D747A825BFE2BDF4C72CA18522A638C71B30B42CDBDBD4549",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 388,
+        "achievement": 101,
+        "dxScore": 1164,
+        "gaps": 0,
+        "seconds": 0.1075967,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 57879.3142203371,
+          "rightDistanceMillimeters": 53153.88908871894,
+          "peakSpeedMillimetersPerSecond": 4185.863599554267,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 17,
+          "projectedCrossingSeconds": 5.534533971373003,
+          "directionReversalCount": 238,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 111033.20330905604
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 388,
+        "achievement": 101,
+        "dxScore": 1164,
+        "gaps": 0,
+        "seconds": 0.487844,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 60037.68896676304,
+          "rightDistanceMillimeters": 47746.18350938146,
+          "peakSpeedMillimetersPerSecond": 4185.863599554267,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 5.153441082295502,
+          "directionReversalCount": 229,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 107783.87247614449
+        },
+        "movementCost": 414.3057115578097,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 70,
+            "solved": 70
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 87,
+            "solved": 87
+          },
+          {
+            "kind": "Trill",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 105,
+            "solved": 105
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 25,
+            "solved": 25
+          },
+          {
+            "kind": "Jack",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Stream",
+            "detected": 4,
+            "solved": 4
+          },
+          {
+            "kind": "Stair",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 138,
+          "free": 230,
+          "repeat-left": 3,
+          "repeat-right": 3,
+          "touch-nearest-right": 3,
+          "alternate-left": 8,
+          "strike-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "24_PRiSMPLUS/011835_はいよろこんで/maidata.txt",
+      "title": "はいよろこんで",
+      "difficulty": 5,
+      "level": "11.6",
+      "displayLevel": "11+",
+      "notes": 649,
+      "chartSha256": "76BD9FD201B1491030CA56C19273DE033AC3BA42A5840754DB5302856C4DAF11",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 649,
+        "achievement": 101,
+        "dxScore": 1947,
+        "gaps": 0,
+        "seconds": 0.2325559,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 73833.24536450036,
+          "rightDistanceMillimeters": 78741.57296995724,
+          "peakSpeedMillimetersPerSecond": 2714.655867178583,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 5.816990824666295,
+          "directionReversalCount": 367,
+          "peakLeftActionsPerSecond": 4,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 152574.81833445758
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 649,
+        "achievement": 101,
+        "dxScore": 1947,
+        "gaps": 0,
+        "seconds": 0.8885523,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 73386.52858835089,
+          "rightDistanceMillimeters": 77631.59922227995,
+          "peakSpeedMillimetersPerSecond": 2714.655867178583,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 11,
+          "projectedCrossingSeconds": 4.235489094942626,
+          "directionReversalCount": 366,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 151018.12781063083
+        },
+        "movementCost": 542.275324652404,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 129,
+            "solved": 129
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 217,
+            "solved": 217
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 109,
+            "solved": 109
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 29,
+            "solved": 29
+          },
+          {
+            "kind": "Touch",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "Jack",
+            "detected": 8,
+            "solved": 8
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 208,
+          "free": 365,
+          "alternate-left": 46,
+          "repeat-left": 12,
+          "touch-right-to-left": 6,
+          "repeat-right": 12
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "24_PRiSMPLUS/011836_ビビデバ/maidata.txt",
+      "title": "ビビデバ",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 668,
+      "chartSha256": "62C8164A291772431E12441FF8CBD808512BBEC82F5C06F2D19EAB7E19FC6379",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 668,
+        "achievement": 101,
+        "dxScore": 2004,
+        "gaps": 0,
+        "seconds": 0.5839901,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 83082.169934548,
+          "rightDistanceMillimeters": 81853.91786677101,
+          "peakSpeedMillimetersPerSecond": 3912.046790253642,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 19,
+          "projectedCrossingSeconds": 11.99936543294675,
+          "directionReversalCount": 360,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 164936.08780131902
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 668,
+        "achievement": 101,
+        "dxScore": 2004,
+        "gaps": 0,
+        "seconds": 1.5507947,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 81090.72093620923,
+          "rightDistanceMillimeters": 79744.0833034999,
+          "peakSpeedMillimetersPerSecond": 3912.046790253642,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 15,
+          "projectedCrossingSeconds": 7.185926559161484,
+          "directionReversalCount": 373,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 160834.8042397091
+        },
+        "movementCost": 638.0488649495001,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 147,
+            "solved": 147
+          },
+          {
+            "kind": "Chord",
+            "detected": 166,
+            "solved": 166
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 85,
+            "solved": 85
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 16,
+            "solved": 16
+          },
+          {
+            "kind": "Stream",
+            "detected": 19,
+            "solved": 19
+          },
+          {
+            "kind": "Touch",
+            "detected": 5,
+            "solved": 5
+          }
+        ],
+        "techniqueUsage": {
+          "free": 336,
+          "alternate-right": 262,
+          "alternate-left": 70
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "24_PRiSMPLUS/011838_メズマライザー/maidata.txt",
+      "title": "メズマライザー",
+      "difficulty": 5,
+      "level": "11.9",
+      "displayLevel": "11+",
+      "notes": 675,
+      "chartSha256": "6E641D3F92BB83143E3FA44E90B79AD65C2806CEC6A01EB966560322FE8B03D8",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 675,
+        "achievement": 101,
+        "dxScore": 2025,
+        "gaps": 0,
+        "seconds": 0.2167459,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 98483.48608950482,
+          "rightDistanceMillimeters": 97088.79049988712,
+          "peakSpeedMillimetersPerSecond": 3416.4036423678253,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 13.025908256160037,
+          "directionReversalCount": 452,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 195572.27658939193
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 675,
+        "achievement": 101,
+        "dxScore": 2025,
+        "gaps": 0,
+        "seconds": 0.9781473,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 95042.91277616577,
+          "rightDistanceMillimeters": 92263.13819864132,
+          "peakSpeedMillimetersPerSecond": 3823.9403267862576,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 36,
+          "projectedCrossingSeconds": 10.362692750584014,
+          "directionReversalCount": 435,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 187306.0509748071
+        },
+        "movementCost": 783.2536439142699,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 102,
+            "solved": 102
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 128,
+            "solved": 128
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 49,
+            "solved": 49
+          },
+          {
+            "kind": "Chord",
+            "detected": 110,
+            "solved": 110
+          },
+          {
+            "kind": "Stream",
+            "detected": 21,
+            "solved": 21
+          },
+          {
+            "kind": "Wifi",
+            "detected": 1,
+            "solved": 1
+          },
+          {
+            "kind": "Touch",
+            "detected": 30,
+            "solved": 30
+          }
+        ],
+        "techniqueUsage": {
+          "free": 453,
+          "alternate-right": 132,
+          "alternate-left": 84,
+          "touch-left-to-right": 5
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "25_CiRCLE/011913_モニタリング/maidata.txt",
+      "title": "モニタリング",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 497,
+      "chartSha256": "A09E6FC9B06C993C3C1A5454F59F02058C387AC6EC12FE3ABE66A7F480E4BC31",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 497,
+        "achievement": 101,
+        "dxScore": 1491,
+        "gaps": 0,
+        "seconds": 0.1236355,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 56195.438829528925,
+          "rightDistanceMillimeters": 60511.90749767795,
+          "peakSpeedMillimetersPerSecond": 2604.9075775246033,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 9,
+          "projectedCrossingSeconds": 6.966979696946707,
+          "directionReversalCount": 284,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 116707.34632720688
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 497,
+        "achievement": 101,
+        "dxScore": 1491,
+        "gaps": 0,
+        "seconds": 0.6542459,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 56564.35695981771,
+          "rightDistanceMillimeters": 56671.245385017064,
+          "peakSpeedMillimetersPerSecond": 2600.370152641784,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 10,
+          "projectedCrossingSeconds": 6.64722839829478,
+          "directionReversalCount": 279,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 113235.60234483477
+        },
+        "movementCost": 428.3422519936419,
+        "patterns": [
+          {
+            "kind": "HoldLock",
+            "detected": 22,
+            "solved": 22
+          },
+          {
+            "kind": "Jack",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 108,
+            "solved": 108
+          },
+          {
+            "kind": "Chord",
+            "detected": 106,
+            "solved": 106
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 97,
+            "solved": 97
+          },
+          {
+            "kind": "Stream",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Touch",
+            "detected": 19,
+            "solved": 19
+          },
+          {
+            "kind": "Trill",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "free": 246,
+          "repeat-left": 13,
+          "alternate-right": 142,
+          "alternate-left": 86,
+          "repeat-right": 10
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "26_CiRCLEPLUS/011975_BOW AND ARROW （アニメ・オープニングver.）/maidata.txt",
+      "title": "BOW AND ARROW （アニメ・オープニングver.）",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 428,
+      "chartSha256": "D6CE1AEAFB8865733570274F82F0820BBCF538BAAE7E987D9A508E0CFDA91389",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 428,
+        "achievement": 101,
+        "dxScore": 1284,
+        "gaps": 0,
+        "seconds": 0.175628,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 52556.4165861923,
+          "rightDistanceMillimeters": 50419.723905406616,
+          "peakSpeedMillimetersPerSecond": 3324.0684087787886,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 16,
+          "projectedCrossingSeconds": 6.411800157298391,
+          "directionReversalCount": 222,
+          "peakLeftActionsPerSecond": 5,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 102976.14049159893
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 428,
+        "achievement": 101,
+        "dxScore": 1284,
+        "gaps": 0,
+        "seconds": 0.4405049,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 48956.14872030261,
+          "rightDistanceMillimeters": 51658.472882257425,
+          "peakSpeedMillimetersPerSecond": 3324.0684087787886,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 17,
+          "projectedCrossingSeconds": 5.232584515624268,
+          "directionReversalCount": 227,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 5,
+          "totalDistanceMillimeters": 100614.62160256004
+        },
+        "movementCost": 397.09230355780767,
+        "patterns": [
+          {
+            "kind": "SingleTap",
+            "detected": 117,
+            "solved": 117
+          },
+          {
+            "kind": "Chord",
+            "detected": 77,
+            "solved": 77
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 67,
+            "solved": 67
+          },
+          {
+            "kind": "Stream",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 20,
+            "solved": 20
+          },
+          {
+            "kind": "Stair",
+            "detected": 3,
+            "solved": 3
+          },
+          {
+            "kind": "Touch",
+            "detected": 5,
+            "solved": 5
+          },
+          {
+            "kind": "Wifi",
+            "detected": 1,
+            "solved": 1
+          }
+        ],
+        "techniqueUsage": {
+          "free": 267,
+          "alternate-right": 119,
+          "alternate-left": 36,
+          "relay": 3,
+          "strike-left": 3
+        }
+      },
+      "change": "unchanged"
+    },
+    {
+      "path": "26_CiRCLEPLUS/011981_ダイダイダイダイダイキライ/maidata.txt",
+      "title": "ダイダイダイダイダイキライ",
+      "difficulty": 5,
+      "level": "11.8",
+      "displayLevel": "11+",
+      "notes": 634,
+      "chartSha256": "2093C8300873489793B7544F29529960699109FA0776677363371734BA81F06E",
+      "baseline": {
+        "status": "all-cp",
+        "cp": 634,
+        "achievement": 101,
+        "dxScore": 1902,
+        "gaps": 0,
+        "seconds": 0.1382115,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 65842.8573813316,
+          "rightDistanceMillimeters": 69324.65107027681,
+          "peakSpeedMillimetersPerSecond": 2400.7160730149394,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 26,
+          "projectedCrossingSeconds": 11.074569591080937,
+          "directionReversalCount": 348,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 135167.50845160842
+        },
+        "movementCost": null,
+        "patterns": null,
+        "techniqueUsage": null
+      },
+      "candidate": {
+        "status": "all-cp",
+        "cp": 634,
+        "achievement": 101,
+        "dxScore": 1902,
+        "gaps": 0,
+        "seconds": 0.8152364,
+        "failuresByKind": {},
+        "error": null,
+        "movement": {
+          "leftDistanceMillimeters": 64451.82453234451,
+          "rightDistanceMillimeters": 65847.38700834259,
+          "peakSpeedMillimetersPerSecond": 3548.341023952973,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 21,
+          "projectedCrossingSeconds": 7.88399832234456,
+          "directionReversalCount": 338,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 130299.2115406871
+        },
+        "movementCost": 494.96409945328327,
+        "patterns": [
+          {
+            "kind": "Chord",
+            "detected": 100,
+            "solved": 100
+          },
+          {
+            "kind": "SingleTap",
+            "detected": 280,
+            "solved": 280
+          },
+          {
+            "kind": "SimpleSlide",
+            "detected": 90,
+            "solved": 90
+          },
+          {
+            "kind": "HoldLock",
+            "detected": 30,
+            "solved": 30
+          },
+          {
+            "kind": "Touch",
+            "detected": 10,
+            "solved": 10
+          },
+          {
+            "kind": "Anchor",
+            "detected": 2,
+            "solved": 2
+          },
+          {
+            "kind": "Jack",
+            "detected": 2,
+            "solved": 2
+          }
+        ],
+        "techniqueUsage": {
+          "alternate-right": 126,
+          "free": 421,
+          "touch-left-to-right": 12,
+          "alternate-left": 63,
+          "repeat-right": 3,
+          "repeat-left": 3,
+          "touch-right-to-left": 6
+        }
+      },
+      "change": "unchanged"
+    }
+  ]
+}

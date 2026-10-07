@@ -1,0 +1,274 @@
+{
+  "createdAtUtc": "2026-10-07T23:46:33.141819+00:00",
+  "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "runIndexSha256": "891F7E449E7404EB7576A04ECFF0B93C0CCDA835549AEB2ED759F9656F52618F",
+  "verifiedRows": 2,
+  "verifiedEvidenceHashes": 6,
+  "verifiedChartHashes": 2,
+  "rows": [
+    {
+      "key": "latent-master",
+      "planner": "human",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "verified-existing-frozen-run",
+      "metrics": {
+        "notes": 1371,
+        "cp": 1363,
+        "miss": 7,
+        "gaps": 7,
+        "achievement": 100.55685805422648,
+        "dxScore": 4089,
+        "seconds": 11.9191847
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6754.913135874316,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 155492.82401132816,
+          "Right": 151993.50455590923
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "former-regressions-565-and-572",
+          "start": 69.8,
+          "end": 70.9,
+          "notes": 21,
+          "cp": 14,
+          "nonCPNoteIds": [
+            566,
+            567,
+            568,
+            569,
+            570,
+            571,
+            572
+          ],
+          "noteIds": [
+            551,
+            555,
+            556,
+            557,
+            558,
+            559,
+            560,
+            561,
+            562,
+            563,
+            564,
+            565,
+            566,
+            567,
+            568,
+            569,
+            570,
+            571,
+            572,
+            573,
+            574
+          ]
+        },
+        {
+          "label": "former-regression-1075",
+          "start": 130.2,
+          "end": 131.05,
+          "notes": 13,
+          "cp": 13,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            1069,
+            1070,
+            1071,
+            1072,
+            1073,
+            1074,
+            1075,
+            1076,
+            1077,
+            1078,
+            1079,
+            1080,
+            1081
+          ]
+        },
+        {
+          "label": "former-regression-1333",
+          "start": 157.8,
+          "end": 158.65,
+          "notes": 11,
+          "cp": 11,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            1328,
+            1329,
+            1330,
+            1331,
+            1332,
+            1333,
+            1334,
+            1335,
+            1336,
+            1337,
+            1338
+          ]
+        },
+        {
+          "label": "tail-1356",
+          "start": 159.35,
+          "end": 160.45,
+          "notes": 22,
+          "cp": 21,
+          "nonCPNoteIds": [
+            1356
+          ],
+          "noteIds": [
+            1349,
+            1350,
+            1351,
+            1352,
+            1353,
+            1354,
+            1355,
+            1356,
+            1357,
+            1358,
+            1359,
+            1360,
+            1361,
+            1362,
+            1363,
+            1364,
+            1365,
+            1366,
+            1367,
+            1368,
+            1369,
+            1370
+          ]
+        }
+      ],
+      "baselineRegressions": [
+        {
+          "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "cpLostNoteIds": [
+            572
+          ],
+          "newMissNoteIds": [
+            572
+          ]
+        },
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "rage-master",
+      "planner": "human",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "metrics": {
+        "notes": 1188,
+        "cp": 1187,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 100.96565540927304,
+        "dxScore": 3562,
+        "seconds": 6.5286805
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7049.670329691158,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 151498.62050005354,
+          "Right": 159526.71595469725
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "remaining-slide-503",
+          "start": 63.89999999999982,
+          "end": 66.19999999999982,
+          "notes": 25,
+          "cp": 24,
+          "nonCPNoteIds": [
+            503
+          ],
+          "noteIds": [
+            500,
+            501,
+            502,
+            503,
+            504,
+            505,
+            506,
+            507,
+            508,
+            509,
+            510,
+            511,
+            512,
+            513,
+            514,
+            515,
+            516,
+            517,
+            518,
+            519,
+            520,
+            521,
+            522,
+            523,
+            524
+          ]
+        },
+        {
+          "label": "ending-parallel-slide-and-double-sweep",
+          "start": 144.15,
+          "end": 146.75,
+          "notes": 16,
+          "cp": 16,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            1172,
+            1173,
+            1174,
+            1175,
+            1176,
+            1177,
+            1178,
+            1179,
+            1180,
+            1181,
+            1182,
+            1183,
+            1184,
+            1185,
+            1186,
+            1187
+          ]
+        }
+      ],
+      "baselineRegressions": [
+        {
+          "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2197 @@
+{
+  "createdAtUtc": "2026-10-07T23:36:00.143727+00:00",
+  "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+  "runIndexSha256": "89F86CFF0CCB324296D13C494534CF09503B5D79817F7CC30DA013DF7480E27E",
+  "verifiedRows": 18,
+  "verifiedEvidenceHashes": 54,
+  "verifiedChartHashes": 18,
+  "verifiedSourceIndexHashes": 2,
+  "movementMethod": "Raw frame distances, equivalent to HumanMotionModel.Analyze: sqrt(dx*dx + dy*dy) * 235.224 / dt; violation threshold = 235.224 * 30 + 1e-9. Human diagnostics independently cross-checked.",
+  "rows": [
+    {
+      "key": "bbkk-expert",
+      "planner": "human",
+      "metrics": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028,
+        "seconds": 3.0937555
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 5159.936693001468,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 85380.94372348787,
+          "Right": 83042.7537869488
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "tap-291",
+          "start": 61.1,
+          "end": 61.8,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            290,
+            291,
+            292,
+            293
+          ]
+        },
+        {
+          "label": "tap-317",
+          "start": 68.0,
+          "end": 68.7,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            316,
+            317,
+            318,
+            319
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "bbkk-expert",
+      "planner": "normal",
+      "metrics": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028,
+        "seconds": 1.2872064
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 3478.5747262203463,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 89213.5716242789,
+          "Right": 86357.28119277945
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "tap-291",
+          "start": 61.1,
+          "end": 61.8,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            290,
+            291,
+            292,
+            293
+          ]
+        },
+        {
+          "label": "tap-317",
+          "start": 68.0,
+          "end": 68.7,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            316,
+            317,
+            318,
+            319
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "end-time-master",
+      "planner": "human",
+      "metrics": {
+        "notes": 949,
+        "cp": 949,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847,
+        "seconds": 4.1106001
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4964.8773287896265,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 98379.05129888318,
+          "Right": 94768.3695273522
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "former-fast-good-525",
+          "start": 85.55,
+          "end": 86.2,
+          "notes": 12,
+          "cp": 12,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            520,
+            521,
+            522,
+            523,
+            524,
+            525,
+            526,
+            527,
+            528,
+            529,
+            530,
+            531
+          ]
+        },
+        {
+          "label": "former-fast-good-626",
+          "start": 92.05,
+          "end": 92.65,
+          "notes": 11,
+          "cp": 11,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            621,
+            622,
+            623,
+            624,
+            625,
+            626,
+            627,
+            628,
+            629,
+            630,
+            631
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "end-time-master",
+      "planner": "normal",
+      "metrics": {
+        "notes": 949,
+        "cp": 947,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 100.91645781119465,
+        "dxScore": 2841,
+        "seconds": 8.1870998
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4964.8773287896265,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 110303.94236297117,
+          "Right": 105986.8296351451
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "former-fast-good-525",
+          "start": 85.55,
+          "end": 86.2,
+          "notes": 12,
+          "cp": 11,
+          "nonCPNoteIds": [
+            525
+          ],
+          "noteIds": [
+            520,
+            521,
+            522,
+            523,
+            524,
+            525,
+            526,
+            527,
+            528,
+            529,
+            530,
+            531
+          ]
+        },
+        {
+          "label": "former-fast-good-626",
+          "start": 92.05,
+          "end": 92.65,
+          "notes": 11,
+          "cp": 10,
+          "nonCPNoteIds": [
+            626
+          ],
+          "noteIds": [
+            621,
+            622,
+            623,
+            624,
+            625,
+            626,
+            627,
+            628,
+            629,
+            630,
+            631
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "hera-master",
+      "planner": "human",
+      "metrics": {
+        "notes": 1031,
+        "cp": 1031,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3093,
+        "seconds": 5.2539141
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4502.84220330517,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99644.77927076165,
+          "Right": 104105.16332174526
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "fast-jack-1",
+          "start": 72.8529729729151,
+          "end": 73.33621621615809,
+          "notes": 6,
+          "cp": 6,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            446,
+            447,
+            448,
+            449,
+            450,
+            451
+          ]
+        },
+        {
+          "label": "fast-jack-2",
+          "start": 73.50162162156307,
+          "end": 73.98486486480607,
+          "notes": 6,
+          "cp": 6,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            452,
+            453,
+            454,
+            455,
+            456,
+            457
+          ]
+        },
+        {
+          "label": "fast-jack-3",
+          "start": 92.31243243235754,
+          "end": 92.71459459451954,
+          "notes": 3,
+          "cp": 3,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            638,
+            639,
+            640
+          ]
+        },
+        {
+          "label": "fast-jack-4",
+          "start": 92.63675675668154,
+          "end": 93.03891891884354,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            641,
+            642,
+            643,
+            644
+          ]
+        },
+        {
+          "label": "fast-jack-5",
+          "start": 95.55567567559741,
+          "end": 100.57945945937615,
+          "notes": 64,
+          "cp": 64,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            672,
+            673,
+            674,
+            675,
+            676,
+            677,
+            678,
+            679,
+            680,
+            681,
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            688,
+            689,
+            690,
+            691,
+            692,
+            693,
+            694,
+            695,
+            696,
+            697,
+            698,
+            699,
+            700,
+            701,
+            702,
+            703,
+            704,
+            705,
+            706,
+            707,
+            708,
+            709,
+            710,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            718,
+            719,
+            720,
+            721,
+            722,
+            723,
+            724,
+            725,
+            726,
+            727,
+            728,
+            729,
+            730,
+            731,
+            732,
+            733,
+            734,
+            735
+          ]
+        },
+        {
+          "label": "fast-jack-6",
+          "start": 101.06918918910513,
+          "end": 106.49837837828885,
+          "notes": 66,
+          "cp": 66,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            738,
+            739,
+            740,
+            741,
+            742,
+            743,
+            744,
+            745,
+            746,
+            747,
+            748,
+            749,
+            750,
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766,
+            767,
+            768,
+            769,
+            770,
+            771,
+            772,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782,
+            783,
+            784,
+            785,
+            786,
+            787,
+            788,
+            789,
+            790,
+            791,
+            792,
+            793,
+            794,
+            795,
+            796,
+            797,
+            798,
+            799,
+            800,
+            801,
+            802,
+            803
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "hera-master",
+      "planner": "normal",
+      "metrics": {
+        "notes": 1031,
+        "cp": 1014,
+        "miss": 17,
+        "gaps": 17,
+        "achievement": 99.1280193236715,
+        "dxScore": 3042,
+        "seconds": 3.8979171
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 3841.451255177371,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 102770.69689887734,
+          "Right": 97817.88146034595
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "fast-jack-1",
+          "start": 72.8529729729151,
+          "end": 73.33621621615809,
+          "notes": 6,
+          "cp": 6,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            446,
+            447,
+            448,
+            449,
+            450,
+            451
+          ]
+        },
+        {
+          "label": "fast-jack-2",
+          "start": 73.50162162156307,
+          "end": 73.98486486480607,
+          "notes": 6,
+          "cp": 6,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            452,
+            453,
+            454,
+            455,
+            456,
+            457
+          ]
+        },
+        {
+          "label": "fast-jack-3",
+          "start": 92.31243243235754,
+          "end": 92.71459459451954,
+          "notes": 3,
+          "cp": 3,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            638,
+            639,
+            640
+          ]
+        },
+        {
+          "label": "fast-jack-4",
+          "start": 92.63675675668154,
+          "end": 93.03891891884354,
+          "notes": 4,
+          "cp": 4,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            641,
+            642,
+            643,
+            644
+          ]
+        },
+        {
+          "label": "fast-jack-5",
+          "start": 95.55567567559741,
+          "end": 100.57945945937615,
+          "notes": 64,
+          "cp": 63,
+          "nonCPNoteIds": [
+            731
+          ],
+          "noteIds": [
+            672,
+            673,
+            674,
+            675,
+            676,
+            677,
+            678,
+            679,
+            680,
+            681,
+            682,
+            683,
+            684,
+            685,
+            686,
+            687,
+            688,
+            689,
+            690,
+            691,
+            692,
+            693,
+            694,
+            695,
+            696,
+            697,
+            698,
+            699,
+            700,
+            701,
+            702,
+            703,
+            704,
+            705,
+            706,
+            707,
+            708,
+            709,
+            710,
+            711,
+            712,
+            713,
+            714,
+            715,
+            716,
+            717,
+            718,
+            719,
+            720,
+            721,
+            722,
+            723,
+            724,
+            725,
+            726,
+            727,
+            728,
+            729,
+            730,
+            731,
+            732,
+            733,
+            734,
+            735
+          ]
+        },
+        {
+          "label": "fast-jack-6",
+          "start": 101.06918918910513,
+          "end": 106.49837837828885,
+          "notes": 66,
+          "cp": 66,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            738,
+            739,
+            740,
+            741,
+            742,
+            743,
+            744,
+            745,
+            746,
+            747,
+            748,
+            749,
+            750,
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766,
+            767,
+            768,
+            769,
+            770,
+            771,
+            772,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782,
+            783,
+            784,
+            785,
+            786,
+            787,
+            788,
+            789,
+            790,
+            791,
+            792,
+            793,
+            794,
+            795,
+            796,
+            797,
+            798,
+            799,
+            800,
+            801,
+            802,
+            803
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "love-you-master",
+      "planner": "human",
+      "metrics": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594,
+        "seconds": 2.4425075
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2493.0513065914333,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 34992.18517300841,
+          "Right": 37289.747351338105
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "slide-140-late-judgement",
+          "start": 79.8,
+          "end": 81.0,
+          "notes": 7,
+          "cp": 7,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "love-you-master",
+      "planner": "normal",
+      "metrics": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594,
+        "seconds": 1.4088028
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2931.6558515618476,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 35071.514560979136,
+          "Right": 37919.472984786065
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "slide-140-late-judgement",
+          "start": 79.8,
+          "end": 81.0,
+          "notes": 7,
+          "cp": 7,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "nulctrl-expert",
+      "planner": "human",
+      "metrics": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569,
+        "seconds": 2.7519415
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2709.6422364736636,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 43989.93644975061,
+          "Right": 43380.339283645255
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "centre-touchhold-278",
+          "start": 81.4,
+          "end": 82.4,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            275,
+            278
+          ]
+        },
+        {
+          "label": "centre-touchhold-279",
+          "start": 83.8,
+          "end": 84.8,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            275,
+            279
+          ]
+        },
+        {
+          "label": "centre-touchhold-510",
+          "start": 139.0,
+          "end": 140.0,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            508,
+            510
+          ]
+        },
+        {
+          "label": "centre-touchhold-511",
+          "start": 141.4,
+          "end": 142.4,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            508,
+            511
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "nulctrl-expert",
+      "planner": "normal",
+      "metrics": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569,
+        "seconds": 1.8140542
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2980.6064601210146,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 45184.38015259535,
+          "Right": 46216.00961079837
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "centre-touchhold-278",
+          "start": 81.4,
+          "end": 82.4,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            275,
+            278
+          ]
+        },
+        {
+          "label": "centre-touchhold-279",
+          "start": 83.8,
+          "end": 84.8,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            275,
+            279
+          ]
+        },
+        {
+          "label": "centre-touchhold-510",
+          "start": 139.0,
+          "end": 140.0,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            508,
+            510
+          ]
+        },
+        {
+          "label": "centre-touchhold-511",
+          "start": 141.4,
+          "end": 142.4,
+          "notes": 2,
+          "cp": 2,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            508,
+            511
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "panopticon-master",
+      "planner": "human",
+      "metrics": {
+        "notes": 900,
+        "cp": 900,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2700,
+        "seconds": 5.2896812
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6190.440773164215,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 115484.66515405172,
+          "Right": 118949.73817929323
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-to-wifi",
+          "start": 35.8,
+          "end": 37.2,
+          "notes": 13,
+          "cp": 13,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "panopticon-master",
+      "planner": "normal",
+      "metrics": {
+        "notes": 900,
+        "cp": 886,
+        "miss": 10,
+        "gaps": 14,
+        "achievement": 99.79065385340117,
+        "dxScore": 2660,
+        "seconds": 16.9800127
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4551.137551380531,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 117309.29519281592,
+          "Right": 118832.75626420476
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-to-wifi",
+          "start": 35.8,
+          "end": 37.2,
+          "notes": 13,
+          "cp": 13,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "panopticon-remaster",
+      "planner": "human",
+      "metrics": {
+        "notes": 909,
+        "cp": 888,
+        "miss": 21,
+        "gaps": 21,
+        "achievement": 98.39747634069401,
+        "dxScore": 2664,
+        "seconds": 5.8524912
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6029.248284796597,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99225.32508195039,
+          "Right": 102747.06138067973
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-to-hold-and-mirror",
+          "start": 76.15,
+          "end": 77.25,
+          "notes": 11,
+          "cp": 11,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            499,
+            500,
+            501,
+            502,
+            503,
+            504,
+            505,
+            506,
+            507,
+            508,
+            509
+          ]
+        },
+        {
+          "label": "later-rotation-to-hold",
+          "start": 108.8,
+          "end": 110.7,
+          "notes": 16,
+          "cp": 12,
+          "nonCPNoteIds": [
+            754,
+            758,
+            762,
+            766
+          ],
+          "noteIds": [
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "panopticon-remaster",
+      "planner": "normal",
+      "metrics": {
+        "notes": 909,
+        "cp": 878,
+        "miss": 26,
+        "gaps": 27,
+        "achievement": 98.59463722397476,
+        "dxScore": 2634,
+        "seconds": 13.2120737
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6029.248284796597,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 114197.77342406237,
+          "Right": 114679.3764010208
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-to-hold-and-mirror",
+          "start": 76.15,
+          "end": 77.25,
+          "notes": 11,
+          "cp": 11,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            499,
+            500,
+            501,
+            502,
+            503,
+            504,
+            505,
+            506,
+            507,
+            508,
+            509
+          ]
+        },
+        {
+          "label": "later-rotation-to-hold",
+          "start": 108.8,
+          "end": 110.7,
+          "notes": 16,
+          "cp": 16,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [
+            855,
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [
+            855,
+            857
+          ],
+          "newMissNoteIds": [
+            857
+          ]
+        }
+      ]
+    },
+    {
+      "key": "phoenix-master",
+      "planner": "human",
+      "metrics": {
+        "notes": 1092,
+        "cp": 1092,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3276,
+        "seconds": 6.2827257
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6948.736908843017,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 119407.76690946023,
+          "Right": 118465.32005958958
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-tail-chord",
+          "start": 96.35,
+          "end": 97.55,
+          "notes": 20,
+          "cp": 20,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            744,
+            746,
+            750,
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766,
+            767
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "phoenix-master",
+      "planner": "normal",
+      "metrics": {
+        "notes": 1092,
+        "cp": 1081,
+        "miss": 10,
+        "gaps": 11,
+        "achievement": 100.23624467254938,
+        "dxScore": 3245,
+        "seconds": 9.5960504
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 5554.327037300709,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 120737.3728288201,
+          "Right": 120752.20499635633
+        },
+        "violations": []
+      },
+      "targetSegments": [
+        {
+          "label": "rotation-tail-chord",
+          "start": 96.35,
+          "end": 97.55,
+          "notes": 20,
+          "cp": 19,
+          "nonCPNoteIds": [
+            766
+          ],
+          "noteIds": [
+            744,
+            746,
+            750,
+            751,
+            752,
+            753,
+            754,
+            755,
+            756,
+            757,
+            758,
+            759,
+            760,
+            761,
+            762,
+            763,
+            764,
+            765,
+            766,
+            767
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [
+            486,
+            495,
+            494
+          ],
+          "newMissNoteIds": [
+            486,
+            494
+          ]
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "xaleid-remaster",
+      "planner": "human",
+      "metrics": {
+        "notes": 2222,
+        "cp": 2201,
+        "miss": 13,
+        "gaps": 17,
+        "achievement": 99.73070189708194,
+        "dxScore": 6605,
+        "seconds": 18.7286519
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7049.670329644227,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 225748.34369874332,
+          "Right": 232166.42930845817
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      },
+      "targetSegments": [
+        {
+          "label": "opening-sweep-to-hold",
+          "start": 3.8,
+          "end": 7.65,
+          "notes": 9,
+          "cp": 9,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "label": "parallel-slides-and-centre-touch",
+          "start": 129.6,
+          "end": 130.65,
+          "notes": 12,
+          "cp": 12,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            904,
+            905,
+            906,
+            907,
+            908,
+            909,
+            910,
+            911,
+            912,
+            913,
+            914,
+            915
+          ]
+        },
+        {
+          "label": "wifi-before-double-slide-head",
+          "start": 153.0,
+          "end": 154.1,
+          "notes": 33,
+          "cp": 33,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145,
+            1146,
+            1147,
+            1148,
+            1149,
+            1150,
+            1151,
+            1152,
+            1153,
+            1154,
+            1155,
+            1156,
+            1157,
+            1158,
+            1159,
+            1160,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166,
+            1167,
+            1168,
+            1169,
+            1170,
+            1171
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": null,
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ]
+    },
+    {
+      "key": "xaleid-remaster",
+      "planner": "normal",
+      "metrics": {
+        "notes": 2222,
+        "cp": 2133,
+        "miss": 58,
+        "gaps": 81,
+        "achievement": 98.13732541656016,
+        "dxScore": 6431,
+        "seconds": 139.4478678
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7380.148461331978,
+        "speedLimitViolations": 29,
+        "distancesMillimeters": {
+          "Left": 235262.72796308005,
+          "Right": 229368.95938968824
+        },
+        "violations": [
+          {
+            "hand": "Left",
+            "start": 213.165953743821,
+            "end": 213.17012041048767,
+            "speedMillimetersPerSecond": 7380.141299488278
+          },
+          {
+            "hand": "Left",
+            "start": 213.17012041048767,
+            "end": 213.17428707715433,
+            "speedMillimetersPerSecond": 7377.915543873438
+          },
+          {
+            "hand": "Left",
+            "start": 213.17428707715433,
+            "end": 213.178453743821,
+            "speedMillimetersPerSecond": 7380.138917759891
+          },
+          {
+            "hand": "Left",
+            "start": 213.178453743821,
+            "end": 213.1826204104877,
+            "speedMillimetersPerSecond": 7380.141507809629
+          },
+          {
+            "hand": "Left",
+            "start": 213.1826204104877,
+            "end": 213.18678707715435,
+            "speedMillimetersPerSecond": 7377.918373897521
+          },
+          {
+            "hand": "Left",
+            "start": 213.18678707715435,
+            "end": 213.190953743821,
+            "speedMillimetersPerSecond": 7380.136013181389
+          },
+          {
+            "hand": "Left",
+            "start": 213.190953743821,
+            "end": 213.19512041048768,
+            "speedMillimetersPerSecond": 7380.144408926393
+          },
+          {
+            "hand": "Left",
+            "start": 213.19512041048768,
+            "end": 213.19928707715434,
+            "speedMillimetersPerSecond": 7377.914107866758
+          },
+          {
+            "hand": "Left",
+            "start": 213.19928707715434,
+            "end": 213.203453743821,
+            "speedMillimetersPerSecond": 7380.138201089091
+          },
+          {
+            "hand": "Left",
+            "start": 213.203453743821,
+            "end": 213.20762041048766,
+            "speedMillimetersPerSecond": 7380.1434568049
+          },
+          {
+            "hand": "Left",
+            "start": 213.20762041048766,
+            "end": 213.21178707715433,
+            "speedMillimetersPerSecond": 7377.913954088559
+          },
+          {
+            "hand": "Left",
+            "start": 213.21178707715433,
+            "end": 213.21595374382102,
+            "speedMillimetersPerSecond": 7380.142330866501
+          },
+          {
+            "hand": "Left",
+            "start": 213.21595374382102,
+            "end": 213.22012041048768,
+            "speedMillimetersPerSecond": 7380.143561976496
+          },
+          {
+            "hand": "Left",
+            "start": 213.22012041048768,
+            "end": 213.22428707715434,
+            "speedMillimetersPerSecond": 7377.910761042455
+          },
+          {
+            "hand": "Left",
+            "start": 213.22428707715434,
+            "end": 213.228453743821,
+            "speedMillimetersPerSecond": 7380.138364825873
+          },
+          {
+            "hand": "Left",
+            "start": 213.228453743821,
+            "end": 213.23262041048767,
+            "speedMillimetersPerSecond": 7380.142532165385
+          },
+          {
+            "hand": "Left",
+            "start": 213.23262041048767,
+            "end": 213.23678707715433,
+            "speedMillimetersPerSecond": 7377.918154595659
+          },
+          {
+            "hand": "Left",
+            "start": 213.23678707715433,
+            "end": 213.240953743821,
+            "speedMillimetersPerSecond": 7380.145303512803
+          },
+          {
+            "hand": "Left",
+            "start": 213.240953743821,
+            "end": 213.2451204104877,
+            "speedMillimetersPerSecond": 7380.130049913201
+          },
+          {
+            "hand": "Left",
+            "start": 213.2451204104877,
+            "end": 213.24928707715435,
+            "speedMillimetersPerSecond": 7377.918568173097
+          },
+          {
+            "hand": "Left",
+            "start": 213.24928707715435,
+            "end": 213.253453743821,
+            "speedMillimetersPerSecond": 7380.138201089101
+          },
+          {
+            "hand": "Left",
+            "start": 213.253453743821,
+            "end": 213.25762041048768,
+            "speedMillimetersPerSecond": 7380.148461331978
+          },
+          {
+            "hand": "Left",
+            "start": 213.25762041048768,
+            "end": 213.26178707715434,
+            "speedMillimetersPerSecond": 7377.917491541074
+          },
+          {
+            "hand": "Left",
+            "start": 213.26178707715434,
+            "end": 213.265953743821,
+            "speedMillimetersPerSecond": 7380.130791134888
+          },
+          {
+            "hand": "Left",
+            "start": 213.265953743821,
+            "end": 213.27012041048766,
+            "speedMillimetersPerSecond": 7380.144612539852
+          },
+          {
+            "hand": "Left",
+            "start": 213.27012041048766,
+            "end": 213.27428707715433,
+            "speedMillimetersPerSecond": 7377.918370898614
+          },
+          {
+            "hand": "Left",
+            "start": 213.27428707715433,
+            "end": 213.27845374382102,
+            "speedMillimetersPerSecond": 7380.143597197907
+          },
+          {
+            "hand": "Left",
+            "start": 213.27845374382102,
+            "end": 213.28262041048768,
+            "speedMillimetersPerSecond": 7380.133551626305
+          },
+          {
+            "hand": "Left",
+            "start": 213.28262041048768,
+            "end": 213.28333333333333,
+            "speedMillimetersPerSecond": 7377.919677753908
+          }
+        ]
+      },
+      "targetSegments": [
+        {
+          "label": "opening-sweep-to-hold",
+          "start": 3.8,
+          "end": 7.65,
+          "notes": 9,
+          "cp": 9,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "label": "parallel-slides-and-centre-touch",
+          "start": 129.6,
+          "end": 130.65,
+          "notes": 12,
+          "cp": 12,
+          "nonCPNoteIds": [],
+          "noteIds": [
+            904,
+            905,
+            906,
+            907,
+            908,
+            909,
+            910,
+            911,
+            912,
+            913,
+            914,
+            915
+          ]
+        },
+        {
+          "label": "wifi-before-double-slide-head",
+          "start": 153.0,
+          "end": 154.1,
+          "notes": 33,
+          "cp": 21,
+          "nonCPNoteIds": [
+            1140,
+            1142,
+            1147,
+            1159,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166,
+            1167,
+            1168
+          ],
+          "noteIds": [
+            1139,
+            1140,
+            1141,
+            1142,
+            1143,
+            1144,
+            1145,
+            1146,
+            1147,
+            1148,
+            1149,
+            1150,
+            1151,
+            1152,
+            1153,
+            1154,
+            1155,
+            1156,
+            1157,
+            1158,
+            1159,
+            1160,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166,
+            1167,
+            1168,
+            1169,
+            1170,
+            1171
+          ]
+        }
+      ],
+      "normalBaselineUnchanged": {
+        "perNoteResultsIdentical": true,
+        "strokesIdentical": true,
+        "gapsIdentical": true,
+        "handsFileIdentical": true
+      },
+      "baselineRegressions": [
+        {
+          "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1163,
+            1164,
+            1165,
+            1166,
+            1587,
+            1595,
+            1623,
+            1625,
+            1630,
+            1631
+          ],
+          "newMissNoteIds": [
+            1587,
+            1595,
+            1623,
+            1625,
+            1630,
+            1631
+          ]
+        },
+        {
+          "coreSha256": "854C2B4C42B026C622C1CD1AD6997480304966408813D815DAE35C40FA9E2D59",
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166
+          ],
+          "newMissNoteIds": []
+        },
+        {
+          "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+          "cpLostNoteIds": [
+            1159,
+            1167,
+            1168,
+            1161,
+            1162,
+            1163,
+            1164,
+            1165,
+            1166
+          ],
+          "newMissNoteIds": []
+        }
+      ]
+    }
+  ],
+  "unchangedNormalBaseline": {
+    "path": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\wifi-final\\run-index.json",
+    "sha256": "F70685206E83D756D7693795AB023A2E127DE96F463F7289E4559821B1D86501",
+    "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672"
+  }
+}

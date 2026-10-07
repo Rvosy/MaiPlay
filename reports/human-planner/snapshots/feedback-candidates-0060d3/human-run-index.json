@@ -1,0 +1,477 @@
+{
+  "createdAtUtc": "2026-10-07T23:46:33.141819+00:00",
+  "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+  "sourceIndexes": [
+    {
+      "path": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\run-index.json",
+      "sha256": "198A0C806D075F299DF4034E7353DC1A9912B6F865A5039D602DD7A63E3694D3",
+      "role": "current-human"
+    },
+    {
+      "path": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\run-index.json",
+      "sha256": "EFD48CA858C78C4A12ACABA378E7AAFAE5AEF889EDD776BFB12F7646284A0203",
+      "role": "current-human"
+    }
+  ],
+  "rows": [
+    {
+      "key": "bbkk-expert",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "planner": "human",
+      "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\bbkk-expert\\human\\results.json",
+      "resultsSha256": "A3F6C937ECEECE8F10F81F174934E905246D05E39C38F0DD71A9A614CF5AED9B",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\bbkk-expert\\human\\hands.json",
+      "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\bbkk-expert\\human\\segments.json",
+      "segmentsSha256": "382D8E1BEFA2EBB5A4FF28ED03C553F871296BC54E0FB307A553772CC46B0ABE",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028,
+        "seconds": 2.8711551
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 5159.936693001468,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 85380.94372348787,
+          "Right": 83042.7537869488
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "end-time-master",
+      "title": "End Time",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "12_FiNALE/000844_End Time/maidata.txt",
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\end-time-master\\human\\results.json",
+      "resultsSha256": "E646ECF220CA396B9EFA1B8D2E9C8FFEF23372B818D964214CC536D261869512",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\end-time-master\\human\\hands.json",
+      "handsSha256": "D346A5EA15BFF6D2AC07959F55D526D2D1C4DB77D93E5A82AFDCA8E281D825B8",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\end-time-master\\human\\segments.json",
+      "segmentsSha256": "60B2B1BE8E7D3EDE23E2E9A68684F51CDF0BF651CC15E4E204107E85B8920E45",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 949,
+        "cp": 949,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847,
+        "seconds": 4.268633
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4964.8773287896265,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 98379.05129888318,
+          "Right": 94768.3695273522
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "hera-master",
+      "title": "HERA",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "08_MURASAKi/000567_HERA/maidata.txt",
+      "chartSha256": "2B73958509E1DBBF54BD32D9B323DA61546CC5425FE5B3D13B988EBE20163BD9",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\hera-master\\human\\results.json",
+      "resultsSha256": "AC4742DF198FEA73A0932D14710FCB230EE92E37603CA20AC475EECC412EB5EB",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\hera-master\\human\\hands.json",
+      "handsSha256": "4176ACCC6035E8CD5CF147642260FF1F962A293580F23AFEF81745B229F74275",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\hera-master\\human\\segments.json",
+      "segmentsSha256": "B6FED02118D075F976007D21811B93642D64BE2813D0FB3BE0B2B060409B1821",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1031,
+        "cp": 1031,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3093,
+        "seconds": 5.2076635
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 4502.84220330517,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99644.77927076165,
+          "Right": 104105.16332174526
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "love-you-master",
+      "title": "Love You",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "00_maimai/000018_Love You/maidata.txt",
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\love-you-master\\human\\results.json",
+      "resultsSha256": "8D1240F12679A029CF962A1F1B8DA78B5D98467C3331A89FC1E114E4E3215107",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\love-you-master\\human\\hands.json",
+      "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\love-you-master\\human\\segments.json",
+      "segmentsSha256": "B4CFF03D70F4B492D304850EABE241F756B931D0C5F7769A13855C637F0B5BFE",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594,
+        "seconds": 2.0980152
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2493.0513065914333,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 34992.18517300841,
+          "Right": 37289.747351338105
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "planner": "human",
+      "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\nulctrl-expert\\human\\results.json",
+      "resultsSha256": "4B4C42ACC9A1A3E733CB05916D5834511DEE72C2C972E2BDECF1FAE8DD38A8DE",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\nulctrl-expert\\human\\hands.json",
+      "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\regression-current\\nulctrl-expert\\human\\segments.json",
+      "segmentsSha256": "A9CCB1F71D9FB771297DC5D76D40FE2B2B0009E38D9F30A576DCA7373CAE6F6A",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569,
+        "seconds": 2.9277779
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 2709.6422364736636,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 43989.93644975061,
+          "Right": 43380.339283645255
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "panopticon-master",
+      "title": "Panopticon",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-master\\human\\results.json",
+      "resultsSha256": "5D85E40CB988B35463B0E5B460F3768664CBC9341966926B8B270F67D8916A29",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-master\\human\\hands.json",
+      "handsSha256": "1ACAB92A1CC48EFD8D6502F9605F0C5632924331EEC9ADCD250D3F9C60335417",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-master\\human\\segments.json",
+      "segmentsSha256": "D44A126B570B0E65FB5A937E590A39E53CF0CB2CC78BFB367AFF6E940F431665",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 900,
+        "cp": 900,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2700,
+        "seconds": 5.1205284
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6190.440773164215,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 115484.66515405172,
+          "Right": 118949.73817929323
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "panopticon-remaster",
+      "title": "Panopticon",
+      "difficulty": 6,
+      "planner": "human",
+      "chart": "08_MURASAKi/000589_Panopticon/maidata.txt",
+      "chartSha256": "FEC1487C3F5A023BF4DD61D9A03A24A98EAF54DABE45C942C9841647CF936542",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-remaster\\human\\results.json",
+      "resultsSha256": "F6C8DBD32A5670F54861670CBA3D5DF972EC7E60ED5CB987AE9D684F0D2C92A1",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-remaster\\human\\hands.json",
+      "handsSha256": "B04D9272734DD05D7DF57729B4BA9A3D9034932732BE24500C5DAD736118623C",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\panopticon-remaster\\human\\segments.json",
+      "segmentsSha256": "CE6B301119C197877908C351E341909E9D21CCEE9A5E4FD3EEFA303E190BCE4B",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 909,
+        "cp": 888,
+        "miss": 21,
+        "gaps": 21,
+        "achievement": 98.39747634069401,
+        "dxScore": 2664,
+        "seconds": 5.2619615
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6029.248284796597,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 99225.32508195039,
+          "Right": 102747.06138067973
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "phoenix-master",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "planner": "human",
+      "chart": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 0,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\phoenix-master\\human\\results.json",
+      "resultsSha256": "C888C578F7CFC7EC5E33136406425340B6BE9D9F96F827A2965CCCD05BB1EF6D",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\phoenix-master\\human\\hands.json",
+      "handsSha256": "32733BB0D11F94AE144A62B78C1097ED00FEEB3C40B8446F32626F499014E62A",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\phoenix-master\\human\\segments.json",
+      "segmentsSha256": "20B29BC559496A3612EDCA8B6A3E34D747387B98E04D8C156402520D1427A953",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 1092,
+        "cp": 1092,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 3276,
+        "seconds": 7.053445
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 6948.736908843017,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 119407.76690946023,
+          "Right": 118465.32005958958
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    },
+    {
+      "key": "xaleid-remaster",
+      "title": "Xaleid◆scopiX",
+      "difficulty": 6,
+      "planner": "human",
+      "chart": "24_PRiSMPLUS/011820_Xaleid◆scopiX/maidata.txt",
+      "chartSha256": "19652E44985B38EB9E9D9A2038433F8ADC9933D1E6FF29B28451B32F176E8F0C",
+      "coreSha256": "0060D326F8A6A89ACB8932F983CDE3372D4ACF74D4EDC489408EDC71F073F6C2",
+      "provenance": "run-with-verified-frozen-assembly",
+      "processExitCode": 2,
+      "results": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\xaleid-remaster\\human\\results.json",
+      "resultsSha256": "C94D391D023A8E3ADE5A401909F902F502B5E50080230FD9729DDF1F3559E2FC",
+      "hands": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\xaleid-remaster\\human\\hands.json",
+      "handsSha256": "2D2E82B45DCDD34C21EC9A50E308BCB905CC2A8633F98464C54F0A87EE9CF196",
+      "segments": "D:\\Project\\MaiPlay\\artifacts\\human-planner-validation\\sweep-candidate-final\\spots-current\\xaleid-remaster\\human\\segments.json",
+      "segmentsSha256": "0206506AD38CD959F203F3D8DADD8F83BD31B8A292365EAA215C675D7A9552CD",
+      "baselineComparisons": [
+        {
+          "baselineCoreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        },
+        {
+          "baselineCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+          "gradeChanges": [],
+          "cpLostNoteIds": [],
+          "newMissNoteIds": []
+        }
+      ],
+      "metrics": {
+        "notes": 2222,
+        "cp": 2201,
+        "miss": 13,
+        "gaps": 17,
+        "achievement": 99.73070189708194,
+        "dxScore": 6605,
+        "seconds": 18.9659711
+      },
+      "movement": {
+        "maxSpeedMillimetersPerSecond": 7056.719999999999,
+        "peakSpeedMillimetersPerSecond": 7049.670329644227,
+        "speedLimitViolations": 0,
+        "distancesMillimeters": {
+          "Left": 225748.34369874332,
+          "Right": 232166.42930845817
+        },
+        "violations": [],
+        "humanDiagnosticsMatch": true
+      }
+    }
+  ]
+}

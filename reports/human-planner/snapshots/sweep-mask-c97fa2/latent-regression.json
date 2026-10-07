@@ -1,0 +1,142 @@
+{
+  "title": "Latent Kingdom",
+  "difficulty": 5,
+  "beforeCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "coreSha256": "C97FA203E4748CA41F87E7A341838B733DAB1BBC2CDBD5BCCF5C567D9133A056",
+  "notes": 1371,
+  "beforeCP": 1363,
+  "afterCP": 1361,
+  "beforeGaps": 7,
+  "afterGaps": 7,
+  "gradeChanges": [
+    {
+      "id": 565,
+      "kind": "Tap",
+      "time": 70.22388059703714,
+      "before": "Perfect",
+      "after": "Miss",
+      "differenceSeconds": null,
+      "reason": "head-timeout",
+      "beforeStrokes": [
+        {
+          "noteId": 565,
+          "hand": "Right",
+          "start": 70.23638059703714,
+          "end": 70.26138059703715,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ],
+      "afterStrokes": []
+    },
+    {
+      "id": 572,
+      "kind": "Tap",
+      "time": 70.42288557216413,
+      "before": "Miss",
+      "after": "Perfect",
+      "differenceSeconds": 0.002114427835863353,
+      "reason": "",
+      "beforeStrokes": [
+        {
+          "noteId": 572,
+          "hand": "Right",
+          "start": 70.41038557216413,
+          "end": 70.43538557216414,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ],
+      "afterStrokes": [
+        {
+          "noteId": 572,
+          "hand": "Right",
+          "start": 70.42288557216413,
+          "end": 70.44788557216414,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ]
+    },
+    {
+      "id": 1075,
+      "kind": "Tap",
+      "time": 130.6467661692181,
+      "before": "Perfect",
+      "after": "FastGood",
+      "differenceSeconds": -0.1342661692181082,
+      "reason": "",
+      "beforeStrokes": [
+        {
+          "noteId": 1075,
+          "hand": "Right",
+          "start": 130.6342661692181,
+          "end": 130.6592661692181,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ],
+      "afterStrokes": [
+        {
+          "noteId": 1075,
+          "hand": "Right",
+          "start": 130.6342661692181,
+          "end": 130.6592661692181,
+          "channel": "Button",
+          "technique": "Rotation"
+        }
+      ]
+    },
+    {
+      "id": 1333,
+      "kind": "Tap",
+      "time": 158.2089552239726,
+      "before": "Perfect",
+      "after": "FastGood",
+      "differenceSeconds": -0.10895522397260038,
+      "reason": "",
+      "beforeStrokes": [
+        {
+          "noteId": 1333,
+          "hand": "Right",
+          "start": 158.22145522397258,
+          "end": 158.2464552239726,
+          "channel": "Button",
+          "technique": "Strike"
+        }
+      ],
+      "afterStrokes": [
+        {
+          "noteId": 1333,
+          "hand": "Right",
+          "start": 158.2089552239726,
+          "end": 158.2339552239726,
+          "channel": "Button",
+          "technique": "Strike"
+        }
+      ]
+    }
+  ],
+  "cpLostNoteIds": [
+    565,
+    1075,
+    1333
+  ],
+  "newMissNoteIds": [
+    565
+  ],
+  "evidence": [
+    {
+      "phase": "before",
+      "directory": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/d9e964",
+      "resultsSha256": "FAF535D6ED56526A53D24B5EBF6670F281009FA23B8BE06ADD8063B1339B15BC",
+      "handsSha256": "5A430FC5AE5B0E17FA44AF0882B27BE54CD041EA2276A8F1339BE768CF3E6B83"
+    },
+    {
+      "phase": "after",
+      "directory": "artifacts/human-planner-validation/sweep-mask-final/latent-regression/c97fa2",
+      "resultsSha256": "7D7C8B7B43686BC7D5282D482EB39D01B9E65205A137A5C931F479796801D85F",
+      "handsSha256": "51B36F1BBF3344B4CA8CF63B8B913C5C09720EE65D4AB7A37C4D1E02C08D49AD"
+    }
+  ]
+}

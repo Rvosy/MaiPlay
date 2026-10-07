@@ -1,0 +1,694 @@
+{
+  "createdAtUtc": "2026-10-07T23:25:57.295727+00:00",
+  "previousCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+  "currentCoreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+  "previousIndexSha256": "A1C2A0E686F47CF0040C050243D96BB45E4E660234C4A3CDD66E94FCC0A41E3C",
+  "currentIndexSha256": "69959BC996AE04D6F83A3814776FE7CDFA2F5A7100961B139B86DF28D8DC07D4",
+  "aggregateRegressions": 0,
+  "chartsWithNewMiss": 0,
+  "chartsWithCPLoss": 0,
+  "rows": [
+    {
+      "key": "bbkk-expert",
+      "planner": "human",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "before": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "after": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "previousEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/human/results.json",
+        "resultsSha256": "EA505778AF692350BC8A3D5C877FDA2E8E5E6BADCE9573B2BB24B91625331714",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/human/hands.json",
+        "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/human/segments.json",
+        "segmentsSha256": "8BEB7A415F3C9729B47B715FFAF64CC530092D22653DE94326C83DB108B0192E",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/human/results.json",
+        "resultsSha256": "8EC4434F4B478C5D1F3B419D58A0762312A120EA19F3C960CFD08A4A30D5252A",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/human/hands.json",
+        "handsSha256": "3E854FCBD45B71EF9819F315984FC10504E0AD1F8B523B20CB960A19D2F563F8",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/human/segments.json",
+        "segmentsSha256": "A59C9E5D875A0846565C22AE19BFF6D144ED73EB5C8DDBDA8DC3EF6F90513514",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "bbkk-expert",
+      "planner": "normal",
+      "title": "B.B.K.K.B.K.K.",
+      "difficulty": 4,
+      "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+      "before": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "after": {
+        "notes": 676,
+        "cp": 676,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2028
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 290
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2234
+        }
+      ],
+      "previousEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "normal",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/normal/results.json",
+        "resultsSha256": "FC386C3EB018E4B8E4365C958E6D37FE9B71EA4E8708864336A95AC2833D2F1A",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/normal/hands.json",
+        "handsSha256": "F85AD7DE1E9EE9386786604AC22AF8676DE619F6D83C4A093009EC7F487987EC",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/bbkk-expert/normal/segments.json",
+        "segmentsSha256": "A21A14B718FEEE88065554D3C83BAB5B238665C630756766A9D81DE60E023CA7",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "bbkk-expert",
+        "title": "B.B.K.K.B.K.K.",
+        "difficulty": 4,
+        "planner": "normal",
+        "chart": "04_ORANGE/000381_B.B.K.K.B.K.K/maidata.txt",
+        "chartSha256": "514B8183F3BFF7C844BD17838319A39E5AC2091550D093AF6BC67DBF0DAF265A",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/normal/results.json",
+        "resultsSha256": "93692A5EB8EB8F4177531FDF1B94B6F3758BBAF0207D0692B59F4EB6760AE9BE",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/normal/hands.json",
+        "handsSha256": "F85AD7DE1E9EE9386786604AC22AF8676DE619F6D83C4A093009EC7F487987EC",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/bbkk-expert/normal/segments.json",
+        "segmentsSha256": "C174925477F6CA117027F60290C9A143ECEB039D1DB3B65221DFE780224E01E4",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "love-you-master",
+      "planner": "human",
+      "title": "Love You",
+      "difficulty": 5,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "before": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "after": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "previousEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/human/results.json",
+        "resultsSha256": "0C2472B84531B812801CF49CFCE38F8D32DB63DA6602C791F3E9A9140B41C53E",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/human/hands.json",
+        "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/human/segments.json",
+        "segmentsSha256": "B7E47BB4A3649DEB75ED93FE443AC704B74AF2B71184D1D6CF1B357F75CEA807",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "human",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/human/results.json",
+        "resultsSha256": "F74E081393540705D1DC33090E0BE0DA18E22AED98CCE9C6C2D73F0ADCE52C4B",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/human/hands.json",
+        "handsSha256": "A6888E97A24533F30A1AD51AFCA5CB6188EE53E5D969B1D125561BE9652CC985",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/human/segments.json",
+        "segmentsSha256": "03A948385D7DB37216788127FED2DF8B7CF199C84C84C3705B133AE945B3D86C",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "love-you-master",
+      "planner": "normal",
+      "title": "Love You",
+      "difficulty": 5,
+      "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+      "before": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "after": {
+        "notes": 198,
+        "cp": 198,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 594
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 6986
+        }
+      ],
+      "previousEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "normal",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/normal/results.json",
+        "resultsSha256": "8F7A671892F9C0811724046A824750F49DC40D9538FA49E673843075636F50E6",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/normal/hands.json",
+        "handsSha256": "F6914700B28050B62F15DBD59F1431C489E3C1C66391C305D44202EC36F57DF6",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/love-you-master/normal/segments.json",
+        "segmentsSha256": "AB81F8C44348BF93E4DF1814775D30B0987C6EB25A007530BA9FA2C7F92D5B7B",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "love-you-master",
+        "title": "Love You",
+        "difficulty": 5,
+        "planner": "normal",
+        "chart": "00_maimai/000018_Love You/maidata.txt",
+        "chartSha256": "07D9E6DBEF925DB5CD8B4F772AD02FF2CF79B1DCE10705E709125169DDA1ED72",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/normal/results.json",
+        "resultsSha256": "E26907FCA94C2013665313FE521310EB9478A330E75F541097EE64EB42E4D3E8",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/normal/hands.json",
+        "handsSha256": "F6914700B28050B62F15DBD59F1431C489E3C1C66391C305D44202EC36F57DF6",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/love-you-master/normal/segments.json",
+        "segmentsSha256": "8C1871ABAB8F79298DF1884C0E881AE573F1BCEF54E1B1426C62CF11E33CBD01",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "planner": "human",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "before": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "after": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "previousEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/human/results.json",
+        "resultsSha256": "B586E2223A48C41BA4CF66A5E7198776A24F8CCC0C3DCEBE50FFCA1D53F6CA48",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/human/hands.json",
+        "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/human/segments.json",
+        "segmentsSha256": "EAC95D60D08D5C7CA4C87D1090BC490F6D7FDC753ED697C715300BBAF8D4E8DF",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "human",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/human/results.json",
+        "resultsSha256": "FFDB63CEE0797A2DE96CA5E7E2C2F3A2A8662C13A658716D463FB7948841F78A",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/human/hands.json",
+        "handsSha256": "4893E0847A7BCB2AB3CA548DBC29F8070D3DF4E61CF3DA2BF44799FC5B181399",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/human/segments.json",
+        "segmentsSha256": "AD73DB7C6E74FA949F979702ACF2FE3FA99E22090CF53C1E79DF883BB901EBDF",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "nulctrl-expert",
+      "planner": "normal",
+      "title": "NULCTRL",
+      "difficulty": 4,
+      "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+      "before": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "after": {
+        "notes": 523,
+        "cp": 523,
+        "miss": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 1569
+      },
+      "aggregateRegression": false,
+      "cpLostNoteIds": [],
+      "newMissNoteIds": [],
+      "recoveredMissNoteIds": [],
+      "gradeChanges": [],
+      "failures": [],
+      "gaps": [],
+      "oldContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "newContactProfiles": [
+        {
+          "part": "finger1",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger2",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger3",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "finger4",
+          "radius": 0.035,
+          "controlPointCount": 3433
+        },
+        {
+          "part": "palm",
+          "radius": 0.19,
+          "controlPointCount": 2232
+        }
+      ],
+      "previousEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "normal",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/normal/results.json",
+        "resultsSha256": "F0675A4D101EB54B7FA447E6185251D5EB828FD6DA85799DD6D9C9BD147D1BF8",
+        "hands": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/normal/hands.json",
+        "handsSha256": "0801DBA44A49A8B733BDB7A12A2D503891AED32531753AC4DD60F1F548A1ADD6",
+        "segments": "artifacts/human-planner-validation/checkpoint-df33bc7c/regression-current/nulctrl-expert/normal/segments.json",
+        "segmentsSha256": "245A123950A0DE36CAD355FFE5D2B82C0618B00C88E147C9399981809418F8E5",
+        "baselineComparisons": []
+      },
+      "currentEvidence": {
+        "key": "nulctrl-expert",
+        "title": "NULCTRL",
+        "difficulty": 4,
+        "planner": "normal",
+        "chart": "14_maimaDXPLUS/011142_NULCTRL/maidata.txt",
+        "chartSha256": "BF70AE963CFC9238869F809D05051DE351E1D67813AB2DC9AE8604709B90FA49",
+        "coreSha256": "D9E96445550FE5A7B988F60178E525AB182DECBB2E67C6E816F9C6232371A672",
+        "provenance": "run-with-verified-frozen-assembly",
+        "processExitCode": 0,
+        "results": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/normal/results.json",
+        "resultsSha256": "23BE64A92017EA7E676255332BEBB0F7133E94F8EDEABC9D0518ED0A84C99A10",
+        "hands": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/normal/hands.json",
+        "handsSha256": "0801DBA44A49A8B733BDB7A12A2D503891AED32531753AC4DD60F1F548A1ADD6",
+        "segments": "artifacts/human-planner-validation/wifi-final/regression-current/nulctrl-expert/normal/segments.json",
+        "segmentsSha256": "39C52A755475B4B526CFCC539824FF50A5787B2BE90E99170364BCE6E68278A1",
+        "baselineComparisons": [
+          {
+            "baselineCoreSha256": "DF33BC7C13C8A68B9E452676DB76600D0357CAD1AF76F61FAFD07F47D132280E",
+            "gradeChanges": [],
+            "cpLostNoteIds": [],
+            "newMissNoteIds": []
+          }
+        ]
+      }
+    }
+  ]
+}
