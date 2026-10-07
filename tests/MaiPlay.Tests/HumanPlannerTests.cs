@@ -4,6 +4,19 @@ namespace MaiPlay.Tests;
 
 public sealed class HumanPlannerTests
 {
+    [Theory]
+    [InlineData(1.003)]
+    [InlineData(200.003)]
+    public void ExistingWifiContactsCanCoverASimultaneousTapAndTouch(double first)
+    {
+        var chart = SimaiParser.ParseChart("(186){4}1b$w5[0.322580645161##0.161290322581],1b/Cf,E", first: first);
+        var plan = HumanPlanner.Plan(chart);
+        Assert.True(plan.AllCriticalPerfect, Explain(plan));
+        Assert.Empty(plan.Gaps);
+        Assert.Equal(0, new HumanMotionModel().Analyze(plan.Tracks, plan.Strokes).SpeedLimitViolations);
+        VerifyReplay(plan);
+    }
+
     [Fact]
     public void MixedWindowsKeepTheirOwnTechniqueAndReplayAsOneChart()
     {

@@ -34,7 +34,54 @@ public sealed class HandReplayTests
         session.Advance(2.1);
         Assert.False(session.Inputs.IsButtonOn(7));
         Assert.False(session.Inputs.IsSensorOn(SensorArea.A7));
-        Assert.Null(replay.PoseAt(HandSide.Left, 2.1));
+        Assert.Equal(p, replay.PoseAt(HandSide.Left, 2.1)!.Position);
+        Assert.Empty(replay.PoseAt(HandSide.Left, 2.1)!.Contacts);
+    }
+
+    [Fact]
+    public void FinishedHandKeepsItsReleasedPositionWhileTheOtherHandContinues()
+    {
+        var left = new HandTrack(HandSide.Left,
+            [new(1, new(-.8, 0), [Finger]), new(1.1, new(-.8, 0), [])]);
+        var right = new HandTrack(HandSide.Right,
+            [new(2, new(.8, 0), []), new(3, new(0, 0), [Finger]), new(3.1, new(0, 0), [])]);
+        var replay = new HandReplay([left, right]);
+
+        Assert.Null(replay.PoseAt(HandSide.Left, .9));
+        foreach (var time in new[] { 1.2, 2.5, 4.0, 10.0 })
+        {
+            var pose = Assert.IsType<HandPose>(replay.PoseAt(HandSide.Left, time));
+            Assert.Equal(left.Frames[^1].Position, pose.Position);
+            Assert.Empty(pose.Contacts);
+        }
+        Assert.Equal(right.Frames[^1].Position, replay.PoseAt(HandSide.Right, 10)!.Position);
+        Assert.Empty(replay.PoseAt(HandSide.Right, 10)!.Contacts);
+        Assert.Equal(new HandReplay([left]).Events,
+            replay.Events.Where(e => replay.HandForSource(e.Source) == HandSide.Left));
+        var session = new PlaybackSession(EmptyChart, PlayMode.Algorithm, replay.Events);
+        session.Advance(4);
+        Assert.All(Enum.GetValues<SensorArea>(), a => Assert.False(session.Inputs.IsSensorOn(a)));
+    }
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void PlannersKeepReleasedHandsInPlaceUntilTheNextAssignedApproach(bool humanPlanner)
+    {
+        var chart = SimaiParser.ParseChart("(120){#1}1/8,,,2/7,E", first: 1);
+        var plan = humanPlanner ? HumanPlanner.Plan(chart) : NormalHandPlanner.Plan(chart);
+        Assert.True(plan.AllCriticalPerfect);
+        foreach (var hand in plan.Replay.Hands)
+        {
+            var strokes = plan.Strokes.Where(s => s.Hand == hand).OrderBy(s => s.Start).ToArray();
+            Assert.Equal(2, strokes.Length);
+            var released = plan.Replay.PoseAt(hand, strokes[0].End)!;
+            var waiting = plan.Replay.PoseAt(hand, (strokes[0].End + strokes[1].Start) / 2)!;
+            Assert.Empty(released.Contacts);
+            Assert.Empty(waiting.Contacts);
+            Assert.Equal(released.Position, waiting.Position);
+            Assert.NotEqual(released.Position, plan.Replay.PoseAt(hand, strokes[1].Start)!.Position);
+        }
     }
 
     [Fact]

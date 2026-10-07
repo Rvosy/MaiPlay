@@ -5,6 +5,41 @@ namespace MaiPlay.Tests;
 public sealed class HumanMotionModelTests
 {
     [Fact]
+    public void FasterRepeatedStrikesCostMoreWithoutBecomingInfeasible()
+    {
+        var model = new HumanMotionModel();
+        var rapid = model.RepetitionCost(.05);
+        var moderate = model.RepetitionCost(.1);
+
+        Assert.Equal(0, model.RepetitionCost(.25));
+        Assert.Equal(0, model.RepetitionCost(model.PreferredStrikeIntervalSeconds));
+        Assert.True(moderate > 0);
+        Assert.True(rapid > moderate);
+        Assert.True(double.IsFinite(rapid));
+    }
+
+    [Fact]
+    public void RepetitionPreferenceCanBeConfiguredIndependentlyOfMovement()
+    {
+        var relaxed = new HumanMotionModel(preferredStrikeIntervalSeconds: .08);
+        var deliberate = new HumanMotionModel(preferredStrikeIntervalSeconds: .16);
+
+        Assert.Equal(0, relaxed.RepetitionCost(.1));
+        Assert.True(deliberate.RepetitionCost(.1) > 0);
+        Assert.Equal(relaxed.MaxSpeedMillimetersPerSecond, deliberate.MaxSpeedMillimetersPerSecond);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-.1)]
+    [InlineData(double.NaN)]
+    [InlineData(double.PositiveInfinity)]
+    public void RepetitionPreferenceRequiresAFinitePositiveInterval(double interval)
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => new HumanMotionModel(preferredStrikeIntervalSeconds: interval));
+    }
+
+    [Fact]
     public void PhysicalScaleControlsTravelFeasibility()
     {
         var small = new HumanMotionModel(new CabinetGeometry(100), 1000, 500);
@@ -85,6 +120,24 @@ public sealed class HumanMotionModelTests
         Assert.Equal(2, result.ProjectedCrossingSeconds, 10);
         Assert.Equal(1, result.DirectionReversalCount);
         Assert.Null(result.PeakLeftActionsPerSecond);
+    }
+
+    [Fact]
+    public void CrossingIncludesAReleasedHandWaitingWhileTheOtherHandContinues()
+    {
+        var model = new HumanMotionModel(new CabinetGeometry(100), 100, 100);
+        HandTrack[] tracks =
+        [
+            new(HandSide.Left, [new(0, new(0, 0), []), new(1, new(0, 0), [])]),
+            new(HandSide.Right, [new(0, new(1, 0), []), new(3, new(-1, 0), [])])
+        ];
+
+        var result = model.Analyze(tracks);
+
+        Assert.Equal(1, result.ProjectedCrossingCount);
+        Assert.Equal(1.5, result.ProjectedCrossingSeconds, 10);
+        Assert.Equal(0, result.LeftDistanceMillimeters);
+        Assert.Equal(200, result.RightDistanceMillimeters);
     }
 
     [Fact]

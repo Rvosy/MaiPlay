@@ -71,20 +71,48 @@ public sealed class GameplayDemandTests
     }
 
     [Theory]
-    [InlineData(.25, false)]
-    [InlineData(.125, false)]
-    [InlineData(.1, true)]
-    public void RepeatSpeedChangesPreferredHandSequenceWithoutRemovingAlternatives(double interval, bool alternate)
+    [InlineData(.25)]
+    [InlineData(.125)]
+    [InlineData(.1)]
+    public void RepeatCandidatesKeepSameHandAlternatingAndFreeAssignmentsAtEverySpeed(double interval)
     {
         var chart = SimaiParser.ParseChart("(120)1,E", first: 1);
         chart = chart with { Notes = Enumerable.Range(0, 4).Select(i => chart.Notes[0] with { Id = i, Time = 1 + i * interval }).ToArray() };
         var segment = Assert.Single(PatternAnalyzer.Analyze(GameplayDemandCompiler.Compile(chart)));
         var candidates = TechniqueCandidates.For(segment);
-        var preferred = candidates.Where(c => c.PreferenceCost == candidates.Min(c => c.PreferenceCost)).ToArray();
-        Assert.All(preferred, c => Assert.Equal(alternate, c.Hands[0] != c.Hands[1]));
         Assert.Contains(candidates, c => c.Hands[0] == c.Hands[1] && c.Hands[0] is not null);
         Assert.Contains(candidates, c => c.Hands[0] != c.Hands[1]);
         Assert.Contains(candidates, c => c.Hands.All(h => h is null));
+    }
+
+    [Theory]
+    [InlineData(.125, false)]
+    [InlineData(.2, true)]
+    public void RepeatCandidatesFollowMixedRhythmsUsingTheConfiguredStrikeInterval(double preferredInterval, bool alternateEveryNote)
+    {
+        var chart = SimaiParser.ParseChart("(120){#0.08}1,1{#0.16},1{#0.08},1{#0.16},1{#0.08},1,E", first: 1);
+        var segment = Assert.Single(PatternAnalyzer.Analyze(GameplayDemandCompiler.Compile(chart)));
+        Assert.Equal(PatternKind.Jack, segment.Kind);
+        var candidates = TechniqueCandidates.For(segment, preferredInterval);
+        foreach (var first in new[] { HandSide.Left, HandSide.Right })
+        {
+            var other = first == HandSide.Left ? HandSide.Right : HandSide.Left;
+            HandSide?[] expected = alternateEveryNote
+                ? [first, other, first, other, first, other]
+                : [first, other, other, first, first, other];
+            Assert.Contains(candidates, c => c.Hands.SequenceEqual(expected));
+        }
+    }
+
+    [Fact]
+    public void SingleTapKeepsOrdinaryStrikesAlongsideContinuationOnlySweeps()
+    {
+        var chart = SimaiParser.ParseChart("(120)4,E", first: 1);
+        var segment = Assert.Single(PatternAnalyzer.Analyze(GameplayDemandCompiler.Compile(chart)));
+        var candidates = TechniqueCandidates.For(segment);
+        Assert.Contains(candidates, c => c.SweepDirection == -1 && c.RequiresSweepContinuation);
+        Assert.Contains(candidates, c => c.SweepDirection == 1 && c.RequiresSweepContinuation);
+        Assert.Contains(candidates, c => c.SweepDirection == 0 && !c.RequiresSweepContinuation && c.PreferenceCost == 0);
     }
 
     [Fact]

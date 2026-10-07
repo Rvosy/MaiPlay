@@ -5,7 +5,7 @@ namespace MaiPlay.Tests;
 public sealed class HumanSchedulingTests
 {
     [Fact]
-    public void WifiContactCanBeginBeforeAndCoverTheTapAtItsLogicalStart()
+    public void WifiAndTapAtItsLogicalStartBothRemainPlayable()
     {
         var chart = SimaiParser.ParseChart("(120){#0.298507462687}1x$w5b[0.298507462687##0.149253731343],1bx,E", first: 1);
         var plan = HumanPlanner.Plan(chart);
@@ -14,7 +14,9 @@ public sealed class HumanSchedulingTests
         var slide = chart.Notes.Single(n => n.Kind == NoteKind.Slide);
         var strokes = plan.Strokes.Where(s => s.NoteId == slide.Id).ToArray();
         Assert.Equal(2, strokes.Length);
-        Assert.All(strokes, s => Assert.True(s.Start < slide.SlideStartTime));
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, plan.Replay.Events);
+        Assert.All(session.Advance(session.FinishTime + .1).Where(e => e.IsFinal),
+            e => Assert.Equal(AchievementGrade.Perfect, e.Grade));
         Assert.Equal(0, plan.Diagnostics!.Movement.SpeedLimitViolations);
     }
 

@@ -216,6 +216,79 @@ public sealed class NormalHandPlannerTests
         Assert.Empty(plan.Gaps);
     }
 
+    public static IEnumerable<object[]> SweepFinishingChordCases()
+    {
+        foreach (var bpm in new[] { 180, 200, 240 })
+            foreach (var direction in new[] { -1, 1 })
+                foreach (var start in Enumerable.Range(1, 8))
+                    foreach (var reverseChord in new[] { false, true })
+                        foreach (var isBreak in new[] { false, true })
+                            yield return [bpm, direction, start, reverseChord, isBreak];
+    }
+
+    [Theory]
+    [MemberData(nameof(SweepFinishingChordCases))]
+    public void SweepContinuesIntoOneSideOfTheFinishingChord(int bpm, int direction, int start, bool reverseChord, bool isBreak)
+    {
+        int Key(int offset) => (start - 1 + direction * offset + 64) % 8 + 1;
+        var singles = Enumerable.Range(0, 5).Select(i => Key(i).ToString());
+        var suffix = isBreak ? "b" : "";
+        var pair = new[] { $"{Key(5)}{suffix}", $"{Key(1)}{suffix}" };
+        if (reverseChord) Array.Reverse(pair);
+        var chart = SimaiParser.ParseChart($"({bpm}){{32}}{string.Join(',', singles.Append(string.Join('/', pair)))},E", first: 1);
+        var plan = NormalHandPlanner.Plan(chart);
+        Assert.True(plan.AllCriticalPerfect, string.Join("; ", plan.Errors.Select(e => $"{e.Note.Source}: {e.Grade}")));
+        Assert.Empty(plan.Gaps);
+        var previous = Assert.Single(plan.Strokes, s => s.NoteId == 4);
+        var finishing = Assert.Single(plan.Strokes, s => s.NoteId == (reverseChord ? 6 : 5));
+        var other = Assert.Single(plan.Strokes, s => s.NoteId == (reverseChord ? 5 : 6));
+        Assert.Equal(HandTechnique.Rotation, finishing.Technique);
+        Assert.Equal(previous.Hand, finishing.Hand);
+        Assert.NotEqual(finishing.Hand, other.Hand);
+        Assert.Equal(0, new HumanMotionModel().Analyze(plan.Tracks, plan.Strokes).SpeedLimitViolations);
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, plan.Replay.Events);
+        var results = session.Advance(session.FinishTime + .1).Where(e => e.IsFinal).ToArray();
+        Assert.Equal(chart.Notes.Count, results.Length);
+        Assert.All(results, e => Assert.Equal(AchievementGrade.Perfect, e.Grade));
+        Assert.Equal(plan.DXScore, session.DXScore);
+    }
+
+    [Theory]
+    [InlineData(.15)]
+    [InlineData(.2)]
+    public void SlowerFinishingChordPreservesTheCompletedFastSweep(double tailInterval)
+    {
+        var interval = tailInterval.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        var chart = SimaiParser.ParseChart($"(200){{32}}1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8{{#{interval}}},1/5,E", first: 1);
+        var plan = NormalHandPlanner.Plan(chart);
+        Assert.True(plan.AllCriticalPerfect, string.Join("; ", plan.Errors.Select(e => $"{e.Note.Source}: {e.Grade}")));
+        Assert.Empty(plan.Gaps);
+        var pair = plan.Strokes.Where(s => s.NoteId >= 16).ToArray();
+        Assert.Equal(2, pair.Select(s => s.Hand).Distinct().Count());
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, plan.Replay.Events);
+        var results = session.Advance(session.FinishTime + .1).Where(e => e.IsFinal).ToArray();
+        Assert.Equal(chart.Notes.Count, results.Length);
+        Assert.All(results, e => Assert.Equal(AchievementGrade.Perfect, e.Grade));
+        Assert.Equal(plan.DXScore, session.DXScore);
+    }
+
+    [Fact]
+    public void SweepTailAndLaterPairedSweepsRemainCompleteInTheSamePlan()
+    {
+        var chart = SimaiParser.ParseChart("(200){32}4,5,6,7,8,1/5,,,,,,,,1,8,7,6,1/5,4/8,3/7,2/6,1/5,E", first: 1);
+        var plan = NormalHandPlanner.Plan(chart);
+        Assert.True(plan.AllCriticalPerfect, string.Join("; ", plan.Errors.Select(e => $"{e.Note.Source}: {e.Grade}")));
+        Assert.Empty(plan.Gaps);
+        foreach (var pair in plan.Strokes.GroupBy(s => chart.Notes[s.NoteId].Time).Where(g => g.Count() == 2))
+            Assert.Equal(2, pair.Select(s => s.Hand).Distinct().Count());
+        Assert.Equal(0, new HumanMotionModel().Analyze(plan.Tracks, plan.Strokes).SpeedLimitViolations);
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, plan.Replay.Events);
+        var results = session.Advance(session.FinishTime + .1).Where(e => e.IsFinal).ToArray();
+        Assert.Equal(chart.Notes.Count, results.Length);
+        Assert.All(results, e => Assert.Equal(AchievementGrade.Perfect, e.Grade));
+        Assert.Equal(plan.DXScore, session.DXScore);
+    }
+
     [Fact]
     public void AvailableJingleBellsMasterCompletesIncludingItsFinalDoubleSweep()
     {

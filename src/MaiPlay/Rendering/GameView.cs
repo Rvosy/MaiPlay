@@ -148,6 +148,12 @@ public sealed class GameView : Control
             if (replay.PoseAt(hand, Time) is not { } pose) continue;
             var p = World(pose.Position);
             var brush = hand == HandSide.Left ? LeftHandBrush : RightHandBrush;
+            foreach (var contact in pose.Contacts.Where(c => c.Channel == InputChannel.Touch))
+            {
+                var centre = World(new(pose.Position.X + contact.Offset.X, pose.Position.Y + contact.Offset.Y));
+                context.DrawEllipse(hand == HandSide.Left ? LeftContactBrush : RightContactBrush,
+                    new Pen(brush, .025), centre, contact.Radius * 4.8, contact.Radius * 4.8);
+            }
             var pressed = Session is { } session &&
                 (Enumerable.Range(1, 8).Any(i => session.Inputs.ButtonSources(i).Any(s => replay.HandForSource(s) == hand)) ||
                  Enum.GetValues<SensorArea>().Any(a => session.Inputs.SensorSources(a).Any(s => replay.HandForSource(s) == hand)));

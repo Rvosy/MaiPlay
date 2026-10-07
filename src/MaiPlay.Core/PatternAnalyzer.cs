@@ -1,6 +1,6 @@
 namespace MaiPlay.Core;
 
-public enum PatternKind { SingleTap, Chord, ChordStream, Jack, Trill, Anchor, Stair, Rotation, Stream, HoldLock, SimpleSlide, Wifi, Touch }
+public enum PatternKind { SingleTap, Chord, ChordStream, Jack, Trill, Anchor, Stair, Rotation, Stream, HoldLock, SimpleSlide, Wifi, Touch, HoldSweep }
 
 public sealed record PatternSegment(PatternKind Kind, IReadOnlyList<GameplayDemand> Demands, int Direction = 0, int SecondDirection = 0)
 {
@@ -22,6 +22,12 @@ public static class PatternAnalyzer
         var segments = new List<PatternSegment>();
         for (var index = 0; index < ordered.Length;)
         {
+            if (IdentifyHoldSweep(ordered, index, time) is { } holdSweep)
+            {
+                segments.Add(holdSweep);
+                index += holdSweep.Demands.Count;
+                continue;
+            }
             if (IdentifyChordStream(ordered, index, time) is { } chordStream)
             {
                 segments.Add(chordStream);
@@ -34,8 +40,21 @@ public static class PatternAnalyzer
             {
                 // Slide 的起滑时刻可以与头部击打相同，但两者不是双押约束。
                 var heads = ordered[index..end].Where(d => d.Note.Kind != NoteKind.Slide).ToArray();
-                if (heads.Length > 0) segments.Add(heads.Length > 1 ? new(PatternKind.Chord, heads) : Single(heads[0]));
-                foreach (var slide in ordered[index..end].Where(d => d.Note.Kind == NoteKind.Slide)) segments.Add(Single(slide));
+                var slides = ordered[index..end].Where(d => d.Note.Kind == NoteKind.Slide).ToArray();
+                if (slides.Any(d => d.Note.SlidePath!.IsWifi))
+                {
+                    // 外键先收尾，Touch 再检查滑动能否顺带覆盖，避免双方互相抢占双手。
+                    var buttons = heads.Where(d => d.Channel == InputChannel.Button).ToArray();
+                    var touches = heads.Where(d => d.Channel == InputChannel.Touch).ToArray();
+                    if (buttons.Length > 0) segments.Add(buttons.Length > 1 ? new(PatternKind.Chord, buttons) : Single(buttons[0]));
+                    foreach (var slide in slides) segments.Add(Single(slide));
+                    if (touches.Length > 0) segments.Add(touches.Length > 1 ? new(PatternKind.Chord, touches) : Single(touches[0]));
+                }
+                else
+                {
+                    if (heads.Length > 0) segments.Add(heads.Length > 1 ? new(PatternKind.Chord, heads) : Single(heads[0]));
+                    foreach (var slide in slides) segments.Add(Single(slide));
+                }
                 index = end;
                 continue;
             }
@@ -47,15 +66,74 @@ public static class PatternAnalyzer
             while (end < ordered.Length && ordered[end].Note.Kind == NoteKind.Tap &&
                    time(ordered[end]) - time(ordered[end - 1]) <= MaximumSequenceGap + Epsilon &&
                    time(ordered[end]) > time(ordered[end - 1]) + Epsilon &&
-                   (end == ordered.Length - 1 || time(ordered[end + 1]) > time(ordered[end]) + Epsilon)) end++;
+                   (end == ordered.Length - 1 || time(ordered[end + 1]) > time(ordered[end]) + Epsilon) &&
+                   IdentifyHoldSweep(ordered, end, time) is null) end++;
             SplitTapRun(ordered[index..end], segments, time);
             index = end;
         }
         return segments;
     }
 
+    private static PatternSegment? IdentifyHoldSweep(GameplayDemand[] demands, int start, Func<GameplayDemand, double> time)
+    {
+        if (demands[start].Note.Kind != NoteKind.Tap) return null;
+        var paired = IsPair(demands, start, time);
+        var next = start + (paired ? 2 : 1);
+        if (!paired && next < demands.Length && time(demands[next]) <= time(demands[start]) + Epsilon) return null;
+        PatternSegment? best = null;
+        var bestDistance = int.MaxValue;
+        for (var seed = start; seed < start + (paired ? 2 : 1); seed++)
+        {
+            var sequence = new List<GameplayDemand> { demands[seed] };
+            if (paired) sequence.Add(demands[start + 1 - (seed - start)]);
+            var previous = demands[seed];
+            var direction = 0;
+            var distance = 0;
+            for (var index = next; index < demands.Length; index++)
+            {
+                var current = demands[index];
+                if (current.Note.Kind is not (NoteKind.Tap or NoteKind.Hold) ||
+                    (index + 1 < demands.Length && time(demands[index + 1]) <= time(current) + Epsilon)) break;
+                var step = ButtonStep(previous.Note.StartPosition, current.Note.StartPosition);
+                var interval = time(current) - time(previous);
+                if (Math.Abs(step) is not (1 or 2) || (direction != 0 && Math.Sign(step) != direction) ||
+                    interval <= Epsilon || interval > .2 * Math.Abs(step) + Epsilon) break;
+                direction = Math.Sign(step);
+                distance += Math.Abs(step);
+                sequence.Add(current);
+                if (current.Note.Kind == NoteKind.Hold)
+                {
+                    if (sequence.Count >= (paired ? 4 : 3) && distance < bestDistance)
+                    {
+                        best = new(PatternKind.HoldSweep, sequence.ToArray(), direction);
+                        bestDistance = distance;
+                    }
+                    break;
+                }
+                previous = current;
+            }
+        }
+        return best;
+    }
+
     private static PatternSegment? IdentifyChordStream(GameplayDemand[] demands, int start, Func<GameplayDemand, double> time)
     {
+        if (!IsPair(demands, start, time) && demands[start].Note.Kind == NoteKind.Tap &&
+            IsPair(demands, start + 1, time))
+        {
+            var following = IdentifyChordStream(demands, start + 1, time);
+            if (following is null || Math.Abs(time(following.Demands[0]) - time(following.Demands[1])) >= Epsilon) return null;
+            var interval = time(following.Demands[0]) - time(demands[start]);
+            for (var lane = 0; lane < 2; lane++)
+            {
+                var step = ButtonStep(demands[start].Note.StartPosition, following.Demands[lane].Note.StartPosition);
+                var direction = lane == 0 ? following.Direction : following.SecondDirection;
+                if (Math.Sign(step) == direction && Math.Abs(step) is 1 or 2 &&
+                    interval <= NormalHandPlanner.FastSweepInterval * Math.Abs(step) + Epsilon)
+                    return following with { Demands = new[] { demands[start] }.Concat(following.Demands).ToArray() };
+            }
+            return null;
+        }
         if (!IsPair(demands, start, time) || !IsPair(demands, start + 2, time)) return null;
         var initial = demands[start..(start + 2)];
         PatternSegment? best = null;
@@ -67,13 +145,14 @@ public static class PatternAnalyzer
             var sequence = new List<GameplayDemand>(initial);
             sequence.AddRange(next);
             var previous = next;
-            for (var index = start + 4; IsPair(demands, index, time); index += 2)
+            for (var index = start + 4; IsPair(demands, index, time, allowHolds: true); index += 2)
             {
                 next = demands[index..(index + 2)];
                 if (!CanFollow(previous, next, directions, time)) Array.Reverse(next);
                 if (!CanFollow(previous, next, directions, time)) break;
                 sequence.AddRange(next);
                 previous = next;
+                if (next.Any(d => d.Note.Kind == NoteKind.Hold)) break;
             }
             if (sequence.Count >= 6 && (best is null || sequence.Count > best.Demands.Count))
                 best = new(PatternKind.ChordStream, sequence.ToArray(), directions[0], directions[1]);
@@ -81,8 +160,9 @@ public static class PatternAnalyzer
         return best;
     }
 
-    private static bool IsPair(GameplayDemand[] demands, int start, Func<GameplayDemand, double> time) => start + 1 < demands.Length &&
-        demands[start].Note.Kind == NoteKind.Tap && demands[start + 1].Note.Kind == NoteKind.Tap &&
+    private static bool IsPair(GameplayDemand[] demands, int start, Func<GameplayDemand, double> time, bool allowHolds = false) => start + 1 < demands.Length &&
+        (demands[start].Note.Kind == NoteKind.Tap || allowHolds && demands[start].Note.Kind == NoteKind.Hold) &&
+        (demands[start + 1].Note.Kind == NoteKind.Tap || allowHolds && demands[start + 1].Note.Kind == NoteKind.Hold) &&
         demands[start].Note.StartPosition != demands[start + 1].Note.StartPosition &&
         Math.Abs(time(demands[start]) - time(demands[start + 1])) < Epsilon &&
         (start == 0 || time(demands[start]) > time(demands[start - 1]) + Epsilon) &&

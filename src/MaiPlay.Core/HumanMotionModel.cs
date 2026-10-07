@@ -20,19 +20,30 @@ public sealed class HumanMotionModel
     public CabinetGeometry Geometry { get; }
     public double MaxSpeedMillimetersPerSecond { get; }
     public double PreferredSpeedMillimetersPerSecond { get; }
+    public double PreferredStrikeIntervalSeconds { get; }
 
-    public HumanMotionModel(CabinetGeometry? geometry = null, double maxSpeedMillimetersPerSecond = 4500,
-        double preferredSpeedMillimetersPerSecond = 1300)
+    public HumanMotionModel(CabinetGeometry? geometry = null, double? maxSpeedMillimetersPerSecond = null,
+        double preferredSpeedMillimetersPerSecond = 1300,
+        double preferredStrikeIntervalSeconds = NormalHandPlanner.FastRepeatInterval)
     {
-        if (!double.IsFinite(maxSpeedMillimetersPerSecond) || maxSpeedMillimetersPerSecond <= 0)
+        Geometry = geometry ?? CabinetGeometry.Approximate43Inch;
+        // 沿用基线扫键允许的每秒 30 个判定半径，作为未标定的可配置搜索上界。
+        var maximumSpeed = maxSpeedMillimetersPerSecond ?? Geometry.JudgementRadiusMillimeters * 30;
+        if (!double.IsFinite(maximumSpeed) || maximumSpeed <= 0)
             throw new ArgumentOutOfRangeException(nameof(maxSpeedMillimetersPerSecond));
         if (!double.IsFinite(preferredSpeedMillimetersPerSecond) || preferredSpeedMillimetersPerSecond <= 0 ||
-            preferredSpeedMillimetersPerSecond > maxSpeedMillimetersPerSecond)
+            preferredSpeedMillimetersPerSecond > maximumSpeed)
             throw new ArgumentOutOfRangeException(nameof(preferredSpeedMillimetersPerSecond));
-        Geometry = geometry ?? CabinetGeometry.Approximate43Inch;
-        MaxSpeedMillimetersPerSecond = maxSpeedMillimetersPerSecond;
+        if (!double.IsFinite(preferredStrikeIntervalSeconds) || preferredStrikeIntervalSeconds <= 0)
+            throw new ArgumentOutOfRangeException(nameof(preferredStrikeIntervalSeconds));
+        MaxSpeedMillimetersPerSecond = maximumSpeed;
         PreferredSpeedMillimetersPerSecond = preferredSpeedMillimetersPerSecond;
+        PreferredStrikeIntervalSeconds = preferredStrikeIntervalSeconds;
     }
+
+    /// <summary>Soft preference against fast same-hand repeats; the positive cadence interval is measured in seconds.</summary>
+    public double RepetitionCost(double intervalSeconds) =>
+        intervalSeconds < PreferredStrikeIntervalSeconds - Epsilon ? 3 * PreferredStrikeIntervalSeconds / intervalSeconds : 0;
 
     public HumanMotionTransition EvaluateTransition(HandSide hand, ChartPoint from, double departureTime,
         ChartPoint to, double arrivalTime, ChartPoint? otherPositionAtArrival = null, double? pathDistanceMillimeters = null)
@@ -108,7 +119,7 @@ public sealed class HumanMotionModel
         var right = tracks.FirstOrDefault(t => t.Hand == HandSide.Right)?.Frames;
         if (left is null || right is null || left.Count == 0 || right.Count == 0) return (0, 0);
         var start = Math.Max(left[0].Time, right[0].Time);
-        var end = Math.Min(left[^1].Time, right[^1].Time);
+        var end = Math.Max(left[^1].Time, right[^1].Time);
         if (end <= start) return (0, 0);
         var times = left.Select(f => f.Time).Concat(right.Select(f => f.Time))
             .Where(t => t >= start && t <= end).Append(start).Append(end).Distinct().Order().ToArray();

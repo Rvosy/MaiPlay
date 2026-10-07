@@ -160,11 +160,12 @@
               <TextBlock Text="数值越大，音符出现越晚、接近越快。" Classes="caption" FontSize="10" />
                   <TextBlock Text="流速不改变判定时刻和 Slide 移动时长。" Classes="caption" TextWrapping="Wrap" />
                   <Border Height="1" Background="#E5EBF1" />
+                  <CheckBox x:Name="SensorToggle" Content="显示按钮与触摸区域边界、编号" IsChecked="True" IsCheckedChanged="Sensors_Changed" />
                   <CheckBox x:Name="ContactHighlightToggle" Content="点亮当前触发区域" IsChecked="True" IsCheckedChanged="HandDisplay_Changed" />
                   <CheckBox x:Name="HandMarkerToggle" Content="显示左右手位" IsChecked="True" IsCheckedChanged="HandDisplay_Changed" />
                   <CheckBox x:Name="HandTrailToggle" Content="显示短拖尾" IsCheckedChanged="HandDisplay_Changed" />
-                  <TextBlock Text="○ 蓝色左手 · ◇ 橙色右手。手位用于看手顺，区域底色表示实际触发。" Classes="caption" TextWrapping="Wrap" />
-                  <TextBlock Text="手位需要带手部轨迹的输入日志；这些显示选项不改变判定。" Classes="caption" TextWrapping="Wrap" />
+                  <TextBlock Text="○ 蓝色左手 · ◇ 橙色右手。区域底色表示实际触发，无手部归属的输入为绿色。" Classes="caption" TextWrapping="Wrap" />
+                  <TextBlock Text="手位需要带手部轨迹的输入日志。外键范围为近似值；这些显示选项不改变判定。" Classes="caption" TextWrapping="Wrap" />
                 </StackPanel>
               </ScrollViewer>
             </TabItem>
@@ -212,8 +213,6 @@
             <TabItem Header="判定与诊断">
               <ScrollViewer HorizontalScrollBarVisibility="Disabled">
                 <StackPanel Spacing="12" Margin="4,20,4,8">
-                  <CheckBox x:Name="SensorToggle" Content="显示按钮与触摸区域边界、编号" IsCheckedChanged="Sensors_Changed" />
-                  <TextBlock Text="区域亮起可在显示页开关。蓝色为左手，橙色为右手，无手部归属的输入为绿色。外键范围为近似值。" Classes="caption" TextWrapping="Wrap" />
                   <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
                     <Button Content="加载输入日志" HorizontalAlignment="Stretch" Click="LoadInputLog_Click" />
                     <Button Grid.Column="1" Content="清空输入" Click="ClearInputLog_Click" />

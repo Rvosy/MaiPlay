@@ -1,0 +1,1727 @@
+{
+  "createdAtUtc": "2026-10-07T22:07:17.3935122+00:00",
+  "currentCoreSha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+  "previousCoreSha256": "CBB26E26AC2949FAF02C90635798A73469E420C417FFCE7F82F2F479180445D5",
+  "currentCore": "artifacts/human-planner-validation/sweep-tail-final-build/bin/MaiPlay.GameplayHarness/release/MaiPlay.Core.dll",
+  "previousCore": "artifacts/human-planner-validation/final-build/bin/MaiPlay.GameplayHarness/release/MaiPlay.Core.dll",
+  "ruleVersion": "majdata-dc19722-240-v1",
+  "defaults": "Planner defaults; difficulty 4 = Expert, 5 = Master.",
+  "evidence": "Whole-chart grades come from the frozen Harness plan replay. Tail hand assignments are checked against button-down events reconstructed from hands.json by the current frozen Core.",
+  "scope": "Three charts, both planners. Six current runs and three additional previous-version runs; reuse existing previous Expert comparison and Human End Time run.",
+  "runtimeNote": "Other validation ran concurrently. Recorded elapsed times are not a controlled performance comparison.",
+  "tailChord": "Master #759/#760 at 96.9 s are simultaneous Break Taps on buttons 1/5; neither is a star head. The next star heads are #761 at 97.2 s and #766 at 97.5 s.",
+  "aggregateRegressions": 0,
+  "rows": [
+    {
+      "chartPath": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "title": "封焔の135秒",
+      "difficulty": 4,
+      "level": "12.7",
+      "planner": "NormalHandPlanner",
+      "notes": 609,
+      "current": {
+        "cp": 608,
+        "nonCp": 1,
+        "gaps": 1,
+        "achievement": 100.880810488677,
+        "dxScore": 1824,
+        "allCriticalPerfect": false,
+        "seconds": 15.2239473
+      },
+      "previous": {
+        "cp": 608,
+        "nonCp": 1,
+        "gaps": 1,
+        "achievement": 100.880810488677,
+        "dxScore": 1824,
+        "allCriticalPerfect": false,
+        "seconds": 10.0448817
+      },
+      "cpChange": 0,
+      "gapChange": 0,
+      "achievementChange": 0.0,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": false,
+      "gradeChanges": [],
+      "cpLostNoteIds": [],
+      "failures": [
+        {
+          "id": 269,
+          "kind": "Tap",
+          "time": 60.52499999999979,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "gapDetails": [
+        {
+          "noteId": 269,
+          "time": 60.52499999999979,
+          "endTime": 60.54999999999979,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        }
+      ],
+      "segmentStart": 96.6,
+      "segmentEnd": 97.5,
+      "segmentNotes": [
+        {
+          "noteId": 428,
+          "kind": "Tap",
+          "time": 96.59999999999968,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.126388037344441E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.59999999999968,
+              "end": 96.62499999999969,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 429,
+          "kind": "Tap",
+          "time": 96.89999999999968,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.89999999999968,
+              "end": 96.92499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 430,
+          "kind": "Tap",
+          "time": 96.89999999999968,
+          "startPosition": 8,
+          "endPosition": 8,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.89999999999968,
+              "end": 96.92499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 431,
+          "kind": "Tap",
+          "time": 97.19999999999968,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.19999999999968,
+              "end": 97.22499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 432,
+          "kind": "Slide",
+          "time": 97.19999999999968,
+          "startPosition": 7,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.0021999999996751285,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.49999999999967,
+              "end": 97.625,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        },
+        {
+          "noteId": 433,
+          "kind": "Tap",
+          "time": 97.49999999999967,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.49999999999967,
+              "end": 97.52499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 434,
+          "kind": "Slide",
+          "time": 97.49999999999967,
+          "startPosition": 1,
+          "endPosition": 5,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.0021999999996751285,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.79999999999967,
+              "end": 97.925,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        }
+      ],
+      "tailChordButtonDowns": [
+        {
+          "time": 96.89999999999968,
+          "area": "4",
+          "hand": "Right"
+        },
+        {
+          "time": 96.89999999999968,
+          "area": "8",
+          "hand": "Left"
+        }
+      ],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/phoenix-expert/normal/results.json",
+      "currentEvidenceSha256": "B87BF687A7C97641F6099A18FB7ECFD784E788B045ED434D6A64BDECDFADB150",
+      "previousEvidence": "artifacts/human-planner-validation/final-generalized/expert-12-plus/comparison.json",
+      "previousEvidenceSha256": "35782785956322A0A5736D10081DBDDE96EA37DDC02DABC3B77E65BFA141594A",
+      "previousProvenance": "existing-comparison-with-assembly-fingerprint"
+    },
+    {
+      "chartPath": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "title": "封焔の135秒",
+      "difficulty": 4,
+      "level": "12.7",
+      "planner": "HumanPlanner",
+      "notes": 609,
+      "current": {
+        "cp": 608,
+        "nonCp": 1,
+        "gaps": 1,
+        "achievement": 100.880810488677,
+        "dxScore": 1824,
+        "allCriticalPerfect": false,
+        "seconds": 9.6025082
+      },
+      "previous": {
+        "cp": 608,
+        "nonCp": 1,
+        "gaps": 1,
+        "achievement": 100.880810488677,
+        "dxScore": 1824,
+        "allCriticalPerfect": false,
+        "seconds": 8.9753824
+      },
+      "cpChange": 0,
+      "gapChange": 0,
+      "achievementChange": 0.0,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": false,
+      "gradeChanges": [],
+      "cpLostNoteIds": [],
+      "failures": [
+        {
+          "id": 269,
+          "kind": "Tap",
+          "time": 60.52499999999979,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "gapDetails": [
+        {
+          "noteId": 269,
+          "time": 60.52499999999979,
+          "endTime": 60.52499999999979,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        }
+      ],
+      "segmentStart": 96.6,
+      "segmentEnd": 97.5,
+      "segmentNotes": [
+        {
+          "noteId": 428,
+          "kind": "Tap",
+          "time": 96.59999999999968,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.126388037344441E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.59999999999968,
+              "end": 96.62499999999969,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 429,
+          "kind": "Tap",
+          "time": 96.89999999999968,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.89999999999968,
+              "end": 96.92499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 430,
+          "kind": "Tap",
+          "time": 96.89999999999968,
+          "startPosition": 8,
+          "endPosition": 8,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.89999999999968,
+              "end": 96.92499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 431,
+          "kind": "Tap",
+          "time": 97.19999999999968,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.19999999999968,
+              "end": 97.22499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 432,
+          "kind": "Slide",
+          "time": 97.19999999999968,
+          "startPosition": 7,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.12303333333301225,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.37999999999967,
+              "end": 97.505,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        },
+        {
+          "noteId": 433,
+          "kind": "Tap",
+          "time": 97.49999999999967,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": 3.268496584496461E-13,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.49999999999967,
+              "end": 97.52499999999968,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 434,
+          "kind": "Slide",
+          "time": 97.49999999999967,
+          "startPosition": 1,
+          "endPosition": 5,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.12303333333301225,
+          "previousGrade": null,
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.67999999999967,
+              "end": 97.80499999999999,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        }
+      ],
+      "tailChordButtonDowns": [
+        {
+          "time": 96.89999999999968,
+          "area": "4",
+          "hand": "Right"
+        },
+        {
+          "time": 96.89999999999968,
+          "area": "8",
+          "hand": "Left"
+        }
+      ],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/phoenix-expert/human/results.json",
+      "currentEvidenceSha256": "4C38E10CE8732FFF7E52C340C5B139BDE87AA68A0DEEB4B285FB1EC3BF9F6392",
+      "previousEvidence": "artifacts/human-planner-validation/final-generalized/expert-12-plus/comparison.json",
+      "previousEvidenceSha256": "35782785956322A0A5736D10081DBDDE96EA37DDC02DABC3B77E65BFA141594A",
+      "previousProvenance": "existing-comparison-with-assembly-fingerprint"
+    },
+    {
+      "chartPath": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "level": "14.8",
+      "planner": "NormalHandPlanner",
+      "notes": 1092,
+      "current": {
+        "cp": 1080,
+        "nonCp": 12,
+        "gaps": 11,
+        "achievement": 100.1984272765472,
+        "dxScore": 3241,
+        "allCriticalPerfect": false,
+        "seconds": 53.258244
+      },
+      "previous": {
+        "cp": 1074,
+        "nonCp": 18,
+        "gaps": 17,
+        "achievement": 98.75674410228706,
+        "dxScore": 3223,
+        "allCriticalPerfect": false,
+        "seconds": 18.5758463
+      },
+      "cpChange": 6,
+      "gapChange": -6,
+      "achievementChange": 1.4416831742601488,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": true,
+      "gradeChanges": [
+        {
+          "noteId": 289,
+          "time": 41.69999999999992,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 392,
+          "time": 51.30000000000004,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 506,
+          "time": 60.900000000000105,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 760,
+          "time": 96.9000000000001,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 846,
+          "time": 104.40000000000022,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 878,
+          "time": 106.50000000000018,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        }
+      ],
+      "cpLostNoteIds": [],
+      "failures": [
+        {
+          "id": 485,
+          "kind": "Tap",
+          "time": 60.03750000000007,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 484,
+          "kind": "Hold",
+          "time": 60.00000000000007,
+          "grade": "LateGood",
+          "differenceSeconds": 0.14999999999992752,
+          "reason": ""
+        },
+        {
+          "id": 766,
+          "kind": "Tap",
+          "time": 97.50000000000011,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 777,
+          "kind": "Tap",
+          "time": 98.40000000000015,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 785,
+          "kind": "Tap",
+          "time": 99.40000000000013,
+          "grade": "FastGood",
+          "differenceSeconds": -0.12916666666680499,
+          "reason": ""
+        },
+        {
+          "id": 783,
+          "kind": "Tap",
+          "time": 99.30000000000014,
+          "grade": "LateGreat",
+          "differenceSeconds": 0.06249999999985789,
+          "reason": ""
+        },
+        {
+          "id": 867,
+          "kind": "Tap",
+          "time": 105.90000000000022,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 888,
+          "kind": "Tap",
+          "time": 107.4000000000002,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 937,
+          "kind": "Tap",
+          "time": 111.1500000000003,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1017,
+          "kind": "Tap",
+          "time": 117.15000000000046,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1035,
+          "kind": "Tap",
+          "time": 118.35000000000049,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1076,
+          "kind": "Tap",
+          "time": 121.30000000000051,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "gapDetails": [
+        {
+          "noteId": 484,
+          "time": 60.00000000000007,
+          "endTime": 60.63250000000007,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 485,
+          "time": 60.03750000000007,
+          "endTime": 60.06250000000007,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 766,
+          "time": 97.50000000000011,
+          "endTime": 97.52500000000012,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 777,
+          "time": 98.40000000000015,
+          "endTime": 98.42500000000015,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 783,
+          "time": 99.30000000000014,
+          "endTime": 99.32500000000014,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 867,
+          "time": 105.90000000000022,
+          "endTime": 105.92500000000022,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 888,
+          "time": 107.4000000000002,
+          "endTime": 107.42500000000021,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 937,
+          "time": 111.1500000000003,
+          "endTime": 111.17500000000031,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 1017,
+          "time": 117.15000000000046,
+          "endTime": 117.17500000000047,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 1035,
+          "time": 118.35000000000049,
+          "endTime": 118.3750000000005,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        },
+        {
+          "noteId": 1076,
+          "time": 121.30000000000051,
+          "endTime": 121.32500000000051,
+          "reason": "双手占用或移动时间不足，暂未找到可衔接的手顺。"
+        }
+      ],
+      "segmentStart": 96.6,
+      "segmentEnd": 97.5,
+      "segmentNotes": [
+        {
+          "noteId": 751,
+          "kind": "Tap",
+          "time": 96.60000000000015,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.5631940186722204E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.60000000000015,
+              "end": 96.62500000000016,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 752,
+          "kind": "Tap",
+          "time": 96.63750000000014,
+          "startPosition": 2,
+          "endPosition": 2,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.4210854715202004E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.63750000000014,
+              "end": 96.66250000000015,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 753,
+          "kind": "Tap",
+          "time": 96.67500000000014,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.4210854715202004E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.67500000000014,
+              "end": 96.70000000000014,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 754,
+          "kind": "Tap",
+          "time": 96.71250000000013,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.71250000000013,
+              "end": 96.73750000000014,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 755,
+          "kind": "Tap",
+          "time": 96.75000000000013,
+          "startPosition": 5,
+          "endPosition": 5,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.75000000000013,
+              "end": 96.77500000000013,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 756,
+          "kind": "Tap",
+          "time": 96.78750000000012,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.78750000000012,
+              "end": 96.81250000000013,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 757,
+          "kind": "Tap",
+          "time": 96.82500000000012,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.1368683772161603E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.82500000000012,
+              "end": 96.85000000000012,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 758,
+          "kind": "Tap",
+          "time": 96.86250000000011,
+          "startPosition": 8,
+          "endPosition": 8,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.1368683772161603E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.86250000000011,
+              "end": 96.88750000000012,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 759,
+          "kind": "Tap",
+          "time": 96.9000000000001,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -9.947598300641403E-14,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.9000000000001,
+              "end": 96.92500000000011,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 760,
+          "kind": "Tap",
+          "time": 96.9000000000001,
+          "startPosition": 5,
+          "endPosition": 5,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -9.947598300641403E-14,
+          "previousGrade": "Miss",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.9000000000001,
+              "end": 96.92500000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 761,
+          "kind": "Tap",
+          "time": 97.2000000000001,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": 0.012499999999903366,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.2125000000001,
+              "end": 97.23750000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 762,
+          "kind": "Slide",
+          "time": 97.2000000000001,
+          "startPosition": 3,
+          "endPosition": 8,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.009000000000114028,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.49833333333355,
+              "end": 97.61500000000011,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        },
+        {
+          "noteId": 763,
+          "kind": "Tap",
+          "time": 97.2000000000001,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000102318,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.1875000000001,
+              "end": 97.2125000000001,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 764,
+          "kind": "Tap",
+          "time": 97.35000000000011,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 0.012499999999889155,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.36250000000011,
+              "end": 97.38750000000012,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 765,
+          "kind": "Tap",
+          "time": 97.50000000000011,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000116529,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.48750000000011,
+              "end": 97.51250000000012,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 766,
+          "kind": "Tap",
+          "time": 97.50000000000011,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "previousGrade": "Miss",
+          "assignments": []
+        },
+        {
+          "noteId": 767,
+          "kind": "Slide",
+          "time": 97.50000000000011,
+          "startPosition": 6,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.004833333333451151,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.80000000000011,
+              "end": 97.91666666666667,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        }
+      ],
+      "tailChordButtonDowns": [
+        {
+          "time": 96.9,
+          "area": "1",
+          "hand": "Right"
+        },
+        {
+          "time": 96.9000000000001,
+          "area": "5",
+          "hand": "Left"
+        }
+      ],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/phoenix-master/normal/results.json",
+      "currentEvidenceSha256": "7846C73DB82FA5B79A71A6E70701A07FEEB77041970B1F8583367A87BCA73F52",
+      "previousEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/previous-cbb26e/phoenix-master/normal/results.json",
+      "previousEvidenceSha256": "50F4B45507EC44DBF2664A32DCA58CDEA9C44D9BFD9215939D1505C99DA47795",
+      "previousProvenance": "rerun-with-verified-previous-assembly"
+    },
+    {
+      "chartPath": "14_maimaDXPLUS/011102_封焔の135秒/maidata.txt",
+      "chartSha256": "3C4D713C6C4E81FF0A40B20056299AEB563F3029EDC6D2B44F22C99D31F44B1F",
+      "title": "封焔の135秒",
+      "difficulty": 5,
+      "level": "14.8",
+      "planner": "HumanPlanner",
+      "notes": 1092,
+      "current": {
+        "cp": 1082,
+        "nonCp": 10,
+        "gaps": 5,
+        "achievement": 99.59273665886307,
+        "dxScore": 3246,
+        "allCriticalPerfect": false,
+        "seconds": 47.6088778
+      },
+      "previous": {
+        "cp": 1077,
+        "nonCp": 15,
+        "gaps": 10,
+        "achievement": 98.42858514916861,
+        "dxScore": 3231,
+        "allCriticalPerfect": false,
+        "seconds": 37.4861063
+      },
+      "cpChange": 5,
+      "gapChange": -5,
+      "achievementChange": 1.164151509694463,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": true,
+      "gradeChanges": [
+        {
+          "noteId": 287,
+          "time": 41.662499999999916,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 391,
+          "time": 51.30000000000004,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 505,
+          "time": 60.900000000000105,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 759,
+          "time": 96.9000000000001,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        },
+        {
+          "noteId": 878,
+          "time": 106.50000000000018,
+          "previousGrade": "Miss",
+          "currentGrade": "Perfect"
+        }
+      ],
+      "cpLostNoteIds": [],
+      "failures": [
+        {
+          "id": 94,
+          "kind": "Tap",
+          "time": 22.70000000000003,
+          "grade": "FastGood",
+          "differenceSeconds": -0.15000000000003055,
+          "reason": ""
+        },
+        {
+          "id": 780,
+          "kind": "Slide",
+          "time": 98.70000000000014,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "超时，末段剩余 4 区"
+        },
+        {
+          "id": 1018,
+          "kind": "Tap",
+          "time": 117.22500000000046,
+          "grade": "FastGood",
+          "differenceSeconds": -0.11250000000046612,
+          "reason": ""
+        },
+        {
+          "id": 1020,
+          "kind": "Tap",
+          "time": 117.37500000000047,
+          "grade": "FastGood",
+          "differenceSeconds": -0.15000000000047464,
+          "reason": ""
+        },
+        {
+          "id": 1036,
+          "kind": "Tap",
+          "time": 118.4250000000005,
+          "grade": "FastGood",
+          "differenceSeconds": -0.11250000000049454,
+          "reason": ""
+        },
+        {
+          "id": 1038,
+          "kind": "Tap",
+          "time": 118.5750000000005,
+          "grade": "FastGood",
+          "differenceSeconds": -0.15000000000050306,
+          "reason": ""
+        },
+        {
+          "id": 1071,
+          "kind": "Tap",
+          "time": 121.22500000000049,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1072,
+          "kind": "Tap",
+          "time": 121.2500000000005,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1073,
+          "kind": "Tap",
+          "time": 121.2500000000005,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        },
+        {
+          "id": 1074,
+          "kind": "Tap",
+          "time": 121.2750000000005,
+          "grade": "Miss",
+          "differenceSeconds": null,
+          "reason": "head-timeout"
+        }
+      ],
+      "gapDetails": [
+        {
+          "noteId": 780,
+          "time": 99.00000000000014,
+          "endTime": 99.15000000000015,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1071,
+          "time": 121.22500000000049,
+          "endTime": 121.22500000000049,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1073,
+          "time": 121.2500000000005,
+          "endTime": 121.2500000000005,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1072,
+          "time": 121.2500000000005,
+          "endTime": 121.2500000000005,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        },
+        {
+          "noteId": 1074,
+          "time": 121.2750000000005,
+          "endTime": 121.2750000000005,
+          "reason": "占手或移动约束下未找到可衔接的动作。"
+        }
+      ],
+      "segmentStart": 96.6,
+      "segmentEnd": 97.5,
+      "segmentNotes": [
+        {
+          "noteId": 751,
+          "kind": "Tap",
+          "time": 96.60000000000015,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.5631940186722204E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.60000000000015,
+              "end": 96.62500000000016,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 752,
+          "kind": "Tap",
+          "time": 96.63750000000014,
+          "startPosition": 2,
+          "endPosition": 2,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.4210854715202004E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.63750000000014,
+              "end": 96.66250000000015,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 753,
+          "kind": "Tap",
+          "time": 96.67500000000014,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.4210854715202004E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.67500000000014,
+              "end": 96.70000000000014,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 754,
+          "kind": "Tap",
+          "time": 96.71250000000013,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.71250000000013,
+              "end": 96.73750000000014,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 755,
+          "kind": "Tap",
+          "time": 96.75000000000013,
+          "startPosition": 5,
+          "endPosition": 5,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.75000000000013,
+              "end": 96.77500000000013,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 756,
+          "kind": "Tap",
+          "time": 96.78750000000012,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.2789769243681803E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.78750000000012,
+              "end": 96.81250000000013,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 757,
+          "kind": "Tap",
+          "time": 96.82500000000012,
+          "startPosition": 7,
+          "endPosition": 7,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.1368683772161603E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.82500000000012,
+              "end": 96.85000000000012,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 758,
+          "kind": "Tap",
+          "time": 96.86250000000011,
+          "startPosition": 8,
+          "endPosition": 8,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.1368683772161603E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.86250000000011,
+              "end": 96.88750000000012,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 759,
+          "kind": "Tap",
+          "time": 96.9000000000001,
+          "startPosition": 1,
+          "endPosition": 1,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -9.947598300641403E-14,
+          "previousGrade": "Miss",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 96.9000000000001,
+              "end": 96.92500000000011,
+              "channel": "Button",
+              "technique": "Rotation"
+            }
+          ]
+        },
+        {
+          "noteId": 760,
+          "kind": "Tap",
+          "time": 96.9000000000001,
+          "startPosition": 5,
+          "endPosition": 5,
+          "isBreak": true,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000102318,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 96.8875000000001,
+              "end": 96.91250000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 761,
+          "kind": "Tap",
+          "time": 97.2000000000001,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": -9.947598300641403E-14,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.2000000000001,
+              "end": 97.22500000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 762,
+          "kind": "Slide",
+          "time": 97.2000000000001,
+          "startPosition": 3,
+          "endPosition": 8,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 0.05349999999988597,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.5600000000001,
+              "end": 97.67666666666666,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        },
+        {
+          "noteId": 763,
+          "kind": "Tap",
+          "time": 97.2000000000001,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 0.012499999999903366,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.2125000000001,
+              "end": 97.23750000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 764,
+          "kind": "Tap",
+          "time": 97.35000000000011,
+          "startPosition": 4,
+          "endPosition": 4,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": -1.1368683772161603E-13,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.35000000000011,
+              "end": 97.37500000000011,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 765,
+          "kind": "Tap",
+          "time": 97.50000000000011,
+          "startPosition": 3,
+          "endPosition": 3,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 0.012499999999889155,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Right",
+              "start": 97.51250000000012,
+              "end": 97.53750000000012,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 766,
+          "kind": "Tap",
+          "time": 97.50000000000011,
+          "startPosition": 6,
+          "endPosition": 6,
+          "isBreak": false,
+          "isStar": true,
+          "grade": "Perfect",
+          "differenceSeconds": -0.012500000000116529,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.48750000000011,
+              "end": 97.51250000000012,
+              "channel": "Button",
+              "technique": "Strike"
+            }
+          ]
+        },
+        {
+          "noteId": 767,
+          "kind": "Slide",
+          "time": 97.50000000000011,
+          "startPosition": 6,
+          "endPosition": 1,
+          "isBreak": false,
+          "isStar": false,
+          "grade": "Perfect",
+          "differenceSeconds": 0.05349999999987176,
+          "previousGrade": "Perfect",
+          "assignments": [
+            {
+              "hand": "Left",
+              "start": 97.86000000000011,
+              "end": 97.97666666666667,
+              "channel": "Touch",
+              "technique": "Slide"
+            }
+          ]
+        }
+      ],
+      "tailChordButtonDowns": [
+        {
+          "time": 96.8875000000001,
+          "area": "5",
+          "hand": "Right"
+        },
+        {
+          "time": 96.9,
+          "area": "1",
+          "hand": "Left"
+        }
+      ],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/phoenix-master/human/results.json",
+      "currentEvidenceSha256": "CCA1FB23E6C9ED13B25146A43E4706E8A1DF5A430C2E6DEFD05E684B52EE3914",
+      "previousEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/previous-cbb26e/phoenix-master/human/results.json",
+      "previousEvidenceSha256": "7934CD872A8AC05DE0349007751ECBFADD5CE18B770DAD4BD035F8DEE150C72E",
+      "previousProvenance": "rerun-with-verified-previous-assembly"
+    },
+    {
+      "chartPath": "12_FiNALE/000844_End Time/maidata.txt",
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "title": "End Time",
+      "difficulty": 5,
+      "level": "14.7",
+      "planner": "NormalHandPlanner",
+      "notes": 949,
+      "current": {
+        "cp": 947,
+        "nonCp": 2,
+        "gaps": 0,
+        "achievement": 100.91645781119465,
+        "dxScore": 2841,
+        "allCriticalPerfect": false,
+        "seconds": 20.775569
+      },
+      "previous": {
+        "cp": 947,
+        "nonCp": 2,
+        "gaps": 0,
+        "achievement": 100.91645781119465,
+        "dxScore": 2841,
+        "allCriticalPerfect": false,
+        "seconds": 8.60787
+      },
+      "cpChange": 0,
+      "gapChange": 0,
+      "achievementChange": 0.0,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": true,
+      "gradeChanges": [],
+      "cpLostNoteIds": [],
+      "failures": [
+        {
+          "id": 525,
+          "kind": "Tap",
+          "time": 85.83333333335489,
+          "grade": "FastGood",
+          "differenceSeconds": -0.15000000002154934,
+          "reason": ""
+        },
+        {
+          "id": 626,
+          "kind": "Tap",
+          "time": 92.3333333333708,
+          "grade": "FastGood",
+          "differenceSeconds": -0.1500000000374655,
+          "reason": ""
+        }
+      ],
+      "gapDetails": [],
+      "segmentStart": null,
+      "segmentEnd": null,
+      "segmentNotes": [],
+      "tailChordButtonDowns": [],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/end-time-master/normal/results.json",
+      "currentEvidenceSha256": "F20F063D01EED31F9CA32C3E5849506758A64AEC7E07A51CD720E92A2A1AF143",
+      "previousEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/previous-cbb26e/end-time-master/normal/results.json",
+      "previousEvidenceSha256": "B047376DB5466D707A9B92FEB53D3EF83892A76D2A18625F3E9348EAB3CFB11E",
+      "previousProvenance": "rerun-with-verified-previous-assembly"
+    },
+    {
+      "chartPath": "12_FiNALE/000844_End Time/maidata.txt",
+      "chartSha256": "92115D77C62DA48A89C1CE9792630B0157C3EFE5F196A5D32F667335A3C3589D",
+      "title": "End Time",
+      "difficulty": 5,
+      "level": "14.7",
+      "planner": "HumanPlanner",
+      "notes": 949,
+      "current": {
+        "cp": 949,
+        "nonCp": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847,
+        "allCriticalPerfect": true,
+        "seconds": 9.4720498
+      },
+      "previous": {
+        "cp": 949,
+        "nonCp": 0,
+        "gaps": 0,
+        "achievement": 101,
+        "dxScore": 2847,
+        "allCriticalPerfect": true,
+        "seconds": 14.4733338
+      },
+      "cpChange": 0,
+      "gapChange": 0,
+      "achievementChange": 0,
+      "aggregateRegression": false,
+      "gradeChangesAvailable": true,
+      "gradeChanges": [],
+      "cpLostNoteIds": [],
+      "failures": [],
+      "gapDetails": [],
+      "segmentStart": null,
+      "segmentEnd": null,
+      "segmentNotes": [],
+      "tailChordButtonDowns": [],
+      "currentEvidence": "artifacts/human-planner-validation/sweep-tail-final/spot-replays/end-time-master/human/results.json",
+      "currentEvidenceSha256": "B0D10BB31FC4C14B152D725B773E7329F81FDAFE075ED3F47BB560686C48B12D",
+      "previousEvidence": "artifacts/human-planner-validation/final-generalized/end-time/results.json",
+      "previousEvidenceSha256": "7EBFB28E297A5DFE3F104998E8EE57F95CB869CF27C6DE411D7C888F055AB818",
+      "previousProvenance": "existing-frozen-run-recorded-by-final-validation"
+    }
+  ]
+}

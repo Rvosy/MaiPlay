@@ -1,20 +1,21 @@
 {
-  "createdAtUtc": "2026-10-07T20:34:09.1814397+00:00",
+  "createdAtUtc": "2026-10-07T22:03:06.7556178+00:00",
   "ruleVersion": "majdata-dc19722-240-v1",
-  "plannerAssemblySha256": "60A4DFDE358F242F37EE01EA709B2969D92D6D1C51CA4FC43F4245FDCA1372B0",
+  "plannerAssemblySha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
   "baseline": "NormalHandPlanner",
   "candidate": "HumanPlanner",
   "motionParameters": {
     "judgementRadiusMillimeters": 235.224,
-    "maxSpeedMillimetersPerSecond": 4500,
-    "preferredSpeedMillimetersPerSecond": 1300
+    "maxSpeedMillimetersPerSecond": 7056.719999999999,
+    "preferredSpeedMillimetersPerSecond": 1300,
+    "preferredStrikeIntervalSeconds": 0.125
   },
   "difficulty": 5,
   "displayLevel": "11+",
   "files": 1512,
   "missingDifficulty": 0,
   "excludedLevel": 1462,
-  "seconds": 85.3986986,
+  "seconds": 149.5201504,
   "totals": {
     "charts": 50,
     "improved": 10,
@@ -30,12 +31,12 @@
       "cp": 27495,
       "gaps": 11,
       "averageAchievement": 100.92657462111355887178470712,
-      "seconds": 101.85119800000001,
+      "seconds": 172.04545039999996,
       "totalDistanceMillimeters": 7128143.0858677635,
       "peakSpeedMillimetersPerSecond": 4986.100669481683,
-      "speedLimitViolations": 180,
-      "projectedCrossingCount": 1362,
-      "projectedCrossingSeconds": 508.8462315565745,
+      "speedLimitViolations": 0,
+      "projectedCrossingCount": 1364,
+      "projectedCrossingSeconds": 523.3293355806682,
       "directionReversalCount": 15880,
       "patterns": []
     },
@@ -46,13 +47,13 @@
       "cp": 27507,
       "gaps": 0,
       "averageAchievement": 101,
-      "seconds": 201.2398109,
-      "totalDistanceMillimeters": 6865115.536565786,
-      "peakSpeedMillimetersPerSecond": 4495.504495509696,
+      "seconds": 357.7187149,
+      "totalDistanceMillimeters": 6884601.2444968745,
+      "peakSpeedMillimetersPerSecond": 5205.103193226963,
       "speedLimitViolations": 0,
-      "projectedCrossingCount": 1103,
-      "projectedCrossingSeconds": 354.99105421693156,
-      "directionReversalCount": 15478,
+      "projectedCrossingCount": 1145,
+      "projectedCrossingSeconds": 378.8095341766708,
+      "directionReversalCount": 15457,
       "patterns": [
         {
           "kind": "SingleTap",
@@ -135,12 +136,12 @@
           "cp": 27495,
           "gaps": 11,
           "averageAchievement": 100.92657462111355887178470712,
-          "seconds": 101.85119800000001,
+          "seconds": 172.04545039999996,
           "totalDistanceMillimeters": 7128143.0858677635,
           "peakSpeedMillimetersPerSecond": 4986.100669481683,
-          "speedLimitViolations": 180,
-          "projectedCrossingCount": 1362,
-          "projectedCrossingSeconds": 508.8462315565745,
+          "speedLimitViolations": 0,
+          "projectedCrossingCount": 1364,
+          "projectedCrossingSeconds": 523.3293355806682,
           "directionReversalCount": 15880,
           "patterns": []
         },
@@ -151,13 +152,13 @@
           "cp": 27507,
           "gaps": 0,
           "averageAchievement": 101,
-          "seconds": 201.2398109,
-          "totalDistanceMillimeters": 6865115.536565786,
-          "peakSpeedMillimetersPerSecond": 4495.504495509696,
+          "seconds": 357.7187149,
+          "totalDistanceMillimeters": 6884601.2444968745,
+          "peakSpeedMillimetersPerSecond": 5205.103193226963,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 1103,
-          "projectedCrossingSeconds": 354.99105421693156,
-          "directionReversalCount": 15478,
+          "projectedCrossingCount": 1145,
+          "projectedCrossingSeconds": 378.8095341766708,
+          "directionReversalCount": 15457,
           "patterns": [
             {
               "kind": "SingleTap",
@@ -240,7 +241,7 @@
         "achievement": 100.59568733153638814016172507,
         "dxScore": 591,
         "gaps": 0,
-        "seconds": 4.0101346,
+        "seconds": 6.5060513,
         "failuresByKind": {
           "Slide": 1
         },
@@ -267,7 +268,7 @@
         "achievement": 101,
         "dxScore": 594,
         "gaps": 0,
-        "seconds": 12.7321174,
+        "seconds": 19.6623526,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -327,7 +328,7 @@
         "achievement": 101,
         "dxScore": 1059,
         "gaps": 0,
-        "seconds": 1.0667675,
+        "seconds": 1.4941779,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -352,7 +353,7 @@
         "achievement": 101,
         "dxScore": 1059,
         "gaps": 0,
-        "seconds": 1.7161346,
+        "seconds": 2.3146958,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -367,7 +368,7 @@
           "peakRightActionsPerSecond": 6,
           "totalDistanceMillimeters": 79536.79587995302
         },
-        "movementCost": 314.50961819635705,
+        "movementCost": 315.8535104589876,
         "patterns": [
           {
             "kind": "Jack",
@@ -424,7 +425,7 @@
         "achievement": 101,
         "dxScore": 1068,
         "gaps": 0,
-        "seconds": 0.2281184,
+        "seconds": 0.3953243,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -449,12 +450,12 @@
         "achievement": 101,
         "dxScore": 1068,
         "gaps": 0,
-        "seconds": 0.5910578,
+        "seconds": 1.2780684,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 39526.38237144814,
-          "rightDistanceMillimeters": 31853.76136168273,
+          "leftDistanceMillimeters": 38459.95964009939,
+          "rightDistanceMillimeters": 34764.93127773022,
           "peakSpeedMillimetersPerSecond": 2867.9323549175047,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 5,
@@ -462,9 +463,9 @@
           "directionReversalCount": 194,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 71380.14373313087
+          "totalDistanceMillimeters": 73224.89091782962
         },
-        "movementCost": 303.075955658975,
+        "movementCost": 328.7620061350641,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -513,10 +514,10 @@
           }
         ],
         "techniqueUsage": {
-          "free": 188,
-          "alternate-right": 121,
+          "free": 175,
+          "alternate-right": 128,
           "repeat-left": 4,
-          "alternate-left": 28,
+          "alternate-left": 34,
           "relay": 3,
           "strike-right": 6,
           "strike-left": 6
@@ -538,7 +539,7 @@
         "achievement": 101,
         "dxScore": 1143,
         "gaps": 0,
-        "seconds": 0.567147,
+        "seconds": 0.9533263,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -563,22 +564,22 @@
         "achievement": 101,
         "dxScore": 1143,
         "gaps": 0,
-        "seconds": 1.2807753,
+        "seconds": 2.8925556,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 41408.04298616686,
-          "rightDistanceMillimeters": 57122.810090834115,
-          "peakSpeedMillimetersPerSecond": 2822.0269737296044,
+          "leftDistanceMillimeters": 47873.86512134212,
+          "rightDistanceMillimeters": 54992.39703283876,
+          "peakSpeedMillimetersPerSecond": 2781.6785811896125,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 19,
-          "projectedCrossingSeconds": 5.171370695251927,
+          "projectedCrossingCount": 51,
+          "projectedCrossingSeconds": 5.8759649330318755,
           "directionReversalCount": 198,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 98530.85307700097
+          "totalDistanceMillimeters": 102866.26215418088
         },
-        "movementCost": 420.9653902213559,
+        "movementCost": 438.49915409052,
         "patterns": [
           {
             "kind": "Stream",
@@ -618,10 +619,10 @@
         ],
         "techniqueUsage": {
           "alternate-right": 104,
-          "free": 217,
-          "alternate-left": 41,
+          "free": 169,
+          "relay": 43,
+          "alternate-left": 57,
           "sweep-right": 5,
-          "relay": 11,
           "strike-left": 3
         }
       },
@@ -641,7 +642,7 @@
         "achievement": 101,
         "dxScore": 969,
         "gaps": 0,
-        "seconds": 0.4783157,
+        "seconds": 0.825675,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -666,22 +667,22 @@
         "achievement": 101,
         "dxScore": 969,
         "gaps": 0,
-        "seconds": 1.2408237,
+        "seconds": 2.3243029,
         "failuresByKind": {},
         "error": null,
         "movement": {
           "leftDistanceMillimeters": 40567.273875431456,
           "rightDistanceMillimeters": 46582.213432035605,
-          "peakSpeedMillimetersPerSecond": 4027.8465677737486,
+          "peakSpeedMillimetersPerSecond": 3548.3410239865907,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 17,
-          "projectedCrossingSeconds": 6.453604649926749,
+          "projectedCrossingSeconds": 6.462048044248096,
           "directionReversalCount": 182,
           "peakLeftActionsPerSecond": 4,
           "peakRightActionsPerSecond": 4,
           "totalDistanceMillimeters": 87149.48730746706
         },
-        "movementCost": 369.65823346843223,
+        "movementCost": 367.72501997205376,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -732,7 +733,7 @@
         "achievement": 101,
         "dxScore": 1362,
         "gaps": 0,
-        "seconds": 0.5643649,
+        "seconds": 0.9970844,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -757,22 +758,22 @@
         "achievement": 101,
         "dxScore": 1362,
         "gaps": 0,
-        "seconds": 1.2776094,
+        "seconds": 2.4514275,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 44864.74274515491,
-          "rightDistanceMillimeters": 45145.45990976609,
+          "leftDistanceMillimeters": 45032.06981821183,
+          "rightDistanceMillimeters": 45655.547652063564,
           "peakSpeedMillimetersPerSecond": 1818.5461339457756,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 7,
-          "projectedCrossingSeconds": 1.8261155795849042,
-          "directionReversalCount": 209,
+          "projectedCrossingSeconds": 2.284688226865679,
+          "directionReversalCount": 217,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 90010.202654921
+          "totalDistanceMillimeters": 90687.61747027539
         },
-        "movementCost": 370.03007078970427,
+        "movementCost": 396.1255157558088,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -816,10 +817,10 @@
           }
         ],
         "techniqueUsage": {
-          "free": 243,
+          "free": 234,
           "alternate-right": 149,
-          "relay": 9,
-          "alternate-left": 45,
+          "relay": 15,
+          "alternate-left": 48,
           "sweep-left": 4,
           "sweep-right": 4
         }
@@ -840,7 +841,7 @@
         "achievement": 101,
         "dxScore": 1143,
         "gaps": 0,
-        "seconds": 0.7750495,
+        "seconds": 1.5514359,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -865,22 +866,22 @@
         "achievement": 101,
         "dxScore": 1143,
         "gaps": 0,
-        "seconds": 1.9375178,
+        "seconds": 3.4818237,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 51060.29641947216,
-          "rightDistanceMillimeters": 46447.84912506686,
+          "leftDistanceMillimeters": 48203.67944450004,
+          "rightDistanceMillimeters": 49706.38572913618,
           "peakSpeedMillimetersPerSecond": 2845.269504002758,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 12,
-          "projectedCrossingSeconds": 4.543439394762121,
-          "directionReversalCount": 202,
-          "peakLeftActionsPerSecond": 6,
+          "projectedCrossingCount": 9,
+          "projectedCrossingSeconds": 4.289022537312286,
+          "directionReversalCount": 198,
+          "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 97508.14554453902
+          "totalDistanceMillimeters": 97910.06517363622
         },
-        "movementCost": 388.89145093422104,
+        "movementCost": 397.09250861477335,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -919,13 +920,12 @@
           }
         ],
         "techniqueUsage": {
-          "free": 156,
-          "strike-right": 3,
-          "relay": 33,
+          "free": 145,
+          "relay": 50,
           "alternate-right": 132,
           "strike-left": 3,
           "alternate-left": 47,
-          "sweep-left": 7
+          "sweep-left": 4
         }
       },
       "change": "unchanged"
@@ -944,7 +944,7 @@
         "achievement": 101,
         "dxScore": 1356,
         "gaps": 0,
-        "seconds": 1.566729,
+        "seconds": 2.7811787,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -953,7 +953,7 @@
           "peakSpeedMillimetersPerSecond": 2582.7551191741104,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 10,
-          "projectedCrossingSeconds": 7.902936481614379,
+          "projectedCrossingSeconds": 8.335976483419305,
           "directionReversalCount": 214,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
@@ -969,22 +969,22 @@
         "achievement": 101,
         "dxScore": 1356,
         "gaps": 0,
-        "seconds": 2.5290632,
+        "seconds": 4.3529862,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 51396.98381743048,
-          "rightDistanceMillimeters": 52414.02995659253,
+          "leftDistanceMillimeters": 51100.3064941485,
+          "rightDistanceMillimeters": 53599.71343580219,
           "peakSpeedMillimetersPerSecond": 2419.183119727259,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 9,
-          "projectedCrossingSeconds": 7.417639496701401,
+          "projectedCrossingSeconds": 7.870499396330803,
           "directionReversalCount": 208,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 103811.01377402301
+          "totalDistanceMillimeters": 104700.01992995068
         },
-        "movementCost": 418.8492644372368,
+        "movementCost": 423.51298601717843,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -1033,10 +1033,10 @@
           }
         ],
         "techniqueUsage": {
-          "free": 211,
+          "free": 192,
           "alternate-left": 19,
           "alternate-right": 205,
-          "relay": 13,
+          "relay": 32,
           "repeat-left": 4
         }
       },
@@ -1056,7 +1056,7 @@
         "achievement": 100.48186528497409326424870466,
         "dxScore": 714,
         "gaps": 1,
-        "seconds": 1.1303063,
+        "seconds": 2.2495085,
         "failuresByKind": {
           "Hold": 1
         },
@@ -1065,9 +1065,9 @@
           "leftDistanceMillimeters": 31179.50087068001,
           "rightDistanceMillimeters": 33809.019293586454,
           "peakSpeedMillimetersPerSecond": 4522.69123822933,
-          "speedLimitViolations": 20,
+          "speedLimitViolations": 0,
           "projectedCrossingCount": 27,
-          "projectedCrossingSeconds": 15.604238480660767,
+          "projectedCrossingSeconds": 15.658277500743521,
           "directionReversalCount": 120,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 4,
@@ -1083,22 +1083,22 @@
         "achievement": 101,
         "dxScore": 717,
         "gaps": 0,
-        "seconds": 1.9400623,
+        "seconds": 3.301471,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 25963.146135287054,
-          "rightDistanceMillimeters": 29874.60977689591,
-          "peakSpeedMillimetersPerSecond": 4495.504495502735,
+          "leftDistanceMillimeters": 25993.843475843943,
+          "rightDistanceMillimeters": 29905.307117452798,
+          "peakSpeedMillimetersPerSecond": 4522.69123822933,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 12,
-          "projectedCrossingSeconds": 6.171922454131282,
+          "projectedCrossingCount": 11,
+          "projectedCrossingSeconds": 5.342340887077837,
           "directionReversalCount": 106,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 55837.75591218297
+          "totalDistanceMillimeters": 55899.15059329674
         },
-        "movementCost": 236.269506837657,
+        "movementCost": 235.30470136056312,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -1148,7 +1148,7 @@
         "achievement": 101,
         "dxScore": 1392,
         "gaps": 0,
-        "seconds": 2.3592127,
+        "seconds": 3.6224824,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1173,22 +1173,22 @@
         "achievement": 101,
         "dxScore": 1392,
         "gaps": 0,
-        "seconds": 3.3061308,
+        "seconds": 5.6820842,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 63873.24130902357,
-          "rightDistanceMillimeters": 64379.01674297724,
+          "leftDistanceMillimeters": 63573.44180508583,
+          "rightDistanceMillimeters": 65149.44986559846,
           "peakSpeedMillimetersPerSecond": 3816.5232538127525,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 21,
-          "projectedCrossingSeconds": 5.144587832375505,
+          "projectedCrossingSeconds": 5.583401125420581,
           "directionReversalCount": 289,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 128252.2580520008
+          "totalDistanceMillimeters": 128722.89167068429
         },
-        "movementCost": 504.3692162321421,
+        "movementCost": 516.2342534645129,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -1232,13 +1232,12 @@
           }
         ],
         "techniqueUsage": {
-          "free": 277,
+          "free": 275,
           "alternate-left": 21,
           "alternate-right": 128,
           "repeat-left": 11,
           "repeat-right": 11,
-          "relay": 11,
-          "strike-left": 5
+          "relay": 18
         }
       },
       "change": "unchanged"
@@ -1257,7 +1256,7 @@
         "achievement": 101,
         "dxScore": 1206,
         "gaps": 0,
-        "seconds": 2.0465219,
+        "seconds": 3.4591618,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1265,8 +1264,8 @@
           "rightDistanceMillimeters": 68994.54956958538,
           "peakSpeedMillimetersPerSecond": 3274.8231790913283,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 28,
-          "projectedCrossingSeconds": 10.138267783433488,
+          "projectedCrossingCount": 29,
+          "projectedCrossingSeconds": 11.631514402568907,
           "directionReversalCount": 253,
           "peakLeftActionsPerSecond": 4,
           "peakRightActionsPerSecond": 4,
@@ -1282,7 +1281,7 @@
         "achievement": 101,
         "dxScore": 1206,
         "gaps": 0,
-        "seconds": 4.5082102,
+        "seconds": 7.9909576,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1290,14 +1289,14 @@
           "rightDistanceMillimeters": 68807.57669927097,
           "peakSpeedMillimetersPerSecond": 3274.8231790913283,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 29,
-          "projectedCrossingSeconds": 10.223984723462365,
+          "projectedCrossingCount": 30,
+          "projectedCrossingSeconds": 11.681649940280643,
           "directionReversalCount": 246,
           "peakLeftActionsPerSecond": 4,
           "peakRightActionsPerSecond": 4,
           "totalDistanceMillimeters": 128906.2972952163
         },
-        "movementCost": 424.1385954320398,
+        "movementCost": 424.5805764243136,
         "patterns": [
           {
             "kind": "Chord",
@@ -1342,20 +1341,20 @@
         "achievement": 101,
         "dxScore": 1560,
         "gaps": 0,
-        "seconds": 0.4476244,
+        "seconds": 0.9712977,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 55255.4682913986,
+          "leftDistanceMillimeters": 55255.468291398596,
           "rightDistanceMillimeters": 56941.6162774345,
           "peakSpeedMillimetersPerSecond": 4986.100669481683,
-          "speedLimitViolations": 50,
+          "speedLimitViolations": 0,
           "projectedCrossingCount": 6,
-          "projectedCrossingSeconds": 1.5433294163586595,
+          "projectedCrossingSeconds": 1.764162749691991,
           "directionReversalCount": 274,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 112197.0845688331
+          "totalDistanceMillimeters": 112197.08456883309
         },
         "movementCost": null,
         "patterns": null,
@@ -1367,22 +1366,22 @@
         "achievement": 101,
         "dxScore": 1560,
         "gaps": 0,
-        "seconds": 1.1764727,
+        "seconds": 2.431761,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 53347.68575435877,
-          "rightDistanceMillimeters": 57279.66314266941,
-          "peakSpeedMillimetersPerSecond": 4495.504495509696,
+          "leftDistanceMillimeters": 55097.12221336222,
+          "rightDistanceMillimeters": 57968.09346841359,
+          "peakSpeedMillimetersPerSecond": 4986.100669481683,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 5,
-          "projectedCrossingSeconds": 1.3852344638093754,
-          "directionReversalCount": 268,
+          "projectedCrossingCount": 8,
+          "projectedCrossingSeconds": 2.3790700035934194,
+          "directionReversalCount": 266,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 110627.34889702818
+          "totalDistanceMillimeters": 113065.21568177581
         },
-        "movementCost": 409.07159900679403,
+        "movementCost": 476.5217944082248,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -1426,9 +1425,9 @@
           }
         ],
         "techniqueUsage": {
-          "free": 258,
-          "alternate-right": 226,
-          "alternate-left": 36
+          "free": 255,
+          "alternate-right": 223,
+          "alternate-left": 42
         }
       },
       "change": "unchanged"
@@ -1447,7 +1446,7 @@
         "achievement": 100.70887918486171761280931587,
         "dxScore": 1407,
         "gaps": 2,
-        "seconds": 2.0401893,
+        "seconds": 5.181277,
         "failuresByKind": {
           "Tap": 2
         },
@@ -1474,22 +1473,22 @@
         "achievement": 101,
         "dxScore": 1413,
         "gaps": 0,
-        "seconds": 2.086903,
+        "seconds": 4.1504631,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 62865.16506584631,
-          "rightDistanceMillimeters": 57745.88937355247,
+          "leftDistanceMillimeters": 60798.92536647035,
+          "rightDistanceMillimeters": 60289.53649932872,
           "peakSpeedMillimetersPerSecond": 3634.8859269766253,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 18,
-          "projectedCrossingSeconds": 3.74805185810295,
-          "directionReversalCount": 258,
+          "projectedCrossingSeconds": 4.261111670030451,
+          "directionReversalCount": 260,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 120611.05443939878
+          "totalDistanceMillimeters": 121088.46186579906
         },
-        "movementCost": 447.34766364490144,
+        "movementCost": 464.7183426927617,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -1533,12 +1532,12 @@
           }
         ],
         "techniqueUsage": {
-          "free": 267,
-          "alternate-right": 135,
+          "free": 255,
+          "alternate-right": 143,
           "alternate-left": 33,
-          "strike-left": 6,
+          "strike-left": 9,
           "strike-right": 6,
-          "relay": 21,
+          "relay": 22,
           "repeat-left": 3
         }
       },
@@ -1558,7 +1557,7 @@
         "achievement": 101,
         "dxScore": 1896,
         "gaps": 0,
-        "seconds": 1.6662493,
+        "seconds": 3.1550888,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1583,12 +1582,12 @@
         "achievement": 101,
         "dxScore": 1896,
         "gaps": 0,
-        "seconds": 2.5839484,
+        "seconds": 4.5040478,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 77658.56171818667,
-          "rightDistanceMillimeters": 81581.86289579961,
+          "leftDistanceMillimeters": 77900.30630051451,
+          "rightDistanceMillimeters": 81266.00837757057,
           "peakSpeedMillimetersPerSecond": 3696.3757978691774,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 21,
@@ -1596,9 +1595,9 @@
           "directionReversalCount": 339,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 159240.42461398628
+          "totalDistanceMillimeters": 159166.3146780851
         },
-        "movementCost": 662.7437772523296,
+        "movementCost": 663.4739160056075,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -1659,7 +1658,7 @@
         "achievement": 101,
         "dxScore": 1401,
         "gaps": 0,
-        "seconds": 2.8737232,
+        "seconds": 4.1949361,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1684,7 +1683,7 @@
         "achievement": 101,
         "dxScore": 1401,
         "gaps": 0,
-        "seconds": 5.0381944,
+        "seconds": 7.5762111,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1699,7 +1698,7 @@
           "peakRightActionsPerSecond": 5,
           "totalDistanceMillimeters": 144712.92653894893
         },
-        "movementCost": 514.9274184916917,
+        "movementCost": 516.5522973611975,
         "patterns": [
           {
             "kind": "Chord",
@@ -1754,7 +1753,7 @@
         "achievement": 101,
         "dxScore": 1410,
         "gaps": 0,
-        "seconds": 2.0523851,
+        "seconds": 2.7576875,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1763,7 +1762,7 @@
           "peakSpeedMillimetersPerSecond": 2326.847886154483,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 39,
-          "projectedCrossingSeconds": 13.784766242014644,
+          "projectedCrossingSeconds": 13.813932908681313,
           "directionReversalCount": 260,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
@@ -1779,7 +1778,7 @@
         "achievement": 101,
         "dxScore": 1410,
         "gaps": 0,
-        "seconds": 4.2968545,
+        "seconds": 6.5004092,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1788,13 +1787,13 @@
           "peakSpeedMillimetersPerSecond": 2326.847886154483,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 30,
-          "projectedCrossingSeconds": 13.037228662958437,
+          "projectedCrossingSeconds": 13.066395329625106,
           "directionReversalCount": 261,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
           "totalDistanceMillimeters": 145765.78002188817
         },
-        "movementCost": 524.643004150235,
+        "movementCost": 529.1088232971881,
         "patterns": [
           {
             "kind": "Chord",
@@ -1854,13 +1853,13 @@
         "achievement": 101,
         "dxScore": 1782,
         "gaps": 0,
-        "seconds": 1.9995308,
+        "seconds": 2.8986363,
         "failuresByKind": {},
         "error": null,
         "movement": {
           "leftDistanceMillimeters": 74950.97402953726,
-          "rightDistanceMillimeters": 74070.71770200956,
-          "peakSpeedMillimetersPerSecond": 2770.3277851188664,
+          "rightDistanceMillimeters": 74070.71770200957,
+          "peakSpeedMillimetersPerSecond": 2770.0570073253416,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 25,
           "projectedCrossingSeconds": 7.404030149811399,
@@ -1879,12 +1878,12 @@
         "achievement": 101,
         "dxScore": 1782,
         "gaps": 0,
-        "seconds": 3.2420837,
+        "seconds": 5.1664822,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 72980.02671564158,
-          "rightDistanceMillimeters": 70263.4940093645,
+          "leftDistanceMillimeters": 72946.20056511986,
+          "rightDistanceMillimeters": 71079.23600303371,
           "peakSpeedMillimetersPerSecond": 3548.3410239524937,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 19,
@@ -1892,9 +1891,9 @@
           "directionReversalCount": 308,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 143243.52072500606
+          "totalDistanceMillimeters": 144025.43656815356
         },
-        "movementCost": 538.8341077168484,
+        "movementCost": 546.7969545333953,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -1943,13 +1942,12 @@
           }
         ],
         "techniqueUsage": {
-          "free": 321,
+          "free": 311,
           "alternate-right": 203,
+          "relay": 30,
           "alternate-left": 35,
-          "relay": 17,
           "repeat-left": 9,
-          "repeat-right": 6,
-          "sweep-left": 3
+          "repeat-right": 6
         }
       },
       "change": "unchanged"
@@ -1968,7 +1966,7 @@
         "achievement": 101,
         "dxScore": 2292,
         "gaps": 0,
-        "seconds": 2.5192012,
+        "seconds": 3.2633587,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -1993,7 +1991,7 @@
         "achievement": 101,
         "dxScore": 2292,
         "gaps": 0,
-        "seconds": 5.7599824,
+        "seconds": 11.9628635,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2008,7 +2006,7 @@
           "peakRightActionsPerSecond": 6,
           "totalDistanceMillimeters": 195563.86307838617
         },
-        "movementCost": 727.0424853162621,
+        "movementCost": 730.4671877448499,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -2042,8 +2040,8 @@
           }
         ],
         "techniqueUsage": {
-          "free": 399,
-          "alternate-right": 340,
+          "free": 395,
+          "alternate-right": 344,
           "repeat-left": 6,
           "alternate-left": 16,
           "repeat-right": 3
@@ -2065,11 +2063,11 @@
         "achievement": 101,
         "dxScore": 2190,
         "gaps": 0,
-        "seconds": 2.9340533,
+        "seconds": 4.8022455,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 83975.53559247799,
+          "leftDistanceMillimeters": 83975.53559247797,
           "rightDistanceMillimeters": 87905.51808628866,
           "peakSpeedMillimetersPerSecond": 3010.8672000000493,
           "speedLimitViolations": 0,
@@ -2090,22 +2088,22 @@
         "achievement": 101,
         "dxScore": 2190,
         "gaps": 0,
-        "seconds": 15.1687217,
+        "seconds": 30.1259269,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 82345.35825978861,
-          "rightDistanceMillimeters": 85125.56033030065,
+          "leftDistanceMillimeters": 82287.59719056137,
+          "rightDistanceMillimeters": 85125.56033030064,
           "peakSpeedMillimetersPerSecond": 2880.522486228364,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 41,
-          "projectedCrossingSeconds": 11.709050333535794,
-          "directionReversalCount": 361,
+          "projectedCrossingSeconds": 11.717889168300625,
+          "directionReversalCount": 362,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 167470.91859008925
+          "totalDistanceMillimeters": 167413.157520862
         },
-        "movementCost": 631.2685738773594,
+        "movementCost": 646.4385579361658,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -2149,8 +2147,8 @@
           }
         ],
         "techniqueUsage": {
-          "free": 410,
-          "alternate-right": 276,
+          "free": 407,
+          "alternate-right": 279,
           "alternate-left": 26,
           "repeat-right": 14,
           "strike-left": 3
@@ -2172,7 +2170,7 @@
         "achievement": 101,
         "dxScore": 2079,
         "gaps": 0,
-        "seconds": 3.525524,
+        "seconds": 6.249935,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2197,7 +2195,7 @@
         "achievement": 101,
         "dxScore": 2079,
         "gaps": 0,
-        "seconds": 17.5454875,
+        "seconds": 32.0544873,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2206,13 +2204,13 @@
           "peakSpeedMillimetersPerSecond": 3231.7331752039477,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 42,
-          "projectedCrossingSeconds": 12.630400644599554,
+          "projectedCrossingSeconds": 12.645978458866999,
           "directionReversalCount": 408,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
           "totalDistanceMillimeters": 188115.3320599633
         },
-        "movementCost": 681.997581070603,
+        "movementCost": 683.027871249706,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -2274,7 +2272,7 @@
         "achievement": 101,
         "dxScore": 1818,
         "gaps": 0,
-        "seconds": 2.7781012,
+        "seconds": 4.7602965,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2299,7 +2297,7 @@
         "achievement": 101,
         "dxScore": 1818,
         "gaps": 0,
-        "seconds": 3.7317076,
+        "seconds": 6.5197026,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2308,13 +2306,13 @@
           "peakSpeedMillimetersPerSecond": 3176.332035075099,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 24,
-          "projectedCrossingSeconds": 3.8269262012592034,
+          "projectedCrossingSeconds": 3.552206354207163,
           "directionReversalCount": 386,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
           "totalDistanceMillimeters": 158805.91079380957
         },
-        "movementCost": 578.3043892004061,
+        "movementCost": 592.2519254628234,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -2382,20 +2380,20 @@
         "achievement": 101,
         "dxScore": 1521,
         "gaps": 0,
-        "seconds": 1.8323509,
+        "seconds": 3.6236663,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 70299.5369582915,
+          "leftDistanceMillimeters": 70299.53695829147,
           "rightDistanceMillimeters": 69189.2145634948,
           "peakSpeedMillimetersPerSecond": 4689.050810535859,
-          "speedLimitViolations": 110,
+          "speedLimitViolations": 0,
           "projectedCrossingCount": 30,
           "projectedCrossingSeconds": 6.987374421825988,
           "directionReversalCount": 313,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 139488.7515217863
+          "totalDistanceMillimeters": 139488.75152178627
         },
         "movementCost": null,
         "patterns": null,
@@ -2407,22 +2405,22 @@
         "achievement": 101,
         "dxScore": 1521,
         "gaps": 0,
-        "seconds": 2.5720035,
+        "seconds": 5.5996924,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 67640.56055582318,
-          "rightDistanceMillimeters": 65081.5890837585,
+          "leftDistanceMillimeters": 67618.96964568732,
+          "rightDistanceMillimeters": 64990.18594001731,
           "peakSpeedMillimetersPerSecond": 3139.3979416434577,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 10,
-          "projectedCrossingSeconds": 2.4720984158645134,
-          "directionReversalCount": 300,
-          "peakLeftActionsPerSecond": 7,
-          "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 132722.14963958168
+          "projectedCrossingCount": 11,
+          "projectedCrossingSeconds": 2.5508352741528153,
+          "directionReversalCount": 302,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 132609.15558570463
         },
-        "movementCost": 528.7815647494033,
+        "movementCost": 538.0178367850891,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -2461,12 +2459,13 @@
           }
         ],
         "techniqueUsage": {
-          "free": 248,
+          "free": 243,
           "alternate-right": 175,
           "alternate-left": 46,
           "touch-right-to-left": 15,
           "sweep-left": 4,
           "relay": 10,
+          "touch-nearest-right": 5,
           "touch-left-to-right": 9
         }
       },
@@ -2486,7 +2485,7 @@
         "achievement": 101,
         "dxScore": 2235,
         "gaps": 0,
-        "seconds": 3.2797765,
+        "seconds": 6.4180223,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2495,7 +2494,7 @@
           "peakSpeedMillimetersPerSecond": 3526.3464093426105,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 45,
-          "projectedCrossingSeconds": 13.717065302939973,
+          "projectedCrossingSeconds": 13.844487783650239,
           "directionReversalCount": 544,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
@@ -2511,22 +2510,22 @@
         "achievement": 101,
         "dxScore": 2235,
         "gaps": 0,
-        "seconds": 4.7219122,
+        "seconds": 14.6433364,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 107290.93315567519,
-          "rightDistanceMillimeters": 104287.11254769546,
+          "leftDistanceMillimeters": 106572.63013903888,
+          "rightDistanceMillimeters": 106312.9238511974,
           "peakSpeedMillimetersPerSecond": 3176.332035075099,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 44,
-          "projectedCrossingSeconds": 12.674597053772725,
-          "directionReversalCount": 520,
-          "peakLeftActionsPerSecond": 9,
-          "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 211578.04570337065
+          "projectedCrossingCount": 45,
+          "projectedCrossingSeconds": 13.188950233012921,
+          "directionReversalCount": 527,
+          "peakLeftActionsPerSecond": 7,
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 212885.55399023628
         },
-        "movementCost": 763.5142983292578,
+        "movementCost": 773.3626584379977,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -2575,14 +2574,14 @@
           }
         ],
         "techniqueUsage": {
-          "free": 424,
-          "alternate-right": 256,
+          "free": 421,
+          "alternate-right": 260,
           "alternate-left": 20,
-          "touch-left-to-right": 19,
-          "relay": 9,
-          "touch-right-to-left": 17,
-          "strike-left": 3,
-          "strike-right": 3
+          "touch-left-to-right": 15,
+          "relay": 18,
+          "touch-nearest-right": 4,
+          "touch-right-to-left": 10,
+          "touch-nearest-left": 3
         }
       },
       "change": "unchanged"
@@ -2601,14 +2600,14 @@
         "achievement": 100.86772486772486772486772487,
         "dxScore": 1560,
         "gaps": 1,
-        "seconds": 2.324621,
+        "seconds": 4.1057193,
         "failuresByKind": {
           "Tap": 1
         },
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 67746.06706032573,
-          "rightDistanceMillimeters": 69967.78443497464,
+          "leftDistanceMillimeters": 67746.06706032572,
+          "rightDistanceMillimeters": 69967.78443497463,
           "peakSpeedMillimetersPerSecond": 3791.0398456166195,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 30,
@@ -2628,22 +2627,22 @@
         "achievement": 101,
         "dxScore": 1563,
         "gaps": 0,
-        "seconds": 4.0639452,
+        "seconds": 7.4407126,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 67218.02238115633,
-          "rightDistanceMillimeters": 64714.29487775201,
+          "leftDistanceMillimeters": 66519.6275491395,
+          "rightDistanceMillimeters": 65110.92328436533,
           "peakSpeedMillimetersPerSecond": 3791.0398456166195,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 20,
-          "projectedCrossingSeconds": 5.632611484466326,
-          "directionReversalCount": 305,
-          "peakLeftActionsPerSecond": 5,
-          "peakRightActionsPerSecond": 8,
-          "totalDistanceMillimeters": 131932.31725890836
+          "projectedCrossingSeconds": 5.83895005829861,
+          "directionReversalCount": 302,
+          "peakLeftActionsPerSecond": 8,
+          "peakRightActionsPerSecond": 6,
+          "totalDistanceMillimeters": 131630.55083350482
         },
-        "movementCost": 490.6177643844284,
+        "movementCost": 493.9967139694163,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -2677,9 +2676,9 @@
           }
         ],
         "techniqueUsage": {
-          "free": 306,
+          "free": 302,
           "alternate-right": 156,
-          "touch-left-to-right": 14,
+          "touch-left-to-right": 17,
           "repeat-left": 9,
           "alternate-left": 18,
           "touch-right-to-left": 12,
@@ -2702,7 +2701,7 @@
         "achievement": 100.53917050691244239631336406,
         "dxScore": 1785,
         "gaps": 2,
-        "seconds": 6.1458242,
+        "seconds": 13.5385259,
         "failuresByKind": {
           "Hold": 2
         },
@@ -2729,22 +2728,22 @@
         "achievement": 101,
         "dxScore": 1791,
         "gaps": 0,
-        "seconds": 4.5136218,
+        "seconds": 7.3868319,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 83610.20798516042,
-          "rightDistanceMillimeters": 90691.23312474645,
+          "leftDistanceMillimeters": 83982.78379267552,
+          "rightDistanceMillimeters": 90240.25951607697,
           "peakSpeedMillimetersPerSecond": 3139.3979416434577,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 36,
           "projectedCrossingSeconds": 8.58440246773216,
-          "directionReversalCount": 372,
+          "directionReversalCount": 370,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 174301.44110990688
+          "totalDistanceMillimeters": 174223.04330875247
         },
-        "movementCost": 647.5031281861588,
+        "movementCost": 651.43979379589,
         "patterns": [
           {
             "kind": "Chord",
@@ -2793,9 +2792,11 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 199,
-          "free": 348,
+          "alternate-right": 207,
+          "free": 332,
           "alternate-left": 20,
+          "touch-nearest-left": 4,
+          "touch-nearest-right": 4,
           "repeat-left": 9,
           "repeat-right": 6,
           "strike-right": 9,
@@ -2819,7 +2820,7 @@
         "achievement": 101,
         "dxScore": 1719,
         "gaps": 0,
-        "seconds": 1.4127731,
+        "seconds": 2.6347069,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2844,22 +2845,22 @@
         "achievement": 101,
         "dxScore": 1719,
         "gaps": 0,
-        "seconds": 3.5177079,
+        "seconds": 6.4037618,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 63634.34519911208,
-          "rightDistanceMillimeters": 65138.4065148585,
+          "leftDistanceMillimeters": 64569.66377531928,
+          "rightDistanceMillimeters": 64021.65394446394,
           "peakSpeedMillimetersPerSecond": 2692.886185504281,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 32,
-          "projectedCrossingSeconds": 14.016233448750102,
-          "directionReversalCount": 258,
+          "projectedCrossingSeconds": 16.409504204164065,
+          "directionReversalCount": 256,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 128772.75171397059
+          "totalDistanceMillimeters": 128591.31771978323
         },
-        "movementCost": 453.55879242450055,
+        "movementCost": 454.7732258345577,
         "patterns": [
           {
             "kind": "Chord",
@@ -2926,7 +2927,7 @@
         "achievement": 101,
         "dxScore": 1983,
         "gaps": 0,
-        "seconds": 1.9607174,
+        "seconds": 3.6753123,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -2951,22 +2952,22 @@
         "achievement": 101,
         "dxScore": 1983,
         "gaps": 0,
-        "seconds": 2.6769618,
+        "seconds": 5.1067355,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 87855.96405411081,
-          "rightDistanceMillimeters": 95043.49610946763,
-          "peakSpeedMillimetersPerSecond": 4431.261560430826,
+          "leftDistanceMillimeters": 84477.28709394307,
+          "rightDistanceMillimeters": 96820.73398523674,
+          "peakSpeedMillimetersPerSecond": 5205.103193226963,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 37,
-          "projectedCrossingSeconds": 18.420554413965803,
-          "directionReversalCount": 390,
+          "projectedCrossingCount": 35,
+          "projectedCrossingSeconds": 17.75715635559152,
+          "directionReversalCount": 382,
           "peakLeftActionsPerSecond": 8,
-          "peakRightActionsPerSecond": 8,
-          "totalDistanceMillimeters": 182899.46016357845
+          "peakRightActionsPerSecond": 9,
+          "totalDistanceMillimeters": 181298.02107917983
         },
-        "movementCost": 763.2209011596788,
+        "movementCost": 768.1890703186535,
         "patterns": [
           {
             "kind": "Anchor",
@@ -3010,14 +3011,15 @@
           }
         ],
         "techniqueUsage": {
-          "free": 391,
+          "free": 380,
           "alternate-right": 222,
+          "touch-nearest-left": 6,
           "touch-left-to-right": 8,
           "alternate-left": 14,
           "strike-left": 3,
           "sweep-left": 8,
           "relay": 8,
-          "sweep-right": 4,
+          "sweep-right": 9,
           "touch-right-to-left": 3
         }
       },
@@ -3037,7 +3039,7 @@
         "achievement": 101,
         "dxScore": 2187,
         "gaps": 0,
-        "seconds": 1.5739448,
+        "seconds": 2.3928628,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3062,22 +3064,22 @@
         "achievement": 101,
         "dxScore": 2187,
         "gaps": 0,
-        "seconds": 2.3619454,
+        "seconds": 4.4515893,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 89910.60789180805,
-          "rightDistanceMillimeters": 84048.25519503884,
-          "peakSpeedMillimetersPerSecond": 2802.332286424141,
+          "leftDistanceMillimeters": 89289.16454384808,
+          "rightDistanceMillimeters": 84374.05750012703,
+          "peakSpeedMillimetersPerSecond": 2792.840747809783,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 12,
-          "projectedCrossingSeconds": 1.845131933580456,
-          "directionReversalCount": 408,
-          "peakLeftActionsPerSecond": 8,
-          "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 173958.8630868469
+          "projectedCrossingCount": 13,
+          "projectedCrossingSeconds": 2.4240606447900053,
+          "directionReversalCount": 412,
+          "peakLeftActionsPerSecond": 6,
+          "peakRightActionsPerSecond": 8,
+          "totalDistanceMillimeters": 173663.2220439751
         },
-        "movementCost": 670.5666209023633,
+        "movementCost": 670.3615639624671,
         "patterns": [
           {
             "kind": "Chord",
@@ -3126,11 +3128,13 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 315,
-          "free": 338,
-          "alternate-left": 47,
-          "touch-right-to-left": 24,
-          "touch-left-to-right": 6
+          "alternate-right": 313,
+          "free": 335,
+          "alternate-left": 49,
+          "touch-right-to-left": 12,
+          "touch-left-to-right": 6,
+          "touch-nearest-right": 7,
+          "touch-nearest-left": 8
         }
       },
       "change": "unchanged"
@@ -3149,7 +3153,7 @@
         "achievement": 101,
         "dxScore": 1722,
         "gaps": 0,
-        "seconds": 1.3825481,
+        "seconds": 2.4563976,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3174,22 +3178,22 @@
         "achievement": 101,
         "dxScore": 1722,
         "gaps": 0,
-        "seconds": 2.5235268,
+        "seconds": 4.5545206,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 65755.52534820068,
-          "rightDistanceMillimeters": 67625.23139389366,
-          "peakSpeedMillimetersPerSecond": 3623.5068359538077,
+          "leftDistanceMillimeters": 65498.70616043422,
+          "rightDistanceMillimeters": 67554.66867157347,
+          "peakSpeedMillimetersPerSecond": 2618.0799512925073,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 13,
-          "projectedCrossingSeconds": 1.449222960197254,
-          "directionReversalCount": 353,
+          "projectedCrossingSeconds": 1.6028361321023468,
+          "directionReversalCount": 352,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 133380.75674209435
+          "totalDistanceMillimeters": 133053.37483200768
         },
-        "movementCost": 496.13315533816086,
+        "movementCost": 495.86982656549884,
         "patterns": [
           {
             "kind": "Jack",
@@ -3240,11 +3244,13 @@
         "techniqueUsage": {
           "repeat-left": 4,
           "alternate-right": 203,
-          "free": 289,
+          "free": 277,
           "alternate-left": 45,
-          "touch-right-to-left": 13,
+          "touch-right-to-left": 6,
           "touch-left-to-right": 2,
-          "relay": 18
+          "relay": 18,
+          "touch-nearest-left": 4,
+          "touch-nearest-right": 15
         }
       },
       "change": "unchanged"
@@ -3263,7 +3269,7 @@
         "achievement": 101,
         "dxScore": 1638,
         "gaps": 0,
-        "seconds": 1.4159797,
+        "seconds": 2.2236302,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3288,22 +3294,22 @@
         "achievement": 101,
         "dxScore": 1638,
         "gaps": 0,
-        "seconds": 2.7028302,
+        "seconds": 4.9542848,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 72215.70050239887,
-          "rightDistanceMillimeters": 73864.55806599758,
+          "leftDistanceMillimeters": 72568.34953198074,
+          "rightDistanceMillimeters": 73365.43226800406,
           "peakSpeedMillimetersPerSecond": 3548.341023952973,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 32,
-          "projectedCrossingSeconds": 7.219729764643558,
+          "projectedCrossingSeconds": 7.339729764643559,
           "directionReversalCount": 355,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 146080.25856839644
+          "totalDistanceMillimeters": 145933.7817999848
         },
-        "movementCost": 543.9841174781492,
+        "movementCost": 543.6189932065431,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -3358,11 +3364,11 @@
         "achievement": 101,
         "dxScore": 1686,
         "gaps": 0,
-        "seconds": 2.0569597,
+        "seconds": 2.9332172,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 63367.01290317567,
+          "leftDistanceMillimeters": 63367.01290317565,
           "rightDistanceMillimeters": 62962.29859732669,
           "peakSpeedMillimetersPerSecond": 4218.434631360207,
           "speedLimitViolations": 0,
@@ -3371,7 +3377,7 @@
           "directionReversalCount": 300,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 126329.31150050237
+          "totalDistanceMillimeters": 126329.31150050234
         },
         "movementCost": null,
         "patterns": null,
@@ -3383,22 +3389,22 @@
         "achievement": 101,
         "dxScore": 1686,
         "gaps": 0,
-        "seconds": 2.8258434,
+        "seconds": 4.1917953,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 61869.58419526717,
-          "rightDistanceMillimeters": 61249.752878704196,
+          "leftDistanceMillimeters": 62457.88155001307,
+          "rightDistanceMillimeters": 61368.65770796241,
           "peakSpeedMillimetersPerSecond": 4218.434631360207,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 22,
-          "projectedCrossingSeconds": 9.16259725638313,
+          "projectedCrossingSeconds": 9.406948931515565,
           "directionReversalCount": 294,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 123119.33707397137
+          "totalDistanceMillimeters": 123826.53925797548
         },
-        "movementCost": 486.8670989942823,
+        "movementCost": 501.0242657280372,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -3447,10 +3453,12 @@
           }
         ],
         "techniqueUsage": {
-          "free": 339,
+          "free": 331,
           "alternate-right": 190,
-          "touch-left-to-right": 11,
-          "touch-right-to-left": 3,
+          "touch-nearest-left": 3,
+          "touch-nearest-right": 3,
+          "touch-left-to-right": 13,
+          "relay": 3,
           "alternate-left": 10,
           "repeat-right": 9
         }
@@ -3471,7 +3479,7 @@
         "achievement": 100.90566037735849056603773585,
         "dxScore": 2160,
         "gaps": 1,
-        "seconds": 2.7303434,
+        "seconds": 4.4331393,
         "failuresByKind": {
           "Tap": 1
         },
@@ -3481,8 +3489,8 @@
           "rightDistanceMillimeters": 91426.25610886978,
           "peakSpeedMillimetersPerSecond": 3416.403642367826,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 38,
-          "projectedCrossingSeconds": 14.47936132418604,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 15.583380207762215,
           "directionReversalCount": 385,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
@@ -3498,22 +3506,22 @@
         "achievement": 101,
         "dxScore": 2163,
         "gaps": 0,
-        "seconds": 4.6864942,
+        "seconds": 6.5011185,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 86598.26487141322,
-          "rightDistanceMillimeters": 86781.71655156628,
+          "leftDistanceMillimeters": 85537.25873815393,
+          "rightDistanceMillimeters": 87842.72268482564,
           "peakSpeedMillimetersPerSecond": 3823.940326787931,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 29,
-          "projectedCrossingSeconds": 11.543722444388308,
-          "directionReversalCount": 389,
+          "projectedCrossingCount": 30,
+          "projectedCrossingSeconds": 12.647741327964482,
+          "directionReversalCount": 390,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 173379.9814229795
+          "totalDistanceMillimeters": 173379.98142297956
         },
-        "movementCost": 678.3988325752837,
+        "movementCost": 682.3831257751399,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -3568,7 +3576,7 @@
         "achievement": 101,
         "dxScore": 1899,
         "gaps": 0,
-        "seconds": 1.7787126,
+        "seconds": 2.5010839,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3593,22 +3601,22 @@
         "achievement": 101,
         "dxScore": 1899,
         "gaps": 0,
-        "seconds": 3.4274654,
+        "seconds": 4.944179,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 74200.58284613962,
-          "rightDistanceMillimeters": 75384.46478213264,
+          "leftDistanceMillimeters": 74432.47997684932,
+          "rightDistanceMillimeters": 75645.75126902999,
           "peakSpeedMillimetersPerSecond": 3667.612991143511,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 19,
-          "projectedCrossingSeconds": 6.096460484956269,
-          "directionReversalCount": 355,
+          "projectedCrossingSeconds": 6.157741848380022,
+          "directionReversalCount": 358,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 149585.04762827227
+          "totalDistanceMillimeters": 150078.23124587932
         },
-        "movementCost": 559.180539943411,
+        "movementCost": 562.3594314549125,
         "patterns": [
           {
             "kind": "Chord",
@@ -3668,11 +3676,12 @@
         ],
         "techniqueUsage": {
           "alternate-right": 296,
-          "free": 300,
+          "free": 287,
           "alternate-left": 20,
+          "touch-nearest-right": 6,
           "repeat-right": 3,
-          "touch-right-to-left": 6,
-          "relay": 7,
+          "relay": 17,
+          "touch-right-to-left": 3,
           "repeat-left": 3
         }
       },
@@ -3692,7 +3701,7 @@
         "achievement": 100.31604938271604938271604938,
         "dxScore": 1713,
         "gaps": 1,
-        "seconds": 1.7945461,
+        "seconds": 2.5226763,
         "failuresByKind": {
           "Tap": 1
         },
@@ -3719,22 +3728,22 @@
         "achievement": 101,
         "dxScore": 1716,
         "gaps": 0,
-        "seconds": 3.2365334,
+        "seconds": 5.249002,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 65058.027098577535,
-          "rightDistanceMillimeters": 63999.713751270974,
+          "leftDistanceMillimeters": 63765.66372610218,
+          "rightDistanceMillimeters": 65100.5897553122,
           "peakSpeedMillimetersPerSecond": 2257.2935976911367,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 6,
           "projectedCrossingSeconds": 1.0273213609665248,
-          "directionReversalCount": 328,
+          "directionReversalCount": 309,
           "peakLeftActionsPerSecond": 7,
-          "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 129057.74084984852
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 128866.25348141437
         },
-        "movementCost": 456.8538180884171,
+        "movementCost": 460.3211592833466,
         "patterns": [
           {
             "kind": "Chord",
@@ -3764,10 +3773,12 @@
         ],
         "techniqueUsage": {
           "alternate-right": 210,
-          "free": 305,
+          "free": 296,
           "alternate-left": 30,
-          "touch-left-to-right": 9,
-          "touch-right-to-left": 18
+          "touch-nearest-right": 9,
+          "touch-nearest-left": 18,
+          "touch-right-to-left": 6,
+          "touch-left-to-right": 3
         }
       },
       "change": "improved"
@@ -3786,7 +3797,7 @@
         "achievement": 101,
         "dxScore": 1458,
         "gaps": 0,
-        "seconds": 1.2298713,
+        "seconds": 2.0174321,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3811,22 +3822,22 @@
         "achievement": 101,
         "dxScore": 1458,
         "gaps": 0,
-        "seconds": 3.3186742,
+        "seconds": 5.3727421,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 58429.32052769098,
-          "rightDistanceMillimeters": 55196.70586705376,
+          "leftDistanceMillimeters": 57703.36196001429,
+          "rightDistanceMillimeters": 56153.15255008836,
           "peakSpeedMillimetersPerSecond": 3224.72097604926,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 7,
-          "projectedCrossingSeconds": 2.024695517097131,
-          "directionReversalCount": 278,
+          "projectedCrossingSeconds": 1.3896250945641206,
+          "directionReversalCount": 279,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 113626.02639474474
+          "totalDistanceMillimeters": 113856.51451010266
         },
-        "movementCost": 439.42099677121195,
+        "movementCost": 441.1722770278352,
         "patterns": [
           {
             "kind": "Chord",
@@ -3865,11 +3876,11 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 139,
-          "free": 289,
+          "alternate-right": 149,
+          "free": 271,
           "touch-left-to-right": 7,
-          "touch-right-to-left": 6,
-          "alternate-left": 45
+          "touch-right-to-left": 9,
+          "alternate-left": 50
         }
       },
       "change": "unchanged"
@@ -3888,7 +3899,7 @@
         "achievement": 101,
         "dxScore": 2469,
         "gaps": 0,
-        "seconds": 4.3243761,
+        "seconds": 6.3967913,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -3913,22 +3924,22 @@
         "achievement": 101,
         "dxScore": 2469,
         "gaps": 0,
-        "seconds": 4.5750013,
+        "seconds": 7.9098408,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 102076.2978405933,
-          "rightDistanceMillimeters": 100785.31703980285,
+          "leftDistanceMillimeters": 102452.55029372871,
+          "rightDistanceMillimeters": 100789.0253379266,
           "peakSpeedMillimetersPerSecond": 3857.7331568333675,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 20,
           "projectedCrossingSeconds": 7.134588069057662,
-          "directionReversalCount": 453,
-          "peakLeftActionsPerSecond": 7,
+          "directionReversalCount": 452,
+          "peakLeftActionsPerSecond": 8,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 202861.61488039614
+          "totalDistanceMillimeters": 203241.57563165532
         },
-        "movementCost": 925.7695683195435,
+        "movementCost": 938.1198740047759,
         "patterns": [
           {
             "kind": "Chord",
@@ -3988,10 +3999,10 @@
         ],
         "techniqueUsage": {
           "alternate-right": 231,
-          "free": 385,
+          "free": 380,
           "touch-right-to-left": 7,
           "strike-right": 3,
-          "strike-left": 3,
+          "relay": 8,
           "alternate-left": 171,
           "repeat-left": 15,
           "touch-left-to-right": 10
@@ -4013,7 +4024,7 @@
         "achievement": 101,
         "dxScore": 2139,
         "gaps": 0,
-        "seconds": 1.8439399,
+        "seconds": 2.3632175,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4038,22 +4049,22 @@
         "achievement": 101,
         "dxScore": 2139,
         "gaps": 0,
-        "seconds": 3.7137222,
+        "seconds": 5.4834435,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 91473.84264256408,
-          "rightDistanceMillimeters": 89970.00595329706,
-          "peakSpeedMillimetersPerSecond": 3830.7960308367105,
+          "leftDistanceMillimeters": 92104.41979866922,
+          "rightDistanceMillimeters": 91919.08853635832,
+          "peakSpeedMillimetersPerSecond": 3830.796030836432,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 51,
-          "projectedCrossingSeconds": 7.979893516629486,
+          "projectedCrossingCount": 56,
+          "projectedCrossingSeconds": 10.000523227356332,
           "directionReversalCount": 439,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 181443.84859586114
+          "totalDistanceMillimeters": 184023.50833502755
         },
-        "movementCost": 772.0270773723444,
+        "movementCost": 770.2657111780276,
         "patterns": [
           {
             "kind": "Chord",
@@ -4092,10 +4103,11 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 328,
-          "alternate-left": 62,
-          "free": 314,
-          "touch-right-to-left": 3,
+          "alternate-right": 330,
+          "alternate-left": 60,
+          "free": 311,
+          "touch-nearest-right": 3,
+          "touch-nearest-left": 3,
           "repeat-right": 3,
           "repeat-left": 3
         }
@@ -4116,7 +4128,7 @@
         "achievement": 101,
         "dxScore": 2241,
         "gaps": 0,
-        "seconds": 2.2335623,
+        "seconds": 2.8972637,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4125,7 +4137,7 @@
           "peakSpeedMillimetersPerSecond": 3998.6036867202843,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 29,
-          "projectedCrossingSeconds": 16.72760733568404,
+          "projectedCrossingSeconds": 27.14886859684276,
           "directionReversalCount": 383,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 7,
@@ -4141,22 +4153,22 @@
         "achievement": 101,
         "dxScore": 2241,
         "gaps": 0,
-        "seconds": 5.2465659,
+        "seconds": 7.1684451,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 76039.08773414558,
-          "rightDistanceMillimeters": 88245.55571941266,
-          "peakSpeedMillimetersPerSecond": 4386.731862549981,
+          "leftDistanceMillimeters": 76236.39682406203,
+          "rightDistanceMillimeters": 87966.2974781385,
+          "peakSpeedMillimetersPerSecond": 3998.6036867202843,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 25,
-          "projectedCrossingSeconds": 15.375966695621859,
-          "directionReversalCount": 364,
+          "projectedCrossingSeconds": 25.78471218420012,
+          "directionReversalCount": 360,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 164284.64345355824
+          "totalDistanceMillimeters": 164202.6943022005
         },
-        "movementCost": 681.2249409849001,
+        "movementCost": 683.2309909275697,
         "patterns": [
           {
             "kind": "Chord",
@@ -4203,8 +4215,8 @@
           "alternate-right": 285,
           "free": 317,
           "alternate-left": 129,
-          "touch-right-to-left": 13,
-          "touch-left-to-right": 3
+          "touch-right-to-left": 12,
+          "touch-nearest-left": 4
         }
       },
       "change": "unchanged"
@@ -4223,7 +4235,7 @@
         "achievement": 101,
         "dxScore": 2139,
         "gaps": 0,
-        "seconds": 3.6604893,
+        "seconds": 6.3444715,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4248,22 +4260,22 @@
         "achievement": 101,
         "dxScore": 2139,
         "gaps": 0,
-        "seconds": 5.853592,
+        "seconds": 9.9189469,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 91768.09864824514,
-          "rightDistanceMillimeters": 94065.10593319913,
+          "leftDistanceMillimeters": 91908.99059564246,
+          "rightDistanceMillimeters": 93661.83278512713,
           "peakSpeedMillimetersPerSecond": 3737.6407480488165,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 38,
-          "projectedCrossingSeconds": 7.986479792445807,
-          "directionReversalCount": 421,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 8.324965278932552,
+          "directionReversalCount": 419,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 185833.20458144427
+          "totalDistanceMillimeters": 185570.82338076958
         },
-        "movementCost": 726.500033840344,
+        "movementCost": 742.0356936211657,
         "patterns": [
           {
             "kind": "Chord",
@@ -4303,9 +4315,10 @@
         ],
         "techniqueUsage": {
           "alternate-right": 242,
-          "free": 400,
+          "free": 397,
           "touch-left-to-right": 6,
           "sweep-right": 4,
+          "touch-nearest-left": 3,
           "touch-right-to-left": 3,
           "alternate-left": 58
         }
@@ -4326,7 +4339,7 @@
         "achievement": 100.20768997880714501967907963,
         "dxScore": 1536,
         "gaps": 1,
-        "seconds": 3.1198706,
+        "seconds": 5.2031423,
         "failuresByKind": {
           "Tap": 1
         },
@@ -4353,22 +4366,22 @@
         "achievement": 101,
         "dxScore": 1539,
         "gaps": 0,
-        "seconds": 3.4637122,
+        "seconds": 5.6257023,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 58152.03974012874,
-          "rightDistanceMillimeters": 55617.33817477232,
+          "leftDistanceMillimeters": 58396.61953631264,
+          "rightDistanceMillimeters": 55861.91797095623,
           "peakSpeedMillimetersPerSecond": 2318.8206014179996,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 24,
-          "projectedCrossingSeconds": 7.0433169500209445,
+          "projectedCrossingSeconds": 7.049566949102015,
           "directionReversalCount": 252,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 113769.37791490107
+          "totalDistanceMillimeters": 114258.53750726886
         },
-        "movementCost": 408.8250761342038,
+        "movementCost": 419.8714741816121,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -4412,8 +4425,9 @@
           }
         ],
         "techniqueUsage": {
-          "free": 354,
+          "free": 346,
           "alternate-right": 134,
+          "relay": 8,
           "alternate-left": 26
         }
       },
@@ -4433,7 +4447,7 @@
         "achievement": 101,
         "dxScore": 1188,
         "gaps": 0,
-        "seconds": 1.3485398,
+        "seconds": 2.8921945,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4458,22 +4472,22 @@
         "achievement": 101,
         "dxScore": 1188,
         "gaps": 0,
-        "seconds": 2.5484064,
+        "seconds": 4.5647952,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 41880.74280016012,
-          "rightDistanceMillimeters": 44353.88599385688,
+          "leftDistanceMillimeters": 43455.3419994777,
+          "rightDistanceMillimeters": 44582.32188224297,
           "peakSpeedMillimetersPerSecond": 3970.0700800766344,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 7,
-          "projectedCrossingSeconds": 4.578374291448448,
+          "projectedCrossingSeconds": 4.549305748953522,
           "directionReversalCount": 205,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 86234.628794017
+          "totalDistanceMillimeters": 88037.66388172067
         },
-        "movementCost": 362.11951593310687,
+        "movementCost": 369.9912420755927,
         "patterns": [
           {
             "kind": "Chord",
@@ -4517,9 +4531,9 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 117,
-          "free": 234,
-          "alternate-left": 42,
+          "alternate-right": 123,
+          "free": 225,
+          "alternate-left": 45,
           "repeat-right": 3
         }
       },
@@ -4539,7 +4553,7 @@
         "achievement": 100.80952380952380952380952381,
         "dxScore": 2124,
         "gaps": 1,
-        "seconds": 2.1243882,
+        "seconds": 3.5017385,
         "failuresByKind": {
           "Hold": 1
         },
@@ -4566,22 +4580,22 @@
         "achievement": 101,
         "dxScore": 2127,
         "gaps": 0,
-        "seconds": 3.6601407,
+        "seconds": 6.0029896,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 81226.21305448089,
-          "rightDistanceMillimeters": 85628.09862761466,
+          "leftDistanceMillimeters": 84749.70955344899,
+          "rightDistanceMillimeters": 85274.81604566069,
           "peakSpeedMillimetersPerSecond": 2942.9399027283694,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 27,
-          "projectedCrossingSeconds": 7.52350024523081,
-          "directionReversalCount": 357,
+          "projectedCrossingCount": 30,
+          "projectedCrossingSeconds": 8.50417241987481,
+          "directionReversalCount": 361,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 166854.31168209555
+          "totalDistanceMillimeters": 170024.52559910968
         },
-        "movementCost": 667.374482740124,
+        "movementCost": 698.3705160205288,
         "patterns": [
           {
             "kind": "Chord",
@@ -4625,9 +4639,10 @@
           }
         ],
         "techniqueUsage": {
-          "alternate-right": 288,
-          "free": 345,
-          "alternate-left": 70,
+          "alternate-right": 296,
+          "free": 339,
+          "alternate-left": 65,
+          "touch-nearest-left": 3,
           "touch-left-to-right": 3,
           "touch-right-to-left": 3
         }
@@ -4648,7 +4663,7 @@
         "achievement": 100.89648033126293995859213251,
         "dxScore": 1728,
         "gaps": 1,
-        "seconds": 2.4838298,
+        "seconds": 3.6361816,
         "failuresByKind": {
           "Tap": 1
         },
@@ -4659,7 +4674,7 @@
           "peakSpeedMillimetersPerSecond": 2437.6501664436255,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 29,
-          "projectedCrossingSeconds": 11.279041524841539,
+          "projectedCrossingSeconds": 11.505783949133892,
           "directionReversalCount": 327,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
@@ -4675,22 +4690,22 @@
         "achievement": 101,
         "dxScore": 1731,
         "gaps": 0,
-        "seconds": 3.7643019,
+        "seconds": 6.5936315,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 66344.19647531543,
-          "rightDistanceMillimeters": 67722.18769680463,
+          "leftDistanceMillimeters": 66250.5257717128,
+          "rightDistanceMillimeters": 67870.02470274646,
           "peakSpeedMillimetersPerSecond": 2792.951697854077,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 27,
-          "projectedCrossingSeconds": 8.836123390006097,
-          "directionReversalCount": 321,
+          "projectedCrossingSeconds": 9.122865814298454,
+          "directionReversalCount": 319,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 7,
-          "totalDistanceMillimeters": 134066.38417212007
+          "totalDistanceMillimeters": 134120.55047445925
         },
-        "movementCost": 492.74461866241126,
+        "movementCost": 492.1687288540637,
         "patterns": [
           {
             "kind": "Chord",
@@ -4725,10 +4740,11 @@
         ],
         "techniqueUsage": {
           "alternate-right": 256,
-          "free": 220,
+          "free": 226,
           "alternate-left": 60,
-          "touch-right-to-left": 12,
-          "touch-left-to-right": 23,
+          "touch-right-to-left": 9,
+          "touch-left-to-right": 12,
+          "touch-nearest-right": 8,
           "repeat-left": 3,
           "repeat-right": 3
         }
@@ -4749,7 +4765,7 @@
         "achievement": 101,
         "dxScore": 1164,
         "gaps": 0,
-        "seconds": 1.5278171,
+        "seconds": 2.1739771,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4758,7 +4774,7 @@
           "peakSpeedMillimetersPerSecond": 4185.863599554267,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 19,
-          "projectedCrossingSeconds": 6.309033614835599,
+          "projectedCrossingSeconds": 6.374033614835639,
           "directionReversalCount": 246,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
@@ -4774,22 +4790,22 @@
         "achievement": 101,
         "dxScore": 1164,
         "gaps": 0,
-        "seconds": 3.1047747,
+        "seconds": 5.3367825,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 61392.48555211565,
+          "leftDistanceMillimeters": 61516.09633732247,
           "rightDistanceMillimeters": 48856.63715594781,
-          "peakSpeedMillimetersPerSecond": 4243.744541208845,
+          "peakSpeedMillimetersPerSecond": 4185.863599554267,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 16,
           "projectedCrossingSeconds": 5.946882038829206,
-          "directionReversalCount": 242,
+          "directionReversalCount": 238,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 110249.12270806346
+          "totalDistanceMillimeters": 110372.73349327028
         },
-        "movementCost": 424.5940988607348,
+        "movementCost": 425.4289978208627,
         "patterns": [
           {
             "kind": "Chord",
@@ -4837,7 +4853,7 @@
           "free": 230,
           "repeat-left": 3,
           "repeat-right": 3,
-          "touch-left-to-right": 3,
+          "touch-nearest-right": 3,
           "alternate-left": 8,
           "strike-left": 3
         }
@@ -4858,7 +4874,7 @@
         "achievement": 101,
         "dxScore": 1947,
         "gaps": 0,
-        "seconds": 1.823329,
+        "seconds": 2.8258408,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4883,22 +4899,22 @@
         "achievement": 101,
         "dxScore": 1947,
         "gaps": 0,
-        "seconds": 4.2492999,
+        "seconds": 7.5529082,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 75197.59310298707,
-          "rightDistanceMillimeters": 79469.62186462648,
+          "leftDistanceMillimeters": 75069.09569903926,
+          "rightDistanceMillimeters": 79763.99055029792,
           "peakSpeedMillimetersPerSecond": 2825.3410464475023,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 18,
-          "projectedCrossingSeconds": 5.505431511886325,
-          "directionReversalCount": 363,
+          "projectedCrossingCount": 19,
+          "projectedCrossingSeconds": 5.91492452657651,
+          "directionReversalCount": 361,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 154667.21496761355
+          "totalDistanceMillimeters": 154833.08624933718
         },
-        "movementCost": 554.7840238260594,
+        "movementCost": 554.8040449667594,
         "patterns": [
           {
             "kind": "Chord",
@@ -4956,7 +4972,7 @@
         "achievement": 101,
         "dxScore": 2004,
         "gaps": 0,
-        "seconds": 1.1748184,
+        "seconds": 2.148923,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4965,7 +4981,7 @@
           "peakSpeedMillimetersPerSecond": 3912.046790253642,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 23,
-          "projectedCrossingSeconds": 11.796893207327958,
+          "projectedCrossingSeconds": 12.046893207327958,
           "directionReversalCount": 362,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
@@ -4981,7 +4997,7 @@
         "achievement": 101,
         "dxScore": 2004,
         "gaps": 0,
-        "seconds": 3.9632663,
+        "seconds": 6.3545359,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -4990,13 +5006,13 @@
           "peakSpeedMillimetersPerSecond": 3912.046790253642,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 19,
-          "projectedCrossingSeconds": 7.238472610577947,
+          "projectedCrossingSeconds": 7.488472610577947,
           "directionReversalCount": 376,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
           "totalDistanceMillimeters": 163542.63087048734
         },
-        "movementCost": 628.8724898027656,
+        "movementCost": 644.872489802766,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -5051,7 +5067,7 @@
         "achievement": 101,
         "dxScore": 2025,
         "gaps": 0,
-        "seconds": 2.6255098,
+        "seconds": 4.904664,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -5076,22 +5092,22 @@
         "achievement": 101,
         "dxScore": 2025,
         "gaps": 0,
-        "seconds": 6.1236152,
+        "seconds": 11.0378874,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 98101.66527483189,
-          "rightDistanceMillimeters": 95659.28851437826,
+          "leftDistanceMillimeters": 98419.78865612765,
+          "rightDistanceMillimeters": 94843.07741235138,
           "peakSpeedMillimetersPerSecond": 3823.9403267862576,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 40,
-          "projectedCrossingSeconds": 10.148622241982665,
+          "projectedCrossingCount": 39,
+          "projectedCrossingSeconds": 9.764150540558006,
           "directionReversalCount": 445,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 193760.95378921015
+          "totalDistanceMillimeters": 193262.86606847902
         },
-        "movementCost": 785.6120602704289,
+        "movementCost": 815.2624037118817,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -5133,7 +5149,7 @@
           "free": 453,
           "alternate-right": 132,
           "alternate-left": 84,
-          "touch-left-to-right": 7
+          "touch-nearest-right": 7
         }
       },
       "change": "unchanged"
@@ -5152,7 +5168,7 @@
         "achievement": 101,
         "dxScore": 1491,
         "gaps": 0,
-        "seconds": 2.0295918,
+        "seconds": 3.3563428,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -5177,22 +5193,22 @@
         "achievement": 101,
         "dxScore": 1491,
         "gaps": 0,
-        "seconds": 4.0618029,
+        "seconds": 10.2477719,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 58569.80148896996,
-          "rightDistanceMillimeters": 58595.837985126076,
+          "leftDistanceMillimeters": 58446.678818760454,
+          "rightDistanceMillimeters": 58472.54147354138,
           "peakSpeedMillimetersPerSecond": 2437.6501664436255,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 14,
-          "projectedCrossingSeconds": 5.215045424488908,
+          "projectedCrossingSeconds": 7.368155072868648,
           "directionReversalCount": 283,
           "peakLeftActionsPerSecond": 6,
           "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 117165.63947409604
+          "totalDistanceMillimeters": 116919.22029230183
         },
-        "movementCost": 441.9717915541683,
+        "movementCost": 442.72053355604527,
         "patterns": [
           {
             "kind": "HoldLock",
@@ -5236,11 +5252,11 @@
           }
         ],
         "techniqueUsage": {
-          "free": 260,
-          "repeat-left": 6,
+          "free": 246,
+          "repeat-left": 13,
           "alternate-right": 142,
           "alternate-left": 86,
-          "repeat-right": 3
+          "repeat-right": 10
         }
       },
       "change": "unchanged"
@@ -5259,20 +5275,20 @@
         "achievement": 101,
         "dxScore": 1284,
         "gaps": 0,
-        "seconds": 1.5161478,
+        "seconds": 2.0838974,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 53697.73127051868,
+          "leftDistanceMillimeters": 53697.73127051866,
           "rightDistanceMillimeters": 51559.47969311234,
           "peakSpeedMillimetersPerSecond": 3598.7928641129197,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 16,
-          "projectedCrossingSeconds": 6.493132380468868,
+          "projectedCrossingSeconds": 6.551465713801836,
           "directionReversalCount": 231,
           "peakLeftActionsPerSecond": 5,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 105257.21096363102
+          "totalDistanceMillimeters": 105257.210963631
         },
         "movementCost": null,
         "patterns": null,
@@ -5284,22 +5300,22 @@
         "achievement": 101,
         "dxScore": 1284,
         "gaps": 0,
-        "seconds": 2.3859596,
+        "seconds": 4.00605,
         "failuresByKind": {},
         "error": null,
         "movement": {
           "leftDistanceMillimeters": 50182.41033618224,
-          "rightDistanceMillimeters": 52698.57204139215,
+          "rightDistanceMillimeters": 52698.57204139214,
           "peakSpeedMillimetersPerSecond": 3324.0684087787886,
           "speedLimitViolations": 0,
           "projectedCrossingCount": 18,
-          "projectedCrossingSeconds": 5.971078579346983,
+          "projectedCrossingSeconds": 6.03274524601402,
           "directionReversalCount": 236,
           "peakLeftActionsPerSecond": 7,
           "peakRightActionsPerSecond": 5,
-          "totalDistanceMillimeters": 102880.9823775744
+          "totalDistanceMillimeters": 102880.98237757437
         },
-        "movementCost": 393.9884550463061,
+        "movementCost": 405.4962994267622,
         "patterns": [
           {
             "kind": "SingleTap",
@@ -5367,7 +5383,7 @@
         "achievement": 101,
         "dxScore": 1902,
         "gaps": 0,
-        "seconds": 1.46677,
+        "seconds": 2.7702464,
         "failuresByKind": {},
         "error": null,
         "movement": {
@@ -5392,22 +5408,22 @@
         "achievement": 101,
         "dxScore": 1902,
         "gaps": 0,
-        "seconds": 3.6863259,
+        "seconds": 6.3896017,
         "failuresByKind": {},
         "error": null,
         "movement": {
-          "leftDistanceMillimeters": 65589.12199334674,
-          "rightDistanceMillimeters": 68517.52190398968,
-          "peakSpeedMillimetersPerSecond": 2400.7160730149394,
+          "leftDistanceMillimeters": 66273.82671752964,
+          "rightDistanceMillimeters": 67894.47694243978,
+          "peakSpeedMillimetersPerSecond": 3548.341023952973,
           "speedLimitViolations": 0,
-          "projectedCrossingCount": 30,
-          "projectedCrossingSeconds": 10.401928281733532,
-          "directionReversalCount": 341,
+          "projectedCrossingCount": 29,
+          "projectedCrossingSeconds": 9.839020096001576,
+          "directionReversalCount": 343,
           "peakLeftActionsPerSecond": 6,
-          "peakRightActionsPerSecond": 6,
-          "totalDistanceMillimeters": 134106.6438973364
+          "peakRightActionsPerSecond": 7,
+          "totalDistanceMillimeters": 134168.30365996942
         },
-        "movementCost": 511.5816560713102,
+        "movementCost": 512.8537614620092,
         "patterns": [
           {
             "kind": "Chord",
@@ -5447,9 +5463,9 @@
         ],
         "techniqueUsage": {
           "alternate-right": 126,
-          "free": 426,
-          "touch-left-to-right": 12,
-          "alternate-left": 58,
+          "free": 418,
+          "touch-left-to-right": 15,
+          "alternate-left": 63,
           "repeat-right": 3,
           "repeat-left": 3,
           "touch-right-to-left": 6

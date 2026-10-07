@@ -1,0 +1,586 @@
+{
+  "createdAtUtc": "2026-10-07T22:08:30.155556+00:00",
+  "oldAssemblySha256": "CBB26E26AC2949FAF02C90635798A73469E420C417FFCE7F82F2F479180445D5",
+  "newAssemblySha256": "890106AE0D1CD28C9874FDCBE6663A4C09EC8DFD4463DE608C31DEA582726824",
+  "batches": [
+    {
+      "name": "master-11-plus",
+      "charts": 50,
+      "oldReportSha256": "6A2EBAE58D7F3C801B3766FA3AE50BE90CB83C70C56E9F50156A0044682718B5",
+      "newReportSha256": "FF0E22FF5E7A93942D08852B0C8D553224031F6541C3C35EB537F15523DA6D9C",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 50,
+          "before": {
+            "allCP": 40,
+            "cp": 27495,
+            "gaps": 11,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 40,
+            "cp": 27495,
+            "gaps": 11,
+            "errors": 0
+          },
+          "changes": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 50,
+          "before": {
+            "allCP": 50,
+            "cp": 27507,
+            "gaps": 0,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 50,
+            "cp": 27507,
+            "gaps": 0,
+            "errors": 0
+          },
+          "changes": []
+        }
+      ]
+    },
+    {
+      "name": "expert-12-plus",
+      "charts": 139,
+      "oldReportSha256": "35782785956322A0A5736D10081DBDDE96EA37DDC02DABC3B77E65BFA141594A",
+      "newReportSha256": "110084333394F95EA891278CFD1D8C7A37406DBAF7D8FDAEAC4298F61A27F57D",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 139,
+          "before": {
+            "allCP": 133,
+            "cp": 87738,
+            "gaps": 23,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 133,
+            "cp": 87738,
+            "gaps": 23,
+            "errors": 0
+          },
+          "changes": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 0,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 139,
+          "before": {
+            "allCP": 137,
+            "cp": 87756,
+            "gaps": 5,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 137,
+            "cp": 87756,
+            "gaps": 5,
+            "errors": 0
+          },
+          "changes": []
+        }
+      ]
+    },
+    {
+      "name": "patterns",
+      "charts": 30,
+      "oldReportSha256": "BE895F6B1438CC7D5E7CCA83B28A8566C3F1912EEF615C44ECA5827558F0161D",
+      "newReportSha256": "1B8DEBC7282A3663A52E7B0157454DF565FD23BAFDB4341A62965D43166EE667",
+      "planners": [
+        {
+          "planner": "NormalHandPlanner",
+          "improved": 9,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 21,
+          "before": {
+            "allCP": 10,
+            "cp": 26235,
+            "gaps": 305,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 12,
+            "cp": 26267,
+            "gaps": 272,
+            "errors": 0
+          },
+          "changes": [
+            {
+              "path": "14_maimaDXPLUS/011113_ハム太郎とっとこうた/maidata.txt",
+              "difficulty": 5,
+              "title": "ハム太郎とっとこうた",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 450,
+                "achievement": 100.06362297496318,
+                "dxScore": 1350,
+                "gaps": 1,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 3,
+                "assignedFastJackPairs": 7,
+                "sameHandFastJackPairs": 2,
+                "fastJackSameHandRatio": 0.2857142857142857
+              },
+              "after": {
+                "status": "all-cp",
+                "cp": 451,
+                "achievement": 101,
+                "dxScore": 1353,
+                "gaps": 0,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 3,
+                "assignedFastJackPairs": 7,
+                "sameHandFastJackPairs": 2,
+                "fastJackSameHandRatio": 0.2857142857142857
+              }
+            },
+            {
+              "path": "16_SplashPLUS/011276_今、誰が為のかがり火へ/maidata.txt",
+              "difficulty": 5,
+              "title": "今、誰が為のかがり火へ",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 673,
+                "achievement": 100.4273018559942,
+                "dxScore": 2019,
+                "gaps": 1,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              },
+              "after": {
+                "status": "all-cp",
+                "cp": 674,
+                "achievement": 101,
+                "dxScore": 2022,
+                "gaps": 0,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              }
+            },
+            {
+              "path": "19_FESTiVAL/011503_Baddest/maidata.txt",
+              "difficulty": 5,
+              "title": "Baddest",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 984,
+                "achievement": 97.04810301907276,
+                "dxScore": 2952,
+                "gaps": 46,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              },
+              "after": {
+                "status": "partial",
+                "cp": 985,
+                "achievement": 97.37208714694818,
+                "dxScore": 2955,
+                "gaps": 45,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              }
+            },
+            {
+              "path": "26_CiRCLEPLUS/010201_魔理沙は大変なものを盗んでいきました/maidata.txt",
+              "difficulty": 5,
+              "title": "魔理沙は大変なものを盗んでいきました",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 767,
+                "achievement": 99.90719199499688,
+                "dxScore": 2301,
+                "gaps": 7,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 24,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              },
+              "after": {
+                "status": "partial",
+                "cp": 769,
+                "achievement": 100.06979362101313,
+                "dxScore": 2307,
+                "gaps": 5,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 24,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              }
+            },
+            {
+              "path": "19_FESTiVAL/011517_最強STRONGER/maidata.txt",
+              "difficulty": 5,
+              "title": "最強STRONGER",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1057,
+                "achievement": 100.25787876634452,
+                "dxScore": 3173,
+                "gaps": 11,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 11,
+                "assignedFastJackPairs": 22,
+                "sameHandFastJackPairs": 4,
+                "fastJackSameHandRatio": 0.18181818181818182
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1063,
+                "achievement": 100.64752700397953,
+                "dxScore": 3190,
+                "gaps": 6,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 11,
+                "assignedFastJackPairs": 22,
+                "sameHandFastJackPairs": 4,
+                "fastJackSameHandRatio": 0.18181818181818182
+              }
+            },
+            {
+              "path": "25_CiRCLE/011882_殿ッ！？ご乱心！？/maidata.txt",
+              "difficulty": 5,
+              "title": "殿ッ！？ご乱心！？",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 859,
+                "achievement": 98.49767080745342,
+                "dxScore": 2577,
+                "gaps": 26,
+                "error": null,
+                "completedRotations": 3,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 4,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              },
+              "after": {
+                "status": "partial",
+                "cp": 861,
+                "achievement": 98.6218944099379,
+                "dxScore": 2583,
+                "gaps": 24,
+                "error": null,
+                "completedRotations": 3,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 4,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              }
+            },
+            {
+              "path": "21_BUDDiES/011612_Latent Kingdom/maidata.txt",
+              "difficulty": 5,
+              "title": "Latent Kingdom",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1338,
+                "achievement": 98.74174071542492,
+                "dxScore": 4019,
+                "gaps": 33,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 3,
+                "fastJackSameHandRatio": 0.2727272727272727
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1341,
+                "achievement": 99.65352016404648,
+                "dxScore": 4029,
+                "gaps": 28,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 3,
+                "fastJackSameHandRatio": 0.2727272727272727
+              }
+            },
+            {
+              "path": "21_BUDDiES/011663_系ぎて/maidata.txt",
+              "difficulty": 5,
+              "title": "系ぎて",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1138,
+                "achievement": 96.9499883582553,
+                "dxScore": 3419,
+                "gaps": 60,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 7,
+                "assignedFastJackPairs": 14,
+                "sameHandFastJackPairs": 10,
+                "fastJackSameHandRatio": 0.7142857142857143
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1149,
+                "achievement": 98.19977233921458,
+                "dxScore": 3448,
+                "gaps": 49,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 7,
+                "assignedFastJackPairs": 14,
+                "sameHandFastJackPairs": 10,
+                "fastJackSameHandRatio": 0.7142857142857143
+              }
+            },
+            {
+              "path": "24_PRiSMPLUS/011814_FLΛME_FRΦST/maidata.txt",
+              "difficulty": 5,
+              "title": "FLΛME/FRΦST",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1016,
+                "achievement": 98.03323233858252,
+                "dxScore": 3050,
+                "gaps": 28,
+                "error": null,
+                "completedRotations": 0,
+                "completedFastJacks": 11,
+                "assignedFastJackPairs": 36,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1021,
+                "achievement": 98.87807495773417,
+                "dxScore": 3064,
+                "gaps": 23,
+                "error": null,
+                "completedRotations": 0,
+                "completedFastJacks": 11,
+                "assignedFastJackPairs": 36,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": 0.0
+              }
+            }
+          ],
+          "patternSegmentsCompared": 144,
+          "segmentChanges": []
+        },
+        {
+          "planner": "HumanPlanner",
+          "improved": 2,
+          "regressed": 0,
+          "mixed": 0,
+          "unchanged": 28,
+          "before": {
+            "allCP": 20,
+            "cp": 26475,
+            "gaps": 74,
+            "errors": 0
+          },
+          "after": {
+            "allCP": 20,
+            "cp": 26477,
+            "gaps": 71,
+            "errors": 0
+          },
+          "changes": [
+            {
+              "path": "19_FESTiVAL/011503_Baddest/maidata.txt",
+              "difficulty": 5,
+              "title": "Baddest",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1014,
+                "achievement": 100.01173563928351,
+                "dxScore": 3042,
+                "gaps": 16,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1015,
+                "achievement": 100.07350216182829,
+                "dxScore": 3045,
+                "gaps": 15,
+                "error": null,
+                "completedRotations": 1,
+                "completedFastJacks": 0,
+                "assignedFastJackPairs": 0,
+                "sameHandFastJackPairs": 0,
+                "fastJackSameHandRatio": null
+              }
+            },
+            {
+              "path": "21_BUDDiES/011612_Latent Kingdom/maidata.txt",
+              "difficulty": 5,
+              "title": "Latent Kingdom",
+              "change": "improved",
+              "improvements": [
+                "cp",
+                "achievement",
+                "dxScore",
+                "gaps"
+              ],
+              "regressions": [],
+              "before": {
+                "status": "partial",
+                "cp": 1354,
+                "achievement": 99.74985190248348,
+                "dxScore": 4062,
+                "gaps": 15,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 4,
+                "fastJackSameHandRatio": 0.36363636363636365
+              },
+              "after": {
+                "status": "partial",
+                "cp": 1355,
+                "achievement": 99.99757347915242,
+                "dxScore": 4065,
+                "gaps": 13,
+                "error": null,
+                "completedRotations": 2,
+                "completedFastJacks": 1,
+                "assignedFastJackPairs": 11,
+                "sameHandFastJackPairs": 4,
+                "fastJackSameHandRatio": 0.36363636363636365
+              }
+            }
+          ],
+          "patternSegmentsCompared": 144,
+          "segmentChanges": []
+        }
+      ]
+    }
+  ]
+}

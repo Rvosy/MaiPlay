@@ -305,11 +305,12 @@ public sealed class SkinTests
             var pageControls = new Control[][]
             {
                 [window.FindControl<NumericUpDown>("TapSpeedInput")!, window.FindControl<NumericUpDown>("TouchSpeedInput")!,
-                    window.FindControl<CheckBox>("ContactHighlightToggle")!, window.FindControl<CheckBox>("HandMarkerToggle")!,
+                    window.FindControl<CheckBox>("SensorToggle")!, window.FindControl<CheckBox>("ContactHighlightToggle")!,
+                    window.FindControl<CheckBox>("HandMarkerToggle")!,
                     window.FindControl<CheckBox>("HandTrailToggle")!],
                 [window.FindControl<ComboBox>("SkinPicker")!, window.FindControl<Button>("PreviewButton")!],
                 [window.FindControl<Slider>("MusicSlider")!, window.FindControl<Slider>("SoundSlider")!, window.FindControl<CheckBox>("SoundToggle")!],
-                [window.FindControl<CheckBox>("SensorToggle")!, window.FindControl<TextBlock>("InputLogHint")!,
+                [window.FindControl<TextBlock>("InputLogHint")!,
                     window.FindControl<TextBlock>("InputHistoryText")!, window.FindControl<TextBlock>("ResultDetails")!,
                     window.FindControl<TextBlock>("SlideProgressText")!]
             };

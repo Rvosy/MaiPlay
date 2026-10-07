@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup Condition="'$(CoreAssembly)' == ''">
+    <ProjectReference Include="../../src/MaiPlay.Core/MaiPlay.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(CoreAssembly)' != ''">
+    <Reference Include="MaiPlay.Core"><HintPath>$(CoreAssembly)</HintPath></Reference>
+  </ItemGroup>
+</Project>

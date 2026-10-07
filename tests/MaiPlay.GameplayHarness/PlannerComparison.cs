@@ -71,7 +71,8 @@ internal static class PlannerComparison
         var summary = new ComparisonReport(DateTimeOffset.UtcNow, InputLog.CurrentRuleVersion,
             Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(HandPlan).Assembly.Location))),
             baselineName, candidateName,
-            new(MotionModel.Geometry.JudgementRadiusMillimeters, MotionModel.MaxSpeedMillimetersPerSecond, MotionModel.PreferredSpeedMillimetersPerSecond),
+            new(MotionModel.Geometry.JudgementRadiusMillimeters, MotionModel.MaxSpeedMillimetersPerSecond, MotionModel.PreferredSpeedMillimetersPerSecond,
+                MotionModel.PreferredStrikeIntervalSeconds),
             difficulty, displayLevel, files.Length, missingDifficulty, excludedLevel,
             watch.Elapsed.TotalSeconds, Aggregate(ordered),
             ordered.GroupBy(c => c.DisplayLevel).OrderBy(g => LevelOrder(g.Key)).Select(g => new LevelSummary(g.Key, Aggregate(g.ToArray()))).ToArray(),
@@ -162,7 +163,7 @@ internal static class PlannerComparison
         text.AppendLine().AppendLine("CP 数、达成率、DX 分数、Gap 数均无下降且至少一项改善时记为改善；同时有改善和下降时单列为“有得有失”。退出码 0 表示没有退步，不能据此认定全部谱面全 CP。退出码 1 表示无匹配谱面或出现异常，2 表示存在退步或有得有失。");
         text.AppendLine().AppendLine("## 动作指标").AppendLine();
         text.AppendLine("距离和速度由 HumanMotionModel 按同一机台几何换算；速度阈值尚未经过人体标定，不能作为真人可打性的结论。投影交叉只统计左右手在屏幕坐标中的相对位置。").AppendLine();
-        text.AppendLine(FormattableString.Invariant($"本次参数：判定环半径 {report.MotionParameters.JudgementRadiusMillimeters:F3} mm，速度上限 {report.MotionParameters.MaxSpeedMillimetersPerSecond:F0} mm/s，偏好速度 {report.MotionParameters.PreferredSpeedMillimetersPerSecond:F0} mm/s。")).AppendLine();
+        text.AppendLine(FormattableString.Invariant($"本次参数：判定环半径 {report.MotionParameters.JudgementRadiusMillimeters:F3} mm，速度上限 {report.MotionParameters.MaxSpeedMillimetersPerSecond:F0} mm/s，偏好速度 {report.MotionParameters.PreferredSpeedMillimetersPerSecond:F0} mm/s，单手偏好击打间隔 {report.MotionParameters.PreferredStrikeIntervalSeconds:F3} s。")).AppendLine();
         text.AppendLine("| 求解器 | 总路程 mm | 峰值速度 mm/s | 超速分段 | 投影交叉次数 | 投影交叉秒数 | 方向反转次数 |");
         text.AppendLine("|---|---:|---:|---:|---:|---:|---:|");
         AppendMovement(report.Baseline, report.Totals.Baseline);
@@ -206,7 +207,8 @@ internal static class PlannerComparison
     private sealed record Totals(int Charts, int Improved, int Regressed, int Mixed, int Unchanged, int Errors,
         int Notes, PlannerTotals Baseline, PlannerTotals Candidate);
     private sealed record LevelSummary(string Level, Totals Totals);
-    private sealed record MotionParameters(double JudgementRadiusMillimeters, double MaxSpeedMillimetersPerSecond, double PreferredSpeedMillimetersPerSecond);
+    private sealed record MotionParameters(double JudgementRadiusMillimeters, double MaxSpeedMillimetersPerSecond, double PreferredSpeedMillimetersPerSecond,
+        double PreferredStrikeIntervalSeconds);
     private sealed record ComparisonReport(DateTimeOffset CreatedAtUtc, string RuleVersion, string PlannerAssemblySha256,
         string Baseline, string Candidate, MotionParameters MotionParameters, int Difficulty, string DisplayLevel, int Files, int MissingDifficulty,
         int ExcludedLevel, double Seconds, Totals Totals, IReadOnlyList<LevelSummary> Levels,

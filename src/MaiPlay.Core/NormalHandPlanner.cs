@@ -14,6 +14,10 @@ public static class NormalHandPlanner
     public const double FastSweepInterval = .1;
     private sealed record Stroke(int Index, ChartNote Note, InputChannel Channel, PointFrame[] Points, bool TwoHandChord = false)
     {
+        public ContactProfile Profile { get; init; } = ContactProfile.Fingertips;
+        public double EntryDelay { get; init; }
+        public double? ContactStart { get; init; }
+        public double? ExtendedSlideDuration { get; init; }
         public int? RepeatPreviousId { get; init; }
         public bool FastRepeat { get; init; }
         public int RotationDirection { get; init; }
@@ -37,13 +41,40 @@ public static class NormalHandPlanner
 
     public static HandPlan Plan(Chart chart, CancellationToken cancellationToken = default)
     {
-        var strokes = CreateStrokes(chart, cancellationToken).OrderBy(s => s.Start)
+        var wifiStarts = chart.Notes.Where(n => n.SlidePath is { IsWifi: true }).Select(n => n.SlideStartTime).ToArray();
+        double SearchTime(Stroke stroke) => stroke.Note.SlidePath is { IsWifi: true }
+            ? Math.Max(stroke.Start, stroke.Note.SlideStartTime) + Epsilon
+            : stroke.Note.Kind is NoteKind.Touch or NoteKind.TouchHold && wifiStarts.Any(t => Math.Abs(t - stroke.Start) < Epsilon)
+                ? stroke.Start + 2 * Epsilon : stroke.Start;
+        var strokes = CreateStrokes(chart, cancellationToken).OrderBy(SearchTime)
             .ThenBy(s => s.Note.Kind == NoteKind.Touch ? s.First.X : 0).ThenBy(s => s.Note.Id)
             .Select((s, i) => s with { Index = i }).ToArray();
         MarkRepeats(strokes);
-        var plan = Optimize(chart, strokes, cancellationToken, out var selectedStrokes);
-        var calibratedStrokes = selectedStrokes;
-        if (CreateRotations(calibratedStrokes, includeShortSweeps: false) is { } rotating)
+        var initialPlan = Optimize(chart, strokes, cancellationToken, out var calibratedStrokes);
+        var plan = ImproveSweeps(chart, initialPlan, calibratedStrokes, includeChordTails: false, cancellationToken);
+        if (plan.AllCriticalPerfect) return plan;
+        var tailPlan = ImproveSweeps(chart, initialPlan, calibratedStrokes, includeChordTails: true, cancellationToken);
+        if (Better(tailPlan, plan)) plan = tailPlan;
+        if (CreateHoldSweeps(chart, calibratedStrokes, cancellationToken) is { } holdSweeps)
+        {
+            var holdPlan = Optimize(chart, holdSweeps, cancellationToken, out var optimized);
+            holdPlan = ImproveSweeps(chart, holdPlan, optimized, includeChordTails: false, cancellationToken);
+            if (!holdPlan.AllCriticalPerfect)
+            {
+                var holdTailPlan = ImproveSweeps(chart, holdPlan, optimized, includeChordTails: true, cancellationToken);
+                if (Better(holdTailPlan, holdPlan)) holdPlan = holdTailPlan;
+            }
+            if (Better(holdPlan, plan)) plan = holdPlan;
+        }
+        return plan;
+    }
+
+    private static HandPlan ImproveSweeps(Chart chart, HandPlan initialPlan, Stroke[] calibratedStrokes,
+        bool includeChordTails, CancellationToken cancellationToken)
+    {
+        var plan = initialPlan;
+        var selectedStrokes = calibratedStrokes;
+        if (CreateRotations(calibratedStrokes, includeShortSweeps: false, includeChordTails: includeChordTails) is { } rotating)
         {
             var rotationPlan = Optimize(chart, rotating, cancellationToken, out var optimized);
             if (Better(rotationPlan, plan) || rotationPlan.Errors.Count == plan.Errors.Count &&
@@ -53,7 +84,7 @@ public static class NormalHandPlanner
                 selectedStrokes = optimized;
             }
         }
-        if (CreateRotations(calibratedStrokes, includeShortSweeps: true) is { } sweeping && sweeping.Any(s => s.FastSweep))
+        if (CreateRotations(calibratedStrokes, includeShortSweeps: true, includeChordTails: includeChordTails) is { } sweeping && sweeping.Any(s => s.FastSweep))
         {
             var singleHand = sweeping.Select(s => s.FastSweep ? s with { KeepRotationHand = true } : s).ToArray();
             var singlePlan = Optimize(chart, singleHand, cancellationToken, out var optimized);
@@ -64,7 +95,7 @@ public static class NormalHandPlanner
                 selectedStrokes = optimized;
             }
         }
-        if (CreateRotations(calibratedStrokes, includeShortSweeps: true, allowSkippedKeys: true) is { } continuous)
+        if (CreateRotations(calibratedStrokes, includeShortSweeps: true, allowSkippedKeys: true, includeChordTails: includeChordTails) is { } continuous)
         {
             var continuousHand = continuous.Select(s => s.FastSweep ? s with { KeepRotationHand = true } : s).ToArray();
             var continuousPlan = Optimize(chart, continuousHand, cancellationToken, out var optimized);
@@ -75,13 +106,14 @@ public static class NormalHandPlanner
                 selectedStrokes = optimized;
             }
         }
-        if (CreatePairedSweeps(selectedStrokes) is { } paired)
-        {
-            var pairedPlan = Optimize(chart, paired, cancellationToken, out _);
-            if (Better(pairedPlan, plan) || pairedPlan.Errors.Count == plan.Errors.Count &&
-                pairedPlan.Achievement == plan.Achievement && pairedPlan.Gaps.Count <= plan.Gaps.Count)
-                plan = pairedPlan;
-        }
+        foreach (var includeHoldTails in new[] { false, true })
+            if (CreatePairedSweeps(selectedStrokes, includeHoldTails) is { } paired)
+            {
+                var pairedPlan = Optimize(chart, paired, cancellationToken, out _);
+                if (Better(pairedPlan, plan) || pairedPlan.Errors.Count == plan.Errors.Count &&
+                    pairedPlan.Achievement == plan.Achievement && pairedPlan.Gaps.Count <= plan.Gaps.Count)
+                    plan = pairedPlan;
+            }
         return plan;
     }
 
@@ -90,14 +122,32 @@ public static class NormalHandPlanner
         selectedStrokes = strokes;
         var plan = Solve(chart, strokes, cancellationToken);
         if (plan.AllCriticalPerfect) return plan;
+        var smaller = SmallerContacts(chart, strokes, plan, cancellationToken);
+        if (smaller is not null)
+        {
+            var adjusted = Solve(chart, smaller, cancellationToken);
+            if (Better(adjusted, plan))
+            {
+                plan = adjusted;
+                selectedStrokes = strokes = smaller;
+            }
+        }
+        if (plan.AllCriticalPerfect) return plan;
         var problemTimes = plan.Gaps.Select(g => g.Time).Concat(plan.Errors.SelectMany(e =>
             new[] { e.Time, e.Note.Kind == NoteKind.Slide ? e.Note.SlideStartTime : e.Note.Time })).ToArray();
         var failedSlides = plan.Errors.Where(e => e.Note.Kind == NoteKind.Slide).Select(e => e.Note.Id).ToHashSet();
+        PointFrame[] ShortenedHoldPoints(Stroke stroke)
+        {
+            var end = Math.Max(stroke.Start + Pulse, stroke.End - .04);
+            return stroke.Points.Where(p => p.Time < end - Epsilon).Append(new(end, stroke.Last)).ToArray();
+        }
         var expanded = strokes.Select(s => problemTimes.Any(t => t >= s.Start - .5 && t <= s.End + .5)
             ? s with { Points = s.Note.Kind is NoteKind.Hold or NoteKind.TouchHold
-                    ? [s.Points[0], s.Points[^1] with { Time = Math.Max(s.Start + Pulse, s.End - .04) }]
+                    ? ShortenedHoldPoints(s)
                     : failedSlides.Contains(s.Note.Id) && s.Note.SlidePath is { IsWifi: false } path && s.Note.Duration < path.Length / 30
                         ? SlidePoints(s.Note, path.Length / 30) : s.Points,
+                ExtendedSlideDuration = failedSlides.Contains(s.Note.Id) && s.Note.SlidePath is { IsWifi: false } slowPath &&
+                    s.Note.Duration < slowPath.Length / 30 ? slowPath.Length / 30 : s.ExtendedSlideDuration,
                 Shifts = s.Note.Kind switch
                 {
                     NoteKind.Tap or NoteKind.Hold => [0, -.0125, .0125],
@@ -113,15 +163,28 @@ public static class NormalHandPlanner
             selectedStrokes = expanded;
         }
         if (plan.AllCriticalPerfect) return plan;
-        var repaired = RepairEarlyContacts(expanded, plan);
-        if (repaired is not null)
+        smaller = SmallerContacts(chart, selectedStrokes, plan, cancellationToken);
+        if (smaller is not null)
         {
+            var adjusted = Solve(chart, smaller, cancellationToken);
+            if (Better(adjusted, plan))
+            {
+                plan = adjusted;
+                selectedStrokes = smaller;
+            }
+        }
+        if (plan.AllCriticalPerfect) return plan;
+        foreach (var advance in new[] { true, false })
+        {
+            var repaired = RepairEarlyContacts(selectedStrokes, plan, advance);
+            if (repaired is null) continue;
             var adjusted = Solve(chart, repaired, cancellationToken);
             if (Better(adjusted, plan))
             {
                 plan = adjusted;
                 selectedStrokes = repaired;
             }
+            if (plan.AllCriticalPerfect) break;
         }
         return plan;
     }
@@ -130,30 +193,29 @@ public static class NormalHandPlanner
         candidate.Errors.Count == before.Errors.Count && (candidate.Achievement > before.Achievement ||
             candidate.Achievement == before.Achievement && candidate.Gaps.Count < before.Gaps.Count);
 
-    private static Stroke[]? RepairEarlyContacts(Stroke[] strokes, HandPlan plan)
+    private static Stroke[]? RepairEarlyContacts(Stroke[] strokes, HandPlan plan, bool advance)
     {
-        var repaired = strokes.ToArray();
-        var changed = false;
-        foreach (var error in plan.Errors.Where(e => e.DifferenceSeconds < 0 && e.Note.Kind is NoteKind.Slide or NoteKind.Tap or NoteKind.Hold))
+        var starts = advance ? PlannerTimingFeedback.EarlierContacts(plan) : PlannerTimingFeedback.DelayedContacts(plan);
+        return starts.Count == 0 ? null : strokes.Select(s => starts.TryGetValue(s.Note.Id, out var start)
+            ? s with { Shifts = [start - s.Start], ContactStart = start } : s).ToArray();
+    }
+
+    private static Stroke[]? SmallerContacts(Chart chart, Stroke[] strokes, HandPlan plan, CancellationToken token)
+    {
+        var ids = PlannerTimingFeedback.FingertipCandidates(plan);
+        if (ids.Count == 0) return null;
+        var affected = chart with { Notes = chart.Notes.Where(n => ids.Contains(n.Id)).ToArray() };
+        var motions = CreateMotions(affected, token, ids).GroupBy(m => m.Note.Id)
+            .ToDictionary(g => g.Key, g => new Queue<ContactMotion>(g));
+        return strokes.Select(s =>
         {
-            foreach (var action in plan.Strokes.Where(s => s.Channel == InputChannel.Touch &&
-                         (error.Note.Kind == NoteKind.Slide ? s.NoteId == error.Note.Id : s.Start <= error.Time && s.End >= error.Time - PlaybackSession.LogicStep)))
-                foreach (var stroke in strokes.Where(s => s.Note.Id == action.NoteId && s.Channel == action.Channel))
-                {
-                    var shift = action.Start - stroke.Start;
-                    if (error.Note.Kind != NoteKind.Slide)
-                    {
-                        var point = stroke.Points.MinBy(p => Math.Abs(p.Time + shift - error.Time))!;
-                        var area = "A" + error.Note.StartPosition;
-                        if (!Fingers(point.Position, InputChannel.Touch).Any(f => ContactMapper.AreasAt(InputChannel.Touch,
-                                new(point.Position.X + f.Offset.X, point.Position.Y + f.Offset.Y), f.Radius).Contains(area))) continue;
-                    }
-                    var delay = -error.DifferenceSeconds!.Value;
-                    repaired[stroke.Index] = stroke with { Shifts = [shift + delay] };
-                    changed = true;
-                }
-        }
-        return changed ? repaired : null;
+            if (!motions.TryGetValue(s.Note.Id, out var queue)) return s;
+            var points = queue.Dequeue().Points;
+            if (s.ExtendedSlideDuration is { } duration) points = SlidePoints(s.Note, duration);
+            if (s.Note.Kind == NoteKind.TouchHold && s.End < points[^1].Time)
+                points = [points[0], points[^1] with { Time = s.End }];
+            return s with { Points = points, Profile = ContactProfile.Fingertips };
+        }).ToArray();
     }
 
     private static HandPlan Solve(Chart chart, Stroke[] strokes, CancellationToken cancellationToken)
@@ -164,17 +226,20 @@ public static class NormalHandPlanner
         {
             cancellationToken.ThrowIfCancellationRequested();
             var next = new List<SearchState>();
+            var variants = ContactVariants(stroke);
             foreach (var state in beam)
                 foreach (var hand in new[] { HandSide.Left, HandSide.Right })
-                    foreach (var shift in stroke.Shifts)
-                        if (Assign(state, new(stroke, hand, shift)) is { } candidate) next.Add(candidate);
+                    foreach (var variant in variants)
+                    foreach (var shift in variant.Shifts)
+                        if (Assign(state, new(variant, hand, shift)) is { } candidate) next.Add(candidate);
             if (next.Count == 0)
             {
                 gaps.Add(new(stroke.Note.Id, stroke.Start, stroke.End, "双手占用或移动时间不足，暂未找到可衔接的手顺。"));
                 continue;
             }
             beam = next.OrderBy(s => s.Cost)
-                .DistinctBy(s => (s.Left?.Stroke.Index, s.Left?.Shift, s.Right?.Stroke.Index, s.Right?.Shift))
+                .DistinctBy(s => (s.Left?.Stroke.Index, s.Left?.Shift, s.Left?.Stroke.EntryDelay,
+                    s.Right?.Stroke.Index, s.Right?.Shift, s.Right?.Stroke.EntryDelay))
                 .Take(BeamWidth).ToList();
         }
         cancellationToken.ThrowIfCancellationRequested();
@@ -197,11 +262,45 @@ public static class NormalHandPlanner
             gaps.Where(g => results.Any(e => e.Note.Id == g.NoteId && e.Grade != AchievementGrade.Perfect)).DistinctBy(g => g.NoteId).ToArray());
     }
 
-    private static Stroke[]? CreateRotations(Stroke[] strokes, bool includeShortSweeps, bool allowSkippedKeys = false)
+    private static Stroke[] ContactVariants(Stroke stroke)
+    {
+        if (stroke.Note.SlidePath is not { IsWifi: true }) return [stroke];
+        // 反馈给出最早接触时刻；更晚入屏的分支保留原末点，不能被负平移拉回去抢手。
+        return new[] { 0d, .06, .12, .18, .24 }.Where(delay => stroke.End - stroke.Start > delay + PlaybackSession.LogicStep)
+            .Select(delay => stroke with
+            {
+                EntryDelay = delay,
+                Points = stroke.Points.Select(p => p with
+                    { Time = p.Time + delay * (stroke.End - p.Time) / (stroke.End - stroke.Start) }).ToArray()
+            }).Select(s => s.ContactStart is { } start ? s with { Shifts = [Math.Max(0, start - s.Start)] } : s)
+            .Where(s => s.Points.Zip(s.Points.Skip(1), (a, b) =>
+                a.Position.DistanceTo(b.Position) <= 30 * (b.Time - a.Time) + Epsilon).All(valid => valid)).ToArray();
+    }
+
+    private static Stroke[]? CreateHoldSweeps(Chart chart, Stroke[] strokes, CancellationToken token)
+    {
+        var segments = PatternAnalyzer.Analyze(GameplayDemandCompiler.Compile(chart, token))
+            .Where(p => p.Kind == PatternKind.HoldSweep).ToArray();
+        if (segments.Length == 0) return null;
+        var result = strokes.ToArray();
+        foreach (var segment in segments)
+        {
+            var sequence = segment.Demands.Where((d, i) => i == 0 || d.Start > segment.Start + Epsilon)
+                .Select(d => strokes.Single(s => s.Note.Id == d.Id)).ToArray();
+            var fast = sequence.Zip(sequence.Skip(1), (a, b) =>
+                b.Start - a.Start <= FastSweepInterval * Math.Abs(ButtonStep(a.Note.StartPosition, b.Note.StartPosition)) + Epsilon).All(v => v);
+            MarkRotation(result, sequence, segment.Direction, fast, keepHand: fast);
+        }
+        return result;
+    }
+
+    private static Stroke[]? CreateRotations(Stroke[] strokes, bool includeShortSweeps, bool allowSkippedKeys = false,
+        bool includeChordTails = false)
     {
         var heads = strokes.Where(s => s.Note.Kind != NoteKind.Slide).ToArray();
         var changed = false;
         var skipped = false;
+        var joinedTail = false;
         var result = strokes.ToArray();
         for (var start = 0; start < heads.Length - 2; start++)
         {
@@ -215,16 +314,29 @@ public static class NormalHandPlanner
                    Math.Sign(ButtonStep(heads[end - 1].Note.StartPosition, heads[end].Note.StartPosition)) == direction &&
                    Math.Abs(ButtonStep(heads[end - 1].Note.StartPosition, heads[end].Note.StartPosition)) <= (allowSkippedKeys ? 2 : 1) &&
                    heads[end].Start - heads[end - 1].Start <= .2 * Math.Abs(ButtonStep(heads[end - 1].Note.StartPosition, heads[end].Note.StartPosition)) + Epsilon) end++;
-            var fast = Enumerable.Range(start + 1, end - start - 1)
-                .All(i => heads[i].Start - heads[i - 1].Start <= FastSweepInterval * Math.Abs(ButtonStep(heads[i - 1].Note.StartPosition, heads[i].Note.StartPosition)) + Epsilon);
-            if (end - start < (fast && includeShortSweeps ? 3 : 4)) continue;
-            skipped |= Enumerable.Range(start + 1, end - start - 1)
-                .Any(i => Math.Abs(ButtonStep(heads[i - 1].Note.StartPosition, heads[i].Note.StartPosition)) == 2);
-            MarkRotation(result, heads[start..end], direction, fast);
+            var sequence = heads[start..end].ToList();
+            if (includeChordTails && end < heads.Length && heads[end].TwoHandChord)
+            {
+                var previous = sequence[^1];
+                // 双押中的顺向一键接续扫动，另一键仍由独立动作和双手约束分配。
+                var following = heads.Skip(end).TakeWhile(s => s.Start == heads[end].Start)
+                    .Where(s => s.Note.Kind is NoteKind.Tap or NoteKind.Hold && s.TwoHandChord && s.Start > previous.Start &&
+                        Math.Sign(ButtonStep(previous.Note.StartPosition, s.Note.StartPosition)) == direction &&
+                        Math.Abs(ButtonStep(previous.Note.StartPosition, s.Note.StartPosition)) <= (allowSkippedKeys ? 2 : 1) &&
+                        s.Start - previous.Start <= .2 * Math.Abs(ButtonStep(previous.Note.StartPosition, s.Note.StartPosition)) + Epsilon)
+                    .OrderBy(s => Math.Abs(ButtonStep(previous.Note.StartPosition, s.Note.StartPosition))).FirstOrDefault();
+                if (following is not null) sequence.Add(following);
+            }
+            var fast = sequence.Zip(sequence.Skip(1), (a, b) =>
+                b.Start - a.Start <= FastSweepInterval * Math.Abs(ButtonStep(a.Note.StartPosition, b.Note.StartPosition)) + Epsilon).All(value => value);
+            if (sequence.Count < (fast && includeShortSweeps ? 3 : 4)) continue;
+            skipped |= sequence.Zip(sequence.Skip(1), (a, b) => Math.Abs(ButtonStep(a.Note.StartPosition, b.Note.StartPosition)) == 2).Any(value => value);
+            MarkRotation(result, sequence.ToArray(), direction, fast);
+            joinedTail |= sequence.Count > end - start;
             changed = true;
             start = end - 1;
         }
-        return changed && (!allowSkippedKeys || skipped) ? result : null;
+        return changed && (includeChordTails ? joinedTail : !allowSkippedKeys || skipped) ? result : null;
     }
 
     private static int ButtonStep(int from, int to)
@@ -233,14 +345,16 @@ public static class NormalHandPlanner
         return step > 4 ? step - 8 : step;
     }
 
-    private static Stroke[]? CreatePairedSweeps(Stroke[] strokes)
+    private static Stroke[]? CreatePairedSweeps(Stroke[] strokes, bool includeHoldTails = false)
     {
         var groups = strokes.Where(s => s.Note.Kind != NoteKind.Slide).GroupBy(s => s.Start)
             .Select(g => g.OrderBy(s => s.Note.StartPosition).ToArray()).ToArray();
-        static bool IsPair(Stroke[] group) => group.Length == 2 && group.All(s => s.Note.Kind == NoteKind.Tap) &&
+        static bool IsPair(Stroke[] group, bool allowHold = false) => group.Length == 2 &&
+            group.All(s => s.Note.Kind == NoteKind.Tap || allowHold && s.Note.Kind == NoteKind.Hold) &&
             group[0].Note.StartPosition != group[1].Note.StartPosition;
         var result = strokes.ToArray();
         var changed = false;
+        var joinedHold = false;
         var joinedSingles = new HashSet<int>();
         for (var start = 0; start < groups.Length - 2; start++)
         {
@@ -259,7 +373,7 @@ public static class NormalHandPlanner
             if (directions.Length == 0) continue;
             var sequences = first.Select(s => new List<Stroke> { s }).ToArray();
             var end = start + 1;
-            while (end < groups.Length && IsPair(groups[end]) &&
+            while (end < groups.Length && IsPair(groups[end], includeHoldTails) &&
                    groups[end][0].Start > groups[end - 1][0].Start &&
                    groups[end][0].Start - groups[end - 1][0].Start <= FastSweepInterval + Epsilon)
             {
@@ -271,6 +385,11 @@ public static class NormalHandPlanner
                 if (following.Any(s => s is null) || following[0] == following[1]) break;
                 for (var lane = 0; lane < 2; lane++) sequences[lane].Add(following[lane]!);
                 end++;
+                if (following.Any(s => s!.Note.Kind == NoteKind.Hold))
+                {
+                    joinedHold = true;
+                    break;
+                }
             }
             if (end - start < 3) continue;
             foreach (var before in new[] { true, false })
@@ -282,7 +401,8 @@ public static class NormalHandPlanner
                 if (interval <= 0 || interval > FastSweepInterval + Epsilon) continue;
                 var lane = Enumerable.Range(0, 2).Where(i => before
                         ? ButtonStep(single.Note.StartPosition, sequences[i][0].Note.StartPosition) == directions[i]
-                        : ButtonStep(sequences[i][^1].Note.StartPosition, single.Note.StartPosition) == directions[i])
+                        : sequences[i][^1].Note.Kind != NoteKind.Hold &&
+                          ButtonStep(sequences[i][^1].Note.StartPosition, single.Note.StartPosition) == directions[i])
                     .OrderByDescending(i => sequences[i].Sum(s => SlidePath.ButtonPosition(s.Note.StartPosition).X) * SlidePath.ButtonPosition(single.Note.StartPosition).X)
                     .Select(i => (int?)i).FirstOrDefault();
                 if (lane is not { } chosen) continue;
@@ -294,7 +414,7 @@ public static class NormalHandPlanner
             changed = true;
             start = end - 1;
         }
-        return changed ? result : null;
+        return changed && (!includeHoldTails || joinedHold) ? result : null;
     }
 
     private static void MarkRotation(Stroke[] result, Stroke[] sequence, int direction, bool fast, bool keepHand = false)
@@ -329,7 +449,9 @@ public static class NormalHandPlanner
                 RotationDirection = direction, RotationPreviousId = i > 0 ? sequence[i - 1].Note.Id : null,
                 RotationGroup = sequence[0].Note.Id, RotationStart = sequence[0].Start, FastSweep = fast,
                 KeepRotationHand = keepHand,
-                Points = [new(stroke.Start, position), new(stroke.End, position)]
+                Points = stroke.Note.Kind == NoteKind.Hold
+                    ? HoldSweepPoints(stroke.Start, stroke.End, position, stroke.Note.StartPosition, direction)
+                    : [new(stroke.Start, position), new(stroke.End, position)]
             };
         }
     }
@@ -373,6 +495,7 @@ public static class NormalHandPlanner
                 }
         var before = choice.Hand == HandSide.Left ? state.Left : state.Right;
         var other = choice.Hand == HandSide.Left ? state.Right : state.Left;
+        if (choice.Stroke.Note.SlidePath is { IsWifi: true } && before?.Stroke.Note.Id == choice.Stroke.Note.Id) return null;
         var singleHandTouches = false;
         if (choice.Stroke.TwoHandChord)
             for (var previous = state; previous.Added is { } added && added.Stroke.Start >= choice.Stroke.Start - Epsilon; previous = previous.Parent!)
@@ -398,7 +521,7 @@ public static class NormalHandPlanner
         var cost = distance * distance / Math.Min(gap, 1) * (rotation ? .045 : .15) + (singleHandTouches ? 10 : 0);
         var targetX = choice.Stroke.RotationDirection == 0 ? choice.Stroke.First.X : SlidePath.ButtonPosition(choice.Stroke.Note.StartPosition).X;
         var wrongSide = choice.Hand == HandSide.Left ? targetX : -targetX;
-        cost += Math.Max(0, wrongSide) * (choice.Stroke.RotationDirection != 0 ? 4 : .8) + Math.Abs(choice.Shift) * 3;
+        cost += Math.Max(0, wrongSide) * (choice.Stroke.RotationDirection != 0 ? 4 : .8) + Math.Abs(choice.Shift) * 3 + choice.Stroke.EntryDelay * 3;
         if (rotation && wrongSide <= 0) cost -= .5;
         if (choice.Stroke.RepeatPreviousId is { } previousId)
         {
@@ -422,7 +545,7 @@ public static class NormalHandPlanner
         var doubleTimes = chart.Notes.Where(n => n.Kind != NoteKind.Slide).GroupBy(n => n.Time)
             .Where(group => group.Count() == 2).Select(group => group.Key).ToHashSet();
         return CreateMotions(chart, token).Select(m => new Stroke(0, m.Note, m.Channel, m.Points,
-            m.Note.Kind != NoteKind.Slide && doubleTimes.Contains(m.Note.Time)));
+            m.Note.Kind != NoteKind.Slide && doubleTimes.Contains(m.Note.Time)) { Profile = m.Profile });
     }
     private static HandTrack[] BuildTracks(IEnumerable<Choice> choices)
     {
@@ -446,7 +569,7 @@ public static class NormalHandPlanner
                         var p = Ring(angle + choice.Stroke.RotationDirection * sweep * i / count);
                         frames.Add(new(previous.Start + (choice.Start - previous.Start) * i / count, p, Fingers(p, InputChannel.Button)));
                     }
-                    frames.AddRange(ContactFrames(choice.Stroke.Points, choice.Stroke.Channel, choice.Shift));
+                    frames.AddRange(ContactFrames(choice.Stroke.Points, choice.Stroke.Channel, choice.Shift, choice.Stroke.Profile));
                     previous = choice;
                     continue;
                 }
@@ -454,7 +577,7 @@ public static class NormalHandPlanner
                 var travel = Math.Max(.06, last.Position.DistanceTo(choice.Stroke.First) / 5);
                 var depart = Math.Max(last.Time, choice.Start - travel);
                 if (depart > last.Time + Epsilon) frames.Add(new(depart, last.Position, []));
-                frames.AddRange(ContactFrames(choice.Stroke.Points, choice.Stroke.Channel, choice.Shift));
+                frames.AddRange(ContactFrames(choice.Stroke.Points, choice.Stroke.Channel, choice.Shift, choice.Stroke.Profile));
                 previous = choice;
             }
             frames.Add(new(frames[^1].Time + .25, frames[^1].Position, []));

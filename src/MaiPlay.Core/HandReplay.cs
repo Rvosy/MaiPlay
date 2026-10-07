@@ -35,7 +35,7 @@ public sealed class HandReplay
     {
         if (!_tracks.TryGetValue(hand, out var track)) return null;
         var frames = track.Frames;
-        if (time < frames[0].Time || time > frames[^1].Time) return null;
+        if (time < frames[0].Time) return null;
         var low = 0; var high = frames.Count;
         while (low < high)
         {

@@ -17,7 +17,7 @@ public sealed class AppSettings
     public bool SoundEnabled { get; set; } = true;
     public double TapSpeed { get; set; } = 7.5;
     public double TouchSpeed { get; set; } = 7.5;
-    public bool ShowSensors { get; set; }
+    public bool ShowSensors { get; set; } = true;
     public bool HighlightContacts { get; set; } = true;
     public bool ShowHandMarkers { get; set; } = true;
     public bool ShowHandTrails { get; set; }
