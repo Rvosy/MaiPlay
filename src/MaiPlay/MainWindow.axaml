@@ -54,6 +54,10 @@
                 <ComboBoxItem Content="Auto Play" />
                 <ComboBoxItem Content="算法游玩" />
               </ComboBox>
+              <ComboBox x:Name="PlannerPicker" SelectedIndex="0">
+                <ComboBoxItem Content="基线手顺" />
+                <ComboBoxItem Content="配置与动作规划（试验）" />
+              </ComboBox>
               <Button x:Name="GeneratePlanButton" Content="求解手顺" HorizontalAlignment="Stretch" Click="GeneratePlan_Click" IsEnabled="False" />
               <TextBlock x:Name="ModeHint" Text="按谱面时机自动完成，显示理想判定。" Classes="caption" TextWrapping="Wrap" LineHeight="18" />
               <ComboBox x:Name="PlanIssuePicker" IsVisible="False" PlaceholderText="定位未解或误判音符" SelectionChanged="PlanIssue_Changed" />

@@ -9,10 +9,12 @@
 ## 架构决策
 
 - [ADR-0001：以固定上游实现建立完整游玩核心](adr/0001-upstream-gameplay.md)。
+- [ADR-0002：分离配置候选与动作搜索，保留基线对照](adr/0002-pattern-human-planner.md)。
 
 ## 使用、兼容与证据
 
 - [输入回放](INPUT-REPLAY.md)、[0.2.0 验收记录](GAMEPLAY-VALIDATION.md)。
+- [配置与动作规划](HUMAN-PLANNER.md)：试验求解器、运动模型范围与分级对照报告。
 - [程序使用](../README.md)。
 - [谱面与时序](CHART-COMPATIBILITY.md)、[皮肤](SKIN-COMPATIBILITY.md)、[音频](AUDIO.md)：现有版本的兼容行为及限制。
 - [官方谱面转换](OFFICIAL-CHARTS.md)：转换工具、版本分类与独立的整库验收记录。

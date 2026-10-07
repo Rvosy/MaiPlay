@@ -319,6 +319,7 @@ public sealed partial class MainWindow : Window
         PlayButton.IsEnabled = RestartButton.IsEnabled = _audioReady && !_loading && _planning is null;
         Progress.IsEnabled = _audioReady && !_loading && _planning is null;
         GeneratePlanButton.IsEnabled = _session != null && !_loading && _planning is null;
+        PlannerPicker.IsEnabled = _planning is null;
         GeneratePlanButton.Content = _planning is null ? "求解手顺" : "正在求解并核验…";
         PlayButton.Content = _audio.IsPlaying ? "暂停" : "播放";
         PlaybackLabel.Text = _audio.IsPlaying ? "播放中" : _audioReady && _audio.Position >= _audio.Duration ? "播放结束" : "已暂停";
@@ -390,13 +391,15 @@ public sealed partial class MainWindow : Window
         if (_session is null || _planning != null || _loading) return;
         Pause();
         var chart = _session.Chart;
+        var useHumanPlanner = PlannerPicker.SelectedIndex == 1;
         using var cancellation = new CancellationTokenSource();
         _planning = cancellation;
         UpdateTransport();
         SetStatus("正在求解手顺，并通过实际输入核验整首谱面…");
         try
         {
-            var plan = await Task.Run(() => NormalHandPlanner.Plan(chart, cancellation.Token), cancellation.Token);
+            var plan = await Task.Run(() => useHumanPlanner ? HumanPlanner.Plan(chart, cancellation.Token)
+                : NormalHandPlanner.Plan(chart, cancellation.Token), cancellation.Token);
             if (_closed || cancellation.IsCancellationRequested || _session?.Chart != chart) return;
             _generatedPlan = plan;
             _inputLog = null;
@@ -461,7 +464,7 @@ public sealed partial class MainWindow : Window
             : $"回放 {Path.GetFileName(_settings.InputLogPath)} · {_inputLog.Events.Count} 条区域输入。" +
               (_inputLog.HandReplay is null ? "" : "\n○ 蓝色左手 · ◇ 橙色右手");
         ToolTip.SetTip(ModeHint, algorithm ? _settings.InputLogPath : null);
-        InputLogHint.Text = _generatedPlan is { } generated ? $"当前谱面的求解结果 · {generated.Strokes.Count} 个动作\n整首核验 {generated.Results.Count} CP · {generated.Achievement:F4}%"
+        InputLogHint.Text = _generatedPlan is { } generated ? $"当前谱面的求解结果 · {generated.Strokes.Count} 个动作\n整首核验 {generated.Results.Count - generated.Errors.Count} CP · {generated.Achievement:F4}%"
             : _inputLog is null ? "未加载输入日志。算法游玩将按无输入状态判定。"
             : $"{_settings.InputLogPath}\n{_inputLog.Events.Count} 条输入" +
               (_inputLog.HandReplay is null ? " · 无手位轨迹" : $" · {_inputLog.Hands.Count} 条手部轨迹");

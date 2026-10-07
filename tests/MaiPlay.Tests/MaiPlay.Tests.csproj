@@ -10,6 +10,7 @@
     <PackageReference Include="Avalonia.Headless" Version="11.3.22" />
     <ProjectReference Include="../../src/MaiPlay.Core/MaiPlay.Core.csproj" />
     <ProjectReference Include="../../src/MaiPlay/MaiPlay.csproj" />
+    <ProjectReference Include="../MaiPlay.GameplayHarness/MaiPlay.GameplayHarness.csproj" />
     <Using Include="Xunit" />
   </ItemGroup>
 </Project>
