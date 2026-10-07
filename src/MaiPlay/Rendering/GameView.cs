@@ -147,13 +147,14 @@ public sealed class GameView : Control
         {
             if (replay.PoseAt(hand, Time) is not { } pose) continue;
             var p = World(pose.Position);
-            // 标记随谱面缩放，仅表示手位，不代表接触面积。
-            const double r = .42;
             var brush = hand == HandSide.Left ? LeftHandBrush : RightHandBrush;
-            var pen = new Pen(brush, .085);
             var pressed = Session is { } session &&
                 (Enumerable.Range(1, 8).Any(i => session.Inputs.ButtonSources(i).Any(s => replay.HandForSource(s) == hand)) ||
                  Enum.GetValues<SensorArea>().Any(a => session.Inputs.SensorSources(a).Any(s => replay.HandForSource(s) == hand)));
+            // 标记随谱面缩放，仅表示手位，不代表接触面积。
+            var scale = pressed ? .9 : 1;
+            var r = .42 * scale;
+            var pen = new Pen(brush, .085 * scale);
             var fill = pressed ? brush : null;
             if (hand == HandSide.Left) context.DrawEllipse(fill, pen, p, r, r);
             else context.DrawGeometry(fill, pen, Polygon(new(p.X, p.Y - r), new(p.X + r, p.Y), new(p.X, p.Y + r), new(p.X - r, p.Y)));
