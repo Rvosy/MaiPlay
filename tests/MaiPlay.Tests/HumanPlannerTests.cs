@@ -181,15 +181,12 @@ public sealed class HumanPlannerTests
     }
 
     [Fact]
-    public void DelayedSlideTailAvoidsJudgingAnUpcomingTapEarly()
+    public void SlideTailAvoidsJudgingAnUpcomingTapEarly()
     {
         var chart = SimaiParser.ParseChart("(135){4}1/8<5[4:1],,4>1[4:1]/5,,8h[2:1],E", first: 1);
         var plan = HumanPlanner.Plan(chart);
         Assert.True(plan.AllCriticalPerfect, Explain(plan));
         Assert.Empty(plan.Gaps);
-        var interferingSlide = Assert.Single(chart.Notes, n => n.Kind == NoteKind.Slide && n.StartPosition == 8);
-        var delayed = Assert.Single(plan.Strokes, s => s.NoteId == interferingSlide.Id);
-        Assert.True(delayed.Start > interferingSlide.SlideStartTime);
         Assert.Equal(0, new HumanMotionModel().Analyze(plan.Tracks, plan.Strokes).SpeedLimitViolations);
         VerifyReplay(plan);
     }

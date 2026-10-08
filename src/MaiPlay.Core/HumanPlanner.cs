@@ -74,9 +74,29 @@ public static class HumanPlanner
             return new(motions, PatternAnalyzer.Analyze(demands, d => d.Note.SlidePath is { IsWifi: true }
                 ? Math.Max(d.Start, motions[d.Id][0].Frames[0].Time) : motions[d.Id][0].Frames[0].Time), doubleTimes);
         }
+        var prepared = PrepareContacts(new HashSet<int>());
+        var initial = PlanPass(chart, options, prepared, null, cancellationToken);
+        var diagnosed = Recover(chart, options, prepared, initial, PrepareContacts, true, cancellationToken);
+        if (diagnosed.AllCriticalPerfect) return diagnosed;
+
+        // 局部改善可能改变下一轮误触来源；基础路线从初始方案独立走完，保留原本可完成的音符。
+        var basis = Recover(chart, options, prepared, initial, PrepareContacts, false, cancellationToken);
+        if (!Better(diagnosed, basis)) return basis;
+        var previousErrors = basis.Errors.ToDictionary(e => e.Note.Id);
+        static bool IsMiss(PlaybackEvent result) => result.Kind == PlaybackEventKind.Miss ||
+            result.Grade is AchievementGrade.Miss or AchievementGrade.TooFast;
+        return diagnosed.Errors.Any(e => !previousErrors.TryGetValue(e.Note.Id, out var previous) ||
+                IsMiss(e) && !IsMiss(previous))
+            ? basis : diagnosed;
+    }
+
+    private static HandPlan Recover(Chart chart, HumanPlannerOptions options, PreparedSearch initialPrepared,
+        HandPlan initial, Func<IReadOnlySet<int>, PreparedSearch> prepareContacts, bool diagnosticRecovery,
+        CancellationToken cancellationToken)
+    {
         var fingertips = new HashSet<int>();
-        var prepared = PrepareContacts(fingertips);
-        var best = PlanPass(chart, options, prepared, null, cancellationToken);
+        var prepared = initialPrepared;
+        var best = initial;
         var shifts = new Dictionary<int, double?>();
         for (var attempt = 0; attempt < 2 && !best.AllCriticalPerfect; attempt++)
         {
@@ -85,7 +105,7 @@ public static class HumanPlanner
             smaller.UnionWith(PlannerTimingFeedback.FingertipCandidates(best));
             if (smaller.Count > fingertips.Count)
             {
-                var smallerPrepared = PrepareContacts(smaller);
+                var smallerPrepared = prepareContacts(smaller);
                 var adjusted = PlanPass(chart, options, smallerPrepared, shifts, cancellationToken);
                 if (Better(adjusted, best) && (adjusted.Errors.Count < best.Errors.Count ||
                     adjusted.Achievement > best.Achievement || adjusted.Gaps.Count < best.Gaps.Count))
@@ -97,12 +117,12 @@ public static class HumanPlanner
                 if (best.AllCriticalPerfect) break;
             }
             var feedback = PlannerTimingFeedback.DelayedContacts(best);
-            if (feedback.Count == 0)
+            var earlier = PlannerTimingFeedback.EarlierContacts(best, includeHeadFeedback: diagnosticRecovery);
+            if (feedback.Count == 0 && (!diagnosticRecovery || earlier.Count == 0))
             {
                 if (ReferenceEquals(before, best)) break;
                 continue;
             }
-            var earlier = PlannerTimingFeedback.EarlierContacts(best);
             var accepted = shifts;
             foreach (var timing in new[]
                      {
@@ -141,11 +161,13 @@ public static class HumanPlanner
                 if (Better(adjusted, candidate)) candidate = adjusted;
             }
             if (!candidate.AllCriticalPerfect && candidate.Gaps.Any(g => chart.Notes[g.NoteId].Kind is NoteKind.Tap or NoteKind.Hold &&
-                    candidate.Strokes.Any(s => s.Technique == HandTechnique.Rotation && g.Time > s.Start &&
-                        g.Time - s.Start <= 2 * NormalHandPlanner.FastSweepInterval)))
+                    candidate.Strokes.Any(s => s.Technique == HandTechnique.Rotation &&
+                        (diagnosticRecovery || g.Time > s.Start) &&
+                        Math.Abs(g.Time - s.Start) <= 2 * NormalHandPlanner.FastSweepInterval)))
             {
                 // 密集扫键的可行时序可能落在原候选之间，保留原方案后再核验更细的采样。
-                var adjusted = PlanPass(chart, options, prepared, shifts, cancellationToken, strikeOnly, refineSweepTiming: true);
+                var adjusted = PlanPass(chart, options, prepared, shifts, cancellationToken, strikeOnly,
+                    refineSweepTiming: true, includeRecoveryTechniques: diagnosticRecovery);
                 if (Better(adjusted, candidate)) candidate = adjusted;
             }
             if (Better(candidate, best)) best = candidate;
@@ -156,7 +178,7 @@ public static class HumanPlanner
 
     private static HandPlan PlanPass(Chart chart, HumanPlannerOptions options, PreparedSearch prepared,
         IReadOnlyDictionary<int, double?>? shiftHints, CancellationToken cancellationToken,
-        IReadOnlySet<int>? strikeOnly = null, bool refineSweepTiming = false)
+        IReadOnlySet<int>? strikeOnly = null, bool refineSweepTiming = false, bool includeRecoveryTechniques = false)
     {
         cancellationToken.ThrowIfCancellationRequested();
         var doubleTimes = prepared.DoubleTimes;
@@ -199,7 +221,8 @@ public static class HumanPlanner
         {
             var pattern = patterns[patternIndex];
             var alternatives = new List<State>();
-            foreach (var technique in TechniqueCandidates.For(pattern, model.PreferredStrikeIntervalSeconds))
+            foreach (var technique in TechniqueCandidates.For(pattern, model.PreferredStrikeIntervalSeconds,
+                         includeRecoveryTechniques))
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 if (strikeOnly is not null && pattern.Demands.Where((d, i) => strikeOnly.Contains(d.Id) &&

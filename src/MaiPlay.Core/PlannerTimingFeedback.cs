@@ -90,7 +90,7 @@ internal static class PlannerTimingFeedback
         }
     }
 
-    internal static IReadOnlyDictionary<int, double> EarlierContacts(HandPlan plan)
+    internal static IReadOnlyDictionary<int, double> EarlierContacts(HandPlan plan, bool includeHeadFeedback = true)
     {
         var starts = new Dictionary<int, double>();
         foreach (var (action, _, _) in EarlyContacts(plan, slidesOnly: true))
@@ -101,7 +101,70 @@ internal static class PlannerTimingFeedback
             var start = note.SlideStartTime - .12;
             if (start < action.Start - Epsilon) starts[note.Id] = start;
         }
+        if (!includeHeadFeedback) return starts;
+        foreach (var error in plan.Errors.Where(e => e.Note.Kind is NoteKind.Tap or NoteKind.Hold && e.DifferenceSeconds < 0))
+        {
+            var tick = Tick(error.Note.Time + error.DifferenceSeconds!.Value);
+            var area = "A" + error.Note.StartPosition;
+            foreach (var span in TouchSpans(plan, new HashSet<string> { area }).Where(s => s.StartTick == tick))
+            {
+                // 同帧按下再松开仍会锁存；归因到释放前的动作，并给早窗前留出一个空采样。
+                var time = Math.Min(tick / (double)PlaybackSession.LogicHz, span.End - Epsilon);
+                foreach (var action in TouchActionsAt(plan, span, time))
+                {
+                    var note = plan.Chart.Notes.Single(n => n.Id == action.NoteId);
+                    if (note.Kind != NoteKind.Slide || note.SlidePath!.IsWifi) continue;
+                    var releaseBefore = error.Note.Time - HeadJudgements.EarlyInputWindow - PlaybackSession.LogicStep;
+                    var start = Math.Clamp(action.Start - (span.End - releaseBefore),
+                        note.SlideStartTime - .12, note.SlideStartTime + .12);
+                    // 尾区提前碰到后续外键时，也尝试先离开；整条轨道延后可能只把错误转移到自身。
+                    if (start < action.Start - Epsilon)
+                        starts[note.Id] = Math.Min(starts.GetValueOrDefault(note.Id, double.PositiveInfinity), start);
+                }
+            }
+        }
+        foreach (var (noteId, start) in EarlierTouchClicks(plan))
+            starts[noteId] = Math.Min(starts.GetValueOrDefault(noteId, double.PositiveInfinity), start);
         return starts;
+    }
+
+    private static IEnumerable<(int NoteId, double Start)> EarlierTouchClicks(HandPlan plan)
+    {
+        foreach (var error in plan.Errors.Where(e => e.Note.Kind == NoteKind.Touch && e.Reason == "head-timeout" &&
+                     e.Note.TouchArea is ['A', >= '1' and <= '8']))
+        {
+            var note = error.Note;
+            var button = note.TouchArea[1] - '0';
+            var attempts = plan.Strokes.Where(s => s.NoteId == note.Id && s.Channel == InputChannel.Touch).ToArray();
+            if (attempts.Length == 0) continue;
+            var consumers = plan.Results.Where(e => e.Note.Kind is NoteKind.Tap or NoteKind.Hold &&
+                    e.Note.StartPosition == button && e.DifferenceSeconds is not null && e.Reason != "head-timeout")
+                .ToLookup(e => Tick(e.Note.Time + e.DifferenceSeconds!.Value));
+            var samples = plan.Replay.Events.Where(e => e.Time <= PlaybackSession.MissDeadline(note) &&
+                    (e.Channel == InputChannel.Button ? e.Area == button.ToString() : e.Area == note.TouchArea))
+                .GroupBy(e => Tick(e.Time));
+            var inputs = new InputState();
+            long previousTick = long.MinValue;
+            foreach (var sample in samples)
+            {
+                if (previousTick != long.MinValue && sample.Key > previousTick + 1) inputs.Sample([]);
+                inputs.Sample(sample);
+                var buttonClick = inputs.TryUseButtonClick(button);
+                var touchClick = inputs.TryUseSensorClick(note.TouchArea);
+                previousTick = sample.Key;
+                // 外键优先吃 Button 边沿；只有它实际用了 Touch 边沿，才调整这次漏判的 Touch。
+                if (buttonClick || !touchClick || !consumers.Contains(sample.Key)) continue;
+                foreach (var down in sample.Where(e => e.Channel == InputChannel.Touch && e.IsDown))
+                foreach (var action in attempts.Where(s => s.Hand == plan.Replay.HandForSource(down.Source) &&
+                             down.Time >= s.Start - Epsilon && down.Time < s.End))
+                foreach (var consumer in consumers[sample.Key])
+                {
+                    var beforeWindow = consumer.Note.Time - HeadJudgements.EarlyInputWindow - PlaybackSession.LogicStep;
+                    var start = Math.Clamp(action.Start + beforeWindow - down.Time, note.Time - .125, note.Time + .125);
+                    if (start < action.Start - Epsilon) yield return (note.Id, start);
+                }
+            }
+        }
     }
 
     private static IEnumerable<(PlannedStroke Action, double Delay, bool Palm)> EarlyContacts(HandPlan plan, bool slidesOnly = false)

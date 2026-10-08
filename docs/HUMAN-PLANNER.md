@@ -65,11 +65,19 @@ Hold 和 TouchHold 通过 `HumanPlanner.MotionVariants` 同时保留原尾部与
 
 若双手隔键扫动提前碰到另一手下一拍的目标，反馈按实际按钮输入源定位造成误触的沿弧接近段，再核验该动作改用抬手击打的方案。扫键后仍有外键缺口时，会在原时移范围内补充更细的候选，保留之前的完整方案一起比较；不会因为候选变多、搜索剪枝改变而直接替换旧结果。
 
+扫键前后相邻的外键缺口都可以触发细化。该轮还保留在当前段中点换手一次的候选，让尾键跨过半圈分界后仍可由当前手扫完；原有按键位分手、同手扫动等方案继续参与比较。新增接力候选只用于失败后的恢复，不改变初次搜索。
+
 计划中的外键击打因持续占键而头判超时时，反馈通过 `InputState.Sample` 重放该键的输入，检查实际击打前后的全区状态，再追踪阻挡来源所属的扫键段。多个手指或双手无缝续压仍属于持续 ON，不能仅靠某个接触部位的松开判断按键已释放。提前误触约束和加入占键修复的约束分别生成候选，并从同一个原始方案开始核验；新增约束不能阻止原有可行方案参与整曲比较。
 
-整曲核验发现 Slide 提前结束，或触摸轨迹提前触发 Tap、Hold 时，[`PlannerTimingFeedback`](../src/MaiPlay.Core/PlannerTimingFeedback.cs) 从实际提前量计算接触延后提示。Hold 的反馈回到头判时刻归因，不使用尾部结算时刻。`HumanPlanner.Plan` 最多进行两轮反馈，每轮分别核验恢复原始时机、提前离开干扰区和按提前量延后的候选，只有比较结果改善才保留调整。提前方案复用已有 Slide 时机范围，不扩大判定窗口。被反馈调整的接触动作只要存在可行分配就优先保留；全部候选都无法衔接时才允许留下该动作的缺口。反馈复用同一搜索、占手约束和判定流程，不修改判定窗口，也不直接改写成绩。
+整曲核验发现 Slide 提前结束，或触摸轨迹提前触发 Tap、Hold 时，[`PlannerTimingFeedback`](../src/MaiPlay.Core/PlannerTimingFeedback.cs) 从实际提前量计算接触延后提示。Hold 的反馈回到头判时刻归因，不使用尾部结算时刻。每条恢复路线最多进行两轮接触反馈，每轮分别核验恢复原始时机、提前离开干扰区和按提前量延后的候选，只有比较结果改善才保留调整。提前方案复用已有 Slide 时机范围，不扩大判定窗口。被反馈调整的接触动作只要存在可行分配就优先保留；全部候选都无法衔接时才允许留下该动作的缺口。反馈复用同一搜索、占手约束和判定流程，不修改判定窗口，也不直接改写成绩。
 
 Slide 提前结束时，反馈按尾区完成前一采样的实际输入源寻找干扰动作，不假定一定是该 Slide 自己的轨迹。延后量由原判定器的 CP 窗口计算，避免把前一条轨道整体拖到下一条的目标时刻。若 Touch 或 TouchHold 因另一掌面从早窗之前持续压住同一区、遮住计划输入的上升沿而头判超时，也会对这个实际阻挡动作尝试小手。TouchHold 可能在尾部结算为 Good，因此按头判超时原因归因，不只检查最终 Miss。
+
+普通 Slide 的尾部提前触发后续 Tap/Hold 时，反馈还会从该 A 区实际释放时刻推导提前离区的候选，使接触在后续头判早窗前结束。候选仍限制在已有 Slide 时移范围内，并与延后方案共同核验，减少将错误转移到 Slide 自身的情况。
+
+若 A 区 Touch 已分配动作却头判超时，反馈会核对同一采样的输入与外键头判：只有 Touch 上升沿确实被同区 Tap/Hold 消费、该采样没有 Button 上升沿时，才尝试将 Touch 提前到该外键早窗之前。外键即使因 EX 规则判为 CP，也不能掩盖这类输入争用。调整保留原掌面与 Touch 时移范围，并经过整曲回放比较。
+
+新增诊断可能改变下一轮看到的误触来源，局部成绩较好的中间方案也可能丢掉后续缩手的机会。`HumanPlanner` 因此从同一个初始方案保留两条完整恢复路线：诊断路线包含上述外键头判反馈和按段接力；基础路线使用原有反馈与扫键候选。诊断路线全 CP 时直接返回，否则独立完成基础路线，再比较最终结果。诊断结果只有整体更优、保留基础结果的全部 CP，且没有新增 Miss/TooFast 时才被接受。两条路线复用接触模板，不共享已接受的缩手集合或时机调整，不递归增加分支。该规则约束两条完整恢复结果的选择，不保证搜索中间状态逐音符不退步，也不保证找到全局最优解。
 
 当前状态无法为 Tap 或 Touch 分配独立动作时，搜索会检查双手已有的触摸轨迹。若 `DemandCoverageProbe` 的单音符回放确认直接 CP，该需求不增加搜索缺口代价；例如 Wifi 经过外圈与中心时可以同时覆盖后继按钮和 Touch。同一个双手轨迹组合的输入在当前配置段内复用，局部检查保留原采样相位，不计 TouchGroup 继承，也不把结果写入最终成绩。
 
@@ -93,6 +101,10 @@ Touch、TouchHold 和 Slide 默认使用掌面圆，半径由 `ContactTrajectory
 
 配置识别、实际输入回放和运动约束的回归用例分别位于 [`GameplayDemandTests`](../tests/MaiPlay.Tests/GameplayDemandTests.cs)、[`HumanPlannerTests`](../tests/MaiPlay.Tests/HumanPlannerTests.cs) 和 [`HumanMotionModelTests`](../tests/MaiPlay.Tests/HumanMotionModelTests.cs)。Touch 长按衔接与密集同刻输入另有 [`HumanTouchSchedulingTests`](../tests/MaiPlay.Tests/HumanTouchSchedulingTests.cs) 和 [`HumanTouchCoverageTests`](../tests/MaiPlay.Tests/HumanTouchCoverageTests.cs)。[`HumanSweepPlanningTests`](../tests/MaiPlay.Tests/HumanSweepPlanningTests.cs) 覆盖不同速度、方向和起键的转圈及单扫接双扫；[`HumanRepetitionPlanningTests`](../tests/MaiPlay.Tests/HumanRepetitionPlanningTests.cs) 覆盖快慢纵连和另一手被长按占用的情况。这些用例均通过独立回放核对实际输入。
 
+扫尾交接、Slide 提前离区、Touch 与 EX 外键争用输入，分别由 [`SweepRelayTailTests`](../tests/MaiPlay.Tests/SweepRelayTailTests.cs)、[`SlideTailContactFeedbackTests`](../tests/MaiPlay.Tests/SlideTailContactFeedbackTests.cs) 和 [`TouchClickFeedbackTests`](../tests/MaiPlay.Tests/TouchClickFeedbackTests.cs) 覆盖不同方向、起键或采样相位。完整反馈路线的保留由 [`CompleteFeedbackRouteTests`](../tests/MaiPlay.Tests/CompleteFeedbackRouteTests.cs) 核验，不依赖本地曲库。
+
 已保存的分级对照见[紫谱 11+](../reports/human-planner/master-11-plus/comparison.md)和[红谱 12+](../reports/human-planner/expert-12-plus/comparison.md)。每份报告列出自身的验证范围、改善和退步；批量复验使用上面的 Harness 命令。
+
+14、14+ 的完整扫描使用[等级扫描脚本](../research/human-planner/level-scan.md)，覆盖本地所有难度编号中的所选等级。原始基线见[扫描报告](../reports/human-planner/level-14-baseline/README.md)，修复结果见[逐音符对照](../reports/human-planner/level-14-comparison/README.md)，剩余单错谱见[调查顺序](../reports/human-planner/level-14-final/one-error-charts.md)。
 
 架构取舍见 [ADR-0002](adr/0002-pattern-human-planner.md)。基线既有整库结果仍保留在[输入回放指南](INPUT-REPLAY.md)，不作为新求解器的验证结果。

@@ -1,0 +1,285 @@
+{
+  "createdAtUtc": "2026-10-08T00:34:15.982264+00:00",
+  "harnessCore": {
+    "path": "artifacts/human-level-14-final-build/bin/MaiPlay.GameplayHarness/release/MaiPlay.Core.dll",
+    "sha256": "0A1AEA0D9B006F5DE075903A84717D490C9FF8FE71064D482F4CDA972804158F"
+  },
+  "previewCore": {
+    "path": "artifacts/preview-20261008-level14/MaiPlay.Core.dll",
+    "sha256": "0A1AEA0D9B006F5DE075903A84717D490C9FF8FE71064D482F4CDA972804158F"
+  },
+  "tests": {
+    "configuration": "Release",
+    "counts": {
+      "total": 1798,
+      "executed": 1798,
+      "passed": 1798,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "trx": {
+      "path": "artifacts/human-level-14-final-tests/results/level-14-final.trx",
+      "sha256": "7CC1F05E1144B24D1C52B2516C4234B00BA923F309E0BDC30808501E4D270B8D"
+    },
+    "core": {
+      "path": "artifacts/human-level-14-final-tests/bin/MaiPlay.Core/release/MaiPlay.Core.dll",
+      "sha256": "3BB7F6BA58641956150AF93505234C4AB875183C423F305AF1EE828F340E5962"
+    },
+    "buildRelation": "Same source; independently built in a separate artifacts directory. Binary hashes are recorded separately."
+  },
+  "scan": {
+    "path": "reports/human-planner/level-14-final/ranking.json",
+    "sha256": "AC4248645215C082D2235F3CD7FC0140BEBA321E99F3C8C678113F4320623AEE"
+  },
+  "comparison": {
+    "path": "reports/human-planner/level-14-comparison/comparison.json",
+    "sha256": "A63E6E84267F8F2DB4F89D70C93EEDC622E44F2673DD232896DFADC24BDD072F"
+  },
+  "lowLevelSpotChecks": {
+    "path": "artifacts/human-planner-validation/final-low-regressions/verification.json",
+    "sha256": "A8D01980221FD7F5D6EDFBD24A2E2608F48156387303FA122F7031842718D3F9"
+  },
+  "cases": [
+    {
+      "key": "445ff5f012e050f8",
+      "title": "Sun Dance",
+      "difficulty": 6,
+      "level": "14.0",
+      "notes": 535,
+      "chartSha256": "15DF3E8DFD2F2702701DC2DB3ED843091C403474DA3210280F3C24A6283EB68D",
+      "results": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/445ff5f012e050f8/results.json",
+        "sha256": "D1093415742935467ADA4D2E5A20A4CE3A284BE843A4ECFE33C9755AD20395B9"
+      },
+      "hands": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/445ff5f012e050f8/hands.json",
+        "sha256": "3D18AA369991F54B4FCE4B98F0C82C08B58484B3CC206A6BBC60BF1E6F5E9CB9"
+      },
+      "movement": {
+        "leftDistanceMillimeters": 76004.0314259993,
+        "rightDistanceMillimeters": 75062.0539353833,
+        "peakSpeedMillimetersPerSecond": 6724.0594973328225,
+        "speedLimitViolations": 0,
+        "projectedCrossingCount": 30,
+        "projectedCrossingSeconds": 8.955475865051834,
+        "directionReversalCount": 322,
+        "peakLeftActionsPerSecond": 8,
+        "peakRightActionsPerSecond": 8,
+        "totalDistanceMillimeters": 151066.0853613826
+      }
+    },
+    {
+      "key": "1d239586e40c2959",
+      "title": "怒槌",
+      "difficulty": 5,
+      "level": "14.8",
+      "notes": 1188,
+      "chartSha256": "08D70A1944D39980B0A5EBD95113271DCFF83B988C29FA11676D2FA558F4D1C2",
+      "results": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/1d239586e40c2959/results.json",
+        "sha256": "29D301024F2B942B246FD4C3E0915CD429D0F56DE051743BD6CD21BCC57FD7D3"
+      },
+      "hands": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/1d239586e40c2959/hands.json",
+        "sha256": "72C9AEAE5341C12138748154800BB59D621A793DA29A3C975EC9BE333030EFC9"
+      },
+      "movement": {
+        "leftDistanceMillimeters": 151498.62050005354,
+        "rightDistanceMillimeters": 159652.84019415063,
+        "peakSpeedMillimetersPerSecond": 7049.670329691158,
+        "speedLimitViolations": 0,
+        "projectedCrossingCount": 65,
+        "projectedCrossingSeconds": 15.297130978441588,
+        "directionReversalCount": 631,
+        "peakLeftActionsPerSecond": 19,
+        "peakRightActionsPerSecond": 27,
+        "totalDistanceMillimeters": 311151.4606942042
+      }
+    },
+    {
+      "key": "34fc856ad79bbf94",
+      "title": "美夜月鏡",
+      "difficulty": 5,
+      "level": "14.1",
+      "notes": 1011,
+      "chartSha256": "A4FEDBAD292124CA388185E48DE5B92F986910D63118F24E1F43FF141C45F59F",
+      "results": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/34fc856ad79bbf94/results.json",
+        "sha256": "00396A3D351C9B0D4234ACA44D82ABDFC75BEFC9EC2A8A5F6B469D5D88005564"
+      },
+      "hands": {
+        "path": "artifacts/human-level-14-final-0a1a/charts/34fc856ad79bbf94/hands.json",
+        "sha256": "CBAD257D6C453E2EC4BA705D4F53D1161A98FF6BC70337317501CF889D902E3B"
+      },
+      "movement": {
+        "leftDistanceMillimeters": 119209.26616352111,
+        "rightDistanceMillimeters": 115929.9480855259,
+        "peakSpeedMillimetersPerSecond": 5159.936693001489,
+        "speedLimitViolations": 0,
+        "projectedCrossingCount": 49,
+        "projectedCrossingSeconds": 11.5291527729357,
+        "directionReversalCount": 461,
+        "peakLeftActionsPerSecond": 11,
+        "peakRightActionsPerSecond": 14,
+        "totalDistanceMillimeters": 235139.214249047
+      }
+    }
+  ],
+  "sourceFilesLf": [
+    {
+      "path": "Directory.Build.props",
+      "sha256Lf": "DED496C5AC3582FBD3E164D42309C8CC3DE1B11F88DF622E68371B4855C69B1F"
+    },
+    {
+      "path": "src/MaiPlay.Core/AchievementState.cs",
+      "sha256Lf": "5832774D1EFEEC928165AC4C7D1B0505F942906333F7185EFE633F447F3EA3C8"
+    },
+    {
+      "path": "src/MaiPlay.Core/CabinetGeometry.cs",
+      "sha256Lf": "036A23057BAC316A72628EAE8F50C39D0A09034A7290A3D8EA475AEF30F62CF2"
+    },
+    {
+      "path": "src/MaiPlay.Core/Chart.cs",
+      "sha256Lf": "7779A3714572BA0DA5ED1CC4CDD8B0BDB6B1DA2CC33273DE9C6CC3A429467800"
+    },
+    {
+      "path": "src/MaiPlay.Core/ContactMapper.cs",
+      "sha256Lf": "D4B840B42783EB1D8F7CEB5491BF6B4444B736528C17E816AC92799A64E1EF90"
+    },
+    {
+      "path": "src/MaiPlay.Core/ContactTrajectoryCompiler.cs",
+      "sha256Lf": "1021EB9C1DB75791EAB343CF28E05D53CC3E5C28EFA9CD8B88FFAC4FE0B2C970"
+    },
+    {
+      "path": "src/MaiPlay.Core/DemandCoverageProbe.cs",
+      "sha256Lf": "2682D16F36D4EAF6507B866348A57EB17EAFDA5157A277A78747587754BE495B"
+    },
+    {
+      "path": "src/MaiPlay.Core/GameplayDemand.cs",
+      "sha256Lf": "7C9F60331BEDA5774102581DE78DA487527E570D68AD2A7C7B8866150BF4D419"
+    },
+    {
+      "path": "src/MaiPlay.Core/HandPlan.cs",
+      "sha256Lf": "4FECA0D5360682207CB3744FAE5135D7CC948D1AE3201445CD9538DF09714CEB"
+    },
+    {
+      "path": "src/MaiPlay.Core/HandReplay.cs",
+      "sha256Lf": "9D0CBB9082CDEDF9C377E580D3294040E3F6F21213987B90624FD34B640D03DB"
+    },
+    {
+      "path": "src/MaiPlay.Core/HeadJudgements.cs",
+      "sha256Lf": "700CA05E918DEED6D958270E76A0891AB3BCE935918442178A06ABDDE19CFA42"
+    },
+    {
+      "path": "src/MaiPlay.Core/HumanMotionModel.cs",
+      "sha256Lf": "7E14C1EEBAE5314EC9C8050FE91444231DB888188EA970E42BD68EBDE4382D09"
+    },
+    {
+      "path": "src/MaiPlay.Core/HumanPlanner.cs",
+      "sha256Lf": "A9C74C9EF11C238539DC83C506EDDFF82540901B91ACB51BC17C54A83B1D416F"
+    },
+    {
+      "path": "src/MaiPlay.Core/InputLog.cs",
+      "sha256Lf": "3FC9C3DD474815ECF335923B88D20D7EBBC3C2F7E1C22F1A1E9338A2E72BDAA9"
+    },
+    {
+      "path": "src/MaiPlay.Core/InputState.cs",
+      "sha256Lf": "96E57C64C920859BBF17B1FECE4D7C1AEDD6B4EC3BC8BA4FC2E095FB314F7374"
+    },
+    {
+      "path": "src/MaiPlay.Core/MaiPlay.Core.csproj",
+      "sha256Lf": "16C5BE88B23F356C88DC7A3C5DE9FF5BB3E44119C9FA1F9DF640D6ADE65169A1"
+    },
+    {
+      "path": "src/MaiPlay.Core/NormalHandPlanner.cs",
+      "sha256Lf": "5876697772B85C8687AD6F9464885C8819848071487D5192779F29B2EF55C87D"
+    },
+    {
+      "path": "src/MaiPlay.Core/NoteMotion.cs",
+      "sha256Lf": "620F28AC760C1FC29AF932D5CFF715FCE541446BFC87E45DF8D0827BCA9ADFB6"
+    },
+    {
+      "path": "src/MaiPlay.Core/PatternAnalyzer.cs",
+      "sha256Lf": "8162778E580DC7B7739101FE9E35AA19CBF99B34ED50933A0D55941888A781EC"
+    },
+    {
+      "path": "src/MaiPlay.Core/PlannerTimingFeedback.cs",
+      "sha256Lf": "0AEC387723DE87F67C4FE092D7CB59F44FEBD0021A4079079B852C6BAFEF81B3"
+    },
+    {
+      "path": "src/MaiPlay.Core/PlaybackSession.cs",
+      "sha256Lf": "2C1A111D69A614679F0E3549FC3787D4FECB3A63C468A62E148811DDD24A5BBD"
+    },
+    {
+      "path": "src/MaiPlay.Core/RatingCalculator.cs",
+      "sha256Lf": "EC331EA168F18AF0D92B50EF1D259CC29E8E236FFCC4742F6B6A67296F69AB92"
+    },
+    {
+      "path": "src/MaiPlay.Core/SensorPolygons.cs",
+      "sha256Lf": "40662D25ED2CAE3092A9F40D00675716534F8F01F885BCFD6E812C14BAD78763"
+    },
+    {
+      "path": "src/MaiPlay.Core/SimaiParser.cs",
+      "sha256Lf": "F164A86453AF3705556A1BDB466050F31C4A2A2AA1BE55A6BBAEF412AFF0974C"
+    },
+    {
+      "path": "src/MaiPlay.Core/SlideJudgements.cs",
+      "sha256Lf": "8DD4FCF55ED3963C0CE89AC5F6AE6AC4A8D0C73F3DA4CE71A922682CD2C9C39B"
+    },
+    {
+      "path": "src/MaiPlay.Core/SlideJudgeTables.cs",
+      "sha256Lf": "F67F98F21802D2C3AF628A1A8BD4BFA3E7B3374BD3E0B55C28C93F3D53DAACDB"
+    },
+    {
+      "path": "src/MaiPlay.Core/SlidePath.cs",
+      "sha256Lf": "3514BC62092FCA7D9639912809C6C3BA68545E3249683B148005AEF29C2B8CEC"
+    },
+    {
+      "path": "src/MaiPlay.Core/SlidePathSamples.cs",
+      "sha256Lf": "93DC597710B9492CCCDFA67243774F2F7C2D8DA65E244C249B8C0B05E15F70F8"
+    },
+    {
+      "path": "src/MaiPlay.Core/TechniqueCandidates.cs",
+      "sha256Lf": "DDB1391FA57AEDBC38F5EAC365B257A9550C9D78F7ECE547765A65A7B89493F6"
+    },
+    {
+      "path": "tests/MaiPlay.Tests/CompleteFeedbackRouteTests.cs",
+      "sha256Lf": "3E74E3A8FFB544F4541F6469A60E6510D9713112CACEE3642D7417C26E814544"
+    },
+    {
+      "path": "tests/MaiPlay.Tests/HumanPlannerTests.cs",
+      "sha256Lf": "0BE6F8CCA35629DCCB3714E6506EA028342636D438D1564B47E08A833C0D3804"
+    },
+    {
+      "path": "tests/MaiPlay.Tests/SlideTailContactFeedbackTests.cs",
+      "sha256Lf": "6D70A3BE2A45291D56FD348D3F566A704B19731EC76F77CB0FAC515C74FDAC04"
+    },
+    {
+      "path": "tests/MaiPlay.Tests/SweepRelayTailTests.cs",
+      "sha256Lf": "95128C63B505BCB9664C1F76DE146DF2462DA2F9D926F4D9FA7A3D71D8C34D8B"
+    },
+    {
+      "path": "tests/MaiPlay.Tests/TouchClickFeedbackTests.cs",
+      "sha256Lf": "ED5A260A9D432FCB928E38250CBB10DD63EBDD3FE64073F369C7367957E3FA59"
+    }
+  ],
+  "preview": {
+    "processIdAtVerification": 74916,
+    "responding": true,
+    "windowHandle": 9702190,
+    "song": "Sun Dance",
+    "difficulty": 6,
+    "visualPlaybackAcceptance": "not performed; user review pending"
+  }
+}

@@ -8,7 +8,7 @@ public sealed record TechniqueCandidate(string Name, IReadOnlyList<HandSide?> Ha
 public static class TechniqueCandidates
 {
     public static IReadOnlyList<TechniqueCandidate> For(PatternSegment segment,
-        double preferredStrikeInterval = NormalHandPlanner.FastRepeatInterval)
+        double preferredStrikeInterval = NormalHandPlanner.FastRepeatInterval, bool refineSweepTiming = false)
     {
         var count = segment.Demands.Count;
         var candidates = new List<TechniqueCandidate>();
@@ -110,6 +110,17 @@ public static class TechniqueCandidates
                         var hand = d.Note.StartPosition <= 4 ? HandSide.Right : HandSide.Left;
                         return (HandSide?)(swap ? Other(hand) : hand);
                     }).ToArray(), segment.Direction, fastSweep ? .1 : 0));
+                // 细化恢复时在段内交接一次，让扫尾越过半圈分界后仍可由当前手完成。
+                if (fastSweep && refineSweepTiming)
+                    foreach (var split in new[] { count / 2, (count + 1) / 2 }.Distinct())
+                        foreach (var first in new[] { HandSide.Left, HandSide.Right })
+                        {
+                            var hands = Enumerable.Range(0, count)
+                                .Select(i => (HandSide?)(i < split ? first : Other(first))).ToArray();
+                            if (candidates.Any(c => c.SweepDirection == segment.Direction && c.Hands.SequenceEqual(hands))) continue;
+                            candidates.Add(new($"relay-split-{split}-{first.ToString().ToLowerInvariant()}",
+                                hands, segment.Direction, .1));
+                        }
                 break;
         }
         var freeHands = Enumerable.Repeat<HandSide?>(null, count).ToArray();
