@@ -10,6 +10,8 @@ public sealed record HumanMotionMetrics(double LeftDistanceMillimeters, double R
     int? PeakRightActionsPerSecond)
 {
     public double TotalDistanceMillimeters => LeftDistanceMillimeters + RightDistanceMillimeters;
+    public HandCollisionAnalysis Collisions { get; init; } = HandCollisionAnalysis.Empty;
+    public bool SatisfiesMotionConstraints => SpeedLimitViolations == 0 && Collisions.Count == 0;
 }
 
 /// <summary>Configurable search assumptions; speed limits and costs have not been measured on players.</summary>
@@ -21,10 +23,12 @@ public sealed class HumanMotionModel
     public double MaxSpeedMillimetersPerSecond { get; }
     public double PreferredSpeedMillimetersPerSecond { get; }
     public double PreferredStrikeIntervalSeconds { get; }
+    public double HandBodyRadiusMillimeters { get; }
 
     public HumanMotionModel(CabinetGeometry? geometry = null, double? maxSpeedMillimetersPerSecond = null,
         double preferredSpeedMillimetersPerSecond = 1300,
-        double preferredStrikeIntervalSeconds = NormalHandPlanner.FastRepeatInterval)
+        double preferredStrikeIntervalSeconds = NormalHandPlanner.FastRepeatInterval,
+        double? handBodyRadiusMillimeters = null)
     {
         Geometry = geometry ?? CabinetGeometry.Approximate43Inch;
         // 沿用基线扫键允许的每秒 30 个判定半径，作为未标定的可配置搜索上界。
@@ -36,9 +40,14 @@ public sealed class HumanMotionModel
             throw new ArgumentOutOfRangeException(nameof(preferredSpeedMillimetersPerSecond));
         if (!double.IsFinite(preferredStrikeIntervalSeconds) || preferredStrikeIntervalSeconds <= 0)
             throw new ArgumentOutOfRangeException(nameof(preferredStrikeIntervalSeconds));
+        // 手部圆独立于判定接触面；改用指尖接触不会缩小手部占用。
+        var bodyRadius = handBodyRadiusMillimeters ?? Geometry.JudgementRadiusMillimeters * .19;
+        if (!double.IsFinite(bodyRadius) || bodyRadius <= 0)
+            throw new ArgumentOutOfRangeException(nameof(handBodyRadiusMillimeters));
         MaxSpeedMillimetersPerSecond = maximumSpeed;
         PreferredSpeedMillimetersPerSecond = preferredSpeedMillimetersPerSecond;
         PreferredStrikeIntervalSeconds = preferredStrikeIntervalSeconds;
+        HandBodyRadiusMillimeters = bodyRadius;
     }
 
     /// <summary>Soft preference against fast same-hand repeats; the positive cadence interval is measured in seconds.</summary>
@@ -46,7 +55,8 @@ public sealed class HumanMotionModel
         intervalSeconds < PreferredStrikeIntervalSeconds - Epsilon ? 3 * PreferredStrikeIntervalSeconds / intervalSeconds : 0;
 
     public HumanMotionTransition EvaluateTransition(HandSide hand, ChartPoint from, double departureTime,
-        ChartPoint to, double arrivalTime, ChartPoint? otherPositionAtArrival = null, double? pathDistanceMillimeters = null)
+        ChartPoint to, double arrivalTime, ChartPoint? otherPositionAtArrival = null, double? pathDistanceMillimeters = null,
+        double postureWeight = 1)
     {
         var distance = pathDistanceMillimeters ?? Geometry.DistanceMillimeters(from, to);
         var duration = arrivalTime - departureTime;
@@ -60,7 +70,7 @@ public sealed class HumanMotionModel
         var speedExcess = Math.Max(0, speed / PreferredSpeedMillimetersPerSecond - 1);
         var wrongSide = hand == HandSide.Left ? to.X : -to.X;
         var cost = .15 * distanceInRadii * distanceInRadii / Math.Min(duration, 1) +
-            .15 * speedExcess * speedExcess + .8 * Math.Max(0, wrongSide) + 2 * Math.Max(0, crossing);
+            .15 * speedExcess * speedExcess + postureWeight * (.8 * Math.Max(0, wrongSide) + 2 * Math.Max(0, crossing));
         return new(true, distance, speed, cost, crossing > 0);
     }
 
@@ -110,8 +120,30 @@ public sealed class HumanMotionModel
         var (crossingCount, crossingSeconds) = AnalyzeCrossings(tracks);
         return new(leftDistance, rightDistance, peakSpeed, speedLimitViolations, crossingCount, crossingSeconds,
             directionReversals, strokes is null ? null : PeakActions(strokes, HandSide.Left),
-            strokes is null ? null : PeakActions(strokes, HandSide.Right));
+            strokes is null ? null : PeakActions(strokes, HandSide.Right))
+        {
+            Collisions = AnalyzeCollisions(tracks)
+        };
     }
+
+    /// <summary>Checks circular hand bodies while both hands contact the cabinet plane, including buttons.</summary>
+    public HandCollisionAnalysis AnalyzeCollisions(IReadOnlyList<HandTrack> tracks)
+    {
+        var left = tracks.FirstOrDefault(t => t.Hand == HandSide.Left)?.Frames;
+        var right = tracks.FirstOrDefault(t => t.Hand == HandSide.Right)?.Frames;
+        return left is null || right is null
+            ? new([], null, null, 2 * HandBodyRadiusMillimeters) : AnalyzeCollisions(left, right);
+    }
+
+    /// <summary>Airborne overlap, wrist orientation, forearms and depth are outside this planar approximation.</summary>
+    public HandCollisionAnalysis AnalyzeCollisions(IReadOnlyList<HandFrame> left, IReadOnlyList<HandFrame> right,
+        double endTime = double.PositiveInfinity) =>
+        HandCollisionAnalyzer.Analyze(left, right, Geometry, HandBodyRadiusMillimeters, endTime);
+
+    /// <summary>Stops at the first continuous-time body collision without constructing diagnostic intervals.</summary>
+    public bool HasCollision(IReadOnlyList<HandFrame> left, IReadOnlyList<HandFrame> right,
+        double endTime = double.PositiveInfinity) =>
+        HandCollisionAnalyzer.HasCollision(left, right, Geometry, HandBodyRadiusMillimeters, endTime);
 
     private static (int Count, double Seconds) AnalyzeCrossings(IReadOnlyList<HandTrack> tracks)
     {

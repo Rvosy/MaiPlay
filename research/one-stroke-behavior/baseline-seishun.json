@@ -1,0 +1,438 @@
+{
+  "Title": "\u9752\u6625\u30B3\u30F3\u30D7\u30EC\u30C3\u30AF\u30B9",
+  "Level": "11.8",
+  "rangeStart": 134.2,
+  "rangeEnd": 138.1,
+  "reports": [
+    {
+      "planner": "normal",
+      "elapsedSeconds": 0.9895725,
+      "Achievement": 101,
+      "cp": 823,
+      "total": 823,
+      "errors": [],
+      "hands": "RRRRRRRRRRR",
+      "slides": [
+        {
+          "Id": 741,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 134.21052631571547,
+          "SlideStartTime": 134.52631578939946,
+          "EndTime": 134.84210526308345,
+          "hand": "Right",
+          "strokeStart": 134.52631578939946,
+          "strokeEnd": 134.80416666666667
+        },
+        {
+          "Id": 743,
+          "Source": "5$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 134.52631578939946,
+          "SlideStartTime": 134.84210526308345,
+          "EndTime": 135.15789473676745,
+          "hand": "Right",
+          "strokeStart": 134.84210526308345,
+          "strokeEnd": 135.12083333333334
+        },
+        {
+          "Id": 745,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 134.84210526308345,
+          "SlideStartTime": 135.15789473676745,
+          "EndTime": 135.47368421045144,
+          "hand": "Right",
+          "strokeStart": 135.15789473676745,
+          "strokeEnd": 135.4375
+        },
+        {
+          "Id": 747,
+          "Source": "5$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 135.15789473676745,
+          "SlideStartTime": 135.47368421045144,
+          "EndTime": 135.78947368413543,
+          "hand": "Right",
+          "strokeStart": 135.47368421045144,
+          "strokeEnd": 135.75
+        },
+        {
+          "Id": 749,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 135.47368421045144,
+          "SlideStartTime": 135.78947368413543,
+          "EndTime": 136.10526315781942,
+          "hand": "Right",
+          "strokeStart": 135.78947368413543,
+          "strokeEnd": 136.06666666666666
+        },
+        {
+          "Id": 751,
+          "Source": "5x$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 135.78947368413543,
+          "SlideStartTime": 136.10526315781942,
+          "EndTime": 136.42105263150341,
+          "hand": "Right",
+          "strokeStart": 136.10526315781942,
+          "strokeEnd": 136.38333333333333
+        },
+        {
+          "Id": 753,
+          "Source": "1x$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 136.10526315781942,
+          "SlideStartTime": 136.42105263150341,
+          "EndTime": 136.7368421051874,
+          "hand": "Right",
+          "strokeStart": 136.42105263150341,
+          "strokeEnd": 136.7
+        },
+        {
+          "Id": 755,
+          "Source": "5x$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 136.42105263150341,
+          "SlideStartTime": 136.7368421051874,
+          "EndTime": 137.0526315788714,
+          "hand": "Right",
+          "strokeStart": 136.7368421051874,
+          "strokeEnd": 137.0125
+        },
+        {
+          "Id": 757,
+          "Source": "1x$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 136.7368421051874,
+          "SlideStartTime": 137.0526315788714,
+          "EndTime": 137.3684210525554,
+          "hand": "Right",
+          "strokeStart": 137.0526315788714,
+          "strokeEnd": 137.32916666666668
+        },
+        {
+          "Id": 759,
+          "Source": "5bx$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 137.0526315788714,
+          "SlideStartTime": 137.3684210525554,
+          "EndTime": 137.68421052623938,
+          "hand": "Right",
+          "strokeStart": 137.3684210525554,
+          "strokeEnd": 137.64583333333334
+        },
+        {
+          "Id": 761,
+          "Source": "1bx$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 137.3684210525554,
+          "SlideStartTime": 137.68421052623938,
+          "EndTime": 137.99999999992338,
+          "hand": "Right",
+          "strokeStart": 137.68421052623938,
+          "strokeEnd": 137.9625
+        }
+      ],
+      "seams": [
+        {
+          "previousId": 741,
+          "nextId": 743,
+          "time": 134.84210526308345,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.037938596416779546
+        },
+        {
+          "previousId": 743,
+          "nextId": 745,
+          "time": 135.15789473676745,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.0370614034341088
+        },
+        {
+          "previousId": 745,
+          "nextId": 747,
+          "time": 135.47368421045144,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.03618421045143805
+        },
+        {
+          "previousId": 747,
+          "nextId": 749,
+          "time": 135.78947368413543,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.039473684135430176
+        },
+        {
+          "previousId": 749,
+          "nextId": 751,
+          "time": 136.10526315781942,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.03859649115275943
+        },
+        {
+          "previousId": 751,
+          "nextId": 753,
+          "time": 136.42105263150341,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.03771929817008868
+        },
+        {
+          "previousId": 753,
+          "nextId": 755,
+          "time": 136.7368421051874,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.03684210518741793
+        },
+        {
+          "previousId": 755,
+          "nextId": 757,
+          "time": 137.0526315788714,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.040131578871410056
+        },
+        {
+          "previousId": 757,
+          "nextId": 759,
+          "time": 137.3684210525554,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.039254385888710885
+        },
+        {
+          "previousId": 759,
+          "nextId": 761,
+          "time": 137.68421052623938,
+          "from": "Right",
+          "to": "Right",
+          "contactGapSeconds": 0.038377192906040136
+        }
+      ],
+      "movement": {
+        "LeftDistanceMillimeters": 104418.84976558905,
+        "RightDistanceMillimeters": 102331.55623351371,
+        "PeakSpeedMillimetersPerSecond": 3508.738875945927,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 22,
+        "ProjectedCrossingSeconds": 7.3835853025214675,
+        "DirectionReversalCount": 441,
+        "PeakLeftActionsPerSecond": 8,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 206750.40599910275
+      }
+    },
+    {
+      "planner": "human",
+      "elapsedSeconds": 1.8100447,
+      "Achievement": 101,
+      "cp": 823,
+      "total": 823,
+      "errors": [],
+      "hands": "RLRLRLRLRLR",
+      "slides": [
+        {
+          "Id": 741,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 134.21052631571547,
+          "SlideStartTime": 134.52631578939946,
+          "EndTime": 134.84210526308345,
+          "hand": "Right",
+          "strokeStart": 134.40631578939946,
+          "strokeEnd": 134.68416666666667
+        },
+        {
+          "Id": 743,
+          "Source": "5$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 134.52631578939946,
+          "SlideStartTime": 134.84210526308345,
+          "EndTime": 135.15789473676745,
+          "hand": "Left",
+          "strokeStart": 134.72210526308345,
+          "strokeEnd": 135.00083333333333
+        },
+        {
+          "Id": 745,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 134.84210526308345,
+          "SlideStartTime": 135.15789473676745,
+          "EndTime": 135.47368421045144,
+          "hand": "Right",
+          "strokeStart": 135.03789473676744,
+          "strokeEnd": 135.3175
+        },
+        {
+          "Id": 747,
+          "Source": "5$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 135.15789473676745,
+          "SlideStartTime": 135.47368421045144,
+          "EndTime": 135.78947368413543,
+          "hand": "Left",
+          "strokeStart": 135.35368421045143,
+          "strokeEnd": 135.63
+        },
+        {
+          "Id": 749,
+          "Source": "1$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 135.47368421045144,
+          "SlideStartTime": 135.78947368413543,
+          "EndTime": 136.10526315781942,
+          "hand": "Right",
+          "strokeStart": 135.66947368413543,
+          "strokeEnd": 135.94666666666666
+        },
+        {
+          "Id": 751,
+          "Source": "5x$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 135.78947368413543,
+          "SlideStartTime": 136.10526315781942,
+          "EndTime": 136.42105263150341,
+          "hand": "Left",
+          "strokeStart": 135.98526315781942,
+          "strokeEnd": 136.26333333333332
+        },
+        {
+          "Id": 753,
+          "Source": "1x$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 136.10526315781942,
+          "SlideStartTime": 136.42105263150341,
+          "EndTime": 136.7368421051874,
+          "hand": "Right",
+          "strokeStart": 136.3010526315034,
+          "strokeEnd": 136.57999999999998
+        },
+        {
+          "Id": 755,
+          "Source": "5x$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 136.42105263150341,
+          "SlideStartTime": 136.7368421051874,
+          "EndTime": 137.0526315788714,
+          "hand": "Left",
+          "strokeStart": 136.6168421051874,
+          "strokeEnd": 136.89249999999998
+        },
+        {
+          "Id": 757,
+          "Source": "1x$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 136.7368421051874,
+          "SlideStartTime": 137.0526315788714,
+          "EndTime": 137.3684210525554,
+          "hand": "Right",
+          "strokeStart": 136.9326315788714,
+          "strokeEnd": 137.20916666666668
+        },
+        {
+          "Id": 759,
+          "Source": "5bx$\u003C1[0.315789473684##0.315789473684]",
+          "Time": 137.0526315788714,
+          "SlideStartTime": 137.3684210525554,
+          "EndTime": 137.68421052623938,
+          "hand": "Left",
+          "strokeStart": 137.2484210525554,
+          "strokeEnd": 137.52583333333334
+        },
+        {
+          "Id": 761,
+          "Source": "1bx$\u003E5[0.315789473684##0.315789473684]",
+          "Time": 137.3684210525554,
+          "SlideStartTime": 137.68421052623938,
+          "EndTime": 137.99999999992338,
+          "hand": "Right",
+          "strokeStart": 137.68421052623938,
+          "strokeEnd": 137.9625
+        }
+      ],
+      "seams": [
+        {
+          "previousId": 741,
+          "nextId": 743,
+          "time": 134.84210526308345,
+          "from": "Right",
+          "to": "Left",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 743,
+          "nextId": 745,
+          "time": 135.15789473676745,
+          "from": "Left",
+          "to": "Right",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 745,
+          "nextId": 747,
+          "time": 135.47368421045144,
+          "from": "Right",
+          "to": "Left",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 747,
+          "nextId": 749,
+          "time": 135.78947368413543,
+          "from": "Left",
+          "to": "Right",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 749,
+          "nextId": 751,
+          "time": 136.10526315781942,
+          "from": "Right",
+          "to": "Left",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 751,
+          "nextId": 753,
+          "time": 136.42105263150341,
+          "from": "Left",
+          "to": "Right",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 753,
+          "nextId": 755,
+          "time": 136.7368421051874,
+          "from": "Right",
+          "to": "Left",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 755,
+          "nextId": 757,
+          "time": 137.0526315788714,
+          "from": "Left",
+          "to": "Right",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 757,
+          "nextId": 759,
+          "time": 137.3684210525554,
+          "from": "Right",
+          "to": "Left",
+          "contactGapSeconds": null
+        },
+        {
+          "previousId": 759,
+          "nextId": 761,
+          "time": 137.68421052623938,
+          "from": "Left",
+          "to": "Right",
+          "contactGapSeconds": null
+        }
+      ],
+      "movement": {
+        "LeftDistanceMillimeters": 100631.48108859894,
+        "RightDistanceMillimeters": 97957.06054029349,
+        "PeakSpeedMillimetersPerSecond": 5159.936692988651,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 15,
+        "ProjectedCrossingSeconds": 5.032329362122253,
+        "DirectionReversalCount": 435,
+        "PeakLeftActionsPerSecond": 7,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 198588.54162889242
+      }
+    }
+  ]
+}

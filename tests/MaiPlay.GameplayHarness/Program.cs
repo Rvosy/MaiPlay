@@ -26,18 +26,29 @@ if (args.Length >= 3 && args[0] is "--plan" or "--plan-human")
         var chart = SimaiParser.LoadSong(args[1]).Charts.Single(c => c.Difficulty == (args.Length > 3 ? int.Parse(args[3]) : 4));
         var watch = System.Diagnostics.Stopwatch.StartNew();
         var plan = args[0] == "--plan-human" ? HumanPlanner.Plan(chart) : NormalHandPlanner.Plan(chart);
+        var inspected = PlannerComparison.WithMotionDiagnostics(plan);
         var options = new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             Converters = { new JsonStringEnumConverter() } };
         File.WriteAllText(Path.Combine(output, "hands.json"), JsonSerializer.Serialize(new InputLog { Hands = plan.Tracks }, options));
         File.WriteAllText(Path.Combine(output, "results.json"), JsonSerializer.Serialize(new
         {
-            chart.Title, chart.Difficulty, chart.Level, notes = chart.Notes.Count, plan.AllCriticalPerfect, plan.Achievement, plan.DXScore,
-            seconds = watch.Elapsed.TotalSeconds, plan.Strokes, plan.Gaps, plan.Diagnostics,
+            chart.Title, chart.Difficulty, chart.Level, notes = chart.Notes.Count, plan.AllCriticalPerfect,
+            inspected.IsExecutable, inspected.IsSolved, plan.Achievement, plan.DXScore,
+            seconds = watch.Elapsed.TotalSeconds, plan.Strokes, plan.Gaps,
+            diagnostics = new
+            {
+                inspected.Diagnostics!.Movement,
+                MovementCost = plan.Diagnostics?.MovementCost,
+                plan.Diagnostics?.Patterns, plan.Diagnostics?.TechniqueUsage,
+                inspected.Diagnostics.SlideConnections, plan.Diagnostics?.CoveredDemands
+            },
             results = plan.Results.Select(e => new { e.Note.Id, e.Note.Kind, e.Note.Time, e.Note.Source, e.Grade, e.DifferenceSeconds, e.Reason })
         }, options));
-        Console.WriteLine($"{chart.Title}: {plan.Achievement:F4}%，CP {plan.Results.Count(e => e.Grade == AchievementGrade.Perfect)}/{chart.Notes.Count}，{watch.Elapsed.TotalSeconds:F2}s");
+        Console.WriteLine($"{chart.Title}: {plan.Achievement:F4}%，CP {plan.Results.Count(e => e.Grade == AchievementGrade.Perfect)}/{chart.Notes.Count}，模型内可执行 {inspected.IsExecutable}，已解 {inspected.IsSolved}，{watch.Elapsed.TotalSeconds:F2}s");
+        var movement = inspected.Diagnostics!.Movement;
+        Console.WriteLine($"手部圆碰撞 {movement.Collisions.Count} 次 / {movement.Collisions.Seconds:F4}s，超速 {movement.SpeedLimitViolations} 段。");
         foreach (var error in plan.Errors.Take(30)) Console.WriteLine($"#{error.Note.Id} {error.Note.Time:F3}s {error.Note.Source}: {error.Grade} {error.Reason}");
-        return plan.AllCriticalPerfect ? 0 : 2;
+        return inspected.IsSolved ? 0 : 2;
     }
     catch (Exception e)
     {

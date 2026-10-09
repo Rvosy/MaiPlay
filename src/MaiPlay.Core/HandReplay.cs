@@ -3,7 +3,11 @@ namespace MaiPlay.Core;
 public enum HandSide { Left, Right }
 
 // 接触部位相对手位记录偏移；同一只手可以同时使用多个部位和输入通道。
-public sealed record HandContact(string Id, InputChannel Channel, ChartPoint Offset, double Radius);
+public sealed record HandContact(string Id, InputChannel Channel, ChartPoint Offset, double Radius)
+{
+    // 同组接触先插值共同朝向，再插值局部形状；未指定时保持旧日志的线性偏移。
+    public string? RigidGroup { get; init; }
+}
 public sealed record HandFrame(double Time, ChartPoint Position, IReadOnlyList<HandContact> Contacts);
 public sealed record HandTrack(HandSide Hand, IReadOnlyList<HandFrame> Frames);
 public sealed record HandPose(ChartPoint Position, IReadOnlyList<HandContact> Contacts);
@@ -51,7 +55,7 @@ public sealed class HandReplay
         var position = ChartPoint.Lerp(before.Position, after.Position, t);
         var contacts = before.Contacts.Select(part =>
         {
-            var (offset, radius) = ContactGeometryAt(part, after, t);
+            var (offset, radius) = ContactGeometryAt(part, before, after, t);
             return part with { Offset = offset, Radius = radius };
         }).ToArray();
         return new(position, contacts);
@@ -68,14 +72,45 @@ public sealed class HandReplay
         return low - 1;
     }
 
-    private static (ChartPoint Offset, double Radius) ContactGeometryAt(HandContact part, HandFrame after, double t)
+    private static (ChartPoint Offset, double Radius) ContactGeometryAt(HandContact part, HandFrame before, HandFrame after, double t)
     {
         foreach (var next in after.Contacts)
         {
             if (next.Id == part.Id && next.Channel == part.Channel)
-                return (ChartPoint.Lerp(part.Offset, next.Offset, t), part.Radius + (next.Radius - part.Radius) * t);
+            {
+                if (t == 0) return (part.Offset, part.Radius);
+                if (t == 1) return (next.Offset, next.Radius);
+                var offset = ChartPoint.Lerp(part.Offset, next.Offset, t);
+                if (part.RigidGroup is { } group && next.RigidGroup == group && part.Offset != next.Offset)
+                {
+                    double dot = 0, cross = 0;
+                    foreach (var source in before.Contacts)
+                    {
+                        if (source.RigidGroup != group || source.Channel != part.Channel) continue;
+                        foreach (var target in after.Contacts)
+                        {
+                            if (target.Id != source.Id || target.Channel != source.Channel || target.RigidGroup != group) continue;
+                            dot += source.Offset.X * target.Offset.X + source.Offset.Y * target.Offset.Y;
+                            cross += source.Offset.X * target.Offset.Y - source.Offset.Y * target.Offset.X;
+                            break;
+                        }
+                    }
+                    var rotation = Math.Atan2(cross, dot);
+                    // 固定手形只发生旋转，不会在半圈转向的中间缩成一个点。
+                    var local = ChartPoint.Lerp(part.Offset, Rotate(next.Offset, -rotation), t);
+                    offset = Rotate(local, rotation * t);
+                }
+                return (offset, part.Radius + (next.Radius - part.Radius) * t);
+            }
         }
         return (part.Offset, part.Radius);
+    }
+
+    private static ChartPoint Rotate(ChartPoint point, double angle)
+    {
+        var cosine = Math.Cos(angle);
+        var sine = Math.Sin(angle);
+        return new(point.X * cosine - point.Y * sine, point.X * sine + point.Y * cosine);
     }
 
     private IEnumerable<ContactEvent> GenerateContacts()
@@ -104,7 +139,7 @@ public sealed class HandReplay
                 {
                     var source = _sources[(hand, part.Id)];
                     var key = (source, part.Channel);
-                    var (offset, radius) = after is null ? (part.Offset, part.Radius) : ContactGeometryAt(part, after, t);
+                    var (offset, radius) = after is null ? (part.Offset, part.Radius) : ContactGeometryAt(part, before, after, t);
                     var centre = new ChartPoint(position.X + offset.X, position.Y + offset.Y);
                     current[key] = previous.TryGetValue(key, out var old) && old.Position == centre && old.Radius == radius
                         ? old : new(time, source, part.Channel, centre, radius, true);

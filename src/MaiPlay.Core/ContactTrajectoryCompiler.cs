@@ -16,7 +16,7 @@ internal static class ContactTrajectoryCompiler
     private const double WifiPalmHalfAxis = .19;
     private const double WifiHandOffset = PalmRadius + WifiPalmHalfAxis;
     internal static IEnumerable<ContactMotion> CreateMotions(Chart chart, CancellationToken token,
-        IReadOnlySet<int>? fingertipNotes = null)
+        IReadOnlySet<int>? fingertipNotes = null, IReadOnlySet<int>? fullSlideNotes = null)
     {
         foreach (var note in chart.Notes)
         {
@@ -40,31 +40,69 @@ internal static class ContactTrajectoryCompiler
             else
             {
                 var points = SlidePoints(note, note.Duration);
-                // 末区完成后释放，给后续击打保留移动时间；完成时刻仍由判定器决定。
-                var result = JudgeSlide(chart, note, points, profile);
-                if (result.Grade != AchievementGrade.Perfect && result.DifferenceSeconds is { } difference && result.Time > note.SlideStartTime)
+                if (fullSlideNotes?.Contains(note.Id) == true)
                 {
-                    // 宽接触面可能让慢速轨道过早进入末区，保持起点时刻并调整滑动速度。
-                    var scale = (result.Time - note.SlideStartTime - difference) / (result.Time - note.SlideStartTime);
-                    var adjusted = points.Select(p => p with { Time = note.SlideStartTime + (p.Time - note.SlideStartTime) * scale }).ToArray();
-                    if (scale > 0 && JudgeSlide(chart, note, adjusted, profile) is { Grade: AchievementGrade.Perfect } corrected)
-                    {
-                        points = adjusted;
-                        result = corrected;
-                    }
+                    // 连续划动保留名义轨道的头尾，由整段候选核验衔接和判定。
+                    yield return new(note, InputChannel.Touch, points, profile);
+                    continue;
                 }
-                if (result.Grade == AchievementGrade.Perfect && result.Time < points[^1].Time)
-                {
-                    var after = Array.FindIndex(points, p => p.Time >= result.Time);
-                    var before = Math.Max(0, after - 1);
-                    var position = after == before ? points[after].Position : ChartPoint.Lerp(points[before].Position, points[after].Position,
-                        (result.Time - points[before].Time) / (points[after].Time - points[before].Time));
-                    // 合并浮点误差内的末点，避免整体平移后两个时间戳重合。
-                    points = points.Where(p => result.Time - p.Time > 1e-8).Append(new PointFrame(result.Time, position)).ToArray();
-                }
+                points = CalibrateSlidePoints(chart, note, points, profile, out _);
                 yield return new(note, InputChannel.Touch, points, profile);
             }
         }
+    }
+
+    internal static ContactMotion? CreateInsetSlideMotion(Chart chart, ChartNote note, ContactProfile profile,
+        double radialScale = .73) => CreateBentSlideMotion(chart, note, profile, default, radialScale);
+
+    internal static ContactMotion? CreateBentSlideMotion(Chart chart, ChartNote note, ContactProfile profile,
+        ChartPoint bend, double radialScale = 1)
+    {
+        if (note.Kind != NoteKind.Slide || note.SlidePath!.IsWifi) return null;
+        if (!double.IsFinite(radialScale) || radialScale <= 0)
+            throw new ArgumentOutOfRangeException(nameof(radialScale));
+        if (!double.IsFinite(bend.X) || !double.IsFinite(bend.Y))
+            throw new ArgumentOutOfRangeException(nameof(bend));
+        // 靠内划动给外键长按留出手部空间；接触面不随轨道缩放。
+        var nominal = SlidePoints(note, note.Duration);
+        var points = nominal.Select((point, i) =>
+        {
+            // 绕行从入口平滑展开，到名义尾点收回，仍须经过原判定区队列。
+            var offset = Math.Sin(Math.PI * i / (nominal.Length - 1));
+            return point with { Position = new(point.Position.X * radialScale + bend.X * offset,
+                point.Position.Y * radialScale + bend.Y * offset) };
+        }).ToArray();
+        points = CalibrateSlidePoints(chart, note, points, profile, out var result);
+        return result.Grade == AchievementGrade.Perfect ? new(note, InputChannel.Touch, points, profile) : null;
+    }
+
+    private static PointFrame[] CalibrateSlidePoints(Chart chart, ChartNote note, PointFrame[] points,
+        ContactProfile profile, out PlaybackEvent result)
+    {
+        // 末区完成后释放，给后续击打保留移动时间；完成时刻仍由判定器决定。
+        result = JudgeSlide(chart, note, points, profile);
+        if (result.Grade != AchievementGrade.Perfect && result.DifferenceSeconds is { } difference && result.Time > note.SlideStartTime)
+        {
+            // 宽接触面可能让慢速轨道过早进入末区，保持起点时刻并调整滑动速度。
+            var scale = (result.Time - note.SlideStartTime - difference) / (result.Time - note.SlideStartTime);
+            var adjusted = points.Select(p => p with { Time = note.SlideStartTime + (p.Time - note.SlideStartTime) * scale }).ToArray();
+            if (scale > 0 && JudgeSlide(chart, note, adjusted, profile) is { Grade: AchievementGrade.Perfect } corrected)
+            {
+                points = adjusted;
+                result = corrected;
+            }
+        }
+        if (result.Grade == AchievementGrade.Perfect && result.Time < points[^1].Time)
+        {
+            var end = result.Time;
+            var after = Array.FindIndex(points, p => p.Time >= end);
+            var before = Math.Max(0, after - 1);
+            var position = after == before ? points[after].Position : ChartPoint.Lerp(points[before].Position, points[after].Position,
+                (end - points[before].Time) / (points[after].Time - points[before].Time));
+            // 合并浮点误差内的末点，避免整体平移后两个时间戳重合。
+            points = points.Where(p => end - p.Time > 1e-8).Append(new PointFrame(end, position)).ToArray();
+        }
+        return points;
     }
 
     private static IEnumerable<PointFrame[]> WifiPoints(ChartNote note, ContactProfile profile)
@@ -138,24 +176,53 @@ internal static class ContactTrajectoryCompiler
     }
 
     internal static HandFrame[] ContactFrames(PointFrame[] points, InputChannel channel, double shift,
-        ContactProfile profile = ContactProfile.Palm) =>
-        points.Select((p, i) => new HandFrame(p.Time + shift, p.Position,
-            i == points.Length - 1 ? [] : Contacts(p.Position, channel, profile, p.ContactAxis))).ToArray();
+        ContactProfile profile = ContactProfile.Palm, bool releaseAtEnd = true)
+    {
+        var frames = new HandFrame[points.Length];
+        ChartPoint? fingerAxis = null;
+        for (var i = 0; i < points.Length; i++)
+        {
+            var point = points[i];
+            var axis = point.ContactAxis;
+            if (channel == InputChannel.Button || profile == ContactProfile.Fingertips)
+            {
+                var next = axis ?? FingerAxis(point.Position);
+                if (fingerAxis is { } previous)
+                {
+                    // 圆心附近径向不稳定；沿同一条轴穿过圆心时保留手指身份。
+                    if (axis is null && point.Position.DistanceTo(new(0, 0)) < .1) next = previous;
+                    else if (previous.X * next.X + previous.Y * next.Y < 0) next = new(-next.X, -next.Y);
+                }
+                fingerAxis = next;
+                axis = next;
+            }
+            frames[i] = new(point.Time + shift, point.Position,
+                releaseAtEnd && i == points.Length - 1 ? [] : Contacts(point.Position, channel, profile, axis));
+        }
+        return frames;
+    }
 
     internal static HandContact[] Contacts(ChartPoint position, InputChannel channel, ContactProfile profile,
         ChartPoint? axis = null) =>
         channel == InputChannel.Touch && profile == ContactProfile.Palm
             ? axis is { } direction
-                ? [new("palm", channel, new(0, 0), PalmRadius),
-                    new("palm1", channel, new(-direction.X * WifiPalmHalfAxis, -direction.Y * WifiPalmHalfAxis), PalmRadius),
-                    new("palm2", channel, new(direction.X * WifiPalmHalfAxis, direction.Y * WifiPalmHalfAxis), PalmRadius)]
+                ? [new("palm", channel, new(0, 0), PalmRadius) { RigidGroup = "palm" },
+                    new("palm1", channel, new(-direction.X * WifiPalmHalfAxis, -direction.Y * WifiPalmHalfAxis), PalmRadius) { RigidGroup = "palm" },
+                    new("palm2", channel, new(direction.X * WifiPalmHalfAxis, direction.Y * WifiPalmHalfAxis), PalmRadius) { RigidGroup = "palm" }]
                 : [new("palm", channel, new(0, 0), PalmRadius)]
-            : Fingers(position, channel);
+            : Fingers(position, channel, axis);
 
-    internal static HandContact[] Fingers(ChartPoint position, InputChannel channel)
+    internal static HandContact[] Fingers(ChartPoint position, InputChannel channel, ChartPoint? axis = null)
+    {
+        var direction = axis ?? FingerAxis(position);
+        return new[] { -.075, -.025, .025, .075 }.Select((d, i) =>
+            new HandContact($"finger{i + 1}", channel, new(d * direction.X, d * direction.Y), .035)
+                { RigidGroup = "fingers" }).ToArray();
+    }
+
+    private static ChartPoint FingerAxis(ChartPoint position)
     {
         var angle = Math.Atan2(position.Y, position.X) + Math.PI / 2;
-        return new[] { -.075, -.025, .025, .075 }.Select((d, i) =>
-            new HandContact($"finger{i + 1}", channel, new(d * Math.Cos(angle), d * Math.Sin(angle)), .035)).ToArray();
+        return new(Math.Cos(angle), Math.Sin(angle));
     }
 }

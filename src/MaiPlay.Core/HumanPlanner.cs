@@ -17,13 +17,25 @@ public static class HumanPlanner
         HandFrame[] Contact, ChartPoint ApproachPosition, double ApproachTime, bool Continues,
         double Start, double End, string Technique, int Pattern, int Direction, int Branch, ContactProfile Profile)
     {
+        public bool ContinuesSlide { get; init; }
+        public bool FullSlide { get; init; }
         private HandFrame[]? _frames;
         public ChartPoint Last => Contact[^1].Position;
         // 剪枝只需要时位与成本；后续衔接或实际回放用到时才展开轨迹。
         public HandFrame[] Frames => _frames ??= BuildFrames();
+        public HandFrame[] CollisionFrames => Continues ? Frames : Contact;
+
+        public ChartPoint PositionAt(double time)
+        {
+            if (time >= Start) return HumanMotionModel.PositionAt(Contact, time);
+            if (time <= ApproachTime) return ApproachPosition;
+            return Continues ? HumanMotionModel.PositionAt(Frames, time) :
+                ChartPoint.Lerp(ApproachPosition, Contact[0].Position, (time - ApproachTime) / (Start - ApproachTime));
+        }
 
         private HandFrame[] BuildFrames()
         {
+            if (ContinuesSlide) return Contact;
             var count = Continues ? Math.Max(2, (int)Math.Ceiling((Start - ApproachTime) * PlaybackSession.LogicHz)) : 1;
             var frames = new HandFrame[count + Contact.Length];
             if (Continues)
@@ -42,16 +54,26 @@ public static class HumanPlanner
         }
     }
     private sealed record State(Action? Left, Action? Right, bool Crossed, int Skipped, double Cost,
-        State? Parent, Action? Added, GameplayDemand? Gap);
+        State? Parent, Action? Added, GameplayDemand? Gap)
+    {
+        public CoveredDemand? Covered { get; init; }
+    }
     private sealed record Motion(HandFrame[] Frames, double Cost, bool Feasible, HandFrame[]? EntryFrames = null,
-        ContactProfile Profile = ContactProfile.Fingertips);
+        ContactProfile Profile = ContactProfile.Fingertips, bool FullSlide = false);
     private readonly record struct ActionKey(int? DemandId, double? Start, double? End, int? Direction,
-        int? Pattern, int? Branch, double? ApproachTime, ChartPoint? ApproachPosition, ContactProfile? Profile);
+        int? Pattern, int? Branch, double? ApproachTime, ChartPoint? ApproachPosition, ContactProfile? Profile,
+        bool FullSlide, bool ContinuesSlide, HandFrame[]? Contact);
     private sealed record PreparedSearch(Dictionary<int, Motion[]> Motions, IReadOnlyList<PatternSegment> Patterns,
         HashSet<double> DoubleTimes)
     {
         public Dictionary<(int Id, int Direction), Motion> SweepMotions { get; } = new();
+        public Dictionary<(int Id, int Direction), HandFrame[]> LiftedSweepEntries { get; } = new();
         public Dictionary<(HandFrame[] Frames, double Shift), HandFrame[]> ShiftedContacts { get; } = new();
+        public Dictionary<int, Motion> FullSlides { get; init; } = new();
+        public Dictionary<int, int> PreviousSlide { get; init; } = new();
+        public Dictionary<int, ChartNote> ChainTails { get; init; } = new();
+        public Dictionary<int, GameplayDemand[][]> TailInputs { get; init; } = new();
+        public Dictionary<int, Motion[]> AvoidanceSlides { get; init; } = new();
     }
 
     public static HandPlan Plan(Chart chart, CancellationToken cancellationToken = default) =>
@@ -65,29 +87,75 @@ public static class HumanPlanner
         ArgumentNullException.ThrowIfNull(options.MotionModel);
         cancellationToken.ThrowIfCancellationRequested();
         var demands = GameplayDemandCompiler.Compile(chart, cancellationToken);
+        var connections = SlideConnections.Analyze(chart);
+        var previousSlides = connections.ToDictionary(c => c.NextId, c => c.PreviousId);
+        var nextSlides = connections.ToDictionary(c => c.PreviousId, c => c.NextId);
+        var chainIds = connections.SelectMany(c => new[] { c.PreviousId, c.NextId }).ToHashSet();
+        var notesById = chart.Notes.ToDictionary(n => n.Id);
+        var chainTails = chainIds.ToDictionary(id => id, id =>
+        {
+            while (nextSlides.TryGetValue(id, out var next)) id = next;
+            return notesById[id];
+        });
+        var tailInputs = chainTails.Values.DistinctBy(n => n.Id).ToDictionary(n => n.Id, n => demands
+            .Where(d => d.Note.Kind != NoteKind.Slide && d.Start >= n.EndTime - Epsilon)
+            .GroupBy(d => Math.Round(d.Start, 7)).Take(2).Select(g => g.ToArray()).ToArray());
         var doubleTimes = chart.Notes.Where(n => n.Kind != NoteKind.Slide).GroupBy(n => n.Time)
             .Where(g => g.Count() == 2).Select(g => g.Key).ToHashSet();
+        var avoidanceNotes = new HashSet<int>();
         PreparedSearch PrepareContacts(IReadOnlySet<int> small)
         {
             var motions = CreateMotions(chart, cancellationToken, small).GroupBy(m => m.Note.Id).ToDictionary(g => g.Key,
                 g => g.Select(m => PrepareMotion(m, options.MotionModel)).ToArray());
+            var fullSlides = chainIds.Count == 0 ? new Dictionary<int, Motion>() :
+                CreateMotions(chart with { Notes = chart.Notes.Where(n => chainIds.Contains(n.Id)).ToArray() },
+                    cancellationToken, small, chainIds).ToDictionary(m => m.Note.Id,
+                    m => Prepare(ContactFrames(m.Points, m.Channel, 0, m.Profile), options.MotionModel)
+                        with { Profile = m.Profile, FullSlide = true });
+            var avoidanceSlides = new Dictionary<int, Motion[]>();
+            foreach (var id in avoidanceNotes)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                var profile = small.Contains(id) ? ContactProfile.Fingertips : ContactProfile.Palm;
+                var alternatives = new List<Motion>();
+                if (CreateInsetSlideMotion(chart, notesById[id], profile) is { } inset)
+                    alternatives.Add(PrepareMotion(inset, options.MotionModel));
+                foreach (var bend in new ChartPoint[] { new(.2, 0), new(-.2, 0), new(0, .2), new(0, -.2) })
+                    if (CreateBentSlideMotion(chart, notesById[id], profile, bend, .8) is { } bent)
+                        alternatives.Add(PrepareMotion(bent, options.MotionModel));
+                if (alternatives.Count != 0) avoidanceSlides[id] = alternatives.ToArray();
+            }
             return new(motions, PatternAnalyzer.Analyze(demands, d => d.Note.SlidePath is { IsWifi: true }
-                ? Math.Max(d.Start, motions[d.Id][0].Frames[0].Time) : motions[d.Id][0].Frames[0].Time), doubleTimes);
+                ? Math.Max(d.Start, motions[d.Id][0].Frames[0].Time) : motions[d.Id][0].Frames[0].Time), doubleTimes)
+            {
+                FullSlides = fullSlides, PreviousSlide = previousSlides, ChainTails = chainTails, TailInputs = tailInputs,
+                AvoidanceSlides = avoidanceSlides
+            };
         }
         var prepared = PrepareContacts(new HashSet<int>());
         var initial = PlanPass(chart, options, prepared, null, cancellationToken);
         var diagnosed = Recover(chart, options, prepared, initial, PrepareContacts, true, cancellationToken);
-        if (diagnosed.AllCriticalPerfect) return diagnosed;
+        if (diagnosed.IsSolved) return diagnosed;
 
         // 局部改善可能改变下一轮误触来源；基础路线从初始方案独立走完，保留原本可完成的音符。
         var basis = Recover(chart, options, prepared, initial, PrepareContacts, false, cancellationToken);
-        if (!Better(diagnosed, basis)) return basis;
         var previousErrors = basis.Errors.ToDictionary(e => e.Note.Id);
         static bool IsMiss(PlaybackEvent result) => result.Kind == PlaybackEventKind.Miss ||
             result.Grade is AchievementGrade.Miss or AchievementGrade.TooFast;
-        return diagnosed.Errors.Any(e => !previousErrors.TryGetValue(e.Note.Id, out var previous) ||
-                IsMiss(e) && !IsMiss(previous))
-            ? basis : diagnosed;
+        var best = !Better(diagnosed, basis) ? basis :
+            diagnosed.Diagnostics!.Movement.SatisfiesMotionConstraints != basis.Diagnostics!.Movement.SatisfiesMotionConstraints
+                ? diagnosed : diagnosed.Errors.Any(e => !previousErrors.TryGetValue(e.Note.Id, out var previous) ||
+                    IsMiss(e) && !IsMiss(previous)) ? basis : diagnosed;
+        if (best.IsSolved) return best;
+        var trouble = best.Errors.Select(e => e.Note.Kind == NoteKind.Slide ? e.Note.SlideStartTime : e.Note.Time)
+            .Concat(best.Gaps.Select(g => g.Time)).ToArray();
+        avoidanceNotes.UnionWith(chart.Notes.Where(n => n.Kind == NoteKind.Slide && n.SlidePath is { IsWifi: false } &&
+            trouble.Any(t => t >= n.SlideStartTime - .3 && t <= n.EndTime + .3)).Select(n => n.Id));
+        if (avoidanceNotes.Count == 0) return best;
+        var avoiding = PrepareContacts(new HashSet<int>());
+        var alternate = PlanPass(chart, options, avoiding, null, cancellationToken);
+        alternate = Recover(chart, options, avoiding, alternate, PrepareContacts, true, cancellationToken);
+        return Better(alternate, best) ? alternate : best;
     }
 
     private static HandPlan Recover(Chart chart, HumanPlannerOptions options, PreparedSearch initialPrepared,
@@ -98,7 +166,7 @@ public static class HumanPlanner
         var prepared = initialPrepared;
         var best = initial;
         var shifts = new Dictionary<int, double?>();
-        for (var attempt = 0; attempt < 2 && !best.AllCriticalPerfect; attempt++)
+        for (var attempt = 0; attempt < 2 && !best.IsSolved; attempt++)
         {
             var before = best;
             var smaller = new HashSet<int>(fingertips);
@@ -114,7 +182,7 @@ public static class HumanPlanner
                     fingertips = smaller;
                     prepared = smallerPrepared;
                 }
-                if (best.AllCriticalPerfect) break;
+                if (best.IsSolved) break;
             }
             var feedback = PlannerTimingFeedback.DelayedContacts(best);
             var earlier = PlannerTimingFeedback.EarlierContacts(best, includeHeadFeedback: diagnosticRecovery);
@@ -142,7 +210,7 @@ public static class HumanPlanner
                 if (!Better(adjusted, best)) continue;
                 best = adjusted;
                 accepted = hints;
-                if (best.AllCriticalPerfect) break;
+                if (best.IsSolved) break;
             }
             if (ReferenceEquals(before, best)) break;
             shifts = accepted;
@@ -160,7 +228,7 @@ public static class HumanPlanner
                 var adjusted = PlanPass(chart, options, prepared, shifts, cancellationToken, strikeOnly);
                 if (Better(adjusted, candidate)) candidate = adjusted;
             }
-            if (!candidate.AllCriticalPerfect && candidate.Gaps.Any(g => chart.Notes[g.NoteId].Kind is NoteKind.Tap or NoteKind.Hold &&
+            if (!candidate.IsSolved && candidate.Gaps.Any(g => chart.Notes[g.NoteId].Kind is NoteKind.Tap or NoteKind.Hold &&
                     candidate.Strokes.Any(s => s.Technique == HandTechnique.Rotation &&
                         (diagnosticRecovery || g.Time > s.Start) &&
                         Math.Abs(g.Time - s.Start) <= 2 * NormalHandPlanner.FastSweepInterval)))
@@ -171,7 +239,7 @@ public static class HumanPlanner
                 if (Better(adjusted, candidate)) candidate = adjusted;
             }
             if (Better(candidate, best)) best = candidate;
-            if (best.AllCriticalPerfect) break;
+            if (best.IsSolved) break;
         }
         return best;
     }
@@ -187,9 +255,9 @@ public static class HumanPlanner
         var coverageCache = new Dictionary<(ActionKey, ActionKey), (IReadOnlyList<InputEvent> Inputs, Dictionary<int, bool> Results)>();
         State SkipDemand(State state, GameplayDemand demand, int actions, bool checkCoverage = true)
         {
-            if (!checkCoverage || demand.Note.Kind is not (NoteKind.Tap or NoteKind.Touch)) return Skip(state, demand, actions);
+            if (!checkCoverage || demand.Note.Kind is not (NoteKind.Tap or NoteKind.Touch or NoteKind.Slide)) return Skip(state, demand, actions);
             Action? Relevant(Action? action) => action is { Channel: InputChannel.Touch } &&
-                action.Start <= demand.Note.Time + .3 && action.End >= demand.Note.Time - .3 ? action : null;
+                action.Start <= demand.End + .3 && action.End >= demand.Start - .3 ? action : null;
             var left = Relevant(state.Left);
             var right = Relevant(state.Right);
             if (left is null && right is null) return Skip(state, demand, actions);
@@ -210,7 +278,10 @@ public static class HumanPlanner
                 coverage.Results.Add(demand.Id, covered);
             }
             // 已有轨迹顺带完成的需求不增加搜索缺口，最终仍以整曲回放为准。
-            return Skip(state, demand, covered ? 0 : actions);
+            return covered ? Skip(state, demand, 0) with
+            {
+                Covered = new(demand.Id, new[] { left?.DemandId, right?.DemandId }.OfType<int>().ToArray())
+            } : Skip(state, demand, actions);
         }
         var motions = prepared.Motions;
         var patterns = prepared.Patterns;
@@ -251,6 +322,10 @@ public static class HumanPlanner
                         motion = [sweep];
                     }
                     var motionVariants = MotionVariants(demand, motion, model);
+                    if (prepared.FullSlides.TryGetValue(demand.Id, out var fullSlide))
+                        motionVariants = new[] { new[] { fullSlide } }.Concat(motionVariants).ToArray();
+                    if (prepared.AvoidanceSlides.TryGetValue(demand.Id, out var avoidingSlides))
+                        motionVariants = motionVariants.Concat(avoidingSlides.Select(m => new[] { m })).ToArray();
                     var next = new List<State>();
                     foreach (var state in local)
                     {
@@ -258,9 +333,8 @@ public static class HumanPlanner
                         var hands = technique.Hands[index] is { } required ? new[] { required } : [HandSide.Left, HandSide.Right];
                         foreach (var hand in hands)
                             foreach (var variant in motionVariants)
-                            foreach (var shift in shiftHints is not null && shiftHints.TryGetValue(demand.Id, out var contactStart)
-                                         ? new[] { contactStart is { } requestedStart ? requestedStart - variant[0].Frames[0].Time : 0 }
-                                         : Shifts(demand, refineSweepTiming && direction != 0))
+                            foreach (var shift in CandidateShifts(demand, variant[0], state, prepared, shiftHints,
+                                         refineSweepTiming && direction != 0))
                             {
                                 var candidate = state;
                                 for (var branch = 0; branch < variant.Length; branch++)
@@ -268,7 +342,7 @@ public static class HumanPlanner
                                     var branchHand = branch == 0 ? hand : Other(hand);
                                     candidate = Assign(candidate, demand, variant[branch], branchHand, shift,
                                         technique.Name, patternIndex, direction, branch,
-                                        doubleTimes.Contains(demand.Note.Time), technique.RequiresSweepContinuation, model, shiftedContacts);
+                                        doubleTimes.Contains(demand.Note.Time), technique.RequiresSweepContinuation, model, shiftedContacts, prepared);
                                     if (candidate is null) break;
                                 }
                                 if (candidate is not null)
@@ -278,7 +352,8 @@ public static class HumanPlanner
                                 }
                             }
                         // 时机反馈先保留被修正的接触，避免用丢弃 Slide 代替修正其误触。
-                        if (!requiresContinuation && (shiftHints is null || !shiftHints.ContainsKey(demand.Id)))
+                        if (!requiresContinuation && (shiftHints is null || !shiftHints.ContainsKey(demand.Id)) &&
+                            (!assigned || demand.Note.Kind is not (NoteKind.Hold or NoteKind.TouchHold)))
                             next.Add(SkipDemand(state, demand, motion.Length, checkCoverage: !assigned));
                     }
                     if (next.Count == 0 && requiresContinuation)
@@ -287,11 +362,11 @@ public static class HumanPlanner
                         break;
                     }
                     if (next.Count == 0) next.AddRange(local.Select(s => SkipDemand(s, demand, motion.Length)));
-                    local = Prune(next, options.BeamWidth);
+                    local = Prune(next, options.BeamWidth, s => TailLookahead(s, prepared, model));
                 }
                 alternatives.AddRange(local);
             }
-            beam = Prune(alternatives, options.BeamWidth);
+            beam = Prune(alternatives, options.BeamWidth, s => TailLookahead(s, prepared, model));
             coverageCache.Clear();
         }
 
@@ -314,6 +389,21 @@ public static class HumanPlanner
             NoteKind.Slide => [0, -.06, .06, -.12, .12],
             _ => [0, -.0125, .0125]
         };
+    }
+
+    private static IEnumerable<double> CandidateShifts(GameplayDemand demand, Motion motion, State state,
+        PreparedSearch prepared, IReadOnlyDictionary<int, double?>? hints, bool refineSweepTiming)
+    {
+        var shifts = hints is not null && hints.TryGetValue(demand.Id, out var requested)
+            ? new[] { requested is { } start ? start - motion.Frames[0].Time : 0 }
+            : Shifts(demand, refineSweepTiming);
+        foreach (var shift in shifts) yield return shift;
+        if (!prepared.PreviousSlide.TryGetValue(demand.Id, out var previousId)) yield break;
+        var before = state.Left?.DemandId == previousId ? state.Left : state.Right?.DemandId == previousId ? state.Right : null;
+        if (before is not { FullSlide: true }) yield break;
+        // 判定反馈可产生采样档位之外的时移，后轨仍可继承当前划手的真实出口时刻。
+        var inherited = before.End - motion.Frames[0].Time;
+        if (!shifts.Any(shift => Math.Abs(shift - inherited) < Epsilon)) yield return inherited;
     }
 
     private static State Skip(State state, GameplayDemand demand, int actions) =>
@@ -373,24 +463,55 @@ public static class HumanPlanner
 
     private static State? Assign(State state, GameplayDemand demand, Motion motion, HandSide hand, double shift,
         string technique, int pattern, int direction, int branch, bool twoHandChord, bool requiresSweepContinuation, HumanMotionModel model,
-        Dictionary<(HandFrame[] Frames, double Shift), HandFrame[]> shiftedContacts)
+        Dictionary<(HandFrame[] Frames, double Shift), HandFrame[]> shiftedContacts, PreparedSearch prepared, bool liftSweep = false)
     {
         if (!motion.Feasible) return null;
         var before = hand == HandSide.Left ? state.Left : state.Right;
         var other = hand == HandSide.Left ? state.Right : state.Left;
         var start = motion.Frames[0].Time + shift;
         var end = motion.Frames[^1].Time + shift;
-        var continues = direction != 0 && before is not null && before.Direction == direction &&
+        var inChain = prepared.ChainTails.ContainsKey(demand.Id);
+        var hasPrevious = prepared.PreviousSlide.TryGetValue(demand.Id, out var previousId);
+        var predecessor = hasPrevious ? before?.DemandId == previousId ? before : other?.DemandId == previousId ? other : null : null;
+        var continuesSlide = predecessor == before && before is { FullSlide: true } &&
+            Math.Abs(start - before.End) < Epsilon && before.Last.DistanceTo(motion.Frames[0].Position) < Epsilon;
+        var continues = !liftSweep && direction != 0 && before is not null && before.Direction == direction &&
             (before.Pattern == pattern || CanContinueSweep(before, demand, direction, start));
         if (requiresSweepContinuation && direction != 0 && !continues) return null;
         var contactFrames = !continues && motion.EntryFrames is { } entryFrames ? entryFrames : motion.Frames;
+        if (liftSweep)
+        {
+            var key = (demand.Id, direction);
+            if (!prepared.LiftedSweepEntries.TryGetValue(key, out var landing))
+            {
+                var entry = contactFrames[0].Position;
+                var target = SlidePath.ButtonPosition(demand.Note.StartPosition, 1.12);
+                var remaining = RotationAngle(entry, target, direction);
+                var point = Ring(Math.Atan2(entry.Y, entry.X) + direction * Math.Min(.06, remaining));
+                landing = [new(contactFrames[0].Time, point, Fingers(point, InputChannel.Button)),
+                    new(contactFrames[^1].Time, point, [])];
+                prepared.LiftedSweepEntries.Add(key, landing);
+            }
+            contactFrames = landing;
+        }
         var first = contactFrames[0].Position;
         var from = before?.Last ?? Rest(hand);
         var departure = before?.End ?? Math.Min(0, start - 1);
-        var distance = model.Geometry.DistanceMillimeters(from, first);
-        if (continues)
+        if (liftSweep && before is { Note.Kind: NoteKind.Tap })
         {
-            from = before!.Frames.First(f => Math.Abs(f.Time - before.Start) < Epsilon).Position;
+            // 扫过上一键后抬手越过占用区，再接回同向扫动；实际释放帧替换原来的停留尾部。
+            departure = before.Start + PlaybackSession.LogicStep;
+            from = before.PositionAt(departure);
+        }
+        var distance = model.Geometry.DistanceMillimeters(from, first);
+        if (continuesSlide)
+        {
+            departure = start;
+            distance = 0;
+        }
+        else if (continues)
+        {
+            from = before!.Contact[0].Position;
             departure = before.Start;
             var sweep = RotationAngle(from, first, direction);
             distance = 1.12 * model.Geometry.JudgementRadiusMillimeters * sweep;
@@ -402,9 +523,11 @@ public static class HumanPlanner
             var travel = Math.Max(PlaybackSession.LogicStep, distance / model.PreferredSpeedMillimetersPerSecond);
             departure = Math.Max(departure, start - travel);
         }
-        if (start <= departure || distance > (start - departure) * model.MaxSpeedMillimetersPerSecond + Epsilon) return null;
-        var otherPosition = other is null ? Rest(Other(hand)) : HumanMotionModel.PositionAt(other.Frames, start);
-        var transition = model.EvaluateTransition(hand, from, departure, first, start, otherPosition, distance);
+        if (!continuesSlide && (start <= departure || distance > (start - departure) * model.MaxSpeedMillimetersPerSecond + Epsilon)) return null;
+        var otherPosition = other is null ? Rest(Other(hand)) : other.PositionAt(start);
+        var transition = continuesSlide
+            ? new HumanMotionTransition(true, 0, 0, 0, hand == HandSide.Left ? first.X > otherPosition.X : first.X < otherPosition.X)
+            : model.EvaluateTransition(hand, from, departure, first, start, otherPosition, distance, inChain ? .1 : 1);
         if (!transition.Feasible) return null;
         // 同刻普通双押保留双手；被持续占用时，Touch 可以在窗口内依次击打。
         if (twoHandChord && before is not null && before.Note.Kind != NoteKind.Slide && demand.Note.Kind != NoteKind.Slide &&
@@ -418,15 +541,92 @@ public static class HumanPlanner
             shiftedContacts.Add((contactFrames, shift), contact);
         }
         var action = new Action(demand.Id, demand.Note, hand, demand.Channel, contact, from, departure, continues,
-            start, end, technique, pattern, direction, branch, motion.Profile);
-        var crossingChange = transition.Crossed != state.Crossed ? .15 : 0;
+            start, end, inChain ? continuesSlide ? "one-stroke-continue" : predecessor is not null && predecessor.Hand != hand
+                ? "one-stroke-relay" : "one-stroke-entry" : technique, pattern, direction, branch, motion.Profile)
+        { ContinuesSlide = continuesSlide, FullSlide = motion.FullSlide };
+        // 同屏接触的实体冲突先于成本比较。检查已分配的重叠动作，包括被后续动作替换的历史。
+        var coveredFrom = double.PositiveInfinity;
+        for (var node = state; node is not null; node = node.Parent)
+        {
+            if (node.Added is not { } occupied || occupied.Hand == hand) continue;
+            if (occupied.End <= action.ApproachTime + Epsilon) break;
+            if (occupied.ApproachTime < end - Epsilon &&
+                model.HasCollision(action.CollisionFrames, occupied.CollisionFrames, coveredFrom))
+                return continues && demand.Note.Kind == NoteKind.Tap
+                    ? Assign(state, demand, motion, hand, shift, technique, pattern, direction, branch, twoHandChord,
+                        false, model, shiftedContacts, prepared, liftSweep: true) : null;
+            coveredFrom = Math.Min(coveredFrom, occupied.ApproachTime);
+        }
+        var crossingChange = transition.Crossed != state.Crossed ? (inChain ? .015 : .15) : 0;
         var repeatCost = before is not null && before.Note.Kind == NoteKind.Tap && demand.Note.Kind == NoteKind.Tap &&
             demand.Note.Time > before.Note.Time + Epsilon &&
             before.Note.StartPosition == demand.Note.StartPosition
             ? model.RepetitionCost(Math.Min(start - before.Start, demand.Note.Time - before.Note.Time)) : 0;
-        var cost = transition.Cost + motion.Cost + Math.Abs(shift) * 3 + crossingChange + repeatCost;
+        // 接力是初次搜索中的正常候选。有限代价允许后续接键的收益抵消交接操作。
+        var seamCost = predecessor is null ? 0 : continuesSlide ? 0 : predecessor.Hand != hand ? .65 : 1.3;
+        var turnCost = before is null || continues || continuesSlide ? 0 : ExitTurnCost(before, first, start, model);
+        var cost = transition.Cost + motion.Cost + Math.Abs(shift) * 3 + crossingChange + repeatCost + seamCost + turnCost + (liftSweep ? .25 : 0);
         return new(hand == HandSide.Left ? action : state.Left, hand == HandSide.Right ? action : state.Right,
             transition.Crossed, state.Skipped, state.Cost + cost, state, action, null);
+    }
+
+    private static double ExitTurnCost(Action before, ChartPoint next, double arrival, HumanMotionModel model)
+    {
+        var contact = before.Contact;
+        if (contact.Length < 2) return 0;
+        var a = contact[^2];
+        var b = contact[^1];
+        var vx = (b.Position.X - a.Position.X) / (b.Time - a.Time);
+        var vy = (b.Position.Y - a.Position.Y) / (b.Time - a.Time);
+        var dx = next.X - b.Position.X;
+        var dy = next.Y - b.Position.Y;
+        var speed = Math.Sqrt(vx * vx + vy * vy);
+        var distance = Math.Sqrt(dx * dx + dy * dy);
+        if (speed < Epsilon || distance < Epsilon) return 0;
+        var reversal = Math.Max(0, -(vx * dx + vy * dy) / (speed * distance));
+        return .35 * reversal * speed * model.Geometry.JudgementRadiusMillimeters /
+            model.PreferredSpeedMillimetersPerSecond / Math.Max(.1, arrival - before.End);
+    }
+
+    // 只用于剪枝，不累加到动作成本；后续动作到来后仍按实际轨迹计算。
+    private static double TailLookahead(State state, PreparedSearch prepared, HumanMotionModel model)
+    {
+        var active = new[] { state.Left, state.Right }.Where(a => a is not null && prepared.ChainTails.ContainsKey(a.DemandId))
+            .OrderByDescending(a => a!.Start).FirstOrDefault();
+        if (active is null) return 0;
+        var tail = prepared.ChainTails[active.DemandId];
+        var groups = prepared.TailInputs[tail.Id];
+        if (groups.Length == 0) return 0;
+        var progress = Math.Max(state.Left?.Start ?? double.NegativeInfinity, state.Right?.Start ?? double.NegativeInfinity);
+        var upcoming = groups.Where(g => g[0].Start > progress + Epsilon).ToArray();
+        if (upcoming.Length == 0) return 0;
+        (ChartPoint Position, double Time) Exit(HandSide hand)
+        {
+            var action = hand == HandSide.Left ? state.Left : state.Right;
+            if (action == active && active.DemandId != tail.Id)
+                return (tail.SlidePath!.PointAt(1), tail.EndTime);
+            return (action?.Last ?? Rest(hand), action?.End ?? 0);
+        }
+        var left = Exit(HandSide.Left);
+        var right = Exit(HandSide.Right);
+        double Cost((ChartPoint Position, double Time) from, GameplayDemand demand)
+        {
+            var to = demand.Channel == InputChannel.Button ? SlidePath.ButtonPosition(demand.Note.StartPosition, 1.12)
+                : TouchCentre(demand.Note.TouchArea);
+            var distance = model.Geometry.DistanceMillimeters(from.Position, to);
+            var duration = Math.Max(PlaybackSession.LogicStep, demand.Start - from.Time);
+            var excess = Math.Max(0, distance / duration / model.PreferredSpeedMillimetersPerSecond - 1);
+            return .15 * Math.Pow(distance / model.Geometry.JudgementRadiusMillimeters, 2) / Math.Min(duration, 1) + .15 * excess * excess;
+        }
+        var total = 0d;
+        foreach (var group in upcoming)
+        {
+            var first = group[0];
+            if (group.Length >= 2)
+                total += Math.Min(Cost(left, first) + Cost(right, group[1]), Cost(right, first) + Cost(left, group[1]));
+            else total += Math.Min(Cost(left, first), Cost(right, first));
+        }
+        return total;
     }
 
     private static bool CanContinueTechnique(State state, PatternSegment pattern, TechniqueCandidate technique,
@@ -453,46 +653,50 @@ public static class HumanPlanner
             start - before.Start <= NormalHandPlanner.FastSweepInterval * steps + Epsilon;
     }
 
-    private static List<State> Prune(List<State> states, int width)
+    private static List<State> Prune(List<State> states, int width, Func<State, double>? lookahead = null)
     {
+        double Rank(State state) => state.Cost + (lookahead?.Invoke(state) ?? 0);
         var seen = new HashSet<(ActionKey Left, ActionKey Right, bool Crossed)>(states.Count);
         var ranked = new List<State>(states.Count);
-        foreach (var state in states.OrderBy(s => s.Skipped).ThenBy(s => s.Cost))
+        foreach (var state in states.OrderBy(s => s.Skipped).ThenBy(Rank))
             if (seen.Add((Key(state.Left), Key(state.Right), state.Crossed))) ranked.Add(state);
         // 每种占手布局保留最低成本，以及左右手各自最早释放的方案。
         // 长按尾部的少量时差可能决定下一组 Touch 是否来得及完成。
         var layouts = ranked.Where(s => s.Skipped == ranked[0].Skipped)
-            .GroupBy(s => (s.Left?.DemandId, s.Left?.Direction, s.Left?.Branch,
-                s.Right?.DemandId, s.Right?.Direction, s.Right?.Branch)).ToArray();
+            .GroupBy(s => (s.Left?.DemandId, s.Left?.Direction, s.Left?.Branch, s.Left?.FullSlide,
+                s.Right?.DemandId, s.Right?.Direction, s.Right?.Branch, s.Right?.FullSlide)).ToArray();
         var selected = layouts.Select(g => g.First()).Take(width).ToList();
         var included = new HashSet<State>(selected, ReferenceEqualityComparer.Instance);
         foreach (var state in layouts.SelectMany(g => new[]
                  {
                      g.OrderBy(s => s.Left?.End ?? double.NegativeInfinity).First(),
                      g.OrderBy(s => s.Right?.End ?? double.NegativeInfinity).First()
-                 }).OrderBy(s => s.Cost))
+                 }).OrderBy(Rank))
         {
             if (selected.Count == width) break;
             if (included.Add(state)) selected.Add(state);
         }
         selected.AddRange(ranked.Where(s => !included.Contains(s)).Take(width - selected.Count));
-        return selected.OrderBy(s => s.Skipped).ThenBy(s => s.Cost).ToList();
+        return selected.OrderBy(s => s.Skipped).ThenBy(Rank).ToList();
     }
 
     private static ActionKey Key(Action? action) =>
         new(action?.DemandId, action?.Start, action?.End, action?.Direction, action?.Pattern, action?.Branch,
             action?.ApproachTime, action is { Continues: true }
-                ? Ring(Math.Atan2(action.ApproachPosition.Y, action.ApproachPosition.X)) : action?.ApproachPosition, action?.Profile);
+                ? Ring(Math.Atan2(action.ApproachPosition.Y, action.ApproachPosition.X)) : action?.ApproachPosition, action?.Profile,
+            action?.FullSlide ?? false, action?.ContinuesSlide ?? false, action?.Contact);
 
     private static HandPlan Verify(Chart chart, State state, IReadOnlyList<PatternSegment> patterns,
         HumanMotionModel model, CancellationToken token)
     {
         var actions = new List<Action>();
         var skipped = new List<GameplayDemand>();
+        var covered = new List<CoveredDemand>();
         for (var node = state; node is not null; node = node.Parent)
         {
             if (node.Added is { } added) actions.Add(added);
             if (node.Gap is { } gap) skipped.Add(gap);
+            if (node.Covered is { } coverage) covered.Add(coverage);
         }
         actions.Reverse();
         var tracks = BuildTracks(actions);
@@ -517,6 +721,10 @@ public static class HumanPlanner
                 patterns.GroupBy(p => p.Kind).Select(g => new PatternOutcome(g.Key, g.Count(),
                     g.Count(p => p.Demands.All(d => !failed.Contains(d.Id))))).ToArray(),
                 actions.GroupBy(a => a.Technique).ToDictionary(g => g.Key, g => g.Count()))
+            {
+                SlideConnections = MaiPlay.Core.SlideConnections.Measure(chart, tracks, strokes, model.Geometry),
+                CoveredDemands = covered.Where(c => !failed.Contains(c.DemandId)).OrderBy(c => c.DemandId).ToArray()
+            }
         };
     }
 
@@ -544,6 +752,7 @@ public static class HumanPlanner
     {
         var a = candidate.Diagnostics!;
         var b = before.Diagnostics!;
+        if (a.Movement.Collisions.Count != b.Movement.Collisions.Count) return a.Movement.Collisions.Count < b.Movement.Collisions.Count;
         if (a.Movement.SpeedLimitViolations != b.Movement.SpeedLimitViolations) return a.Movement.SpeedLimitViolations < b.Movement.SpeedLimitViolations;
         if (candidate.Errors.Count != before.Errors.Count) return candidate.Errors.Count < before.Errors.Count;
         if (candidate.Achievement != before.Achievement) return candidate.Achievement > before.Achievement;

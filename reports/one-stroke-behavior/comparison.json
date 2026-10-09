@@ -1,0 +1,493 @@
+{
+  "chart": "青春コンプレックス DX MASTER 11.8",
+  "chartSha256": "672392BDD11B8DD53EB45699AFBB439D5ECB76CD1E1D6D73A3ECA7725420E8E7",
+  "baselineCommit": "5fc13853a00845a96886a16871e716a1a58d79ff",
+  "currentCoreSha256": "AA0978A8E0EE46F1F90945A306EB93B26C5D9EDD67300FE69B7C77916BB072B4",
+  "coreSourceAggregateSha256": "20DB547D8F5D12E5846BD4075137932ED9AF49BCEA04F04097581C5198D9633C",
+  "coreSourceFileCount": 31,
+  "coreSourceHashFormat": "Sorted relative POSIX path + NUL + raw file bytes + NUL; Core .cs/.csproj excluding bin/obj plus Directory.Build.props/targets",
+  "rangeStart": 134.2,
+  "rangeEnd": 138.1,
+  "countsScope": "全曲成绩；11条链的换手和断触；全曲运动统计",
+  "rows": [
+    {
+      "version": "baseline",
+      "planner": "normal",
+      "cp": 823,
+      "total": 823,
+      "achievement": 101,
+      "handSequence": "RRRRRRRRRRR",
+      "handSwitches": 0,
+      "sameHandContactBreaks": 10,
+      "contactGapSeconds": 0.3815789466141837,
+      "observedRunSeconds": 0.9895725,
+      "fullChartMovement": {
+        "LeftDistanceMillimeters": 104418.84976558905,
+        "RightDistanceMillimeters": 102331.55623351371,
+        "PeakSpeedMillimetersPerSecond": 3508.738875945927,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 22,
+        "ProjectedCrossingSeconds": 7.3835853025214675,
+        "DirectionReversalCount": 441,
+        "PeakLeftActionsPerSecond": 8,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 206750.40599910275
+      }
+    },
+    {
+      "version": "baseline",
+      "planner": "human",
+      "cp": 823,
+      "total": 823,
+      "achievement": 101,
+      "handSequence": "RLRLRLRLRLR",
+      "handSwitches": 10,
+      "sameHandContactBreaks": 0,
+      "contactGapSeconds": 0.0,
+      "observedRunSeconds": 1.8100447,
+      "fullChartMovement": {
+        "LeftDistanceMillimeters": 100631.48108859894,
+        "RightDistanceMillimeters": 97957.06054029349,
+        "PeakSpeedMillimetersPerSecond": 5159.936692988651,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 15,
+        "ProjectedCrossingSeconds": 5.032329362122253,
+        "DirectionReversalCount": 435,
+        "PeakLeftActionsPerSecond": 7,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 198588.54162889242
+      }
+    },
+    {
+      "version": "current",
+      "planner": "normal",
+      "cp": 823,
+      "total": 823,
+      "achievement": 101,
+      "handSequence": "RRRRRRRRRRR",
+      "handSwitches": 0,
+      "sameHandContactBreaks": 10,
+      "contactGapSeconds": 0.3815789466141837,
+      "observedRunSeconds": 1.225687,
+      "fullChartMovement": {
+        "LeftDistanceMillimeters": 104418.84976558905,
+        "RightDistanceMillimeters": 102331.55623351371,
+        "PeakSpeedMillimetersPerSecond": 3508.738875945927,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 22,
+        "ProjectedCrossingSeconds": 7.3835853025214675,
+        "DirectionReversalCount": 441,
+        "PeakLeftActionsPerSecond": 8,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 206750.40599910275,
+        "Collisions": {
+          "Intervals": [
+            {
+              "StartTime": 45.47368421049795,
+              "EndTime": 45.50324086271045,
+              "ClosestTime": 45.47368421049795,
+              "MinimumDistanceMillimeters": 0
+            },
+            {
+              "StartTime": 46.73684210523495,
+              "EndTime": 46.82754095363861,
+              "ClosestTime": 46.73684210523495,
+              "MinimumDistanceMillimeters": 0
+            },
+            {
+              "StartTime": 46.860822253189205,
+              "EndTime": 46.926814311568364,
+              "ClosestTime": 46.89389286006557,
+              "MinimumDistanceMillimeters": 6.823589107196189
+            },
+            {
+              "StartTime": 46.95591090332854,
+              "EndTime": 46.96666666666667,
+              "ClosestTime": 46.96666666666667,
+              "MinimumDistanceMillimeters": 78.04690671207094
+            },
+            {
+              "StartTime": 59.684210526282925,
+              "EndTime": 59.70681241505404,
+              "ClosestTime": 59.684210526282925,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            },
+            {
+              "StartTime": 59.999999999966924,
+              "EndTime": 60.02260188801686,
+              "ClosestTime": 59.999999999966924,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            },
+            {
+              "StartTime": 60.31578947365092,
+              "EndTime": 60.33673469478296,
+              "ClosestTime": 60.31578947365092,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            },
+            {
+              "StartTime": 90.63157894731813,
+              "EndTime": 90.65657894731814,
+              "ClosestTime": 90.63157894731813,
+              "MinimumDistanceMillimeters": 61.038021270044865
+            },
+            {
+              "StartTime": 96.71288540458436,
+              "EndTime": 96.74166666666666,
+              "ClosestTime": 96.74166666666666,
+              "MinimumDistanceMillimeters": 57.60438063283229
+            },
+            {
+              "StartTime": 97.34446434922928,
+              "EndTime": 97.375,
+              "ClosestTime": 97.375,
+              "MinimumDistanceMillimeters": 55.68391080476097
+            },
+            {
+              "StartTime": 97.97604329932038,
+              "EndTime": 98.00833333333334,
+              "ClosestTime": 98.00833333333334,
+              "MinimumDistanceMillimeters": 53.766636318591324
+            },
+            {
+              "StartTime": 98.60762224396531,
+              "EndTime": 98.6375,
+              "ClosestTime": 98.6375,
+              "MinimumDistanceMillimeters": 56.403730711043096
+            },
+            {
+              "StartTime": 99.2392011940564,
+              "EndTime": 99.27083333333333,
+              "ClosestTime": 99.27083333333333,
+              "MinimumDistanceMillimeters": 54.485218277405224
+            },
+            {
+              "StartTime": 99.87078013870133,
+              "EndTime": 99.9,
+              "ClosestTime": 99.9,
+              "MinimumDistanceMillimeters": 57.12398252395424
+            },
+            {
+              "StartTime": 101.68421052625823,
+              "EndTime": 101.71376717847072,
+              "ClosestTime": 101.68421052625823,
+              "MinimumDistanceMillimeters": 0
+            },
+            {
+              "StartTime": 102.94736842099523,
+              "EndTime": 103.03806727409831,
+              "ClosestTime": 102.94736842099523,
+              "MinimumDistanceMillimeters": 0
+            },
+            {
+              "StartTime": 103.07134856496796,
+              "EndTime": 103.13734062092666,
+              "ClosestTime": 103.10441917086939,
+              "MinimumDistanceMillimeters": 6.82359731901135
+            },
+            {
+              "StartTime": 103.16643723801832,
+              "EndTime": 103.17916666666666,
+              "ClosestTime": 103.17916666666666,
+              "MinimumDistanceMillimeters": 76.00302636699514
+            },
+            {
+              "StartTime": 115.89473684204341,
+              "EndTime": 115.91568206317545,
+              "ClosestTime": 115.89473684204341,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            },
+            {
+              "StartTime": 116.21052631572742,
+              "EndTime": 116.23312820377737,
+              "ClosestTime": 116.21052631572742,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            },
+            {
+              "StartTime": 116.52631578941143,
+              "EndTime": 116.54891767818255,
+              "ClosestTime": 116.52631578941143,
+              "MinimumDistanceMillimeters": 28.22688000000005
+            }
+          ],
+          "MinimumDistanceMillimeters": 0,
+          "ClosestTime": 45.47368421049795,
+          "RequiredSeparationMillimeters": 89.38512,
+          "Count": 21,
+          "Seconds": 0.7356150116385294
+        },
+        "SatisfiesMotionConstraints": false
+      }
+    },
+    {
+      "version": "current",
+      "planner": "human",
+      "cp": 823,
+      "total": 823,
+      "achievement": 101,
+      "handSequence": "RRRRRRRRRRR",
+      "handSwitches": 0,
+      "sameHandContactBreaks": 0,
+      "contactGapSeconds": 0,
+      "observedRunSeconds": 2.2309498,
+      "fullChartMovement": {
+        "LeftDistanceMillimeters": 100843.5076028466,
+        "RightDistanceMillimeters": 98710.11660136837,
+        "PeakSpeedMillimetersPerSecond": 5159.936692988651,
+        "SpeedLimitViolations": 0,
+        "ProjectedCrossingCount": 27,
+        "ProjectedCrossingSeconds": 8.477922479682517,
+        "DirectionReversalCount": 421,
+        "PeakLeftActionsPerSecond": 7,
+        "PeakRightActionsPerSecond": 7,
+        "TotalDistanceMillimeters": 199553.62420421495,
+        "Collisions": {
+          "Intervals": [],
+          "MinimumDistanceMillimeters": 128.3057901180819,
+          "ClosestTime": 101.68421052625823,
+          "RequiredSeparationMillimeters": 89.38512,
+          "Count": 0,
+          "Seconds": 0
+        },
+        "SatisfiesMotionConstraints": true
+      }
+    }
+  ],
+  "tailVariants": [
+    {
+      "source": "(150){4}4-7[4:1]/8h[#0.3],7<5[4:1],{#0.43},2,E",
+      "allCriticalPerfect": true,
+      "movementCost": 5.87379635972221,
+      "strokes": [
+        {
+          "note": "8h[#0.3]",
+          "hand": "Left",
+          "Start": 0.9875,
+          "End": 1.2575
+        },
+        {
+          "note": "4-7[4:1]",
+          "hand": "Right",
+          "Start": 1,
+          "End": 1.025
+        },
+        {
+          "note": "4-7[4:1]",
+          "hand": "Right",
+          "Start": 1.4,
+          "End": 1.675
+        },
+        {
+          "note": "7<5[4:1]",
+          "hand": "Left",
+          "Start": 1.4124999999999999,
+          "End": 1.4374999999999998
+        },
+        {
+          "note": "7<5[4:1]",
+          "hand": "Left",
+          "Start": 1.7999999999999998,
+          "End": 2.095833333333333
+        },
+        {
+          "note": "2",
+          "hand": "Right",
+          "Start": 2.23,
+          "End": 2.255
+        }
+      ],
+      "connections": [
+        {
+          "PreviousId": 1,
+          "NextId": 4,
+          "Time": 1.7999999999999998,
+          "PreviousHand": 1,
+          "NextHand": 0,
+          "ContactGapSeconds": 0.12499999999999978,
+          "EndpointDistanceMillimeters": 133.73250316569093,
+          "VelocityChangeMillimetersPerSecond": 1706.9836911462778,
+          "IsRelay": true,
+          "Continuous": false
+        }
+      ],
+      "speedLimitViolations": 0,
+      "collisionCount": 0
+    },
+    {
+      "source": "(150){4}4-7[4:1]/8h[#0.3],7<5[4:1],{#0.43},7,E",
+      "allCriticalPerfect": true,
+      "movementCost": 3.7432318935498428,
+      "strokes": [
+        {
+          "note": "8h[#0.3]",
+          "hand": "Left",
+          "Start": 0.9875,
+          "End": 1.2575
+        },
+        {
+          "note": "4-7[4:1]",
+          "hand": "Right",
+          "Start": 1,
+          "End": 1.025
+        },
+        {
+          "note": "4-7[4:1]",
+          "hand": "Right",
+          "Start": 1.4,
+          "End": 1.8
+        },
+        {
+          "note": "7<5[4:1]",
+          "hand": "Left",
+          "Start": 1.4124999999999999,
+          "End": 1.4374999999999998
+        },
+        {
+          "note": "7<5[4:1]",
+          "hand": "Right",
+          "Start": 1.7999999999999998,
+          "End": 2.095833333333333
+        },
+        {
+          "note": "7",
+          "hand": "Left",
+          "Start": 2.23,
+          "End": 2.255
+        }
+      ],
+      "connections": [
+        {
+          "PreviousId": 1,
+          "NextId": 4,
+          "Time": 1.7999999999999998,
+          "PreviousHand": 1,
+          "NextHand": 1,
+          "ContactGapSeconds": 0,
+          "EndpointDistanceMillimeters": 2.1095125756099947E-13,
+          "VelocityChangeMillimetersPerSecond": 1582.5061730875918,
+          "IsRelay": false,
+          "Continuous": true
+        }
+      ],
+      "speedLimitViolations": 0,
+      "collisionCount": 0
+    }
+  ],
+  "timingFeedback": [
+    {
+      "tapTime": 1.35,
+      "tapPosition": 1,
+      "cp": 7,
+      "total": 7,
+      "hands": "LLL",
+      "chainContactGapSeconds": 0,
+      "slides": [
+        {
+          "NoteId": 1,
+          "Start": 1.4357894736842107,
+          "End": 1.7515789473684213,
+          "shift": 0.1200000000000001
+        },
+        {
+          "NoteId": 3,
+          "Start": 1.7515789473684213,
+          "End": 2.067368421052632,
+          "shift": 0.1200000000000001
+        },
+        {
+          "NoteId": 6,
+          "Start": 2.067368421052632,
+          "End": 2.345,
+          "shift": 0.1200000000000001
+        }
+      ],
+      "connections": [
+        {
+          "PreviousId": 1,
+          "NextId": 3,
+          "Time": 1.6315789473684212,
+          "PreviousHand": 0,
+          "NextHand": 0,
+          "ContactGapSeconds": 0,
+          "EndpointDistanceMillimeters": 0,
+          "VelocityChangeMillimetersPerSecond": 229.55200438162873,
+          "IsRelay": false,
+          "Continuous": true
+        },
+        {
+          "PreviousId": 3,
+          "NextId": 6,
+          "Time": 1.9473684210526319,
+          "PreviousHand": 0,
+          "NextHand": 0,
+          "ContactGapSeconds": 0,
+          "EndpointDistanceMillimeters": 0,
+          "VelocityChangeMillimetersPerSecond": 229.55200438162987,
+          "IsRelay": false,
+          "Continuous": true
+        }
+      ],
+      "peakSpeedMillimetersPerSecond": 4638.836093023249,
+      "speedLimitViolations": 0,
+      "collisionCount": 0
+    },
+    {
+      "tapTime": 1.5,
+      "tapPosition": 2,
+      "cp": 7,
+      "total": 7,
+      "hands": "LLL",
+      "chainContactGapSeconds": 0,
+      "slides": [
+        {
+          "NoteId": 1,
+          "Start": 1.221622807017544,
+          "End": 1.5374122807017547,
+          "shift": -0.09416666666666651
+        },
+        {
+          "NoteId": 3,
+          "Start": 1.5374122807017547,
+          "End": 1.8532017543859653,
+          "shift": -0.09416666666666651
+        },
+        {
+          "NoteId": 6,
+          "Start": 1.8532017543859653,
+          "End": 2.1308333333333334,
+          "shift": -0.09416666666666651
+        }
+      ],
+      "connections": [
+        {
+          "PreviousId": 1,
+          "NextId": 3,
+          "Time": 1.6315789473684212,
+          "PreviousHand": 0,
+          "NextHand": 0,
+          "ContactGapSeconds": 0,
+          "EndpointDistanceMillimeters": 0,
+          "VelocityChangeMillimetersPerSecond": 229.55200438162873,
+          "IsRelay": false,
+          "Continuous": true
+        },
+        {
+          "PreviousId": 3,
+          "NextId": 6,
+          "Time": 1.9473684210526319,
+          "PreviousHand": 0,
+          "NextHand": 0,
+          "ContactGapSeconds": 0,
+          "EndpointDistanceMillimeters": 0,
+          "VelocityChangeMillimetersPerSecond": 229.55200438162987,
+          "IsRelay": false,
+          "Continuous": true
+        }
+      ],
+      "peakSpeedMillimetersPerSecond": 2642.59465213009,
+      "speedLimitViolations": 0,
+      "collisionCount": 0
+    }
+  ],
+  "behaviorTestsPassed": 17,
+  "coreSourceManifest": "artifacts/one-stroke-optimized-build/source-manifest.json"
+}

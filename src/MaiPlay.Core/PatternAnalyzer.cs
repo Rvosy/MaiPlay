@@ -47,7 +47,8 @@ public static class PatternAnalyzer
                     var buttons = heads.Where(d => d.Channel == InputChannel.Button).ToArray();
                     var touches = heads.Where(d => d.Channel == InputChannel.Touch).ToArray();
                     if (buttons.Length > 0) segments.Add(buttons.Length > 1 ? new(PatternKind.Chord, buttons) : Single(buttons[0]));
-                    foreach (var slide in slides) segments.Add(Single(slide));
+                    // 先分配需要双手的 Wifi，让同刻普通分支检查这次接触能否顺带完成。
+                    foreach (var slide in slides.OrderByDescending(d => d.Note.SlidePath!.IsWifi)) segments.Add(Single(slide));
                     if (touches.Length > 0) segments.Add(touches.Length > 1 ? new(PatternKind.Chord, touches) : Single(touches[0]));
                 }
                 else

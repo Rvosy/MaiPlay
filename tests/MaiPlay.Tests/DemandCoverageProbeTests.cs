@@ -28,7 +28,34 @@ public sealed class DemandCoverageProbeTests
             Assert.True(probe.IsCovered(target, tracks));
             Assert.True(probe.IsCoveredByInputs(target, inputs));
         }
-        Assert.False(probe.IsCovered(chart.Notes.Single(n => n.Kind == NoteKind.Slide), tracks));
+        var slide = chart.Notes.Single(n => n.Kind == NoteKind.Slide);
+        Assert.Equal(AchievementGrade.Perfect, session.GetResult(slide)!.Grade);
+        Assert.True(probe.IsCovered(slide, tracks));
+        Assert.True(probe.IsCoveredByInputs(slide, inputs));
+    }
+
+    [Theory]
+    [InlineData(1.003, 0, true)]
+    [InlineData(200.003, 0, true)]
+    [InlineData(200.0001, 0, true)]
+    [InlineData(200.0001, .243, true)]
+    [InlineData(200.003, .243, false)]
+    [InlineData(200.003, .3, false)]
+    public void SlideCoveragePreservesBothWaitingTimeAndLogicSamplingPhase(double first, double delay, bool covered)
+    {
+        var chart = SimaiParser.ParseChart("(120)1?-5[0.5##0.4],E", first: first);
+        var slide = Assert.Single(chart.Notes);
+        // 直线 1→5 的独立输入路线；末区时刻沿用已核验的 0.152 尾区比例。
+        var route = new[] { ("A1", .5), ("B1", .58), ("C", .66), ("B5", .74), ("A5", .9 - .4 * .152) };
+        var inputs = route.SelectMany(step => new[]
+        {
+            new InputEvent(first + step.Item2 + delay, InputChannel.Touch, step.Item1, true),
+            new InputEvent(first + step.Item2 + delay + .025, InputChannel.Touch, step.Item1, false)
+        }).OrderBy(e => e.Time).ToArray();
+        var session = new PlaybackSession(chart, PlayMode.Algorithm, inputs);
+        session.Advance(session.FinishTime + .1);
+        Assert.Equal(covered, session.GetResult(slide)!.Grade == AchievementGrade.Perfect);
+        Assert.Equal(covered, new DemandCoverageProbe(chart).IsCoveredByInputs(slide, inputs));
     }
 
     [Theory]

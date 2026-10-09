@@ -407,8 +407,11 @@ public sealed partial class MainWindow : Window
             if (ModePicker.SelectedIndex != 1) ModePicker.SelectedIndex = 1;
             else ConfigureChart();
             SaveSettings();
+            var movementWarning = plan.Diagnostics is { Movement.SatisfiesMotionConstraints: false } diagnostics
+                ? $"运动检查未通过：{diagnostics.Movement.Collisions.Count} 处接触碰撞、{diagnostics.Movement.SpeedLimitViolations} 处超速。" : "";
             SetStatus($"手顺求解完成：CP {plan.Results.Count - plan.Errors.Count}/{chart.Notes.Count}，{plan.Achievement:F4}%。" +
-                (plan.AllCriticalPerfect ? "点击播放查看手顺。" : $"有 {plan.Gaps.Count} 处手顺缺口、{plan.Errors.Count} 个非 CP 音符；可播放，并从位置列表或时间轴查看。"), !plan.AllCriticalPerfect);
+                movementWarning + (plan.AllCriticalPerfect ? "点击播放查看手顺。" : $"有 {plan.Gaps.Count} 处手顺缺口、{plan.Errors.Count} 个非 CP 音符；可播放，并从位置列表或时间轴查看。"),
+                !plan.AllCriticalPerfect || movementWarning.Length != 0);
         }
         catch (OperationCanceledException) { }
         catch (Exception ex)
